@@ -387,7 +387,7 @@
       "Design principles"
     ],
     "fullContent": {
-      "keyQuote": "You cannot design away the difficulty of a hard job. You can stop adding difficulty on top of it.",
+      "keyQuote": "Some difficulty comes with the job, and no design removes it. A greyed-out button, an extra setting or a list of every possible error cause is difficulty we added, and that part is ours to remove.",
       "sections": [
         {
           "heading": "Some of my favourite decisions are invisible",
@@ -432,7 +432,7 @@
             },
             {
               "type": "quote",
-              "text": "You cannot design away the difficulty of a hard job. You can stop adding difficulty on top of it."
+              "text": "Some difficulty comes with the job, and no design removes it. A greyed-out button, an extra setting or a list of every possible error cause is difficulty we added, and that part is ours to remove."
             }
           ]
         },
