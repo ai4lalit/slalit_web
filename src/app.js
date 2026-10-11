@@ -66,7 +66,7 @@ const projIdx = id => DATA.projects.findIndex(p => p.id === id);
 
 /* ---------------- NAV ---------------- */
 $("#navLinks").innerHTML = NAV.slice(1).map(([k,l]) => `<li><a href="#${k}" data-nav="${k}">${l}</a></li>`).join("");
-$("#mobileLinks").innerHTML = NAV.map(([k,l],i) => `<a href="#${k}" data-nav="${k}">${l}<span>0${i+1}</span></a>`).join("") + `<a href="#resume" data-nav="resume">Résumé<span>07</span></a><a href="#contact" data-nav="contact">Contact<span>08</span></a>`;
+$("#mobileLinks").innerHTML = NAV.map(([k,l],i) => `<a href="#${k}" data-nav="${k}">${l}<span>0${i+1}</span></a>`).join("") + `<a href="#resume" data-nav="resume">Résumé<span>07</span></a>`;
 $("#footWork").innerHTML = DATA.projects.slice(0,4).map(p => `<li><a href="#case.${p.id}">${esc(p.title.split(":")[0])}</a></li>`).join("") + `<li><a href="#work">All case studies</a></li>`;
 const mm = $("#mobileMenu");
 function setMenu(open){ mm.classList.toggle("open", open); $("#menuBtn").setAttribute("aria-expanded", open); document.body.style.overflow = open ? "hidden" : ""; if(open) $("#menuClose").focus(); }
@@ -128,16 +128,8 @@ function aboutBand(){
       <h2>${md(B.title)}</h2>
       ${B.paragraphs.map(t => `<p>${md(t)}</p>`).join("")}
       <ul class="ab-facts">${B.facts.map(([a,b]) => `<li><b>${md(a)}</b><span>${md(b)}</span></li>`).join("")}</ul>
-      <div class="ab-ctas"><a class="btn btn-primary" href="#about">${md(B.primaryCta)} ${I.arrow}</a><a class="btn btn-ghost" href="#contact">${md(B.secondaryCta)}</a></div>
+      <div class="ab-ctas"><a class="btn btn-primary" href="#about">${md(B.primaryCta)} ${I.arrow}</a></div>
     </div>
-  </div></section>`;
-}
-function contactBand(){
-  return `<section class="cta-band"><div class="wrap">
-    <span class="eyebrow">${md(S.sections.cta.eyebrow)}</span>
-    <h2 style="margin-top:18px">${md(S.sections.cta.titleLead)} <em>${md(S.sections.cta.titleAccent)}</em>${md(S.sections.cta.titleTail)}</h2>
-    <div class="row"><p>${md(S.sections.cta.body)}</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="#contact">Start a conversation ${I.arrow}</a><a class="btn btn-ghost" href="#resume">View résumé</a></div></div>
   </div></section>`;
 }
 
@@ -430,7 +422,7 @@ function viewAbout(){
   <section class="sec"><div class="wrap">
     ${secHead("Academic foundation", "Education and credentials")}
     <div class="creds">${DATA.creds.map(c => `<div class="cred"><span class="seal">${I.check}</span><span class="badge">${esc(c.badge)}</span><h3>${esc(c.degree)}</h3><span class="f">${esc(c.field)}</span><p>${esc(c.institution)}</p></div>`).join("")}</div>
-  </div></section>${contactBand()}`;
+  </div></section>`;
 }
 
 /* PHOTOGRAPHY */
@@ -520,34 +512,8 @@ function viewResume(){
     <div class="rs-sec"><h2>Recent work</h2><div class="rs-cs">${DATA.projects.map(p => `<a href="#case.${p.id}"><b>${esc(p.title)}</b><span>${esc(p.category)}</span></a>`).join("")}</div></div>
     <div class="rs-sec"><h2>Career</h2><div class="rs-roles">${DATA.career.slice().reverse().map(c => `<div class="rs-role"><b>${esc(c.title)}</b><span class="p">${esc(c.period)}</span><span class="o">${esc(c.organization)}</span><p>${esc(c.description)}</p></div>`).join("")}</div></div>
     <div class="rs-sec"><h2>Education</h2><div class="rs-comp">${DATA.creds.map(c => `<div><b>${esc(c.degree)}</b><span>${esc(c.field)} · ${esc(c.badge)}</span></div>`).join("")}</div></div>
-    <div class="rs-sec"><h2>References</h2><p class="muted">Available on request. <a href="#contact" class="link-arrow" style="margin-left:6px">Get in touch ${I.arrow}</a></p></div>
+    <div class="rs-sec"><h2>References</h2><p class="muted">Available on request.</p></div>
   </div></div>`;
-}
-
-/* CONTACT */
-function viewContact(){
-  const draft = store.get("ls-contact-draft", {});
-  const topics = S.contact.topics;
-  return pageHead("", md(S.contact.pageTitle), md(S.contact.pageLede), "contact") + `
-  <div class="wrap contact-grid">
-    <div>
-      <div class="channel" style="border-top:1px solid var(--line)"><span class="mono">Email</span><span class="val">${esc(P.email)}<button class="copy" type="button" data-copy="${esc(P.email)}">${I.copy}Copy</button></span></div>
-      <div class="channel"><span class="mono">LinkedIn</span><a class="val" href="${esc(P.linkedInUrl)}" target="_blank" rel="noopener">${esc(P.linkedInDisplay)} ↗</a></div>
-      <div class="channel"><span class="mono">Based in</span><span class="val">${esc(P.location)} · <span id="clock2">IST</span></span></div>
-      <div class="channel"><span class="mono">Open to</span><span style="color:var(--muted)">${md(S.contact.openTo)}</span></div>
-    </div>
-    <form id="contactForm" novalidate>
-      <div class="form">
-        <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" autocomplete="name" value="${esc(draft.name||"")}" required><span class="err">Please add your name.</span></div>
-        <div class="field"><label for="cf-email">Your email</label><input id="cf-email" name="email" type="email" autocomplete="email" value="${esc(draft.email||"")}" required><span class="err">Enter an email like name@company.com.</span></div>
-        <div class="field full"><label for="cf-org">Company or organization <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional)</span></label><input id="cf-org" name="org" autocomplete="organization" value="${esc(draft.org||"")}"></div>
-        <div class="field full"><label>What’s it about?</label><div class="topics">${topics.map((t,i) => `<input type="radio" name="topic" id="cf-t${i}" value="${esc(t)}" ${(draft.topic||topics[0])===t ? "checked" : ""}><label for="cf-t${i}">${t}</label>`).join("")}</div></div>
-        <div class="field full"><label for="cf-msg">Message</label><textarea id="cf-msg" name="msg" required placeholder="Hello Lalit, I would like to connect about…">${esc(draft.msg||"")}</textarea><span class="err">Add a short message (at least 10 characters).</span></div>
-        <div class="full" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn-primary" type="submit">Prepare message ${I.arrow}</button><span class="muted" style="font-size:14px">Your draft is kept in this browser until you send it.</span></div>
-      </div>
-      <div id="composed" style="margin-top:24px"></div>
-    </form>
-  </div>`;
 }
 
 function viewNotFound(){
@@ -555,7 +521,7 @@ function viewNotFound(){
 }
 
 /* ---------------- ROUTER ---------------- */
-const TITLES = {home:S.meta.title, work:"Work", thinking:"Thinking", journey:"Career journey", about:"About", photography:"Photography", resume:"Résumé", contact:"Contact"};
+const TITLES = {home:S.meta.title, work:"Work", thinking:"Thinking", journey:"Career journey", about:"About", photography:"Photography", resume:"Résumé"};
 function parse(){
   const h = decodeURIComponent(location.hash.slice(1)) || "home";
   const [r, ...rest] = h.split(".");
@@ -579,7 +545,6 @@ function route(){
     case "about": html = viewAbout(); break;
     case "photography": html = viewPhotography(); break;
     case "resume": html = viewResume(); break;
-    case "contact": html = viewContact(); break;
     default: html = viewNotFound(); title = "Not found";
   }
   main.innerHTML = `<div class="view">${html}</div>`;
@@ -646,7 +611,6 @@ document.addEventListener("change", e => {
 });
 document.addEventListener("input", e => {
   if (e.target.id === "artSearch"){ artState.q = e.target.value; renderArticles(); }
-  if (e.target.closest("#contactForm")){ const f = $("#contactForm"); store.set("ls-contact-draft", {name:f.name.value, email:f.email.value, org:f.org.value, msg:f.msg.value, topic:(f.querySelector("[name=topic]:checked")||{}).value}); e.target.closest(".field")?.classList.remove("invalid"); }
 });
 function selectPhase(j){
   const {id} = parse(); const p = DATA.projects.find(x => x.id === id);
@@ -739,26 +703,10 @@ function openAddStory(){
   });
 }
 
-/* CONTACT SUBMIT */
-document.addEventListener("submit", e => {
-  if (e.target.id !== "contactForm") return; e.preventDefault();
-  const f = e.target; const v = {name:f.name.value.trim(), email:f.email.value.trim(), org:f.org.value.trim(), msg:f.msg.value.trim(), topic:(f.querySelector("[name=topic]:checked")||{}).value};
-  const checks = [["name", v.name.length > 0], ["email", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)], ["msg", v.msg.length >= 10]];
-  let first = null; checks.forEach(([n, ok]) => { f[n].closest(".field").classList.toggle("invalid", !ok); if (!ok && !first) first = f[n]; });
-  if (first){ first.focus(); return; }
-  const subject = `${v.topic} — from ${v.name}${v.org ? " (" + v.org + ")" : ""}`;
-  const body = `Hello Lalit,\n\n${v.msg}\n\n— ${v.name}${v.org ? ", " + v.org : ""}\n${v.email}`;
-  $("#composed").innerHTML = `<div class="composed" data-copy-target="#composedText"><div><span class="eyebrow">Ready to send</span><p style="margin-top:8px;font-size:15px">Copy this and send it to <b>${esc(P.email)}</b>, or open it in your email app.</p></div>
-    <pre id="composedText">To: ${esc(P.email)}\nSubject: ${esc(subject)}\n\n${esc(body)}</pre>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="btn btn-primary btn-sm" data-copy="${esc("Subject: " + subject + "\n\n" + body)}">${I.copy.replace('<svg','<svg width="16" height="16"')} Copy message</button>
-    <a class="btn btn-ghost btn-sm" href="mailto:${esc(P.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">Open in email app</a></div></div>`;
-  $("#composed").scrollIntoView({behavior:"smooth", block:"nearest"});
-});
-
 /* ---------------- CLOCK ---------------- */
 function tick(){
   let t; try{ t = new Intl.DateTimeFormat("en-IN",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Kolkata"}).format(new Date()) + " IST"; }catch(e){ t = "IST"; }
-  $("#clock").textContent = t; const c2 = $("#clock2"); if (c2) c2.textContent = t + " local time";
+  $("#clock").textContent = t;
 }
 const fb = $("#footBlurb"); if (fb) fb.textContent = fill(S.footer.blurb);
 $("#yr").textContent = new Date().getFullYear(); tick(); setInterval(tick, 30000);

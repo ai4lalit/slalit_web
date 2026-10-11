@@ -16,13 +16,12 @@ Single-page app with hash routing, light and dark themes, no framework and no ru
 | `#about` | Bio, current role, leadership pillars, education and credentials |
 | `#photography` | Photo stories gallery, lightbox, "post a photo story" form (saved in the visitor's browser) |
 | `#resume` | Résumé summary |
-| `#contact` | Contact details and a form that prepares an email |
 
 ## Project structure
 
 ```
 content/                 ← edit these to change what the site says
-  site.json              page copy: hero, stats, section headings, about, résumé, contact, footer
+  site.json              page copy: hero, stats, section headings, about, résumé, footer
   profile.json           name, email, LinkedIn, location
   case-studies.json      the 5 case studies (order here = order on the site; first one is featured).
                          Each has: summary, metrics, discover/define/ideate/prototype/implement (+ optional evolve),

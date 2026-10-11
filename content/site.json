@@ -74,13 +74,6 @@
       "pageTitle": "The art of noticing: light, shadows & human moments",
       "pageLede": "Beyond enterprise strategy and systems architecture, photography is my lifelong practice of deep observation. Every frame is a study in light, geometry, patience and emotion."
     },
-    "cta": {
-      "eyebrow": "Open to conversations",
-      "titleLead": "Let’s design what’s",
-      "titleAccent": "next",
-      "titleTail": ", together.",
-      "body": "UX leadership advisory, AI product innovation, design-organization building or a keynote. Tell me what you’re working on."
-    },
     "aboutBand": {
       "eyebrow": "About me",
       "title": "Hi, I’m Lalit. I design where technology, business and people meet.",
@@ -103,8 +96,7 @@
         ]
       ],
       "photo": "img/portrait.jpg",
-      "primaryCta": "More about me",
-      "secondaryCta": "Get in touch"
+      "primaryCta": "More about me"
     }
   },
   "about": {
@@ -166,18 +158,6 @@
     "title": "Senior Product Experience & UX Transformation Leader",
     "currentRole": "Senior Manager, User Experience · multi-product enterprise software portfolio",
     "summary": "Product experience and UX leader with 25+ years guiding enterprise modernization, AI product innovation and cross-functional design excellence. Translates complex technical architectures into human-centered platforms that customers trust and adopt."
-  },
-  "contact": {
-    "pageTitle": "Let’s start a conversation",
-    "pageLede": "Reach out about UX leadership advisory, AI product innovation or keynote discussions. I read every message.",
-    "openTo": "Executive advisory · keynote sessions · strategic design leadership",
-    "topics": [
-      "UX leadership advisory",
-      "AI product innovation",
-      "Keynote or talk",
-      "Design org building",
-      "Something else"
-    ]
   },
   "footer": {
     "blurb": "25+ years shaping enterprise product experiences, AI-enabled systems and design organizations. Open to executive advisory, keynote sessions and strategic design leadership."
