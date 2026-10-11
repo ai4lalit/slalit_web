@@ -13,7 +13,7 @@
     "headline": {
       "lead": "Product Experience",
       "joiner": "&",
-      "middle": "UX Transformation",
+      "middle": "Innovation",
       "accent": "Leader"
     },
     "subhead": "Designing intelligent experiences. Transforming products, teams and organizations.",
@@ -33,24 +33,7 @@
     },
     "meta": "PUNE, INDIA · 18.5204° N, 73.8567° E"
   },
-  "stats": [
-    {
-      "value": "25+",
-      "label": "Years in UX & product"
-    },
-    {
-      "value": "4",
-      "label": "Product lines · Ops, Data, DevX, Cloud"
-    },
-    {
-      "value": "{caseStudyCount}",
-      "label": "Case studies"
-    },
-    {
-      "value": "{articleCount}",
-      "label": "Essays on AI & leadership"
-    }
-  ],
+  "stats": [],
   "sections": {
     "work": {
       "eyebrow": "Selected work",

@@ -158,9 +158,9 @@ function viewHome(){
     ${H.meta ? `<span class="hero-meta">${md(H.meta)}</span>` : ""}
   </section>
 
-  <div class="ticker"><div class="wrap ticker-row" style="padding-inline:var(--gut)">
+  ${(S.stats || []).length ? `<div class="ticker"><div class="wrap ticker-row" style="padding-inline:var(--gut)">
     ${S.stats.map(x => `<div class="ticker-cell"><b>${md(x.value)}</b><span>${md(x.label)}</span></div>`).join("")}
-  </div></div>
+  </div></div>` : ""}
 
   <section class="sec alt"><div class="wrap">
     ${secHead(md(X.work.eyebrow), md(X.work.title), `<a class="link-arrow" href="#work">All ${DATA.projects.length} case studies ${I.arrow}</a>`)}
