@@ -741,3 +741,28 @@ footer{background:var(--bg)}
 .cs-hero h1{font-size:clamp(34px,4.6vw,60px);font-weight:700;max-width:22ch}
 .cs-block > h2{font-weight:700;letter-spacing:-.025em}
 .art-head h1{font-weight:700}
+
+/* nav LinkedIn button */
+.nav-cta svg{width:16px;height:16px}
+.nav-cta:hover svg{transform:none}
+@media (max-width:520px){.nav-cta{display:inline-flex;width:40px;height:40px;padding:0;justify-content:center;border-radius:999px}.nav-cta span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+
+/* ---------- closing "About me" band (inverted in both themes) ---------- */
+.about-band{background:var(--band-bg);color:var(--band-fg);padding-block:clamp(72px,9vw,120px)}
+.ab-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(32px,6vw,88px);align-items:center}
+.ab-photo{margin:0;position:relative;max-width:420px}
+.ab-photo::before{content:"";position:absolute;inset:auto -18px -18px auto;width:70%;height:70%;border-radius:24px;border:1px solid rgba(47,211,192,.35);z-index:0}
+.ab-photo img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;border-radius:20px}
+.ab-copy .eyebrow{color:var(--band-brass)}
+.ab-copy h2{font-size:clamp(30px,3.8vw,50px);font-weight:700;letter-spacing:-.035em;line-height:1.08;margin-top:12px;max-width:20ch;color:var(--band-fg)}
+.ab-copy p{color:var(--band-muted);font-size:clamp(16.5px,1.3vw,18px);line-height:1.7;margin-top:18px;max-width:58ch}
+.ab-copy p strong{color:var(--band-fg);font-weight:600}
+.ab-facts{list-style:none;margin:28px 0 0;padding:22px 0 0;border-top:1px solid rgba(238,243,246,.14);display:flex;flex-wrap:wrap;gap:16px 44px}
+.ab-facts li{display:flex;flex-direction:column;gap:4px}
+.ab-facts b{font:700 28px/1 var(--f-display);letter-spacing:-.02em;color:var(--band-fg)}
+.ab-facts span{font-size:14px;color:var(--band-muted)}
+.ab-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.about-band .btn-primary{background:var(--band-accent);color:#04141C}
+.about-band .btn-ghost{color:var(--band-fg);border-color:rgba(238,243,246,.35)}
+.about-band .btn-ghost:hover{border-color:var(--band-accent);color:var(--band-accent)}
+@media (max-width:860px){.ab-grid{grid-template-columns:1fr}.ab-photo{max-width:300px}}

@@ -118,7 +118,21 @@ function artCard(a, feature){
     <div class="foot"><span>${esc(a.readingTime)}</span><span class="r">Read ${I.arrow}</span></div>
   </a>`;
 }
-function ctaBand(){
+/* closing band on every page except About: a short "about me" with portrait */
+function aboutBand(){
+  const B = S.sections.aboutBand, A = S.about;
+  return `<section class="about-band"><div class="wrap ab-grid">
+    <figure class="ab-photo"><img src="${esc(B.photo || A.photo.src)}" alt="${esc(A.photo.alt)}" width="1070" height="1470" loading="lazy"></figure>
+    <div class="ab-copy">
+      <span class="eyebrow">${md(B.eyebrow)}</span>
+      <h2>${md(B.title)}</h2>
+      ${B.paragraphs.map(t => `<p>${md(t)}</p>`).join("")}
+      <ul class="ab-facts">${B.facts.map(([a,b]) => `<li><b>${md(a)}</b><span>${md(b)}</span></li>`).join("")}</ul>
+      <div class="ab-ctas"><a class="btn btn-primary" href="#about">${md(B.primaryCta)} ${I.arrow}</a><a class="btn btn-ghost" href="#contact">${md(B.secondaryCta)}</a></div>
+    </div>
+  </div></section>`;
+}
+function contactBand(){
   return `<section class="cta-band"><div class="wrap">
     <span class="eyebrow">${md(S.sections.cta.eyebrow)}</span>
     <h2 style="margin-top:18px">${md(S.sections.cta.titleLead)} <em>${md(S.sections.cta.titleAccent)}</em>${md(S.sections.cta.titleTail)}</h2>
@@ -171,7 +185,7 @@ function viewHome(){
     ${secHead(md(X.photography.eyebrow), md(X.photography.title), `<a class="link-arrow" href="#photography">Visit the gallery ${I.arrow}</a>`)}
     <div class="pstrip" id="homePhotos"></div>
   </div></section>
-  ${ctaBand()}`;
+  ${aboutBand()}`;
 }
 function pillarsHTML(){
   return `<div class="pillars">${DATA.pillars.map(p => `
@@ -226,7 +240,7 @@ function viewWork(){
       ${[["all","All"],["ai","AI experiences"],["enterprise","Enterprise UX"]].map(([k,l]) => `<button type="button" class="chip" data-wf="${k}" aria-pressed="${f===k}">${l}<span class="n">${counts[k]}</span></button>`).join("")}
     </div><span class="mono">2022–2026</span></div>
     <div class="cards" id="workList"></div>
-  </div></section>${ctaBand()}`;
+  </div></section>${aboutBand()}`;
 }
 function renderWorkList(f){
   const list = f === "all" ? DATA.projects : DATA.projects.filter(p => p.categoryKey === f);
@@ -376,7 +390,7 @@ function viewJourney(){
       </div></li>`).join("")}
     </ol></div>
     <p class="mono muted" style="margin-top:20px">Teal nodes mark major career transformation milestones.</p>
-  </div></section>${ctaBand()}`;
+  </div></section>${aboutBand()}`;
 }
 
 /* ABOUT */
@@ -405,7 +419,7 @@ function viewAbout(){
   <section class="sec"><div class="wrap">
     ${secHead("Academic foundation", "Education and credentials")}
     <div class="creds">${DATA.creds.map(c => `<div class="cred"><span class="seal">${I.check}</span><span class="badge">${esc(c.badge)}</span><h3>${esc(c.degree)}</h3><span class="f">${esc(c.field)}</span><p>${esc(c.institution)}</p></div>`).join("")}</div>
-  </div></section>${ctaBand()}`;
+  </div></section>${contactBand()}`;
 }
 
 /* PHOTOGRAPHY */

@@ -95,6 +95,31 @@
       "titleAccent": "next",
       "titleTail": ", together.",
       "body": "UX leadership advisory, AI product innovation, design-organization building or a keynote. Tell me what you’re working on."
+    },
+    "aboutBand": {
+      "eyebrow": "About me",
+      "title": "Hi, I’m Lalit. I design where technology, business and people meet.",
+      "paragraphs": [
+        "Over a quarter century in product experience design, I’ve focused on **enterprise UX transformation**: modernizing complex, mission-critical platforms without disrupting the business.",
+        "Today I lead UX across the AMI product portfolio, championing **human-centered AI** and building teams that make design a strategic driver of growth."
+      ],
+      "facts": [
+        [
+          "25+",
+          "years in UX and product"
+        ],
+        [
+          "4",
+          "AMI product lines"
+        ],
+        [
+          "Pune",
+          "Maharashtra, India"
+        ]
+      ],
+      "photo": "img/portrait.jpg",
+      "primaryCta": "More about me",
+      "secondaryCta": "Get in touch"
     }
   },
   "about": {
