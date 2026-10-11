@@ -104,14 +104,14 @@ function workCard(p, feature){
 function workCards(list, featureFirst){ return list.map((p,i) => workCard(p, featureFirst && i === 0)).join(""); }
 function articleRow(a){
   return `<a class="arow" href="#article.${a.id}">
-    <span class="when"><b>${esc(a.category)}</b><span>${esc(a.date)} · ${esc(a.readingTime)}</span></span>
+    <span class="when"><b>Article ${esc(a.number)}</b><span>${esc(a.category)} · ${esc(a.readingTime)}</span></span>
     <span style="min-width:0"><h3>${esc(a.title)}</h3><p>${esc(a.shortDescription)}</p></span>
     <span class="arr">${I.arrow}</span></a>`;
 }
 function artCard(a, feature){
   const c = /Strategy|Leadership/.test(a.category) ? "amb" : "";
   return `<a class="art-card${feature ? " feature" : ""}" href="#article.${a.id}">
-    <div class="meta"><span class="c ${c}">${esc(a.category)}</span><span>${esc(a.date)}</span></div>
+    <div class="meta"><span class="c ${c}">${esc(a.category)}</span><span>Article ${esc(a.number)}</span></div>
     <h3>${esc(a.title)}</h3>
     ${feature ? `<blockquote>${esc(a.fullContent.keyQuote)}</blockquote>` : ""}
     <p>${esc(a.shortDescription)}</p>
@@ -144,7 +144,7 @@ function contactBand(){
 /* HOME */
 function viewHome(){
   const feat = DATA.projects, H = S.hero, X = S.sections;
-  const latest = DATA.articles.slice().sort((a,b) => new Date("1 "+b.date) - new Date("1 "+a.date)).slice(0, (X.thinking.homeCount || 3) + 1);
+  const latest = DATA.articles.slice(0, (X.thinking.homeCount || 3) + 1);
   return `
   <section class="hero" style="--hero-light:url('${esc(H.background.light)}');--hero-dark:url('${esc(H.background.dark)}')">
     <div class="hero-art" role="img" aria-label="${esc(H.background.alt)}"></div><div class="hero-shade"></div>
@@ -173,11 +173,11 @@ function viewHome(){
   </div></section>
 
   <section class="sec alt"><div class="wrap">
-    ${secHead(md(X.thinking.eyebrow), md(X.thinking.title), `<a class="link-arrow" href="#thinking">All ${DATA.articles.length} essays ${I.arrow}</a>`)}
+    ${secHead(md(X.thinking.eyebrow), md(X.thinking.title), `<a class="link-arrow" href="#thinking">All ${DATA.articles.length} articles ${I.arrow}</a>`)}
     <div class="think">
-      <a class="think-feature" href="#article.${latest[0].id}"><span class="meta-line"><span class="c">${esc(latest[0].category)}</span><span>${esc(latest[0].date)} · ${esc(latest[0].readingTime)}</span></span>
-        <h3>${esc(latest[0].title)}</h3><blockquote>${esc(latest[0].fullContent.keyQuote)}</blockquote><span class="link-arrow">Read essay ${I.arrow}</span></a>
-      <ul class="alist">${latest.slice(1).map(a => `<li><a href="#article.${a.id}"><h3>${esc(a.title)}</h3><span class="meta-line"><span class="c">${esc(a.category)}</span><span>${esc(a.date)}</span></span><span class="arr">${I.arrow}</span></a></li>`).join("")}</ul>
+      <a class="think-feature" href="#article.${latest[0].id}"><span class="meta-line"><span class="c">${esc(latest[0].category)}</span><span>Article ${esc(latest[0].number)} · ${esc(latest[0].readingTime)}</span></span>
+        <h3>${esc(latest[0].title)}</h3><blockquote>${esc(latest[0].fullContent.keyQuote)}</blockquote><span class="link-arrow">Read article ${I.arrow}</span></a>
+      <ul class="alist">${latest.slice(1).map(a => `<li><a href="#article.${a.id}"><h3>${esc(a.title)}</h3><span class="meta-line"><span class="c">${esc(a.category)}</span><span>Article ${esc(a.number)}</span></span><span class="arr">${I.arrow}</span></a></li>`).join("")}</ul>
     </div>
   </div></section>
 
@@ -321,8 +321,8 @@ function viewThinking(){
   const cats = ["All", ...new Set(DATA.articles.map(a => a.category))];
   return pageHead("", md(S.sections.thinking.pageTitle), md(S.sections.thinking.pageLede), "thinking") + `
   <section class="sec" style="padding-top:40px"><div class="wrap">
-    <div class="toolbar"><div class="filters" role="group" aria-label="Filter essays">${cats.map((c,i) => `<button type="button" class="chip" data-af="${esc(c)}" aria-pressed="${i===0}">${esc(c)}<span class="n">${c==="All" ? DATA.articles.length : DATA.articles.filter(a=>a.category===c).length}</span></button>`).join("")}</div>
-      <label class="search"><span class="mono" style="position:absolute;left:-9999px">Search essays</span>${I.search}<input id="artSearch" type="search" placeholder="Search essays and tags…" autocomplete="off"></label></div>
+    <div class="toolbar"><div class="filters" role="group" aria-label="Filter articles">${cats.map((c,i) => `<button type="button" class="chip" data-af="${esc(c)}" aria-pressed="${i===0}">${esc(c)}<span class="n">${c==="All" ? DATA.articles.length : DATA.articles.filter(a=>a.category===c).length}</span></button>`).join("")}</div>
+      <label class="search"><span class="mono" style="position:absolute;left:-9999px">Search articles</span>${I.search}<input id="artSearch" type="search" placeholder="Search articles and tags…" autocomplete="off"></label></div>
     <div class="arows" id="artGrid"></div>
   </div></section>`;
 }
@@ -331,32 +331,52 @@ function renderArticles(){
   const q = artState.q.trim().toLowerCase();
   const list = DATA.articles.filter(a => (artState.cat === "All" || a.category === artState.cat) &&
     (!q || (a.title + " " + a.shortDescription + " " + a.tags.join(" ") + " " + a.category).toLowerCase().includes(q)));
-  $("#artGrid").innerHTML = list.length ? list.map(articleRow).join("") : `<div class="empty" style="grid-column:1/-1">No essays match “${esc(artState.q)}”. Try “trust”, “agentic” or “strategy”.</div>`;
+  $("#artGrid").innerHTML = list.length ? list.map(articleRow).join("") : `<div class="empty" style="grid-column:1/-1">No articles match “${esc(artState.q)}”. Try “trust”, “workflow” or “leadership”.</div>`;
   $$("[data-af]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.af === artState.cat)));
+}
+/* article body blocks: p, ul, ol, quote, callout, table, cards (zones | ladder) */
+function articleBlock(b){
+  switch (b.type){
+    case "p": return `<p>${md(b.text)}</p>`;
+    case "ul": return `<ul class="blist">${b.items.map(t => `<li>${md(t)}</li>`).join("")}</ul>`;
+    case "ol": return `<ol class="nlist">${b.items.map(t => `<li><span>${md(t)}</span></li>`).join("")}</ol>`;
+    case "quote": return `<figure class="pull"><blockquote>${md(b.text)}</blockquote><figcaption>Lalit Shahane</figcaption></figure>`;
+    case "callout": return `<aside class="callout"><span class="callout-label">${md(b.label)}</span><p>${md(b.text)}</p></aside>`;
+    case "table": return `<div class="atable-wrap"><table class="atable"><thead><tr>${b.columns.map(c => `<th scope="col">${md(c)}</th>`).join("")}</tr></thead>
+      <tbody>${b.rows.map(r => `<tr>${r.map((c,k) => `<td data-label="${esc(b.columns[k])}">${md(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    case "cards": return b.style === "ladder"
+      ? `<ol class="ladder">${b.items.map((c,k) => `<li style="--rung:${k}"><span class="rung">${k+1}</span><b>${md(c.label)}</b><p>${md(c.text)}</p></li>`).join("")}</ol>`
+      : `<div class="zones">${b.items.map((c,k) => `<div class="zone z${k}"><b>${md(c.label)}</b><p>${md(c.text)}</p></div>`).join("")}</div>`;
+    default: return "";
+  }
 }
 function viewArticle(id){
   const i = DATA.articles.findIndex(a => a.id === id); if (i < 0) return viewNotFound();
-  const a = DATA.articles[i], F = a.fullContent;
-  const related = DATA.articles.filter(x => x.id !== a.id).map(x => [x, x.tags.filter(t => a.tags.includes(t)).length + (x.category === a.category ? 1 : 0)]).sort((m,n) => n[1]-m[1]).slice(0,3).map(x=>x[0]);
+  const a = DATA.articles[i], F = a.fullContent, n = DATA.articles.length;
+  const prev = DATA.articles[i-1], next = DATA.articles[i+1];
+  const related = DATA.articles.filter(x => x.id !== a.id).map(x => [x, x.tags.filter(t => a.tags.includes(t)).length + (x.category === a.category ? 1 : 0)]).sort((m,q) => q[1]-m[1]).slice(0,3).map(x=>x[0]);
   return `<article><header class="art-head wrap">
       <nav class="crumb" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#thinking">Thinking</a></nav>
+      <span class="eyebrow art-no">Article ${esc(a.number)} of ${n}</span>
       <h1 class="reveal">${esc(a.title)}</h1>
-      <div class="art-meta"><b>${esc(a.category)}</b><span>${esc(a.date)}</span><span>${esc(a.readingTime)}</span><span>By Lalit Shahane</span></div>
+      <p class="art-dek reveal" style="animation-delay:.06s">${md(a.shortDescription)}</p>
+      <div class="art-meta"><b>${esc(a.category)}</b><span>${esc(a.readingTime)}</span><span>By Lalit Shahane</span></div>
     </header>
-    <div class="wrap"><blockquote class="key-quote reveal" style="animation-delay:.08s">${esc(F.keyQuote)}</blockquote></div>
     <div class="wrap"><div class="prose">
-      <p class="lead">${esc(F.lead)}</p>
-      ${F.sections.map((s,j) => `<h2><span class="no">${String(j+1).padStart(2,"0")}</span>${esc(s.heading)}</h2><p>${esc(s.body)}</p>
-        <blockquote>${esc(s.quote)}</blockquote>
-        <ul>${s.bulletPoints.map(b => { const k = b.indexOf(":"); return `<li>${k > 0 && k < 40 ? `<b>${esc(b.slice(0,k))}:</b>${esc(b.slice(k+1))}` : esc(b)}</li>`; }).join("")}</ul>`).join("")}
-      <div class="takeaways"><h3>Key takeaways</h3><ol>${F.takeaways.map(t => `<li><span>${esc(t)}</span></li>`).join("")}</ol></div>
+      ${F.sections.map((s,j) => `<h2><span class="no">${String(j+1).padStart(2,"0")}</span>${md(s.heading)}</h2>${s.blocks.map(articleBlock).join("")}`).join("")}
+      ${(F.takeaways || []).length ? `<div class="takeaways"><h3>Key takeaways</h3><ol>${F.takeaways.map(t => `<li><span>${md(t)}</span></li>`).join("")}</ol></div>` : ""}
+      ${(F.references || []).length ? `<div class="refs"><h3>Ideas referenced in this article</h3><ul>${F.references.map(r => `<li>${md(r)}</li>`).join("")}</ul></div>` : ""}
       <div class="tags">${a.tags.map(t => `<span class="tag">#${esc(t)}</span>`).join("")}</div>
       <div class="share"><span class="mono muted">Share</span>
         <button type="button" class="copy" data-copy="${esc(a.title)} — Lalit Shahane">${I.copy}Copy title</button>
-        <a class="link-arrow" href="#thinking" style="margin-left:auto">${I.back} All essays</a></div>
+        <a class="link-arrow" href="#thinking" style="margin-left:auto">${I.back} All articles</a></div>
+    </div></div>
+    <div class="wrap"><div class="pn art-pn">
+      ${prev ? `<a href="#article.${prev.id}"><span class="mono">← Previous · Article ${esc(prev.number)}</span><b>${esc(prev.title)}</b></a>` : "<span></span>"}
+      ${next ? `<a class="next" href="#article.${next.id}"><span class="mono">Next · Article ${esc(next.number)} →</span><b>${esc(next.title)}</b></a>` : ""}
     </div></div>
   </article>
-  <section class="sec alt"><div class="wrap">${secHead("Keep reading", "Related essays", `<a class="link-arrow" href="#thinking">All essays ${I.arrow}</a>`)}
+  <section class="sec alt"><div class="wrap">${secHead("Keep reading", "Related articles", `<a class="link-arrow" href="#thinking">All articles ${I.arrow}</a>`)}
     <div class="arows">${related.map(articleRow).join("")}</div></div></section>`;
 }
 

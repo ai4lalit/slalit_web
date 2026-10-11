@@ -1,438 +1,1806 @@
 [
   {
-    "id": "designing-human-centered-ai-experiences",
-    "title": "Designing Human-Centered AI Experiences",
-    "date": "February 2026",
-    "readingTime": "6 min read",
-    "category": "AI & Product Design",
-    "shortDescription": "Why chat interfaces are insufficient for complex enterprise cognition, and how multimodal generative canvases foster transparent agentic collaboration.",
-    "coverAccent": "#35D0BA",
+    "id": "ai-changes-what-ux-can-do",
+    "number": "01",
+    "title": "AI Doesn’t Replace UX — It Changes What UX Can Do",
+    "category": "Perspective",
+    "readingTime": "4 min read",
+    "shortDescription": "Every wave of design automation has made judgement more valuable. AI is the biggest wave yet, and it is pulling our discipline towards behaviour, trust and outcomes.",
     "tags": [
-      "Agentic AI",
-      "Cognitive Canvas",
-      "Enterprise UX",
-      "Human-in-the-Loop",
-      "AI Trust"
-    ],
-    "fullContent": {
-      "lead": "The tech industry has spent the past two years shoving chat interfaces into enterprise software. Yet when dealing with high-stakes financial pipelines, clinical diagnoses, or complex cloud orchestration, a conversational text stream introduces cognitive friction rather than relieving it. True intelligence requires spatial ergonomics.",
-      "keyQuote": "Conversation is ephemeral and linear; professional enterprise cognition is spatial, multidimensional, and verified through comparative models.",
-      "sections": [
-        {
-          "heading": "The Limits of the Conversational Sandbox",
-          "body": "Conversation is fundamentally linear, ephemeral, and low-density. Enterprise professionals do not think in single back-and-forth text exchanges; they manipulate spatial models, verify multidimensional tables, and validate branching decision trees. By forcing sophisticated users to interact exclusively through a text box, we degrade their situational awareness.",
-          "quote": "A text box is the least expressive interface for multidimensional data analysis ever conceived.",
-          "bulletPoints": [
-            "Chat interfaces hide state: Users lose track of antecedent parameters and intermediate model assumptions.",
-            "Linear scrolling creates context thrashing: Comparing two complex outputs requires endless vertical scrubbing.",
-            "Prompt gymnastics place the cognitive burden on the human rather than the tool."
-          ]
-        },
-        {
-          "heading": "Introducing the Adaptive Cognitive Canvas",
-          "body": "Human-centered AI requires replacing static chat windows with dynamic, self-assembling user interfaces. When an agent synthesizes an inquiry, it should output structured telemetry cards, editable decision matrices, and transparent attribution chains. The UI becomes an interactive playground for verification rather than a passive transcript.",
-          "quote": "The future of enterprise AI UX is generative interfaces that assemble ad-hoc UI components tailored to the active task.",
-          "bulletPoints": [
-            "Contextual Artifacts: Generative outputs render as first-class UI cards, graphs, and sliders that can be directly tweaked.",
-            "Explainability Topologies: Interactive attribution links showing exactly which data sources produced the recommendation.",
-            "Spatial Memory: Preserving workspace state across multi-turn sessions so operators never lose their train of thought."
-          ]
-        },
-        {
-          "heading": "Designing Calibrated Trust & Friction",
-          "body": "Counterintuitively, a frictionless AI experience is dangerous. When system mistakes carry multi-million dollar ramifications, UX leaders must intentionally introduce \"cognitive pauses\"—clear checkpoints where human judgement validates agent intent before autonomous execution.",
-          "quote": "Frictionless design in high-stakes AI is an architectural bug, not a feature. We must design intentional moments of reflection.",
-          "bulletPoints": [
-            "Confidence Visualization: Clearly demarcating probabilistic predictions versus deterministic truths.",
-            "Safe Dry-Runs: Allowing operators to preview simulated outcome impacts before triggering destructive scripts.",
-            "Instant Rollback Safeguards: Empowering users with unambiguous escape hatches and single-click state reversion."
-          ]
-        }
-      ],
-      "takeaways": [
-        "Shift from transient chat boxes to multimodal generative UI artifacts that preserve spatial context.",
-        "Calibrate friction intentionally: introduce cognitive verification checkpoints before high-consequence automations.",
-        "Anchor agent explainability directly into the visual layout through interactive attribution topologies.",
-        "Empower human operators as directors and validators, never passive consumers of black-box outputs."
-      ]
-    }
-  },
-  {
-    "id": "from-feature-delivery-to-experience-transformation",
-    "title": "From Feature Delivery to Experience Transformation",
-    "date": "November 2025",
-    "readingTime": "7 min read",
-    "category": "UX Strategy",
-    "shortDescription": "A practical executive framework for escaping the feature factory and restructuring design as a primary driver of enterprise platform valuation.",
-    "coverAccent": "#E7B86B",
-    "tags": [
-      "UX Strategy",
-      "Experience Transformation",
-      "DesignOps",
-      "Enterprise Value",
-      "Product Operations"
-    ],
-    "fullContent": {
-      "lead": "Most enterprise design teams operate as high-velocity ticket fulfillment centers. They produce screens, wireframes, and prototypes in response to feature requests, yet the aggregate experience remains bloated, fractured, and disjointed. Moving from delivery to strategic value demands an organizational paradigm shift.",
-      "keyQuote": "Executives do not buy Figma files; they invest in customer retention, reduced support overhead, and accelerated ARR expansion.",
-      "sections": [
-        {
-          "heading": "Diagnosing the Feature Factory Trap",
-          "body": "When engineering teams measure velocity by story points and product managers by feature ship counts, the customer bears the cognitive burden. Every shipped toggle or standalone tab increases systemic debt. A feature-centric organization measures outputs; an experience-led organization measures workflow completion and cognitive load.",
-          "quote": "Shipping 50 disjointed features creates negative compounding value if the end-to-end customer journey remains broken.",
-          "bulletPoints": [
-            "Feature bloat directly correlates with customer onboarding drag and elevated customer support tickets.",
-            "Siloed product pods optimize for local metrics while destroying global usability cohesion.",
-            "Designers get relegated to cosmetic polishers at the end of the waterfall sprint cycle."
-          ]
-        },
-        {
-          "heading": "The Three-Horizon Experience Architecture",
-          "body": "To elevate design into boardroom strategy, UX leaders must construct a Three-Horizon Roadmap: Horizon 1 fixes acute ergonomic bottlenecks in current releases; Horizon 2 unifies fractured workflows across product silos; Horizon 3 prototypes the disruptive paradigm shifts that safeguard the business against competitive obsolescence.",
-          "quote": "A design leader must balance quarterly tactical ergonomics with multi-year conceptual reinvention.",
-          "bulletPoints": [
-            "Horizon 1 (Current Quarter): Remove friction from the top 5 high-volume enterprise task journeys.",
-            "Horizon 2 (6-12 Months): Unify fragmented product platforms into a single coherent design token system.",
-            "Horizon 3 (1-3 Years): Prototype speculative operating paradigms that redefine the company’s product category."
-          ]
-        },
-        {
-          "heading": "Speaking the Language of the Executive Suite",
-          "body": "Executives do not buy Figma files; they invest in customer retention, reduced support overhead, faster user onboarding, and accelerated expansion revenue. UX leaders must tie every qualitative friction point to a quantified operational cost.",
-          "quote": "If you cannot articulate how a design change protects gross margins or accelerates sales velocity, you remain an observer in executive decisions.",
-          "bulletPoints": [
-            "Translate System Usability Scale (SUS) scores into reduced onboarding churn metrics.",
-            "Measure task completion duration in terms of recouped enterprise labor hours.",
-            "Present UX scorecards directly alongside quarterly financial business reviews."
-          ]
-        }
-      ],
-      "takeaways": [
-        "De-emphasize feature ship counts in favor of holistic user job completion velocity.",
-        "Use the Three-Horizon model to balance urgent tactical ergonomics with bold strategic reinvention.",
-        "Quantify UX debt as direct operational labor cost and customer retention risk.",
-        "Embed design leadership at the inception of business strategy, not the tail end of product delivery."
-      ]
-    }
-  },
-  {
-    "id": "evolving-role-ux-leaders-ai-era",
-    "title": "The Evolving Role of UX Leaders in the AI Era",
-    "date": "August 2025",
-    "readingTime": "5 min read",
-    "category": "Leadership",
-    "shortDescription": "As machine intelligence generates baseline UI components, the true value of design leadership shifts toward ethical governance, problem framing, and organizational empathy.",
-    "coverAccent": "#35D0BA",
-    "tags": [
-      "Design Leadership",
-      "AI Ethics",
-      "Org Design",
-      "Human Agency",
-      "Polymathic Teams"
-    ],
-    "fullContent": {
-      "lead": "Generative algorithms will soon construct wireframes, write component code, and run synthetic usability simulations in seconds. In this reality, what is the enduring mandate of a senior UX leader? It is the deliberate stewardship of human intent, ethical boundaries, and organizational purpose.",
-      "keyQuote": "The central challenge of the AI era is not \"What can we build with this model?\", but \"Should we build this, and how does it protect human agency?\"",
-      "sections": [
-        {
-          "heading": "The Commoditization of Pixel Execution",
-          "body": "For twenty years, design orgs differentiated themselves by the aesthetic polish and speed of their design deliverables. As design systems and AI automate layout composition, pixel-pushing will become a commoditized utility. What cannot be automated is deep customer empathy, systems-level problem definition, and ethical stewardship.",
-          "quote": "When execution becomes virtually free, framing the right problem becomes priceless.",
-          "bulletPoints": [
-            "Automated design tools can render 100 variants of a button, but cannot discern whether the button should exist.",
-            "Designers must elevate from interface artisans to systems thinkers and ethical auditors.",
-            "Executive value shifts from deliverable throughput to customer outcome efficacy."
-          ]
-        },
-        {
-          "heading": "Design Leaders as Chief Meaning Officers",
-          "body": "The central challenge of the AI era is not \"What can we build with this model?\", but \"Should we build this, and how does it respect human agency?\" Design executives must become the fierce protectors of human dignity, verifying that automated systems empower rather than marginalize the humans they serve.",
-          "quote": "Design leaders must be the conscience of the product organization, asking the uncomfortable questions before algorithms are deployed.",
-          "bulletPoints": [
-            "Establish algorithmic safety and fairness principles before training models on customer data.",
-            "Prevent automation complacency by designing transparent oversight interfaces for domain experts.",
-            "Advocate for vulnerable user cohorts who bear the disproportionate brunt of system errors."
-          ]
-        },
-        {
-          "heading": "Cultivating High-Agency, Polymathic Teams",
-          "body": "The next generation of high-impact design teams will be smaller, faster, and radically interdisciplinary. Designers will need fluency in statistical probabilistic models, prompt ergonomics, and system topology. Cultivating this curiosity is the greatest privilege of modern design leadership.",
-          "quote": "The best AI designers will not be tool operators; they will be polymaths who navigate data science, human psychology, and business strategy with equal agility.",
-          "bulletPoints": [
-            "Break down silos between UX researchers and ML data scientists through joint problem-discovery sprints.",
-            "Instill prompt ergonomics and mental model mapping as foundational design competencies.",
-            "Foster an organizational culture where qualitative human insight actively steers quantitative algorithmic goals."
-          ]
-        }
-      ],
-      "takeaways": [
-        "Shift focus from deliverable quantity to strategic problem framing and system-level architecture.",
-        "Champion human agency and ethical safety as non-negotiable core pillars of product design.",
-        "Foster polymathic design teams fluent in data science, cognitive ergonomics, and business viability.",
-        "Serve as the bridge between computational machine capabilities and human emotional resonance."
-      ]
-    }
-  },
-  {
-    "id": "agentic-workflows-beyond-chat",
-    "title": "Agentic Workflows: Moving Beyond Conversational Chat",
-    "date": "January 2026",
-    "readingTime": "6 min read",
-    "category": "AI & Product Design",
-    "shortDescription": "How to design multi-step autonomous agent workflows that maintain operator oversight, transparent telemetry, and predictable failure recovery.",
-    "coverAccent": "#35D0BA",
-    "tags": [
-      "Agentic Workflows",
-      "Autonomous Agents",
-      "Human-in-the-Loop",
-      "Enterprise AI"
-    ],
-    "fullContent": {
-      "lead": "Moving from generative chatbots to autonomous multi-step agents represents the most profound shift in enterprise software since the transition from desktop to cloud. Agents do not merely answer questions; they investigate, decide, and act across distributed microservice estates.",
-      "keyQuote": "An agent without transparent intermediate reasoning is merely a high-speed black box generating expensive uncertainty.",
-      "sections": [
-        {
-          "heading": "The Anatomy of Agentic Interaction",
-          "body": "Enterprise agents operate across asynchronous horizons. Unlike instant chat responses, a complex database reorganisation or security remediation plan may take minutes to compile. The interface must communicate progress, intent, and branching options without overwhelming the operator.",
-          "quote": "Designers must visualize agent intent before execution so humans remain directors rather than spectators.",
-          "bulletPoints": [
-            "Intent Previews: Clear, structured summaries of what the agent plans to modify before executing commands.",
-            "Live Telemetry Streams: Step-by-step progress tickers showing which logs, databases, or policies are being inspected.",
-            "Graceful Degradation: Preserving partial results when an agent encounters unexpected system permissions."
-          ]
-        },
-        {
-          "heading": "Adjustable Autonomy Dials",
-          "body": "Different tasks require different levels of machine independence. We must design adjustable autonomy settings (Ask, Assist, Agent) that allow organizations to graduate trust incrementally as agent reliability is empirically proven in production.",
-          "quote": "Autonomy is not a binary switch; it is a graduated sliding scale calibrated against risk and domain familiarity.",
-          "bulletPoints": [
-            "Ask Mode: Agent recommends actions and waits for explicit manual confirmation on every step.",
-            "Assist Mode: Agent executes low-risk subtasks automatically while pausing for major state alterations.",
-            "Agent Mode: Autonomous multi-step execution with post-action audit trails and instant rollback."
-          ]
-        }
-      ],
-      "takeaways": [
-        "Provide transparent intent previews before autonomous multi-step execution begins.",
-        "Implement adjustable autonomy dials (Ask, Assist, Agent) to scale trust incrementally.",
-        "Design robust live telemetry streams so operators maintain situational awareness.",
-        "Ensure single-click rollback mechanisms are always visible for emergency intervention."
-      ]
-    }
-  },
-  {
-    "id": "designing-for-trust-explainability",
-    "title": "Designing for Trust and Explainability in Autonomous Systems",
-    "date": "December 2025",
-    "readingTime": "5 min read",
-    "category": "Enterprise UX",
-    "shortDescription": "Strategies for exposing machine reasoning, confidence scores, and data lineage to eliminate user anxiety in mission-critical environments.",
-    "coverAccent": "#E7B86B",
-    "tags": [
+      "Future of UX",
       "Trust",
-      "Explainability",
-      "Data Lineage",
-      "Enterprise Safety"
+      "Design judgement",
+      "AI experiences"
     ],
     "fullContent": {
-      "lead": "In enterprise systems, trust is hard-won and instantly lost. When an AI model recommends purging a cache or modifying a security firewall rule, the operator needs to know exactly why the recommendation was made and what historical data informed it.",
-      "keyQuote": "Explainability is not an audit afterthought; it is the fundamental foundation upon which enterprise AI adoption rests.",
+      "keyQuote": "The interface used to be the product. With AI, the behaviour is the product, and the interface is how people learn to live with it.",
       "sections": [
         {
-          "heading": "Visualizing Data Lineage and Provenance",
-          "body": "Operators do not trust opaque confidence percentages. They require interactive attribution links that connect recommendations directly to specific log lines, compliance frameworks, and historical incident tickets.",
-          "quote": "If an AI cannot cite its evidentiary sources, its recommendation should be treated as conjecture.",
-          "bulletPoints": [
-            "Source Citation Cards: Hoverable footnotes linking directly to underlying telemetry and audit records.",
-            "Confidence Breakdown: Granular scoring across accuracy, historical precedent, and anomaly risk.",
-            "Alternative Hypothesis View: Showing what other conclusions the model considered before arriving at its primary recommendation."
+          "heading": "The question I keep being asked",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Over the last couple of years I have been asked some version of the same question in meetings, in hallways and by designers early in their careers: Is AI going to replace us? I understand why it comes up. The first time you watch a model produce a plausible interface in a few seconds, two feelings arrive together. One is awe. The other is a small, uncomfortable calculation about your own job."
+            },
+            {
+              "type": "p",
+              "text": "My honest answer is no, but not for the reassuring reason people expect. The profession is not safe because AI is bad at design. It is safe because the part of design that matters most was never the drawing."
+            }
+          ]
+        },
+        {
+          "heading": "We have been here before",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Design has lived through this pattern repeatedly. Templates were going to make designers redundant. Then design systems, then no-code tools, then component libraries. Every one of them automated a layer of production, and every time the same thing happened: the work moved up a level. When producing screens became cheap, the real question became which screens should exist at all, and what they should do for the person using them."
+            },
+            {
+              "type": "p",
+              "text": "AI is the largest version of that shift I have seen. It is not shrinking what UX is for. It is changing where the hard, valuable work sits."
+            }
+          ]
+        },
+        {
+          "heading": "What AI genuinely takes off our plate",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I want to be fair to the technology, because dismissing it is as unhelpful as worshipping it. AI is very good at the tasks that used to eat our days: a first draft of a wireframe, a structured brief, a clean summary of research notes, variations on a layout, documentation nobody enjoyed writing. A concept can reach something clickable in hours instead of days."
+            },
+            {
+              "type": "p",
+              "text": "I welcome that. Nobody joined this profession to resize artboards. If AI gives designers more time to sit with users and think, that is a good trade."
+            },
+            {
+              "type": "p",
+              "text": "But speed in production only matters when the thing being produced is the right thing. That is exactly where the discipline gets more important, not less."
+            }
+          ]
+        },
+        {
+          "heading": "What AI quietly adds to our plate",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Traditional interfaces are deterministic. Press a button and the same thing happens every time. AI experiences are probabilistic. The same request can return different answers, and the system can be wrong with complete confidence. That single difference creates a new family of design questions that did not exist a few years ago."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "**How much should the system do on its own?** Answer, investigate, suggest or act?",
+                "**How visible should its reasoning be?** What does the user see of the evidence and the confidence?",
+                "**What happens when it is wrong?** Can the person notice, correct and recover without losing their work?",
+                "**Who is accountable?** Where does a human stay in control, and how do they know they are?"
+              ]
+            },
+            {
+              "type": "p",
+              "text": "None of these is a model question. They are experience questions, and they decide whether people adopt AI, ignore it or, worse, trust it too much. They sit squarely in the territory UX was built for."
+            },
+            {
+              "type": "quote",
+              "text": "The interface used to be the product. With AI, the behaviour is the product, and the interface is how people learn to live with it."
+            }
+          ]
+        },
+        {
+          "heading": "From designing screens to designing behaviour",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I find it helpful to think about what actually changes in the daily work."
+            },
+            {
+              "type": "table",
+              "columns": [
+                "From",
+                "To",
+                "What changes"
+              ],
+              "rows": [
+                [
+                  "Designing screens and flows",
+                  "Designing behaviours and boundaries",
+                  "The unit of design is what the system does, not only what it shows."
+                ],
+                [
+                  "Usability of the interface",
+                  "Trust in the outcome",
+                  "A flawless interface on an unreliable answer still fails the user."
+                ],
+                [
+                  "Specifying fixed states",
+                  "Designing for variability and failure",
+                  "Wrong, partial and slow answers become first-class states."
+                ],
+                [
+                  "Handoff, then done",
+                  "Continuous evaluation",
+                  "AI behaviour keeps changing, so quality needs watching after release."
+                ],
+                [
+                  "Designer as maker",
+                  "Designer as editor and governor",
+                  "When options are cheap, the value is in choosing and shaping."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Trust is built in steps",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "One pattern I see again and again in enterprise settings is that people do not hand over responsibility to a system in one leap. They begin with low-risk help, such as an answer with a source they can check. If that goes well, they let it investigate. Later they let it suggest. Only after they have seen it behave reliably do they let it act."
+            },
+            {
+              "type": "p",
+              "text": "No improvement in model quality removes the need for that progression. Designing it, and making every step feel safe and reversible, is work that belongs to us. It is also work that looks nothing like drawing screens."
+            }
+          ]
+        },
+        {
+          "heading": "What stays human",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "AI can produce options. It cannot know your users’ working day, your organisation’s appetite for risk or the politics of a release. It does not carry accountability when something goes wrong. Researchers studying AI at work have described its abilities as jagged: brilliant at some tasks, unexpectedly poor at others, with no obvious pattern from a human point of view. Someone has to know where the edges are. In my experience, that someone is usually the person with the deepest understanding of the user and the domain, which is to say, the designer."
+            },
+            {
+              "type": "p",
+              "text": "Empathy, context, taste and responsibility remain human. As everything else becomes cheaper, they become more valuable."
+            }
+          ]
+        },
+        {
+          "heading": "What I would tell a UX team",
+          "blocks": [
+            {
+              "type": "ol",
+              "items": [
+                "**Stop defending the craft of production.** Defend the craft of judgement.",
+                "**Take ownership of the autonomy question.** Make “how much should the system do?” a design decision on every AI feature.",
+                "**Design for being wrong.** Errors, uncertainty and recovery are primary states, not edge cases.",
+                "**Invest in evidence.** When anyone can generate an interface, research and testing become the differentiator.",
+                "**Keep making things.** Judgement is built through practice, so protect time to originate, not only to edit."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "The most useful question for a UX team is not “how do we protect our work from AI?” It is “which harder, more valuable problems can we take on now?” That is where I would point the team, and it is where I am pointing mine."
+            }
           ]
         }
       ],
       "takeaways": [
-        "Always connect AI recommendations to verifiable underlying data sources and telemetry.",
-        "Break down confidence scores into understandable rubric components.",
-        "Surface alternative hypotheses to prevent premature operator automation bias."
+        "AI automates production; the valuable work moves up a level, to judgement.",
+        "Probabilistic systems create new experience questions: autonomy, visible reasoning, failure and accountability.",
+        "Trust is built in steps, from a checkable answer to investigating, suggesting and finally acting.",
+        "Empathy, context, taste and responsibility stay human, and become more valuable as everything else gets cheaper."
+      ],
+      "references": [
+        "Dell’Acqua, F., et al. “Navigating the Jagged Technological Frontier” (Harvard Business School working paper, 2023)."
       ]
     }
   },
   {
-    "id": "enterprise-design-systems-generative-ui",
-    "title": "Enterprise Design Systems in the Age of Generative UI",
-    "date": "October 2025",
-    "readingTime": "6 min read",
-    "category": "Enterprise UX",
-    "shortDescription": "Adapting traditional component libraries to support dynamic, AI-assembled user interfaces without compromising accessibility and brand integrity.",
-    "coverAccent": "#35D0BA",
+    "id": "where-should-ai-participate",
+    "number": "02",
+    "title": "AI Infusion into the UX Process: Where Should AI Actually Participate?",
+    "category": "Practice",
+    "readingTime": "4 min read",
+    "shortDescription": "“Use AI everywhere” is not a strategy. Here is the simple way I think about what AI should do, what it should assist with and what must stay human.",
     "tags": [
-      "Design Systems",
-      "Generative UI",
-      "Tokens",
-      "Accessibility"
+      "UX process",
+      "Research",
+      "Team practice",
+      "Human in the loop"
     ],
     "fullContent": {
-      "lead": "Traditional design systems are built on static component taxonomies: buttons, tables, modals, and accordions. But when generative AI begins assembling ad-hoc interfaces in real time based on user queries, how do design tokens and accessibility standards hold up?",
-      "keyQuote": "Design systems in the AI era must govern generative composition rules, not just static component pixels.",
+      "keyQuote": "Let AI take the work that is repeatable, low-risk and quick to verify. Let it assist on everything else. Keep a human on every decision that someone will be accountable for.",
       "sections": [
         {
-          "heading": "Governing Generative Layout Composition",
-          "body": "When an AI assistant generates a custom dashboard on the fly, it must adhere to strict spatial token hierarchies, contrast ratios, and keyboard navigation standards defined in the core design system.",
-          "quote": "Generative UI requires programmatic guardrails to prevent layout chaos and cognitive overload.",
-          "bulletPoints": [
-            "Composition Rules: Strict layout bounding boxes that prevent generated widgets from colliding or overflowing.",
-            "Tokenized Intent: Mapping AI semantic tags directly to design system token variables.",
-            "Automated Accessibility Checks: Real-time validation of contrast, ARIA labels, and tab orders on generated elements."
+          "heading": "Where most teams start, and why it is a trap",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "When AI tools became easy to reach, most teams I have watched began where the tools were instead of where the value was. A new plug-in appeared, someone tried it on whatever was in front of them, and a few weeks later there was a pleasant feeling of speed and not much evidence of anything else."
+            },
+            {
+              "type": "p",
+              "text": "I understand the impulse. Experimentation is healthy, and everyone is learning. But experimenting is not the same as infusing AI into a process, and the difference shows up in quality. A more deliberate question is available: for each part of how we design, should AI lead, assist or stay out?"
+            }
+          ]
+        },
+        {
+          "heading": "Three questions I ask before AI joins a task",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I keep this test deliberately simple, because a complicated framework never gets used."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "**Is the task well defined and repeatable?** Structuring a brief, clustering notes and generating layout variations are. Deciding which problem to solve is not.",
+                "**Is a mistake cheap and reversible?** A weak first draft costs minutes. A wrong research conclusion that steers a roadmap can cost months.",
+                "**Can a person check the result quickly?** If verifying takes as long as doing, the saving is an illusion."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Three yes answers mean AI can lead. One no means AI assists and a person decides. Two or more noes mean the task stays human. It is not scientific, but it has stopped me from handing over work I should have kept."
+            }
+          ]
+        },
+        {
+          "heading": "Three zones of participation",
+          "blocks": [
+            {
+              "type": "cards",
+              "style": "zones",
+              "items": [
+                {
+                  "label": "AI leads",
+                  "text": "Repetitive, well-defined, low-risk work: first-draft briefs, transcription and clustering, copy variations, documentation and consistency checks."
+                },
+                {
+                  "label": "AI assists",
+                  "text": "Work where AI widens the options and a person narrows them: concept exploration, prototype scaffolding, synthesis, competitive scans and edge-case discovery."
+                },
+                {
+                  "label": "Humans own",
+                  "text": "Work that needs judgement and accountability: problem framing, research questions, trade-offs, trust decisions and final approval."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Stage by stage",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Stage",
+                "Where AI can participate",
+                "What stays human"
+              ],
+              "rows": [
+                [
+                  "Discover",
+                  "Transcribing and clustering interviews, summarising desk research, scanning competitors.",
+                  "Choosing the research questions, spending time with users, noticing what was not said."
+                ],
+                [
+                  "Define",
+                  "Drafting problem statements and how-might-we options, stress-testing assumptions.",
+                  "Deciding which problem is worth solving, and for whom."
+                ],
+                [
+                  "Ideate",
+                  "Generating breadth: alternative flows, layouts and interaction models.",
+                  "Setting criteria first, then choosing and shaping a direction."
+                ],
+                [
+                  "Prototype",
+                  "Scaffolding prototypes, filling in realistic content, applying design-system components.",
+                  "Interaction quality, craft and fit with the user’s real workflow."
+                ],
+                [
+                  "Validate",
+                  "Preparing scripts, summarising sessions, flagging patterns.",
+                  "Facilitating sessions, reading behaviour, judging what the evidence means."
+                ],
+                [
+                  "Govern and scale",
+                  "Auditing consistency, drafting specifications and documentation.",
+                  "Principles, standards and the call on when to break them."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "The stage I am most careful with",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "If I could put a warning sign on one stage, it would be research. The temptation is obvious: synthesis is slow, and AI is quick and fluent. But fluency is not the same as insight. A summary nobody has checked against the raw material is a hypothesis, not a finding."
+            },
+            {
+              "type": "p",
+              "text": "There is a subtler risk too. If every team summarises its research with the same tools, the results tend to drift towards what is statistically likely, and the surprising observation that would have changed a decision gets smoothed away. The most valuable moments in research are often the odd comment, the workaround or the silence after a question. I would not outsource the noticing."
+            },
+            {
+              "type": "p",
+              "text": "My rule is that AI can help me organise what I heard, but I stay close to the people and the raw data. If I have not been in the room or read the transcript, I should not be confident in the conclusion."
+            }
+          ]
+        },
+        {
+          "heading": "Make it a team practice, not a personal hack",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Individual experiments are easy. Shared practice is hard, and it is where the value compounds. Four habits make the difference in my experience."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "**Name owners.** Literacy, guidelines, tooling and measurement each need someone accountable. Without a name, they drift into side projects.",
+                "**Capture what works.** Turn a good prompt into a shared template, agent or checklist so everyone starts from the same standard.",
+                "**Add guardrails, not just permission.** Constrain generation to your design system and agreed patterns.",
+                "**Label every artefact.** Mark whether something is an exploration, a concept or a decision. AI output looks finished even when it is not, and people will treat it as final unless you say otherwise."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "What I watch for",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Three things worry me as teams move faster."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "**Speed without direction.** More artefacts are not progress if nobody has decided which one matters.",
+                "**Skill erosion.** Early-career designers who only ever edit AI output may never learn to originate, and judgement is built through originating. I would protect time for craft deliberately.",
+                "**Unmeasured enthusiasm.** Because new tools feel fast, it is easy to assume they are. I would rather agree a few simple measures, such as time to a first prototype or rework after review, and let the data speak."
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "My rule of thumb",
+              "text": "Let AI take the work that is repeatable, low-risk and quick to verify. Let it assist on everything else. Keep a human on every decision that someone will be accountable for."
+            }
           ]
         }
       ],
       "takeaways": [
-        "Extend design systems from static components to dynamic generative layout rules.",
-        "Enforce strict contrast, tokenization, and accessibility checks on all AI-rendered widgets.",
-        "Maintain unified brand tone and ergonomic rhythm across both static and dynamic UI surfaces."
+        "Before AI joins a task, ask: is it repeatable, is a mistake cheap, and can a person check the result quickly?",
+        "Sort work into three zones: AI leads, AI assists, humans own.",
+        "Be most careful with research: a summary nobody has checked against the raw material is a hypothesis, not a finding.",
+        "Make AI a team practice with named owners, shared templates, guardrails and labelled artefacts."
+      ],
+      "references": [
+        "Parasuraman, R., Sheridan, T., & Wickens, C. “A model for types and levels of human interaction with automation” (IEEE, 2000).",
+        "Doshi, A., & Hauser, O. “Generative AI enhances individual creativity but reduces the collective diversity of novel content” (Science Advances, 2024)."
       ]
     }
   },
   {
-    "id": "mitigating-cognitive-friction",
-    "title": "Mitigating Cognitive Friction in Complex Enterprise Operations",
-    "date": "September 2025",
-    "readingTime": "7 min read",
-    "category": "Enterprise UX",
-    "shortDescription": "How progressive disclosure, contextual telemetry, and unified dashboards eliminate the intimidation factor of legacy enterprise tooling.",
-    "coverAccent": "#E7B86B",
+    "id": "complex-problems-simple-solutions",
+    "number": "03",
+    "title": "Complex Problems Don’t Always Need Complex Solutions",
+    "category": "Practice",
+    "readingTime": "4 min read",
+    "shortDescription": "The problem may be genuinely hard. The solution does not have to be elaborate, and in the age of AI the temptation to make it so has never been greater.",
     "tags": [
-      "Cognitive Load",
-      "Progressive Disclosure",
-      "Enterprise Tooling",
-      "UX Ergonomics"
+      "Simplicity",
+      "Enterprise UX",
+      "Cognitive load",
+      "Design principles"
     ],
     "fullContent": {
-      "lead": "Legacy enterprise software is notorious for exposing every database parameter, configuration toggle, and log stream on a single intimidating screen. Reducing cognitive friction requires mastering progressive disclosure and spatial hierarchy.",
-      "keyQuote": "Simplicity in enterprise software is not the removal of power; it is the immaculate timing of information revelation.",
+      "keyQuote": "You cannot design away the difficulty of a hard job. You can stop adding difficulty on top of it.",
       "sections": [
         {
-          "heading": "The Art of Progressive Disclosure",
-          "body": "By surfacing high-level executive summaries and estate flow maps by default, while tucking deep parameter controls into contextual drill-down panels, we empower novice operators without clipping the wings of elite experts.",
-          "quote": "Show the summary state first, the diagnostic drill-down second, and raw configuration parameters only when requested.",
-          "bulletPoints": [
-            "Estate Flow Maps: Visual topologies representing system health at a glance.",
-            "Contextual Action Drawers: Side panels that slide in to provide deep controls without obscuring primary workflows.",
-            "Smart Defaults: Pre-populating complex forms with AI-derived recommendations based on historical best practices."
+          "heading": "Some of my favourite decisions are invisible",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Ask a designer to name their proudest work and they will usually describe something you can see: a new flow, a redesigned dashboard, an elegant interaction. When I think about the decisions that have mattered most, many are invisible. They are the things we chose not to build, the options we removed and the steps we took out of a flow so that no one ever had to think about them."
+            },
+            {
+              "type": "p",
+              "text": "That instinct has become more important to me as problems have become more complicated. The harder the problem, the stronger the pull towards an elaborate answer. I have learned to distrust that pull."
+            }
+          ]
+        },
+        {
+          "heading": "Why complexity feels like diligence",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "In enterprise software, complexity is everywhere. There are many roles, many products, many edge cases and a long list of stakeholders who each need something slightly different. In that environment, matching a complicated problem with an equally elaborate solution feels responsible. It looks thorough. It is easy to defend in a review."
+            },
+            {
+              "type": "p",
+              "text": "But elaborate is not the same as rigorous. Often, elaborate is a way of avoiding a decision. Adding another option, another mode or another setting is easier than deciding which one the user actually needs."
+            },
+            {
+              "type": "p",
+              "text": "AI sharpens the temptation. When a model can generate a new capability in an afternoon, the cost of building more drops close to zero. The cost of understanding, testing, explaining and maintaining more does not. We end up with products that can do a great deal and that almost nobody fully understands."
+            }
+          ]
+        },
+        {
+          "heading": "Essential and accidental complexity",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The software engineer Fred Brooks drew a distinction I return to often. Some complexity is essential: it belongs to the problem and cannot be wished away. Some is accidental: it comes from our own tools, habits and choices. Good design respects the first kind and relentlessly removes the second."
+            },
+            {
+              "type": "p",
+              "text": "Cognitive psychology gives the same idea a human face. Working memory is small, and a person under pressure has even less of it. A designer cannot make a hard task easy. A designer can stop making it harder than it needs to be."
+            },
+            {
+              "type": "quote",
+              "text": "You cannot design away the difficulty of a hard job. You can stop adding difficulty on top of it."
+            }
+          ]
+        },
+        {
+          "heading": "Small decisions, large effects",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Let me describe the kind of decision I mean, without tying it to any one product. Imagine an AI feature that some customers have access to and others do not. The design team can debate how to handle the customers who do not. Grey the feature out with an explanation? Show a banner? Offer an upgrade prompt? Each has a rationale."
+            },
+            {
+              "type": "p",
+              "text": "My preference is almost always the simplest: if you cannot use it, do not show it. A disabled control invites questions. Why is it grey? What am I missing? Who do I ask? Every question becomes a support call or a lost moment of focus. Removing the control removes the question."
+            },
+            {
+              "type": "p",
+              "text": "The same reasoning applies to failure. When an automated step fails, the instinct is to diagnose every possible cause and explain each one. But the list of causes is long, most of them are not actionable by the user and every extra explanation is another state to design, build and test. A clear, calm message that says what happened and what to do next usually serves people better than an encyclopaedia of reasons."
+            },
+            {
+              "type": "p",
+              "text": "And retry is a good example of a feature that sounds harmless. A blind retry can resubmit work that should not be repeated and rarely fixes the underlying problem. Offering it case by case, where it is safe, is less impressive in a demo and much kinder in real life."
+            }
+          ]
+        },
+        {
+          "heading": "Old techniques, new uses",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I find it reassuring that some of the best tools for a new technology are decades old. Asking why repeatedly until you reach a root cause. Writing the user’s job to be done before choosing a solution. Testing a rough idea with a handful of real users before building anything more. Applying the usability heuristics we have known for thirty years to a chat interface and discovering that they still catch most of the problems."
+            },
+            {
+              "type": "p",
+              "text": "AI can accelerate the analysis in these methods. But the structure that makes the result usable is usually simple and familiar, and that familiarity is a feature."
+            }
+          ]
+        },
+        {
+          "heading": "Five back-to-basics principles",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Principle",
+                "What it looks like"
+              ],
+              "rows": [
+                [
+                  "Start with the job, not the capability",
+                  "Write the user’s job and a how-might-we statement before opening any tool. If the job is unclear, more AI will not help."
+                ],
+                [
+                  "Remove before you add",
+                  "Ask what can come out of the flow first: fewer states, fewer options, fewer labels."
+                ],
+                [
+                  "Make the simple path the default",
+                  "Keep the common case effortless. Make the advanced path available, not mandatory."
+                ],
+                [
+                  "Disclose progressively",
+                  "Show the conclusion first. Let people open the reasoning when they want it."
+                ],
+                [
+                  "Time-box and park",
+                  "Take a clear position for this release, write down what you are deferring and revisit it with evidence."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Simple is not simplistic",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I should add a caution, because “keep it simple” can become an excuse for shallow thinking. The simplest solutions are usually the result of a great deal of analysis that then stays out of sight. Good simplicity absorbs complexity into the system instead of passing it to the user. If a design merely hides the difficulty from the designer and exposes it to the customer, it has failed."
+            },
+            {
+              "type": "callout",
+              "label": "A test I use",
+              "text": "Does this reduce the number of decisions the user has to make, without removing the control they need?"
+            },
+            {
+              "type": "p",
+              "text": "Complex problems deserve rigorous thinking. They rarely deserve elaborate answers."
+            }
           ]
         }
       ],
       "takeaways": [
-        "Adopt progressive disclosure to prevent overwhelming operators with raw configuration data.",
-        "Use visual estate flow maps to communicate complex system health instantly.",
-        "Leverage smart defaults and contextual drawers to streamline high-volume workflows."
+        "Elaborate is not the same as rigorous; often it is a way of avoiding a decision.",
+        "Respect essential complexity and relentlessly remove the accidental kind.",
+        "If people cannot use a feature, do not show it; a disabled control only raises questions.",
+        "Good simplicity absorbs complexity into the system instead of passing it to the user."
+      ],
+      "references": [
+        "Brooks, F. “No Silver Bullet: Essence and Accident in Software Engineering” (1986).",
+        "Sweller, J. “Cognitive load during problem solving: Effects on learning” (Cognitive Science, 1988)."
       ]
     }
   },
   {
-    "id": "three-horizon-framework-ai",
-    "title": "The Three-Horizon Framework for AI-Driven Product Strategy",
-    "date": "July 2025",
-    "readingTime": "6 min read",
-    "category": "UX Strategy",
-    "shortDescription": "A structured roadmap for balancing immediate tactical AI feature integration with long-term platform reinvention and disruptive innovation.",
-    "coverAccent": "#35D0BA",
+    "id": "dont-add-ai-to-a-broken-workflow",
+    "number": "04",
+    "title": "Don’t Add AI to a Broken Workflow",
+    "category": "Practice",
+    "readingTime": "4 min read",
+    "shortDescription": "AI amplifies whatever it is attached to. Attach it to a confused process and you have built a faster way to be wrong.",
     "tags": [
-      "Product Strategy",
-      "Three-Horizon Model",
-      "Roadmapping",
-      "Innovation"
+      "Workflow",
+      "AI strategy",
+      "Process design",
+      "Measurement"
     ],
     "fullContent": {
-      "lead": "Product teams often fall into the trap of either chasing every shiny AI trend or remaining paralyzed by legacy maintenance. The Three-Horizon Framework provides a disciplined methodology for sequencing AI investments across short, medium, and long-term horizons.",
-      "keyQuote": "True product strategy is the art of allocating scarce design and engineering capacity between defending today and inventing tomorrow.",
+      "keyQuote": "If you cannot draw how the work really happens, you are not ready to improve it with AI. You are ready to understand it.",
       "sections": [
         {
-          "heading": "Sequencing Horizon 1, 2, and 3 Investments",
-          "body": "Horizon 1 focuses on embedding generative summaries and assistive insights into existing workflows. Horizon 2 unifies cross-product agentic workspaces. Horizon 3 explores spatial computing and fully autonomous cognitive governance.",
-          "quote": "Without a multi-horizon framework, urgent bug fixes will always crowd out transformative innovation.",
-          "bulletPoints": [
-            "Horizon 1 (Optimization): Instant summaries, auto-generated notes, and guided error recovery.",
-            "Horizon 2 (Expansion): Cross-product agentic workspaces and shared AI front doors.",
-            "Horizon 3 (Disruption): Fully autonomous self-healing enterprise architectures."
+          "heading": "An opinion I hold firmly",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Most AI roadmaps I see begin with a capability. We have a model, so where can we put it? That is how products end up with an “Ask AI” button in every corner and very little to show for it."
+            },
+            {
+              "type": "p",
+              "text": "I want to argue for the opposite sequence. Start with the workflow. If it is broken, AI will not repair it. It will make the breakage faster, more confident and harder to spot."
+            }
+          ]
+        },
+        {
+          "heading": "AI is an amplifier, not a fixer",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "An amplifier has no opinion about what it amplifies. Feed it a clear, well-understood process and it multiplies value. Feed it a muddled one and it multiplies the muddle, now delivered in the fluent, assured tone of a machine."
+            },
+            {
+              "type": "p",
+              "text": "I have seen three things happen when AI is layered onto a weak process."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "**It hides the problem.** Fluent output makes a confused process look orderly. People stop noticing the missing step because something plausible now fills it.",
+                "**It scales the error.** What once went wrong once a day can now go wrong a hundred times before anyone looks.",
+                "**It moves the burden to the user.** When the workflow is fragmented, someone still has to check, reconcile and decide. AI often adds a new job, verification, on top of the old mess."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "That last point is easy to miss. A tool that saves five minutes of drafting but adds ten minutes of checking has not saved anything. It has changed the type of work and made it less visible."
+            }
+          ]
+        },
+        {
+          "heading": "What a broken workflow looks like",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "You do not need a consultant to spot one. These are the signs I look for."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "**Nobody owns the outcome.** Steps are handed between teams and no one sees the result end to end.",
+                "**Information is scattered.** The knowledge, the history and the data live in different places, and people stitch them together by hand.",
+                "**A few experts are the bottleneck.** Work waits for the people who know where everything is.",
+                "**Each tool is good, the journey is not.** Every system works well on its own, but a real task spans several of them, and a human is the integration layer."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "That last one deserves attention because it fools capable teams. When each product or function builds its own excellent AI, it feels like progress. But the person doing the job does not live inside one product. Their task crosses several, and they are still the one carrying context from screen to screen. Adding one more clever agent to one of those screens does not change the shape of their day."
+            }
+          ]
+        },
+        {
+          "heading": "Layering versus redesigning",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Consider something familiar, like processing an insurance claim. Layering AI onto the existing flow might mean a model drafts the letter a person would otherwise type. The process looks identical, and the saving is a few minutes per case."
+            },
+            {
+              "type": "p",
+              "text": "Redesigning the workflow might mean the system classifies, routes and drafts in one pass, while people focus on exceptions and the complicated cases that need judgement. The second approach changes throughput, not just typing time."
+            },
+            {
+              "type": "p",
+              "text": "Layering gives you an incremental gain. Redesign changes what the process is. Both can be right, but you should know which one you are doing, and most teams I talk to believe they are doing the second while actually doing the first."
+            }
+          ]
+        },
+        {
+          "heading": "Map first, then decide",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The most useful habit I know is to draw the real workflow before discussing AI at all. Not the one in the process document. The one that actually happens, including the spreadsheet on someone’s desktop, the message to a colleague who knows the answer and the step everyone skips."
+            },
+            {
+              "type": "p",
+              "text": "Mapping does two things. It shows you where the real effort and frustration sit, which is not always where the demo would be most impressive. And it often reveals that the first fix has nothing to do with AI: remove a handoff, merge two screens, give one person ownership. I have seen simple process changes deliver more than a model could have."
+            },
+            {
+              "type": "quote",
+              "text": "If you cannot draw how the work really happens, you are not ready to improve it with AI. You are ready to understand it."
+            }
+          ]
+        },
+        {
+          "heading": "Five questions before you add AI",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Question",
+                "Why it matters"
+              ],
+              "rows": [
+                [
+                  "Can we draw the workflow as it really happens?",
+                  "If you cannot describe the current state, you cannot tell whether AI improved it."
+                ],
+                [
+                  "Where does it hurt, and what is the evidence?",
+                  "Research and observation beat intuition about where effort is wasted."
+                ],
+                [
+                  "Would simplifying the process help on its own?",
+                  "Often the fix is removing a step, a handoff or a duplicate screen. Do that first."
+                ],
+                [
+                  "Who owns the outcome end to end?",
+                  "AI needs an accountable human for what it produces."
+                ],
+                [
+                  "How will we know it improved?",
+                  "Choose a measure, such as time to decision or task success, before you build."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "The test of an AI feature",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I have a blunt test for any AI feature. If a person has to leave their context, learn a new mode and double-check the answer, it has added work. The feature exists to prove the product has AI. It does not exist to help."
+            },
+            {
+              "type": "p",
+              "text": "Good AI experiences look different. They sit inside the work: in context, at the point of need, with a clear next step. They feel less like a new tool and more like the process quietly getting better."
+            }
+          ]
+        },
+        {
+          "heading": "To be clear, this is not anti-AI",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I am enthusiastic about what AI can do. This is an argument about sequence, not about ambition. Fix the workflow first. Then let AI take effort out of what remains. In that order, AI becomes the most powerful improvement in years. In the other order, it becomes an expensive way to decorate a problem."
+            }
           ]
         }
       ],
       "takeaways": [
-        "Balance immediate assistive AI features with long-term platform agentic transformation.",
-        "Protect dedicated design capacity for Horizon 3 exploratory research and prototyping.",
-        "Align R&D roadmap milestones with measurable customer value inflection points."
+        "AI amplifies whatever it is attached to: a clear process multiplies value, a muddled one multiplies the muddle.",
+        "Watch for the hidden verification tax; saving five minutes of drafting while adding ten of checking saves nothing.",
+        "Map the workflow as it really happens before discussing AI; the first fix is often not AI at all.",
+        "Know whether you are layering AI onto a process or redesigning it, and choose a measure before you build."
+      ],
+      "references": [
+        "Parasuraman, R., Sheridan, T., & Wickens, C. “A model for types and levels of human interaction with automation” (IEEE, 2000)."
       ]
     }
   },
   {
-    "id": "balancing-algorithmic-autonomy",
-    "title": "Balancing Algorithmic Autonomy with Human Governance",
-    "date": "June 2025",
-    "readingTime": "5 min read",
+    "id": "ux-leader-in-the-age-of-ai",
+    "number": "05",
+    "title": "The Role of the UX Leader in the Age of AI",
     "category": "Leadership",
-    "shortDescription": "Why organizational governance and ethical design review boards are essential prerequisites for deploying high-stakes autonomous AI agents.",
-    "coverAccent": "#E7B86B",
+    "readingTime": "4 min read",
+    "shortDescription": "The job is shifting from guarding design quality to shaping direction, decisions, systems and capability.",
     "tags": [
-      "Governance",
-      "Algorithmic Autonomy",
-      "Ethics",
-      "Leadership"
+      "Design leadership",
+      "Decision making",
+      "Design systems",
+      "Team capability"
     ],
     "fullContent": {
-      "lead": "As software gains the authority to modify production databases and firewall rules autonomously, the traditional lines of product liability blur. UX leaders must spearhead cross-functional governance structures to oversee agentic behavior.",
-      "keyQuote": "When code can take autonomous action, product design governance becomes corporate risk management.",
+      "keyQuote": "The measure of a UX leader is less the screens they ship and more the quality of the decisions they enable, the systems they leave behind and the people they grow.",
       "sections": [
         {
-          "heading": "Establishing Cross-Functional AI Governance",
-          "body": "Bringing together product managers, security architects, legal counsel, and UX designers into weekly AI review boards ensures that autonomy is granted strictly on the basis of empirical safety validation and clear audit trails.",
-          "quote": "Ethics in AI cannot be outsourced to a compliance checkbox; it must be baked directly into the interaction design.",
-          "bulletPoints": [
-            "Multidisciplinary Review Boards: Joint sign-offs for any feature granting autonomous write privileges.",
-            "Standardized Failure Protocols: Defining predictable, graceful fallback behaviors when models produce syntax or logic errors.",
-            "Immutable Audit Logs: Ensuring every agent decision is permanently recorded for regulatory compliance."
+          "heading": "The job description is changing",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Not long ago, a UX leader’s value was easy to describe. Hire well, protect quality, represent the user. All of that still matters. But when AI arrives in a product portfolio, the questions land on a leader’s desk long before they reach a design file."
+            },
+            {
+              "type": "p",
+              "text": "How autonomous should this feature be? Who decides? What does the customer see when it fails? How do we make several products behave like one? These are leadership questions with design consequences, and I notice that organisations are often unsure who should answer them. That uncertainty is an opening for UX leaders, and also a responsibility."
+            },
+            {
+              "type": "p",
+              "text": "Here are the roles I find myself playing more and more."
+            }
+          ]
+        },
+        {
+          "heading": "The sense-maker",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "New technology arrives without an agreed experience model. Teams copy one another, vendors push their defaults and customers form expectations from consumer apps. A leader’s first job is to offer a point of view early: what should this feel like, what must it never do, and what are we optimising for?"
+            },
+            {
+              "type": "p",
+              "text": "I have learned that a clear, imperfect direction offered early beats a perfect one offered late. Teams can correct a direction. They cannot easily recover from the absence of one."
+            }
+          ]
+        },
+        {
+          "heading": "The steward of autonomy",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Deciding what a machine should do and what a person should keep is a design decision. It is not a technical afterthought. In AI products, it appears as a constant stream of choices: suggest or act, ask first or report afterwards, interrupt or stay quiet."
+            },
+            {
+              "type": "p",
+              "text": "Someone must own the principles that answer these consistently, or every team will answer them differently. I believe that someone should be the design leader, because the question is ultimately about the relationship between a person and a system."
+            }
+          ]
+        },
+        {
+          "heading": "The decision-forcer",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "AI work produces endless open debates: hide it or grey it out, banner or no banner, one control or four. Teams can circle for weeks, and meetings end with everyone agreeing the topic is important."
+            },
+            {
+              "type": "p",
+              "text": "What helps is converting debate into a recorded decision. A short summary of the options, a recommendation, a position for now and a list of what is parked. A one-page summary has moved more things forward in my experience than another workshop, because it lets busy people say yes, no or not yet."
+            }
+          ]
+        },
+        {
+          "heading": "The systems builder",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "One excellent screen does not scale. Shared patterns, naming rules and interaction principles do. The best thing a design leader can build is often the least visible: a small set of clear principles that many teams can apply without asking permission."
+            },
+            {
+              "type": "p",
+              "text": "When it works, consistency comes from clarity and not from policing. Teams make the right call because the right call is easy and obvious. When it does not work, you end up as a gatekeeper, and gatekeepers get routed around."
+            }
+          ]
+        },
+        {
+          "heading": "The capability builder",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "AI changes what a team needs to know. It would be easy to treat that as a tools problem: pick the right products, run a training day and move on. I think it is more fundamental."
+            },
+            {
+              "type": "p",
+              "text": "The people who get the most from AI are those with strong foundations of their own: they know what good looks like, so they can tell when the output is not. That means a leader’s job is to build expertise, and judgement, not only tool skills. I try to make learning part of how the team works, with named owners for each area of change, shared tools and templates, and honest conversations about what is and is not working."
+            }
+          ]
+        },
+        {
+          "heading": "The translator",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "AI decisions cut across product management, engineering, marketing, sales, legal and customer success. The UX leader often ends up as the translator, turning design trade-offs into business language for executives, and business constraints into design decisions for the team."
+            },
+            {
+              "type": "p",
+              "text": "Short and clear beats long and thorough. A leader who can state a trade-off in three sentences gets decisions made. A leader who needs thirty slides does not."
+            }
+          ]
+        },
+        {
+          "heading": "What changes, in one view",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "From",
+                "To"
+              ],
+              "rows": [
+                [
+                  "Guardian of design quality",
+                  "Owner of direction and decision quality"
+                ],
+                [
+                  "Reviewer of final screens",
+                  "Architect of shared patterns and principles"
+                ],
+                [
+                  "Representing users in product meetings",
+                  "Bringing customer evidence into portfolio and investment decisions"
+                ],
+                [
+                  "Managing a design team",
+                  "Building an AI-capable, cross-functional practice"
+                ],
+                [
+                  "Delivering UX for a release",
+                  "Shaping the end-to-end product experience"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "What I am learning to let go of",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Gatekeeping is the hardest. It is tempting to believe that quality depends on every decision passing through me. It does not, and if it did, the organisation would slow to the speed of my calendar, or more likely, route around me."
+            },
+            {
+              "type": "p",
+              "text": "The better approach is to make the right behaviour the easy behaviour. Clear principles, reusable components, visible evidence and trust in the team. That is harder than reviewing every screen, and far more scalable."
+            },
+            {
+              "type": "quote",
+              "text": "The measure of a UX leader is less the screens they ship and more the quality of the decisions they enable, the systems they leave behind and the people they grow."
+            }
+          ]
+        },
+        {
+          "heading": "A question I now ask in every review",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "When someone brings me an AI design, I have started asking four things before I look at the screens."
+            },
+            {
+              "type": "ol",
+              "items": [
+                "What problem does this solve?",
+                "What happens when it is wrong?",
+                "How will the user know what it did?",
+                "What evidence would change our minds?"
+              ]
+            },
+            {
+              "type": "p",
+              "text": "If a team can answer those, the screens usually take care of themselves."
+            }
           ]
         }
       ],
       "takeaways": [
-        "Institute multidisciplinary AI governance boards to oversee autonomous feature releases.",
-        "Design standardized, graceful fallback behaviors for all model failure scenarios.",
-        "Maintain immutable audit logs of all agent-driven system modifications."
+        "Offer a clear, imperfect direction early; teams can correct a direction but not the absence of one.",
+        "Own the autonomy question: what the machine does and what the person keeps is a design decision.",
+        "Turn open debates into recorded, one-page decisions that let busy people say yes, no or not yet.",
+        "Make the right behaviour the easy behaviour with clear principles, so consistency comes from clarity rather than policing."
+      ],
+      "references": [
+        "Amershi, S., et al. “Guidelines for Human-AI Interaction” (CHI, 2019).",
+        "Google PAIR. “People + AI Guidebook.”"
       ]
     }
   },
   {
-    "id": "polymathic-product-team",
-    "title": "The Polymathic Product Team: Merging UX, Data Science, and Engineering",
-    "date": "May 2025",
-    "readingTime": "6 min read",
-    "category": "Innovation",
-    "shortDescription": "Breaking down traditional departmental silos to build fast, interdisciplinary squads capable of shipping complex AI-driven enterprise products.",
-    "coverAccent": "#35D0BA",
+    "id": "from-ai-features-to-ai-experiences",
+    "number": "06",
+    "title": "From AI Features to AI Experiences",
+    "category": "Experience design",
+    "readingTime": "4 min read",
+    "shortDescription": "A feature adds capability. An experience gives people one coherent, trustworthy way of working with it, and that is what actually gets adopted.",
     "tags": [
-      "Polymathic Teams",
-      "Cross-Functional",
-      "DesignOps",
-      "Engineering Culture"
+      "AI experiences",
+      "Trust",
+      "Autonomy",
+      "Agentic AI",
+      "Consistency"
     ],
     "fullContent": {
-      "lead": "The era of handing requirements over the wall from product management to UX, then from UX to engineering, is officially dead. Building sophisticated AI experiences requires polymathic squads where designers understand model telemetry and engineers grasp cognitive ergonomics.",
-      "keyQuote": "The best products are built by blended teams who share a common mental model of customer pain and technical possibility.",
+      "keyQuote": "Customers do not buy features. They adopt ways of working.",
       "sections": [
         {
-          "heading": "Breaking Down Departmental Silos",
-          "body": "By embedding UX researchers directly into machine learning training sprints and pairing designers with system architects during prototype discovery, we eliminate translation loss and compress delivery timelines.",
-          "quote": "Speed in modern product development is a direct consequence of eliminating inter-departmental handoffs.",
-          "bulletPoints": [
-            "Blended Discovery Sprints: Product managers, designers, and data scientists prototyping together on day one.",
-            "Shared Mental Models: Training engineers in cognitive empathy and designers in system constraints.",
-            "Rapid Prototyping Loops: Testing interactive HTML prototypes directly with design partners before writing production code."
+          "heading": "The feature trap",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "In the first wave of enterprise AI, nearly every product added its own chat panel, its own “Ask AI” button and its own behaviour. Each feature worked, and each team could show a good demo. Together, they did not add up."
+            },
+            {
+              "type": "p",
+              "text": "People experience a product suite as one thing. They expect a single way of asking, a single way of knowing what the AI did and a single way of putting things right. What many of them met instead was a patchwork: different labels, different rules, different levels of confidence from one screen to the next."
+            },
+            {
+              "type": "p",
+              "text": "When a system behaves differently in every corner, people cannot build a reliable mental model of it. And without a mental model, they cannot decide how much to rely on it. That, more than any technical limitation, is what slows adoption."
+            }
+          ]
+        },
+        {
+          "heading": "A test I use",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Here is a quick exercise. Take two AI moments from different parts of your product and put them side by side. Ask whether a user would guess they came from the same company. Does the assistant look the same? Are actions named the same way? Do errors read like the same voice? Does it know where the user is, and does it behave consistently when it does not know?"
+            },
+            {
+              "type": "p",
+              "text": "If the honest answer is no, you have features. You may have good features, but you do not yet have an experience."
+            }
+          ]
+        },
+        {
+          "heading": "What an experience adds",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Dimension",
+                "An AI feature",
+                "An AI experience"
+              ],
+              "rows": [
+                [
+                  "Identity",
+                  "A button or panel in each product",
+                  "One recognisable assistant across the suite"
+                ],
+                [
+                  "Behaviour",
+                  "Custom rules for each team",
+                  "Shared principles for naming, failure and consent"
+                ],
+                [
+                  "Context",
+                  "Starts from a blank prompt",
+                  "Knows where the user is and what they are doing"
+                ],
+                [
+                  "Trust",
+                  "Output is shown",
+                  "Evidence, confidence and control are visible"
+                ],
+                [
+                  "Failure",
+                  "An error message",
+                  "A path to recovery that keeps the user’s progress"
+                ],
+                [
+                  "Growth",
+                  "Ships once",
+                  "Gives users a path from asking to delegating"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Trust is designed, not declared",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "No product becomes trustworthy by saying so. Trust in an AI system is built from small things people notice over time: whether the answer is usually right, whether it says so when it is unsure, whether it shows where the information came from and whether it is easy to correct."
+            },
+            {
+              "type": "p",
+              "text": "I find it useful to remember that the goal is not for people to trust the system completely. It is for people to trust it appropriately: to know when to rely on it and when to apply their own judgement. Under-trust wastes the capability. Over-trust is dangerous. An experience that shows evidence, signals uncertainty and makes checking easy keeps confidence tied to reliability."
+            }
+          ]
+        },
+        {
+          "heading": "A ladder of autonomy",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Experiences also need room to grow as trust grows. I think about this as a ladder with five rungs, and I try to design every AI capability with a clear answer about which rung it occupies today and which it might reach."
+            },
+            {
+              "type": "cards",
+              "style": "ladder",
+              "items": [
+                {
+                  "label": "Inform",
+                  "text": "The system surfaces information and answers questions, with sources."
+                },
+                {
+                  "label": "Suggest",
+                  "text": "It recommends an option and shows its reasoning. The human decides."
+                },
+                {
+                  "label": "Act with approval",
+                  "text": "It prepares an action and previews the effect. The human approves."
+                },
+                {
+                  "label": "Act and report",
+                  "text": "It acts within agreed limits and reports, with an easy way to undo."
+                },
+                {
+                  "label": "Autonomous",
+                  "text": "It handles the task end to end, with auditability and escalation."
+                }
+              ]
+            },
+            {
+              "type": "p",
+              "text": "The principle is to match the rung to the risk and to the user’s demonstrated confidence, and to let people move up and down deliberately. Reversible, low-stakes steps can run quietly in the background. Irreversible or high-stakes steps need a person, a preview and a record."
+            },
+            {
+              "type": "p",
+              "text": "I find that most disagreements about AI features are really disagreements about which rung is right. Naming the ladder lets a team have that conversation on purpose."
+            }
+          ]
+        },
+        {
+          "heading": "Why this matters even more with agents",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "As AI moves from answering to acting across several steps, the questions get more serious. Can the user see what is happening? Can they interrupt it? Do they know what it is allowed to do? What happens when step three of five goes wrong? Visibility, consent, interruption and recovery stop being polish and become the product."
+            },
+            {
+              "type": "p",
+              "text": "There is also a risk of calling things agents that are really chat features with a new label. Customers can tell the difference quickly, and the disappointment costs credibility. I would rather describe what the system actually does and let the experience earn the word."
+            }
+          ]
+        },
+        {
+          "heading": "Three habits that move a team from features to experiences",
+          "blocks": [
+            {
+              "type": "ul",
+              "items": [
+                "**Design the seams.** Walk through the whole journey, across products and moments. The gaps between features are where trust leaks away.",
+                "**Agree a small set of non-negotiables.** A recognisable identity, consistent action names, visible sources and a clear path to correction. Keep the list short enough that people remember it.",
+                "**Review experiences, not screens.** Evaluate what happens on the first day, on day thirty and when the system is wrong."
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "The question behind it all",
+              "text": "Does the AI know where the user is, what they are trying to do and how much they trust it to do on their own? If the answer changes from screen to screen, you have features, not an experience."
+            },
+            {
+              "type": "p",
+              "text": "Customers do not buy features. They adopt ways of working. Treat AI as a layer of experience with one identity, shared behaviour and visible trust, and every new capability becomes easier to ship and easier to believe."
+            }
           ]
         }
       ],
       "takeaways": [
-        "Erase traditional handoff silos by forming blended, multidisciplinary product squads.",
-        "Empower designers with foundational fluency in data science and system architecture.",
-        "Prioritize rapid interactive prototyping over static specification documents."
+        "A patchwork of AI features stops people forming a mental model, and that slows adoption more than any technical limit.",
+        "Aim for appropriate trust: show evidence, signal uncertainty and make checking easy.",
+        "Place every capability on a ladder of autonomy and match the rung to the risk.",
+        "Design the seams between products, agree a few non-negotiables and review experiences, not screens."
+      ],
+      "references": [
+        "Google PAIR. “People + AI Guidebook” (chapters on mental models, trust and explanations, and errors and graceful failure).",
+        "Amershi, S., et al. “Guidelines for Human-AI Interaction” (CHI, 2019)."
+      ]
+    }
+  },
+  {
+    "id": "ai-can-generate-100-designs",
+    "number": "07",
+    "title": "AI Can Generate 100 Designs. The Designer Still Has to Choose One.",
+    "category": "Practice",
+    "readingTime": "4 min read",
+    "shortDescription": "Generation is now cheap. Judgement is the scarce skill, and it deserves deliberate protection.",
+    "tags": [
+      "Design judgement",
+      "Craft",
+      "Generative AI",
+      "Decision making"
+    ],
+    "fullContent": {
+      "keyQuote": "When anyone can produce something that looks good, the designer’s job is to know what is good for this user, in this context, at this moment.",
+      "sections": [
+        {
+          "heading": "The bottleneck has moved",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "For most of my career, making was the slow part of design. Producing options took time, so we produced a handful, and choosing among them was manageable because there was little to choose from."
+            },
+            {
+              "type": "p",
+              "text": "AI has reversed that arithmetic. A designer can now generate a hundred variations in the time it once took to sketch three. The constraint is no longer how many options can be made. It is how well one can be chosen. That sounds like good news, and it is, but it quietly changes what the job asks of us."
+            }
+          ]
+        },
+        {
+          "heading": "A hundred options is not a hundred times better",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The first thing I noticed when options became abundant was that my team did not become a hundred times more decisive. If anything, the reverse. Reviews got longer. Everyone had a favourite. Someone would say, “Let’s see a few more,” and a few more would arrive, each one polished and plausible and slightly different from the last."
+            },
+            {
+              "type": "p",
+              "text": "There is a human limit on comparison. We can hold only a few things in mind at once, and a very large set of choices tends to slow decisions down, not improve them. Abundant generation needs an equally strong filter. Without one, teams either pick the first decent option or lose an afternoon scrolling. Neither is judgement."
+            }
+          ]
+        },
+        {
+          "heading": "Polished is not the same as right",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Generated designs look finished, and that is a hazard. A tidy layout can conceal a missing error state, an unclear hierarchy or an interaction that works in a demo and fails under pressure. When something looks complete, we review it as if it were complete."
+            },
+            {
+              "type": "p",
+              "text": "I have also noticed a sameness. Many generated options feel like competent averages. They are rarely bad and rarely distinctive. Researchers who have studied AI-assisted writing found something similar: individual outputs improve, while collectively the range of ideas narrows. Design is likely to follow the same pattern. If everyone generates from similar models with similar prompts, distinctiveness has to be pursued on purpose."
+            },
+            {
+              "type": "quote",
+              "text": "When anyone can produce something that looks good, the designer’s job is to know what is good for this user, in this context, at this moment."
+            }
+          ]
+        },
+        {
+          "heading": "What the designer brings",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Judgement",
+                "What it means in practice"
+              ],
+              "rows": [
+                [
+                  "Problem clarity",
+                  "Knowing what success looks like before generating anything."
+                ],
+                [
+                  "Context",
+                  "Understanding the user’s real working day, constraints and risks, which no prompt fully carries."
+                ],
+                [
+                  "Taste",
+                  "Recognising what is coherent, calm and right for the product, not just what is attractive."
+                ],
+                [
+                  "Evidence",
+                  "Testing with real users and letting behaviour overrule opinion."
+                ],
+                [
+                  "Accountability",
+                  "Owning the decision and being able to explain why."
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Notice that the last item cannot be delegated. “The AI suggested it” is not an answer when a customer cannot complete a critical task. Someone has to stand behind the choice, and that someone is the designer."
+            }
+          ]
+        },
+        {
+          "heading": "How I try to choose well",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I have settled on a short practice. It is not clever, but it works."
+            },
+            {
+              "type": "ol",
+              "items": [
+                "**Set criteria first.** Write down what the design must achieve, such as task success, clarity, risk and design-system fit, before any option exists. This protects you from anchoring on the first thing you see.",
+                "**Generate wide, then filter hard.** Use AI for breadth, but cut to three or four finalists against the criteria before anyone compares them side by side.",
+                "**Test the finalists with real people.** Observed behaviour on realistic tasks beats a room full of opinions.",
+                "**Constrain the canvas.** Generate inside your design system and agreed patterns, so the choice is about experience and not about reconciling styles.",
+                "**Ask for the unusual.** Deliberately request options that differ in structure, not just in styling. It is the best defence against sameness.",
+                "**Write down the why.** A short note on what you chose, what you rejected and the reason. It keeps decisions honest and teaches the next person."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "The part that makes the difference: converging",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "When teams work with AI in a workshop setting, generating prototypes is the exciting part. People are energised, and there is a lot on the screen. But in my experience the most valuable minutes are the quiet ones at the end, when the group agrees which themes are worth keeping, which patterns hold up and which exciting ideas to let go."
+            },
+            {
+              "type": "p",
+              "text": "Convergence is uncomfortable. It means saying no to things people enjoyed making. But it is where design actually happens, and it is a skill that grows with practice."
+            }
+          ]
+        },
+        {
+          "heading": "What this means for craft",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Some people worry that if AI does the making, craft disappears. I think it moves. Craft becomes the ability to see what is wrong with something that looks right: the missing state, the unclear priority, the control that is fine in a presentation and unusable in the field."
+            },
+            {
+              "type": "p",
+              "text": "That is a sharper skill than pushing pixels, but it does not appear from nowhere. It comes from having made many things badly and learned why. Designers who only ever edit generated work risk losing the instincts that make editing good."
+            },
+            {
+              "type": "p",
+              "text": "So I try to protect time for the team to make things from scratch, even when a faster route exists. Not out of nostalgia, but because that is how judgement is trained."
+            },
+            {
+              "type": "callout",
+              "label": "What I would remember",
+              "text": "When options are unlimited, the designer’s value is the quality of the choice and the clarity of the reason. Set criteria early, converge deliberately and own the decision."
+            }
+          ]
+        }
+      ],
+      "takeaways": [
+        "The bottleneck has moved from making options to choosing one well.",
+        "Polished is not the same as right; generated work looks finished even when it is not.",
+        "Set criteria first, generate wide, filter hard and test the finalists with real people.",
+        "Craft moves to seeing what is wrong with something that looks right, so protect time to make things from scratch."
+      ],
+      "references": [
+        "Doshi, A., & Hauser, O. “Generative AI enhances individual creativity but reduces the collective diversity of novel content” (Science Advances, 2024).",
+        "Iyengar, S., & Lepper, M. “When choice is demotivating” (Journal of Personality and Social Psychology, 2000)."
+      ]
+    }
+  },
+  {
+    "id": "ai-should-reduce-cognitive-load",
+    "number": "08",
+    "title": "AI Should Reduce Cognitive Load — Not Add to It",
+    "category": "Experience design",
+    "readingTime": "4 min read",
+    "shortDescription": "In professional software, the test of an AI feature is simple: after using it, does the person have less to think about?",
+    "tags": [
+      "Cognitive load",
+      "Enterprise UX",
+      "Trust",
+      "Measurement"
+    ],
+    "fullContent": {
+      "keyQuote": "An AI that makes people feel faster but leaves them less sure is not saving time. It is borrowing it.",
+      "sections": [
+        {
+          "heading": "Think about the person, not the feature",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "When I evaluate an AI feature, I try to picture a specific person at a specific moment. Not a persona on a slide, but someone on a Tuesday afternoon with three things open, a message waiting and a decision that cannot wait. An engineer handling an incident. An analyst reviewing a risk. A manager approving something before the day ends."
+            },
+            {
+              "type": "p",
+              "text": "Consumer AI is often used for curiosity. Professional AI is used under pressure. For these people, attention is the scarcest resource they have. A feature that asks them to learn a new mode, read a long answer or double-check an uncertain claim spends exactly the thing they are short of."
+            }
+          ]
+        },
+        {
+          "heading": "A very small mind",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Cognitive load theory begins from a humbling observation: working memory is tiny. We can hold only a few new things in mind at once, and under stress even fewer. A useful distinction in that tradition separates intrinsic load, which is the real difficulty of the task, from extraneous load, which is the unnecessary effort created by how something is presented."
+            },
+            {
+              "type": "p",
+              "text": "Designers cannot reduce the first. We can, and should, remove the second. Looking at a lot of current AI design through that lens, I see more extraneous load than I would like."
+            }
+          ]
+        },
+        {
+          "heading": "Where AI quietly adds load",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Source of load",
+                "What AI often does",
+                "What to do instead"
+              ],
+              "rows": [
+                [
+                  "More to read",
+                  "Long, unstructured answers",
+                  "A predictable summary, evidence and next-step structure"
+                ],
+                [
+                  "Uncertainty to resolve",
+                  "A confident tone with hidden reasoning",
+                  "Explicit confidence signals and reasoning on demand"
+                ],
+                [
+                  "New modes to learn",
+                  "A separate chat window and vocabulary",
+                  "AI in context, with plain action names"
+                ],
+                [
+                  "Context to rebuild",
+                  "Follow-ups that lose the thread",
+                  "Preserve context across follow-up questions"
+                ],
+                [
+                  "Decisions to make",
+                  "Many toggles, options and prompts",
+                  "Sensible defaults and risk-proportional friction"
+                ],
+                [
+                  "Worry about consequences",
+                  "Actions with unclear effects",
+                  "Previews, visible scope and easy undo"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "The blank box problem",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "One load that I think is under-appreciated is the cost of asking. A blank prompt box feels open and powerful, but it asks the user to do something hard: describe precisely, in words, what they want, from memory. Interfaces have spent decades trying to spare people that effort by letting them recognise options instead of recalling them."
+            },
+            {
+              "type": "p",
+              "text": "Good AI experiences reintroduce recognition. Suggested prompts that reflect the current context. Actions on the page that say what they do. Starting points based on what the person is looking at. The more the interface can offer, the less the person has to compose."
+            }
+          ]
+        },
+        {
+          "heading": "The verification tax",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Every AI answer carries a hidden question: can I trust this? If the interface does not help, the user answers it themselves, by opening another tab, re-checking a number or asking a colleague. That cost is invisible in a demo, and it can quietly cancel the time saved."
+            },
+            {
+              "type": "p",
+              "text": "This is why I care so much about sources, citations and visible reasoning. They are not decoration. They are what makes checking fast. A person who can see where an answer came from, and open it in a click, spends far less effort than one who must hunt."
+            },
+            {
+              "type": "p",
+              "text": "There is a safety angle as well. People under heavy load tend to lean on automated advice more than they should, and research on automation bias has long suggested that lowering the load on the decision-maker is part of the remedy. Reducing cognitive load is not just a comfort. It helps people stay critical when it matters."
+            },
+            {
+              "type": "quote",
+              "text": "An AI that makes people feel faster but leaves them less sure is not saving time. It is borrowing it."
+            }
+          ]
+        },
+        {
+          "heading": "Principles I design by",
+          "blocks": [
+            {
+              "type": "ul",
+              "items": [
+                "**Put AI where the work is.** Contextual actions on the page beat a separate destination. Do not make people leave their task to get help with it.",
+                "**Use a consistent answer structure.** Summary first, then evidence, then the next step. Once people learn the pattern, they stop re-learning it.",
+                "**Disclose progressively.** Show the conclusion and let people open the reasoning when they want it. Explain enough for understanding, not for completeness.",
+                "**Match friction to risk.** Reversible steps should run quietly. Irreversible actions deserve a clear preview and a human decision.",
+                "**Name actions plainly.** “Summarise” beats “AI summarisation”. The assistant’s identity already signals that AI is involved.",
+                "**Hide what is unavailable.** A disabled control only makes the user wonder why."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "On choice, one reminder: more options slow decisions, but structure matters as much as count. Grouping, defaults and a clearly recommended path reduce the cost of a choice without taking the choice away."
+            }
+          ]
+        },
+        {
+          "heading": "Measure what the user experiences",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Be wary of trusting impressions, including your own. A feature can feel efficient and still add work, and teams are often the last to notice. Engagement numbers can mislead too. If an AI feature is working, people will often spend less time with it, not more."
+            },
+            {
+              "type": "p",
+              "text": "In professional settings, I would rather track whether people reached a decision faster and with more confidence: time to decision, task success without help, rework, how often recommendations are accepted versus edited, and how many people still need to ask for help."
+            },
+            {
+              "type": "callout",
+              "label": "One question for every AI feature",
+              "text": "After using it, does the person have less to think about than before? If not, simplify it, put it in context or remove it."
+            }
+          ]
+        }
+      ],
+      "takeaways": [
+        "Professional AI is used under pressure, where attention is the scarcest resource.",
+        "Designers cannot reduce the intrinsic difficulty of a task, but they can remove extraneous load.",
+        "Sources and visible reasoning are not decoration; they make checking fast and cut the verification tax.",
+        "Measure time to decision and task success, not engagement; a working feature often gets less time, not more."
+      ],
+      "references": [
+        "Sweller, J. “Cognitive load during problem solving: Effects on learning” (Cognitive Science, 1988).",
+        "Goddard, K., Roudsari, A., & Wyatt, J. “Automation bias: a systematic review of frequency, effect mediators, and mitigators” (JAMIA, 2012)."
+      ]
+    }
+  },
+  {
+    "id": "knowing-what-to-ask-ai",
+    "number": "09",
+    "title": "The New UX Skill: Knowing What to Ask AI",
+    "category": "Practice",
+    "readingTime": "4 min read",
+    "shortDescription": "Prompting is the surface skill. The deeper one is framing the problem, and framing has always been the heart of design.",
+    "tags": [
+      "Problem framing",
+      "Prompting",
+      "Research",
+      "Team practice"
+    ],
+    "fullContent": {
+      "keyQuote": "A vague question to a fluent machine produces a confident, well-written, wrong answer.",
+      "sections": [
+        {
+          "heading": "A question of questions",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Early advice about generative AI was dominated by prompt tricks: magic phrases, secret formats, templates to copy and paste. Most of it aged quickly. What did not age is the idea underneath it. The quality of what you get depends heavily on how well you understand, and can state, what you need."
+            },
+            {
+              "type": "p",
+              "text": "That is not a technical trick. It is one of the oldest skills in design: framing the problem. I have come to believe it is the single most useful capability a designer or a design leader can build right now."
+            }
+          ]
+        },
+        {
+          "heading": "Why asking is harder than it looks",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "In a traditional interface, people recognise what they want by seeing it. They scan a menu, spot the option and click. With AI, the interaction is increasingly intent-based: you describe the outcome and the system works out the steps. That removes a lot of effort, and it creates a new difficulty. You have to know what you want, and say it well enough for a literal-minded collaborator to act on."
+            },
+            {
+              "type": "p",
+              "text": "A usable statement of intent usually has three layers: the outcome you want, the constraints that bound a good answer and the limits on what the system may do on its own. “Plan my trip” names an outcome. It leaves out the budget, the fixed commitments and the appetite for risk, which are exactly what a good plan depends on. Experienced people supply those layers without thinking. Newer users often do not realise they are missing."
+            }
+          ]
+        },
+        {
+          "heading": "What I have noticed about people who use AI well",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Watching colleagues work with AI, I see a clear pattern, and it has less to do with prompt vocabulary than with a few habits of mind."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "**They know what they want before they ask.** They have thought about the goal, the audience and what good looks like.",
+                "**They break big tasks into steps.** They give the model parts it can do well and keep the rest for themselves.",
+                "**They argue with the answer.** They ask what is missing, what could be wrong and what the alternatives are.",
+                "**They check.** Facts, sources and numbers get verified, particularly when the stakes are high.",
+                "**They iterate.** The first output is a draft, and feedback is specific."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Another thing: confidence in one’s own expertise seems to protect against passive acceptance. The more you know about the domain, the more critically you read the answer. Learning to ask well is therefore tied to learning the subject well."
+            }
+          ]
+        },
+        {
+          "heading": "A frame for a strong ask",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Element",
+                "What to provide",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Context",
+                  "Who the users are, what they do, what exists today",
+                  "People triaging urgent requests across several tools."
+                ],
+                [
+                  "Goal",
+                  "The outcome, not the artefact",
+                  "Help them decide within two minutes whether to escalate."
+                ],
+                [
+                  "Constraints",
+                  "Standards, risks and things that must not change",
+                  "Use existing components; no irreversible action without approval."
+                ],
+                [
+                  "Format",
+                  "The shape you need back",
+                  "Three options with trade-offs, as a table."
+                ],
+                [
+                  "Challenge",
+                  "An invitation to disagree",
+                  "List the assumptions that would make this fail."
+                ],
+                [
+                  "Verification",
+                  "How you will check the answer",
+                  "Show sources and flag anything you are unsure about."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Weak asks and strong asks",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Weak ask",
+                "Strong ask"
+              ],
+              "rows": [
+                [
+                  "Design a dashboard for alerts.",
+                  "Propose three ways to help an operator spot the one alert that matters in a noisy stream, with the trade-offs of each and the research I would need to choose between them."
+                ],
+                [
+                  "Make this better.",
+                  "Review this flow against the principles of transparency and user control, and list the three biggest risks."
+                ],
+                [
+                  "Summarise these interviews.",
+                  "Cluster these interviews by the job each participant was trying to do, and flag where participants disagreed."
+                ],
+                [
+                  "Write error messages.",
+                  "Draft messages for a failed automated action: calm, active voice, no blame, and pointing the user to the next step."
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Notice that the strong versions are not longer for the sake of it. They are more specific about the outcome, the lens and the form of the answer. Specificity is the real skill."
+            }
+          ]
+        },
+        {
+          "heading": "Designers were always good at this",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I find this a hopeful point. Interviewing users is the art of asking questions that reveal instead of lead. A how-might-we statement is a question deliberately framed to open possibilities. Asking “why” until you reach a root cause is a technique older than most of our tools."
+            },
+            {
+              "type": "p",
+              "text": "The habits that make a good researcher also make a good prompter. What is new is the audience: a system that takes you very literally, never gets tired and will answer a poorly framed question with great fluency. That last quality is the dangerous one, because fluency can disguise a weak question."
+            },
+            {
+              "type": "quote",
+              "text": "A vague question to a fluent machine produces a confident, well-written, wrong answer."
+            }
+          ]
+        },
+        {
+          "heading": "Turn good questions into shared assets",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "A strong prompt is a reusable asset, and teams that treat it that way compound their advantage. I encourage capturing the questions that work as templates, checklists or shared assistants, reviewing them the way we review design work and noting what failed and why."
+            },
+            {
+              "type": "p",
+              "text": "Over time, a team’s best thinking becomes part of its tools, and a newcomer starts from the standard of the most experienced person in the room. That is an unusually cheap way to raise quality."
+            }
+          ]
+        },
+        {
+          "heading": "The leadership version",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The same skill scales upward. Leaders who use AI well ask different questions in meetings. What problem is this solving? What happens when it is wrong? How will the user know what it did? What evidence would change our mind? Those questions shape roadmaps far more than any prompt does."
+            },
+            {
+              "type": "p",
+              "text": "So my advice is to learn to frame, not just to prompt. Provide context, goal and constraints. Invite critique. Check the evidence. Capture what works. The new UX skill is a very old one, applied to a very new collaborator."
+            }
+          ]
+        }
+      ],
+      "takeaways": [
+        "Prompting is the surface skill; framing the problem is the deeper one.",
+        "A usable ask states the outcome, the constraints and the limits on what the system may do on its own.",
+        "Strong asks are not longer, they are more specific about the outcome, the lens and the form of the answer.",
+        "Capture the questions that work as shared assets so newcomers start from the team’s best thinking."
+      ],
+      "references": [
+        "Nielsen, J. “AI: First New UI Paradigm in 60 Years” (Nielsen Norman Group, 2023).",
+        "Nielsen, J. “10 Usability Heuristics for User Interface Design” (Nielsen Norman Group, 1994)."
+      ]
+    }
+  },
+  {
+    "id": "better-design-decisions",
+    "number": "10",
+    "title": "The Future of UX Isn’t Less Design. It’s Better Design Decisions.",
+    "category": "Perspective",
+    "readingTime": "3 min read",
+    "shortDescription": "As AI takes on more of the production, what remains is deciding. That work is design, and it matters more than ever.",
+    "tags": [
+      "Future of UX",
+      "Decision making",
+      "Design leadership",
+      "Automation"
+    ],
+    "fullContent": {
+      "keyQuote": "Machines will keep getting better at producing options. People will keep being responsible for what is chosen. The future of UX lives in that gap, and it is a very good place to be.",
+      "sections": [
+        {
+          "heading": "More decisions, higher stakes",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "If the future of UX were simply fewer screens, our profession would shrink. I do not believe that is the future. AI does not remove design decisions. It multiplies them and raises their stakes."
+            },
+            {
+              "type": "p",
+              "text": "Think about how many new decisions an AI experience carries. What may the system do on its own, and what must it ask about? What does the user see when it is wrong? How much of its reasoning is visible? Which capabilities are shown to which people? How do they correct it, and how quickly does it learn? Every one of those is a design decision, with consequences for trust, risk and the business."
+            },
+            {
+              "type": "p",
+              "text": "And as more decisions are delegated to software, the decisions about how to delegate become the important ones. Behind every automated choice there is a boundary somebody designed: what the system may decide, under which conditions, with what oversight. That is design work, whether or not anyone calls it that."
+            }
+          ]
+        },
+        {
+          "heading": "Why this belongs to design",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Human factors researchers made the central point a long time ago: automation does not simply replace human activity, it changes it. How much to automate, and in which kind of task, depends on the consequences for people, the reliability of the system and the cost of being wrong."
+            },
+            {
+              "type": "p",
+              "text": "Those are judgement calls about people, context and risk. They need empathy, evidence and an understanding of how real work happens, which is what design practice is for."
+            },
+            {
+              "type": "p",
+              "text": "I also see a gap many organisations are living in: AI is widely adopted, yet the benefit is uneven. In my view, a large part of that gap is made of design decisions. Where to apply AI, how to shape the work around it and how to make people confident using it are all questions about experience, not about models."
+            }
+          ]
+        },
+        {
+          "heading": "What a better design decision looks like",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Not all decisions are equal. The better ones, in my experience, share five qualities."
+            },
+            {
+              "type": "ol",
+              "items": [
+                "**Grounded in evidence.** Research, usage and expert review inform the choice, not preference or whoever speaks loudest.",
+                "**Explicit about trade-offs.** It states what is being given up, such as consistency over speed or simplicity over richness.",
+                "**Time-boxed and scoped.** It sets a clear position for now and logs what is deferred, so parked questions are not forgotten.",
+                "**Owned and recorded.** A named person and a short written rationale make the decision findable and challengeable.",
+                "**Measured afterwards.** It names the outcome that would show it was right, and someone checks."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Three habits that improve decisions",
+          "blocks": [
+            {
+              "type": "ul",
+              "items": [
+                "**Write the decision down.** A one-page summary of the options, the recommendation and the rationale forces clarity and travels well to people who were not in the room. If I cannot write it on a page, I probably do not understand it yet.",
+                "**Separate reversible from irreversible.** Move quickly on decisions that are easy to undo and slow down on those that are not. It is the same logic good designers apply to AI actions, turned on their own choices.",
+                "**Close the loop.** Compare what happened with what you expected, and update your principles. Mature design teams do not only maintain a library of components. They maintain a memory of decisions and what was learned from them."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "The ideas in this series, in one view",
+          "blocks": [
+            {
+              "type": "table",
+              "columns": [
+                "Idea",
+                "What I believe"
+              ],
+              "rows": [
+                [
+                  "AI changes UX, it does not replace it",
+                  "The work shifts from screens to behaviour, trust and outcomes."
+                ],
+                [
+                  "Choose where AI participates",
+                  "Use it where tasks are repeatable, low-risk and quickly verified."
+                ],
+                [
+                  "Keep solutions simple",
+                  "Complexity in the problem does not justify complexity in the answer."
+                ],
+                [
+                  "Fix workflows first",
+                  "AI amplifies whatever it is attached to."
+                ],
+                [
+                  "Lead through decisions",
+                  "Sense-making, systems, capability and translation."
+                ],
+                [
+                  "Build experiences, not features",
+                  "One identity, shared behaviour and visible trust."
+                ],
+                [
+                  "Choose deliberately",
+                  "Generation is cheap. Selection is the skill."
+                ],
+                [
+                  "Reduce load",
+                  "People should have less to think about after using AI."
+                ],
+                [
+                  "Ask better questions",
+                  "Framing the problem is the new fluency."
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Where I think this leads",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The UX teams that will matter most in the coming years are, I think, the ones that make fast, well-founded decisions about how people and AI work together, and can explain them clearly to customers, engineers and executives. That takes craft, but it also takes evidence, judgement and the courage to hold a position when it is unpopular."
+            },
+            {
+              "type": "p",
+              "text": "It is not less design. It is more design, aimed at harder problems."
+            },
+            {
+              "type": "quote",
+              "text": "Machines will keep getting better at producing options. People will keep being responsible for what is chosen. The future of UX lives in that gap, and it is a very good place to be."
+            }
+          ]
+        }
+      ],
+      "takeaways": [
+        "AI does not remove design decisions; it multiplies them and raises their stakes.",
+        "Behind every automated choice is a boundary somebody designed, and that is design work.",
+        "Better decisions are evidence-based, explicit about trade-offs, time-boxed, owned and measured afterwards.",
+        "Write decisions down, separate reversible from irreversible and close the loop."
+      ],
+      "references": [
+        "Parasuraman, R., Sheridan, T., & Wickens, C. “A model for types and levels of human interaction with automation” (IEEE, 2000)."
       ]
     }
   }

@@ -7,11 +7,11 @@ Single-page app with hash routing, light and dark themes, no framework and no ru
 
 | Route | Page |
 |---|---|
-| `#home` | Hero, stats, selected work, autonomy-dial demo, leadership pillars, latest essays, career arc, photography teaser |
+| `#home` | Hero, stats, selected work, autonomy-dial demo, leadership pillars, latest articles, career arc, photography teaser |
 | `#work` | All case studies, filterable by AI experiences / Enterprise UX |
 | `#case.<id>` | Case study detail: overview, five design phases (tabs), leadership, outcomes, takeaway |
-| `#thinking` | All essays, with category filter and search |
-| `#article.<id>` | Essay with reading progress, takeaways, tags, related essays |
+| `#thinking` | All articles, with category filter and search |
+| `#article.<id>` | Article with reading progress, takeaways, references, previous/next and related articles |
 | `#journey` | Interactive career timeline (expand steps, milestones-only switch) |
 | `#about` | Bio, current role, leadership pillars, education and credentials |
 | `#photography` | Photo stories gallery, lightbox, "post a photo story" form (saved in the visitor's browser) |
@@ -28,7 +28,7 @@ content/                 ← edit these to change what the site says
                          Each has: summary, metrics, discover/define/ideate/prototype/implement (+ optional evolve),
                          leadership (intro, actions, capabilities, lessons), outcomes, evidenceBase, pullQuote.
                          Confidential: keep product and people names out; use roles and generic names.
-  articles.json          the 10 essays
+  articles.json          the 10 articles (AI and the Future of UX series)
   career.json            career timeline steps (isMilestone: true = teal milestone)
   leadership-pillars.json
   credentials.json
@@ -79,7 +79,11 @@ For anything bigger (new sections, design changes), ask Claude with the reposito
 - `**double asterisks**` in `site.json` text become bold.
 - In `site.json` stats, `{caseStudyCount}` and `{articleCount}` are filled in automatically.
 - Ids (`"id"`) appear in URLs: lowercase letters, digits and hyphens only.
-- Bullet points written as `Label: text` in essays render with the label in bold.
+- Articles (`articles.json`) are a list of `sections`, each a `heading` plus `blocks`. Block types:
+  `p` (text), `ul` / `ol` (items), `quote` (pull quote), `callout` (label + text),
+  `table` (columns + rows), `cards` with style `zones` or `ladder` (label + text items).
+  Article text supports `**bold**`, e.g. `**Name owners.** Literacy, guidelines…`.
+- An article's `number` sets its place in the series; the Thinking page and home teaser follow that order.
 
 ## Theme
 
