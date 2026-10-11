@@ -1,620 +1,1336 @@
 [
   {
-    "id": "security-console-modernisation",
-    "category": "ENTERPRISE UX",
-    "categoryKey": "enterprise",
-    "title": "Security: Streaming & Management Console Modernisation",
-    "subtitle": "Replacing green-screen configuration with a visual, policy-driven experience",
-    "description": "Replacing green-screen configuration with a visual, policy-driven experience.",
-    "detailedSummary": "The Security product line protects mainframe estates by streaming security-relevant data. The streaming product was configured through terminal panels, and the management console was widely seen as intimidating and complex. I led UX for the modernisation of both: web-based policy management, flow-map visualisation and a UX audit.",
-    "visualType": "enterprise-platform",
-    "problemSpace": "Green-screen configuration and intimidating management consoles made streaming setup complex and error-prone.",
-    "solution": "A centralised, visual policy system: policies are created once, tagged, deployed to many instances and understood through an estate flow map.",
-    "keyOutcomes": [
-      "Streaming web UX validated with 6 customers",
-      "Policy-driven configuration replacing terminal work",
-      "Evidence-based console modernisation"
-    ],
-    "role": "UX leader for Security product line: streaming web enablement, console re-platform, policy management",
+    "id": "ai-assistant-platform",
+    "category": "Enterprise AI platform",
+    "categoryKey": "ai",
+    "title": "AI Assistant & Platform Experience",
+    "subtitle": "One consistent, trustworthy AI front door across a multi-product suite",
+    "description": "A shared AI experience layer for every product in the suite, in place of one-off chat implementations.",
+    "summary": "The Platform is the foundation that lets every product in the suite embed AI. I led UX direction for the Platform experience (the AI Assistant, knowledge management, product configuration, observability and admin foundations) and for how the Assistant behaves when it is embedded in other products. The result is a shared experience layer in place of one-off chat implementations.",
     "year": "2025–2026",
-    "duration": "May 2025 to present",
-    "teamComposition": "Three designers (one at 50%) · Research: one UX researcher",
+    "duration": "Jun 2025 to present · early features through to the next major release",
+    "role": "UX leader for the Platform and the AI Assistant: UX strategy, design direction and cross-functional alignment",
+    "team": "Assistant UX lead and four designers · Research: one UX researcher",
     "stakeholders": [
-      "Lead Product Manager",
+      "VP of Product Management & Design",
+      "Director of Product Management",
+      "Product managers",
+      "Platform architect"
+    ],
+    "metrics": [
+      {
+        "value": "8",
+        "label": "Platform capabilities UX-complete",
+        "detail": "Knowledge hub, personal home, Assistant UI, bring-your-own-LLM, product configuration, bulk upload, prompt editor, about page"
+      },
+      {
+        "value": "5",
+        "label": "Web products with Assistant chat",
+        "detail": "Delivered through a shared web-services layer (Jan 2026)"
+      },
+      {
+        "value": "Oct 2025",
+        "label": "Assistant GA in the operations product",
+        "detail": "The first in-product Assistant for operators"
+      },
+      {
+        "value": "4",
+        "label": "New patterns for the next release",
+        "detail": "Data visualisation, inline citations, prompt chips, streaming steps"
+      }
+    ],
+    "discover": {
+      "intro": "The starting question was not “how do we add a chat box?” but “how do customers expect to work with AI inside real mainframe workflows?” We combined customer research, early integration feedback and one-to-one conversations with each product manager.",
+      "research": [
+        {
+          "metric": "Nov 2025 study",
+          "detail": "Assistant integration research: customers expect the Assistant in chat and in context on the page."
+        },
+        {
+          "metric": "3 customers",
+          "detail": "AI-in-operations workflow study: one on-site visit and two remote customers."
+        },
+        {
+          "metric": "Beta programme",
+          "detail": "Early-customer surveys on AI and agentic readiness, knowledge management and the Platform."
+        },
+        {
+          "metric": "Oct 2025 review",
+          "detail": "Usability gaps found in the first integration: size, resize, history and pin mode."
+        }
+      ],
+      "insights": [
+        "Customers want proactive notifications and in-context recommendations from the Assistant, which the first release did not yet offer.",
+        "Customers expect the Assistant to know “all” of their information, so knowledge coverage became a UX concern, not only a back-end one.",
+        "Trust is earned in steps: cited documentation answers first, actions later.",
+        "Each product team had its own picture of how the Assistant should behave on its screens, which created inconsistent conversational UX."
+      ]
+    },
+    "define": {
+      "hmw": "How might we give every product in the suite one consistent, explainable AI front door, so customers get the same trusted behaviour whether they ask in chat, act in context or delegate to an agent?",
+      "finding": {
+        "label": "Fragmentation discovered",
+        "text": "Products were building conversational features with custom UX and duplicated back-end integrations, while customers experience the suite as one product and expect one assistant."
+      },
+      "friction": [
+        {
+          "title": "Inconsistent UX",
+          "text": "Conversational patterns differed from product to product."
+        },
+        {
+          "title": "Engineering duplication",
+          "text": "Repetitive AI components were rebuilt in every product."
+        },
+        {
+          "title": "Navigation overhead",
+          "text": "No single AI-first entry point, which raised cognitive load."
+        }
+      ],
+      "jobs": [
+        "When I am working in any product, let me ask, understand and act without leaving my context.",
+        "When I administer the platform, give me clear control over knowledge, models and connectors so I can trust what the Assistant says."
+      ]
+    },
+    "ideate": {
+      "northStar": "The AI-native interface layer: the Assistant as the cross-product experience layer, where chat, in-product AI actions and agents share one identity, one pattern library and one set of guardrails.",
+      "shifts": [
+        {
+          "from": "Product-specific chat built separately in each product",
+          "to": "A shared AI-native interface layer with reusable components",
+          "why": "Cuts duplicated engineering effort and keeps behaviour consistent."
+        },
+        {
+          "from": "Generic “Ask AI” buttons",
+          "to": "Named capability actions (Summarise, Analyse, Investigate, Explain) under one Assistant identity",
+          "why": "The identity signals AI, so labels can describe the action."
+        },
+        {
+          "from": "One chat window for every product",
+          "to": "Per-product defaults agreed with each product manager: a floating overlay in one product, a docked panel in another",
+          "why": "Fits each persona’s workflow with minimal disruption to existing screens."
+        }
+      ],
+      "tradeoffs": "Chose a platform-level framework over faster product-by-product delivery, accepting short-term coordination cost for long-term consistency. Kept the legal disclaimer and context-preserving “Ask follow-up” behaviour mandatory across products. Deferred AI-generated indicators because they are not yet part of the design-system guidelines."
+    },
+    "prototype": {
+      "intro": "Concepts were prototyped, shown to customers at a customer advisory event and reviewed weekly with Platform product managers, architects and R&D.",
+      "columns": [
+        "Area",
+        "Method",
+        "What we learned or decided"
+      ],
+      "rows": [
+        [
+          "Assistant home",
+          "Concept shown at a customer advisory event (Jun 2025) and in a design-partnership session",
+          "Introduced a persona-aware, action-oriented home for the Assistant and collected early customer reaction."
+        ],
+        [
+          "Assistant in the operations product",
+          "Customer research sessions",
+          "Customers asked for proactive notifications and in-context recommendations."
+        ],
+        [
+          "Chat window resize",
+          "Design work with the design-system team and research sessions",
+          "Replaced a hard-to-find control with a discoverable, familiar resize interaction."
+        ],
+        [
+          "Data visualisation in chat",
+          "Next-release design review (Sep 2026)",
+          "Line, area, bar, column and pie charts in one shared container. The LLM proposes the default chart; an open decision remains on limiting chart types to the data format."
+        ],
+        [
+          "Inline citations",
+          "Same review",
+          "Linked references across chat modes, collaboration tools and mobile (mobile needs one extra tap)."
+        ],
+        [
+          "Streaming and elicitation",
+          "Same review",
+          "Steps expose agent, tool or skill activity. Permission, form and code-review elicitations were designed."
+        ],
+        [
+          "Prompt chips",
+          "Same review",
+          "Pre-canned prompts need to look different from suggested prompts; layout trade-offs remain open."
+        ]
+      ],
+      "highlights": [
+        "Elicitation blocks (permission, form and code review) keep a human in the loop when an agent needs more input.",
+        "Inline citations let users see where every answer came from, in chat, collaboration tools and mobile.",
+        "Streaming steps show which agent, tool or skill is working, so the Assistant never feels like a black box."
+      ]
+    },
+    "implement": {
+      "governance": "Agreed Assistant principles across products: use the Assistant icon with an action label, always show the legal disclaimer, preserve context on follow-up and stream responses consistently.",
+      "designSystem": "Assistant chat, resize and pin or float behaviour live in the design system. The identity went through Brand and Legal review (logo clearance, trademark path) against the launch target.",
+      "feedback": "A weekly Platform UX discussion with product managers, architects and R&D (about 30 invitees) and a monthly UX priorities review with product-management leadership keep design and delivery aligned."
+    },
+    "leadership": {
+      "intro": "The Platform work was less about individual screens and more about alignment. Several product teams were building AI interactions at their own pace. My role was to create the shared language, the decision forums and the evidence that let them converge.",
+      "actions": [
+        {
+          "when": "Oct 2025",
+          "situation": "The Assistant in the operations product had usability gaps just before GA, and the product manager asked for a single point of contact.",
+          "did": "Separated what had been designed and agreed from new enhancement requests, using the specification, browser-usage data and an existing design as evidence. Committed UX to work with the design-system team on a better resize interaction and to share research insights.",
+          "result": "One consolidated usability work item with named R&D owners. The Assistant reached GA in the operations product in October 2025."
+        },
+        {
+          "when": "Mar 2026",
+          "situation": "Each product team had a different picture of an “AI-first” interface.",
+          "did": "Authored a product requirements document for the AI-native interface and an Assistant architecture explainer for non-technical stakeholders covering the problem, impact and urgency.",
+          "result": "Product managers and R&D share a written definition of a platform-level AI layer."
+        },
+        {
+          "when": "Jul 2026",
+          "situation": "The Assistant needed an in-product identity before R&D code freeze.",
+          "did": "Requested a Brand review and facilitated it with the Assistant UX lead, opening a regular Brand and UX cadence.",
+          "result": "Brand direction for the mark, a Legal trademark path and alignment to the launch target, with a plan requested to reach production by January."
+        },
+        {
+          "when": "Jul 2026",
+          "situation": "The Platform product manager flagged inconsistent Assistant designs in two products.",
+          "did": "Brought designers together to standardise design, interaction and experience patterns, and proposed a guidelines session for one product team.",
+          "result": "Shared principles on icon and label, disclaimer, follow-up context and streaming now apply across products."
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Platform strategy",
+          "text": "Positioned the Assistant as a shared layer, not a feature."
+        },
+        {
+          "title": "Influence without authority",
+          "text": "Aligned product management, R&D, architecture, Brand and Legal without formal ownership of their plans."
+        },
+        {
+          "title": "Evidence-led advocacy",
+          "text": "Used specifications, usage data and research to separate defects from new requirements."
+        },
+        {
+          "title": "Growing leaders",
+          "text": "A designer on the team was promoted to Lead Product Designer in May 2025 and now leads Assistant UX strategy."
+        }
+      ],
+      "lessons": "Sketches meant to support discovery were sometimes read as final designs, and the discovery window for the next release was shorter than the eight-week model proposed by product management. Next: agree the discovery-to-definition timeline and the status of every artefact (sketch, concept, final) at the start of each release."
+    },
+    "outcomes": [
+      {
+        "outcome": "Consistent Assistant behaviour across products",
+        "evidence": "Per-product defaults and shared principles. Assistant chat is live in five web products (Jan 2026) and in the operations product (Oct 2025).",
+        "benefit": "Less rework, a more coherent customer experience and faster AI adoption across product lines."
+      },
+      {
+        "outcome": "Platform foundations ready for AI",
+        "evidence": "Eight capabilities with UX status “Done”: knowledge hub, personal home, Assistant UI, bring-your-own-LLM, product configuration, bulk upload, prompt editor and about page.",
+        "benefit": "Customers can organise knowledge, configure products and bring their own LLM."
+      },
+      {
+        "outcome": "Next-generation Assistant patterns",
+        "evidence": "Data visualisation, inline citations, prompt chips and streaming steps designed for the next release.",
+        "benefit": "Higher answer trust and usability, reusable for agents."
+      },
+      {
+        "outcome": "Protectable AI identity",
+        "evidence": "Brand and Legal review with a trademark clearance path.",
+        "benefit": "A differentiated, legally cleared Assistant mark."
+      }
+    ],
+    "evidenceBase": "UX project reviews · product requirements document · release communications · usability review threads · Brand and Legal review threads · weekly Platform UX discussion notes",
+    "pullQuote": "The Platform work was less about individual screens and more about alignment."
+  },
+  {
+    "id": "agentic-ai-experience",
+    "category": "Agentic AI",
+    "categoryKey": "ai",
+    "demo": "autonomy",
+    "title": "Agentic AI Experience",
+    "subtitle": "Designing human–agent collaboration that customers can trust",
+    "description": "How much autonomy, shown how, with which safeguards: the UX direction for moving from AI chat to agents.",
+    "summary": "As the company moved from AI chat to agents that can investigate and act on mission-critical mainframe systems, the experience question became: how much autonomy, shown how, with which safeguards? I led UX direction for that shift, from a cross-product AI experience framework to the November 2026 agentic release decisions and the agentic workspaces programme.",
+    "year": "2025–2026",
+    "duration": "2025 to present · framework Jul 2026 · November 2026 release · workspaces workshop Oct 2026",
+    "role": "UX leader for agentic experience strategy and cross-product alignment (Platform, operations and data products)",
+    "team": "Assistant UX lead and three designers (one on agentic patterns for developer tools, one on AI in the design workflow) · Research: two UX researchers",
+    "stakeholders": [
+      "VP of Product Management & Design",
+      "Directors of Product Management",
+      "Product managers",
+      "Architects",
+      "R&D leaders"
+    ],
+    "metrics": [
+      {
+        "value": "3",
+        "label": "Customers in the AI-in-operations study",
+        "detail": "One on-site visit and two remote customers"
+      },
+      {
+        "value": "4",
+        "label": "Pillars under every AI feature",
+        "detail": "Transparency, human control, safety and recovery, efficiency"
+      },
+      {
+        "value": "30 Sep",
+        "label": "Release decisions recorded",
+        "detail": "De-risking the November 2026 release"
+      },
+      {
+        "value": "≥ 80%",
+        "label": "Task-success target for workspaces",
+        "detail": "Set in the UX plan, with ≥ 90% design-system reuse"
+      }
+    ],
+    "discover": {
+      "intro": "Before designing agent behaviour we needed to know how much autonomy mainframe operators would actually accept. The AI-in-operations workflow study mapped current incident workflows, pain points and trust requirements at three customers.",
+      "research": [
+        {
+          "metric": "3 customers",
+          "detail": "One on-site visit and two remote customers: operators, leads and a systems programmer."
+        },
+        {
+          "metric": "6 workflow stages",
+          "detail": "Incident awareness, review, communication, investigation, resolution and documentation mapped at one customer."
+        },
+        {
+          "metric": "Highest value",
+          "detail": "Incident awareness and investigation: the least satisfying steps and the strongest AI opportunity."
+        },
+        {
+          "metric": "Phased trust",
+          "detail": "Answer, investigate, suggest, then act, matched to each customer’s AI maturity."
+        }
+      ],
+      "insights": [
+        "Customers are ready for low-risk AI tasks such as documentation answers with cited sources, but want positive experiences first before AI acts on its own.",
+        "Trust is an adoption requirement: transparent, explainable AI, detailed suggestions for human review and a controlled test environment before production.",
+        "Customers need guidance on possibilities, not only features: “I have no time to just sit and explore the monitoring product.” (customer participant)",
+        "Governance, not model quality, is the adoption bottleneck: approval, blast radius, evidence and audit must be visible."
+      ]
+    },
+    "define": {
+      "hmw": "How might we let customers delegate more to agents over time, while keeping approval, blast radius, evidence and audit visible at every step?",
+      "finding": {
+        "label": "Mental-model misalignment",
+        "text": "Each product line built strong agents inside its own domain, but a real incident spans operations, data, developer tooling, security and cloud, and a person bridges them manually. The experience was fragmented even where the agents were not."
+      },
+      "friction": [
+        {
+          "title": "Fragmented surfaces",
+          "text": "No shared place where humans and agents work one outcome."
+        },
+        {
+          "title": "Expertise bottleneck",
+          "text": "Operations still run one thread at a time and depend on a few experts."
+        },
+        {
+          "title": "Inconsistent AI behaviour",
+          "text": "Licensing, failure and naming rules differed by product."
+        }
+      ],
+      "jobs": [
+        "When an incident spans several products, help me work from one shared context so humans and agents coordinate to an outcome.",
+        "When an agent proposes an action, show me the evidence, the blast radius and how to undo it before I approve."
+      ]
+    },
+    "ideate": {
+      "northStar": "From product chat to agentic workspaces: an experience strategy that moves customers from product-focused chat, to agentic workflows, to persistent shared workspaces where humans and agents coordinate from trigger to outcome.",
+      "shifts": [
+        {
+          "from": "A single “Ask AI” chat for every need",
+          "to": "A two-axis framework: where the experience lives (conversational or embedded) and what role AI plays (assistive or agentic)",
+          "why": "Separates two independent design decisions. Choose by what the task demands, not by what AI can do."
+        },
+        {
+          "from": "Binary manual versus fully autonomous execution",
+          "to": "Adjustable autonomy: Ask, Assist and Agent modes with user-tuned permissions",
+          "why": "Gives psychological safety and lets confidence graduate by workload."
+        },
+        {
+          "from": "Opaque agent output",
+          "to": "Progressive disclosure of reasoning, explicit confidence signals and a summary, evidence, next-step template",
+          "why": "Makes AI behaviour understandable and verifiable."
+        },
+        {
+          "from": "One-way execution",
+          "to": "Risk-proportional friction: intent previews, gated irreversible actions, stepwise repair and undo",
+          "why": "Reversible steps run quietly; irreversible actions need a human."
+        }
+      ],
+      "pillars": [
+        {
+          "name": "Transparency & explainability",
+          "purpose": "Make AI behaviour understandable and verifiable.",
+          "principles": "Progressive disclosure of reasoning; explicit confidence badges; predictable output templates."
+        },
+        {
+          "name": "Human control & governance",
+          "purpose": "Keep users in control of permissions and decisions.",
+          "principles": "Autonomy dials (Ask, Assist, Agent); interruptible execution; graceful hand-over to a human."
+        },
+        {
+          "name": "Safety & recovery",
+          "purpose": "Enable safe execution and predictable recovery.",
+          "principles": "Intent previews; risk-proportional friction; failure legibility with retry, edit or skip; blast-radius containment and undo."
+        },
+        {
+          "name": "Efficiency through context & guidance",
+          "purpose": "Reduce effort while accelerating outcomes.",
+          "principles": "Steerability over scripting; visible and editable preference memory; contextual AI actions and suggested prompts."
+        }
+      ],
+      "tradeoffs": "Hid unlicensed AI features rather than greying them out, to avoid confusion and support calls. Used one generic failure message in November rather than diagnosing every cause. Protected the November delivery by deferring richer diagnostics and awareness banners."
+    },
+    "prototype": {
+      "intro": "Two tracks ran in parallel: closing the interaction rules the November 2026 release needed, and designing how the agentic workspaces concept will be validated with customers.",
+      "title": "November 2026 UX decision log",
+      "columns": [
+        "Scenario",
+        "Decision",
+        "Rationale"
+      ],
+      "rows": [
+        [
+          "Product has no AI licence",
+          "Hide the relevant AI features in the operations and data products. The Platform is the source of truth for licence validation.",
+          "Unavailable controls, even greyed out, can cause confusion and unnecessary support calls."
+        ],
+        [
+          "Licensed product, agent disabled by an administrator",
+          "Show a generic agent-processing failure with a title and description.",
+          "Many causes (including microservice failures) exist, and listing them adds risk."
+        ],
+        [
+          "Retry after a failure",
+          "Offer retry case by case rather than by default.",
+          "A blind retry could resubmit work (for example a batch job) and rarely fixes the cause."
+        ],
+        [
+          "Platform unreachable",
+          "Show a platform-specific message that directs users to their administrator.",
+          "Distinguishes a platform outage from an agent failure."
+        ],
+        [
+          "Call-to-action labels",
+          "Use the action name only (“Analyze”, “Summarize”); the Assistant icon signals AI.",
+          "Avoids “AI analysis” style labels and keeps naming consistent."
+        ],
+        [
+          "Licence-expiry notification",
+          "Defer to a follow-on common pattern.",
+          "AI licensing launches in November, so expiry is not an immediate blocker."
+        ]
+      ],
+      "extras": [
+        {
+          "title": "Agentic workspaces: validation design",
+          "columns": [
+            "Stage",
+            "What happens",
+            "Output"
+          ],
+          "rows": [
+            [
+              "Pre-workshop sessions (remote)",
+              "Agree objectives, roles and evidence; prioritise problems; review competitors; walk through day-in-the-life workflows for a reactive multi-persona incident, a proactive database expert and critical triage.",
+              "Prioritised problems and 2–4 agreed use cases."
+            ],
+            [
+              "UX design briefs",
+              "The UX team structures each use case into a design brief using an AI design-brief agent.",
+              "Two briefs (data and operations)."
+            ],
+            [
+              "3-day in-person innovation workshop",
+              "Goal-setting, brief walk-throughs, hackathon-style vibe design in two teams, convergence on themes, agents and patterns.",
+              "Two working interactive prototypes."
+            ],
+            [
+              "Post-workshop phases",
+              "Refine with product management and engineering, validate with 3+ customer design-program participants, align, iterate and support delivery.",
+              "Customer-validated concepts and a 12-month roadmap with named owners."
+            ]
+          ]
+        },
+        {
+          "title": "Success targets set for the UX package",
+          "text": "At least 80% of participants complete each critical workflow without help. No unresolved critical usability issues before final UX approval. 100% of agreed critical flows, states and exceptions documented. At least 90% design-system reuse and 90% of acceptance criteria accepted at first handoff."
+        }
+      ]
+    },
+    "implement": {
+      "governance": "The AI Experience Framework gives product managers and R&D one reference for naming, licensing, failures and autonomy, and is walked through in the regular UX and product-management connect.",
+      "designSystem": "Assistant identity and action-naming rules are being added to the design system, and the workspaces plan targets at least 90% design-system reuse.",
+      "feedback": "The customer design program and research run beneath every workspaces phase: engage, gather, synthesise, validate and feed forward into the next cycle.",
+      "extras": [
+        {
+          "title": "Scaling the practice inside the UX team",
+          "items": [
+            "Four AI “big rocks” with owners (Jul 2026): AI literacy, AI infusion into the UX design process, designing-for-AI guidelines and AI-infused UX research.",
+            "Two custom agents and skills plus guardrail rules for designers using an AI coding tool, with prototyping training scheduled for October 2026. The FY27 target is 20% of UX design artefacts generated with AI.",
+            "A joint leadership project with product management on AI literacy, AI across the product lifecycle and AI cost and ROI.",
+            "Hiring: a Principal UX Designer (Agentic Experience) role drafted to add senior capacity."
+          ]
+        }
+      ]
+    },
+    "leadership": {
+      "intro": "Agentic UX is a leadership problem before it is a design problem. The decisions that matter (what an agent may do, what the customer sees when it cannot) cut across product management, R&D, Platform and marketing. I focused on turning open debates into recorded decisions customers could rely on.",
+      "actions": [
+        {
+          "when": "Aug–Sep 2026",
+          "situation": "Licensing and agent-disable behaviour was unresolved weeks before the November release, with hide, grey-out and banner options all in play.",
+          "did": "Wrote the UX decision summary on four components (feature-toggle visibility, agent-catalogue visibility, AI interaction patterns, awareness), recommended deferring awareness to the next release and escalated open points to product-management leaders with a concise summary. Held the line on “keep it simple for November” and parked edge cases.",
+          "result": "Decisions recorded on 30 Sep: hide AI when unlicensed, Platform-led licence validation, generic failure messaging; complex diagnostics beyond November."
+        },
+        {
+          "when": "Sep 2026",
+          "situation": "New granularity (separate toggles for Summarise, Analyse, Investigate, Explain) appeared as unplanned scope.",
+          "did": "Clarified that these are action buttons driven by agents, and that agent availability is controlled as a whole for now, with individual controls later as customers build their own agents.",
+          "result": "Scope kept to the planned feature-toggle epic; future agent-level control logged."
+        },
+        {
+          "when": "Sep–Oct 2026",
+          "situation": "Leadership asked for a UX-specific project plan for workspaces: specific objectives, owners, milestones and metrics.",
+          "did": "Authored the end-to-end UX plan: phases, internal and customer roles, the customer feedback loop, undated milestones and success metrics.",
+          "result": "A plan aligned to the leadership brief and the October 2026 workshop preparation."
+        },
+        {
+          "when": "Jun–Jul 2026",
+          "situation": "AI effort was spread across a separate AI programme, UX process change and product-integrated AI.",
+          "did": "Proposed four big rocks in the AI initiative discussion and invited owners.",
+          "result": "Owners stepped up by July 2026 for AI infusion in design, AI UX guidelines and AI literacy."
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Decision-making under ambiguity",
+          "text": "Reduced competing options to a recommended, time-boxed November position."
+        },
+        {
+          "title": "Strategic framing",
+          "text": "Reframed “AI chat” as a progression from chat to workflows to workspaces."
+        },
+        {
+          "title": "Executive communication",
+          "text": "Packaged complex trade-offs into short summaries for product-management and R&D leaders."
+        },
+        {
+          "title": "Building organisational capability",
+          "text": "Created owners, training, guardrails and a senior hire plan for AI-native design."
+        }
+      ],
+      "lessons": "Products had already built different licensing behaviour (one greyed out, one hid) before a shared rule existed. Next: publish the AI Experience Framework as approved guidance before teams build, and extend the shared rules to licence expiry, agent-level controls and customer awareness in the next release."
+    },
+    "outcomes": [
+      {
+        "outcome": "One AI experience framework for the suite",
+        "evidence": "Four interaction types, four pillars and shared naming, licensing and failure behaviours.",
+        "benefit": "Consistency lowers rework and shortens design and approval cycles."
+      },
+      {
+        "outcome": "November 2026 release de-risked",
+        "evidence": "Decisions recorded on 30 Sep with the Platform as the licence source of truth; edge cases parked.",
+        "benefit": "Protects the release target and avoids support calls from unlicensed controls."
+      },
+      {
+        "outcome": "Customer-validated adoption path",
+        "evidence": "Phased trust (answer, investigate, suggest, act) from research with three customers.",
+        "benefit": "Tells product teams which agent use cases to ship first."
+      },
+      {
+        "outcome": "Workspaces UX plan with measurable targets",
+        "evidence": "Task success ≥ 80%, design-system reuse ≥ 90%, first-handoff acceptance ≥ 90% (targets).",
+        "benefit": "A clear bar for experience quality before delivery."
+      },
+      {
+        "outcome": "AI-native team capability",
+        "evidence": "Two custom agents and skills, guardrails, training and a 20% AI-artefact target.",
+        "benefit": "Faster prototyping within design standards."
+      }
+    ],
+    "evidenceBase": "customer research reports · AI experience design framework · release decision threads (Sep 2026) · agent enable/disable discussion · workspaces concept deck and UX plan · AI initiative threads",
+    "pullQuote": "Agentic UX is a leadership problem before it is a design problem."
+  },
+  {
+    "id": "genai-assistant",
+    "category": "Generative AI",
+    "categoryKey": "ai",
+    "title": "Generative AI Assistant: Defining the GenAI Experience",
+    "subtitle": "From a GenAI vision in December 2022 to agentic capabilities and an agent marketplace",
+    "description": "Setting the GenAI experience direction early, then turning it into shared patterns, features in market and agents.",
+    "summary": "When generative AI arrived in late 2022, the IT service and operations suite had no agreed experience model for it. I led the early ideation, use case exploration, customer research, UX strategy and vision for GenAI capabilities. That direction became the foundation of the company’s GenAI features: summaries, insights, recommendations and conversation inside service and operations workflows. The same foundation later evolved into agentic capabilities and an agent marketplace.",
+    "year": "2022–2025",
+    "duration": "Dec 2022 to 2025 · GenAI foundation, design patterns, AIOps features, then agentic evolution",
+    "role": "UX leader for GenAI direction: ideation, use case exploration, customer research, UX strategy and vision. Later led UX for the IT operations and AIOps experiences of the assistant",
+    "team": "Six designers · Research: two UX researchers",
+    "stakeholders": [
+      "VP of R&D and UX",
+      "Senior Director and Director of Product Design",
+      "Product managers",
+      "Design-system lead"
+    ],
+    "metrics": [
+      {
+        "value": "Dec 2022",
+        "label": "GenAI experience direction set",
+        "detail": "Before patterns, components or customer expectations existed"
+      },
+      {
+        "value": "43",
+        "label": "Participants in agent-assistant research",
+        "detail": "10 sessions across enterprise customers (2024)"
+      },
+      {
+        "value": "~5 months",
+        "label": "Design start to market",
+        "detail": "Vulnerability remediation, shipped Jan 2025"
+      },
+      {
+        "value": "3",
+        "label": "Design-system delivery phases",
+        "detail": "Jun 2023, Oct 2023, Jan 2024"
+      }
+    ],
+    "discover": {
+      "intro": "The first question was not “where do we add a chatbot?” but “where in an IT operator’s or service agent’s day does generative AI remove real effort?” We explored use cases with customers and internal users, then kept testing as each capability took shape.",
+      "research": [
+        {
+          "metric": "Service-desk usability test",
+          "detail": "Three chat and search designs compared: static chatbot-style results, chat-first and a combined chat and search model."
+        },
+        {
+          "metric": "AIOps research rounds",
+          "detail": "2023 rounds on summary, situation timeline, the feedback loop and the AI assistant."
+        },
+        {
+          "metric": "Agent-assistant research",
+          "detail": "10 sessions with 43 participants across enterprise customers (2024)."
+        },
+        {
+          "metric": "Vulnerability remediation",
+          "detail": "11 research sessions with 20 participants on current practice and the proposed GenAI remediation flow."
+        }
+      ],
+      "insights": [
+        "The assistant is needed and expected. All participants saw it as beneficial and expected it across the journey, not only in chat.",
+        "Top needs were practical: easy access to information for resolving tickets, visibility into history and similar tickets, and help documenting activity.",
+        "Trust depends on accuracy and control. Outdated knowledge articles were a concern, and agents wanted to edit generated emails and resolution notes. “What if the summary is good, but the answer is bad?” (customer participant)",
+        "Usage data showed discoverability gaps. In the October 2024 analysis of the top five customers and internal IT, 37% of Ask users landed on the situation detail page and 15% of sessions started investigation with the recommendation feature. Customers other than internal IT were not yet using the GenAI features."
+      ]
+    },
+    "define": {
+      "hmw": "How might we bring generative AI into service and operations workflows so that people get summaries, insights and recommended actions in context, with explainability and human control, instead of a separate chatbot?",
+      "finding": {
+        "label": "Mental-model misalignment",
+        "text": "Operators and agents think in tasks: resolve this ticket, understand this situation, fix this vulnerability. Early GenAI experiences were organised around prompts and answers, which sit outside the task. Customers asked for AI at every step of the journey."
+      },
+      "friction": [
+        {
+          "title": "Scattered information",
+          "text": "Knowledge articles, past tickets and activity logs live in different places."
+        },
+        {
+          "title": "Manual documentation",
+          "text": "Agents write resolution notes and emails by hand."
+        },
+        {
+          "title": "Slow diagnosis",
+          "text": "Operators correlate situations, logs and changes manually."
+        }
+      ],
+      "jobs": [
+        "When I work a ticket, give me a summary, related knowledge and a recommended solution so I can resolve it faster.",
+        "When a situation or vulnerability appears, show me the likely cause, similar past events and remediation steps I can act on."
+      ]
+    },
+    "ideate": {
+      "northStar": "GenAI woven into the workflow: a capability model (summarise, surface insights, recommend, converse, create, aggregate, and later predict, supervise and coach) delivered in context, in one design language across the suite.",
+      "shifts": [
+        {
+          "from": "A stand-alone chatbot with generic answers",
+          "to": "Contextual GenAI: summary boxes, insights and recommendations in place, with conversation on demand",
+          "why": "Ties AI to the task. Users expected the assistant across the whole journey."
+        },
+        {
+          "from": "One-off GenAI screens in each product",
+          "to": "Shared patterns in the design system: global (header search, hero-box search, global chat) and local (limited and detailed conversation)",
+          "why": "A symmetric experience across service desk, ITSM, the virtual agent and AIOps."
+        },
+        {
+          "from": "Opaque AI output",
+          "to": "Editable, explainable output: feedback controls, copy and email actions, editable resolution notes and a generated-code disclaimer",
+          "why": "Agents wanted to edit before sending, and Legal required human oversight."
+        },
+        {
+          "from": "Insights to read",
+          "to": "Recommendations to act on: best-action recommendation, automation, a code wizard and an Action Plan view",
+          "why": "Moves users from understanding a problem to guided remediation."
+        }
+      ],
+      "tradeoffs": "Built on design-system components, including the guidance flow and details pattern, rather than bespoke widgets, so GenAI looked and behaved the same everywhere. Treated generated code as a draft that needs human review. Removed the free-text box from the first Ask view in favour of predefined prompts and structured cards."
+    },
+    "prototype": {
+      "intro": "Concepts were evaluated with customers, internal users and executive reviewers as each capability took shape.",
+      "columns": [
+        "Area",
+        "Method",
+        "What we learned or decided"
+      ],
+      "rows": [
+        [
+          "Service-desk chat and search",
+          "Usability test of three designs",
+          "Compared static chatbot-style results, a chat-first approach and a combined model to choose the interaction design."
+        ],
+        [
+          "AIOps summary, timeline and feedback loop",
+          "Research rounds, Jun to Aug 2023",
+          "Evaluated usability and learnability, captured customer business use cases and gathered actionable design insights."
+        ],
+        [
+          "Assistant for ticket resolution",
+          "60-minute remote interviews with concept evaluation",
+          "Summary box, email summary and auto-generated resolution note were well received. Customers asked for editable output, an auto-populated resolution category and the assistant as the default tab when no activity is logged."
+        ],
+        [
+          "Ask assistant with patterns",
+          "Design prototypes reviewed with the VP of R&D and UX, Apr 2024",
+          "Made the run-automation step clickable, slowed the automation transition to about three seconds, added realistic escalation roles and moved log insights to their own side panel."
+        ],
+        [
+          "5 Whys and Action Plan",
+          "Prototype reviews, Sep to Nov 2024",
+          "The situations card view needed no changes. An Action Plan tab became a primary screen, and automated diagnostic summaries and an accuracy feedback loop were added."
+        ],
+        [
+          "Vulnerability remediation",
+          "Design audit, desk research, prototype research, Jun to Nov 2024",
+          "Customers and internal users shaped the risk view, remediation steps and code generation."
+        ]
+      ],
+      "highlights": [
+        "Ask assistant: situation summary, insights, remediation steps, available automation and a code wizard in one container.",
+        "Vulnerability remediation: risk view, plain-language summaries, remediation steps, generated scripts and change-request creation.",
+        "Action Plan: a guided landing view built from 5 Whys analysis that helps L1, L2 and L3 teams prioritise and remediate."
+      ]
+    },
+    "implement": {
+      "governance": "Design patterns were documented for all products. Legal’s wording for generated code (“not tested or certified and requires human oversight before use”) was designed into the UI. A fit-and-finish audit consolidated defects for engineering.",
+      "designSystem": "The design system delivered the first assistant concept in Jun 2023, assistant controls in Oct 2023 and service-desk contributions in Jan 2024. Chat, feedback, insights card and live-agent components followed.",
+      "feedback": "Research, product-analytics behaviour data and design partnerships kept design tied to evidence. The IT operations team was the first to adopt product analytics.",
+      "extras": [
+        {
+          "title": "Taking the vision to market",
+          "items": [
+            "Customer conference 2024: design journeys and videos for AIOps cyber monitoring (two personas) and AIOps with the assistant, within a five-booth expo line-up that also showed an employee-support agent, a knowledge agent and the assistant in a collaboration tool.",
+            "Videos: six GenAI and IT-operations videos completed by October 2024 and prepared for the company’s video channel.",
+            "Innovation: the UX team’s 2024 ideation-challenge ideas reached the top 30 of 669, including service modelling and multilingual GPT summarisation."
+          ]
+        }
+      ]
+    },
+    "evolve": {
+      "title": "From GenAI to agentic capabilities and an agent marketplace",
+      "columns": [
+        "Stage",
+        "What changed",
+        "Evidence"
+      ],
+      "rows": [
+        [
+          "GenAI foundation (Dec 2022 onward)",
+          "Direction defined for summarise, insight, recommend and converse capabilities that became the foundation of the company’s GenAI features.",
+          "Capability model in customer and sales decks"
+        ],
+        [
+          "Recommend and act (2024)",
+          "Best-action recommendation, log insights, a code wizard, a change-risk advisor and a vulnerability resolver moved GenAI from answers to guided action.",
+          "Described as AI agents in a Feb 2025 newsletter"
+        ],
+        [
+          "Agents (2024 to 2025)",
+          "An employee-support agent was positioned as the first GenAI agent for the 2024 conference. The line-up grew to include catalogue curation, collaboration, major-incident, proactive problem-solving and change-risk agents.",
+          "Agent roadmap and capability pages"
+        ],
+        [
+          "No-code agent builder (2025)",
+          "The assistant manager became a no-code agent builder, an interface to create, test and deploy custom agents with tools and channels such as collaboration apps.",
+          "Agent enablement documentation"
+        ],
+        [
+          "Carry-forward to the Platform",
+          "Patterns for human oversight, explainability and feedback appear again in the Platform assistant framework, and the original assistant pattern is still listed in the design system.",
+          "Platform and agentic case studies; design-system pattern library"
+        ]
+      ]
+    },
+    "leadership": {
+      "intro": "The GenAI work started with an unanswered question: what should GenAI feel like in enterprise IT software? My role was to set the direction early, turn it into reusable patterns and keep the work grounded in customer evidence while product, R&D and design-systems teams moved at different speeds.",
+      "actions": [
+        {
+          "when": "Late 2022",
+          "situation": "General-purpose generative AI chat tools arrived, and the suite had no agreed GenAI experience model across products.",
+          "did": "Led the early ideation, use case exploration, customer research, UX strategy and vision for GenAI capabilities, working with UX Research on the evidence.",
+          "result": "A direction that became the foundation for the company’s GenAI features."
+        },
+        {
+          "when": "Oct 2023",
+          "situation": "Engineering needed assistant designs built from design-system controls, and the request was high priority.",
+          "did": "Reviewed with the design-system team which patterns existed and which two were missing (a similar-situations timeline graph view and accordion panels). Aligned the design with engineering’s existing components.",
+          "result": "A clear gap list for the design system and a reusable build path. Assistant controls shipped in the design system in Oct 2023."
+        },
+        {
+          "when": "Apr 2024",
+          "situation": "The VP asked for AIOps designs that matched the new assistant patterns, with a tight turnaround.",
+          "did": "Ran working sessions across the design team and the design-system team, produced two flows and closed the VP’s feedback overnight.",
+          "result": "The Ask assistant flow with patterns was reviewed and refined in two days."
+        },
+        {
+          "when": "Jun–Dec 2024",
+          "situation": "Security and operations teams needed vulnerability management inside AIOps, fast.",
+          "did": "Led end-to-end UX strategy: design audit, desk research, prototypes and recurring research with customers and internal users. Reported research status in the weekly programme meeting.",
+          "result": "Designs delivered with a two-week turnaround on the remediation flow, and the feature reached market in about five months (Jan 2025)."
+        },
+        {
+          "when": "Sep–Nov 2024",
+          "situation": "Leadership asked UX to own a design proposal for 5 Whys and an Action Plan.",
+          "did": "Built prototypes, reviewed them with an engineering leader and distilled the feedback into design changes, including the Action Plan tab.",
+          "result": "Recognised by senior AI strategy leadership."
+        },
+        {
+          "when": "Jan 2025",
+          "situation": "Legal required a disclaimer on AI-generated code.",
+          "did": "Shared the disclaimer prototype with engineering and flagged the design-system component update.",
+          "result": "Human-oversight wording approved by Legal is part of the generated-code experience."
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Vision in a new technology",
+          "text": "Set a GenAI experience direction before the patterns, components or customer expectations existed."
+        },
+        {
+          "title": "Evidence-led strategy",
+          "text": "Combined customer interviews, research rounds, usage analytics and executive reviews to steer decisions."
+        },
+        {
+          "title": "Systems thinking",
+          "text": "Turned individual features into shared patterns in the design system so every product benefits."
+        },
+        {
+          "title": "Responsible AI and delivery",
+          "text": "Balanced speed with human oversight, legal wording and quality audits."
+        }
+      ],
+      "lessons": "The October 2024 usage review showed that customers outside internal IT were not yet using the assistant or the recommendation feature, so capability alone did not drive adoption. Next time: design entry points from where users already start, such as the situation detail page, and measure adoption for each capability from the first release."
+    },
+    "outcomes": [
+      {
+        "outcome": "A GenAI foundation for the company",
+        "evidence": "Capability model (summarise, converse, surface, create, aggregate, recommend) used in customer and sales decks.",
+        "benefit": "One coherent GenAI story across service and operations products."
+      },
+      {
+        "outcome": "A shared design language",
+        "evidence": "Assistant patterns for global and local entry points, delivered by the design system in three phases (Jun 2023, Oct 2023, Jan 2024).",
+        "benefit": "Less rework and a consistent experience across service desk, ITSM and AIOps."
+      },
+      {
+        "outcome": "GenAI features in market",
+        "evidence": "Best-action recommendation, log insights, a change-risk advisor and a vulnerability resolver, with the vulnerability feature shipped about five months after design start.",
+        "benefit": "Faster remediation and a better security posture for operations teams."
+      },
+      {
+        "outcome": "Customer evidence at scale",
+        "evidence": "10 sessions and 43 participants (agent assistant), 11 sessions and 20 participants (vulnerability), plus usage analytics for the top five customers.",
+        "benefit": "Roadmap choices grounded in customer data."
+      },
+      {
+        "outcome": "Market and sales enablement",
+        "evidence": "2024 conference AIOps journeys and six videos by Oct 2024, feeding a video channel popular with sales and customers.",
+        "benefit": "Stronger demos and self-serve learning for field teams."
+      },
+      {
+        "outcome": "Customer-reported value (context)",
+        "evidence": "A customer story from March 2025 estimates more than 10,000 hours a year saved from GenAI and agentic use cases in IT, HR and finance.",
+        "benefit": "Shows the value of the capabilities this direction enabled. Not attributed to UX alone."
+      }
+    ],
+    "evidenceBase": "customer research reports · UX quarterly business review · design-pattern decks · agent roadmaps · design-pattern review threads (2023–2024) · product newsletter · customer story · performance reviews",
+    "pullQuote": "Set the direction early, turn it into reusable patterns, and keep the work grounded in customer evidence."
+  },
+  {
+    "id": "data-management-ai",
+    "category": "Data management",
+    "categoryKey": "ai",
+    "title": "Data Management: Agentic AI for Database Operations",
+    "subtitle": "Bringing expert-level diagnosis to database teams without removing human control",
+    "description": "Three agentic use cases and a web log-analysis experience that bring expert judgement to every database team.",
+    "summary": "The Data product line covers the company’s relational and hierarchical database solutions. As its squads moved to agentic AI, I led UX direction for three use cases (a deadlock log analyser, autonomous reorganisation and an exception list), the web log-analysis experience that replaces terminal-era workflows, and the 2026 customer-event demonstrations that carried the vision to customers.",
+    "year": "2025–2026",
+    "duration": "Nov 2025 to present · kick-off Nov 2025 · EMEA customer event 2026 · November 2026 release",
+    "role": "UX leader for the Data product line: agentic AI use cases, log analysis, Assistant consistency and customer-event demos",
+    "team": "Design lead for the Data product line · Research: one UX researcher · Shared Assistant patterns with the Platform designers",
+    "stakeholders": [
+      "Product managers for each database family",
       "Senior Manager of Product Development",
+      "Platform product manager",
+      "Director-level leaders"
+    ],
+    "metrics": [
+      {
+        "value": "3",
+        "label": "Agentic use cases UX-complete",
+        "detail": "Deadlock log analysis, autonomous reorganisation, exception list"
+      },
+      {
+        "value": "6",
+        "label": "Design-partner customers",
+        "detail": "Three on each database family"
+      },
+      {
+        "value": "2",
+        "label": "Database families demoed",
+        "detail": "Offline HTML demos for the EMEA 2026 customer event"
+      }
+    ],
+    "discover": {
+      "intro": "Discovery began with a kick-off with the Data team in November 2025 and continued through a customer design programme study on workflows, pain points and AI capabilities for both database families, plus a separate evaluation of the log-analysis tool.",
+      "research": [
+        {
+          "metric": "6 customers",
+          "detail": "Three customers on each database family."
+        },
+        {
+          "metric": "Interim report",
+          "detail": "Assistant and Data research published as an interim report in 2026."
+        },
+        {
+          "metric": "Terminal workflows",
+          "detail": "A log-analysis study evaluates real terminal-based workflows and log-dataset visualisations."
+        },
+        {
+          "metric": "Day-in-the-life",
+          "detail": "A reactive multi-persona incident and a proactive database expert, mapped for the workspaces pre-work."
+        }
+      ],
+      "insights": [
+        "Expertise is the bottleneck. The Data AI story is “the expertise your database team needs at scale” and “when data operations can’t wait for the expert”.",
+        "Web experiences must respect terminal habits. The log-analysis goal is to collect, filter and categorise log data in a way that solves the workflows users truly need.",
+        "Investigations lose context. The performance-drift brief asks users to separate volume growth from cost-per-execution growth, rank SQL statements and resume work without losing context.",
+        "Open gaps are explicit. The brief flags the customer-facing surface, supported devices and quantified targets as not yet confirmed."
+      ]
+    },
+    "define": {
+      "hmw": "How might we give every database team the judgement of their most experienced DBA, by surfacing evidence, ranking likely causes and proposing safe actions that a human approves?",
+      "finding": {
+        "label": "Framing questions I put to the squads",
+        "text": "What problem are we solving? What is the role of AI over the next three quarters, not only this release? How does AI help users and customers? If agents are in the workflow, what is their job? Which Assistant capabilities apply: knowledge, explain and summarise, recommendations or agentic flows? Who is the product manager for this use case?"
+      },
+      "friction": [
+        {
+          "title": "Expert dependency",
+          "text": "Diagnosis depends on a small number of experienced people."
+        },
+        {
+          "title": "Scattered evidence",
+          "text": "Logs, SQL statistics and capacity data live in different places."
+        },
+        {
+          "title": "Fragile hand-offs",
+          "text": "Investigations are hard to hand over or resume without losing context."
+        }
+      ],
+      "jobs": [
+        "When a deadlock or performance drift appears, show me the conflicting transactions or statements and the likely cause so I can decide quickly.",
+        "When an agent recommends an action, explain why and let me approve it before anything changes."
+      ]
+    },
+    "ideate": {
+      "northStar": "Report first, human approved: an AI insights panel next to a report grid that explains what the agent found, then a phased path from recommending to acting with approval.",
+      "shifts": [
+        {
+          "from": "Terminal panels and raw log files",
+          "to": "A web log-analysis tool to collect, filter, categorise and visualise log data",
+          "why": "Removes terminal-skill barriers and makes patterns visible."
+        },
+        {
+          "from": "Expert-only interpretation",
+          "to": "An AI insights panel that identifies conflicting transactions or fragmented objects and recommends actions",
+          "why": "Brings expert judgement to every team member."
+        },
+        {
+          "from": "Immediate automation",
+          "to": "Phased autonomy: report-only first (autonomous reorganisation phase one), then recommend, then act with approval",
+          "why": "Matches the customer trust ladder found in the operations research."
+        }
+      ],
+      "tradeoffs": "Kept phase one in report-only mode. Set limits for very large object lists and wildcards. Separated what the LLM generates from what is parsed from data so users know which content is AI-written."
+    },
+    "prototype": {
+      "intro": "Prototypes were built quickly, several with AI-assisted tools, and reviewed with product managers, engineers and customer-facing teams.",
+      "columns": [
+        "Artefact",
+        "Purpose",
+        "Outcome or feedback"
+      ],
+      "rows": [
+        [
+          "Log-analysis web prototype",
+          "Evaluate the workflow and dataset visualisations with users",
+          "Research plan in place to evaluate the workflow and visualisations with customers."
+        ],
+        [
+          "Deadlock log-analysis proof of concept",
+          "Show an agent that analyses deadlock logs and recommends fixes",
+          "Moved from proof of concept to completed UX in the October 2026 review."
+        ],
+        [
+          "SQL workload analysis proof of concept",
+          "Show an agent that finds bottlenecks and recommends query optimisations",
+          "Matches the SQL performance use case in the EMEA 2026 showcase."
+        ],
+        [
+          "EMEA 2026 HTML demos (both database families)",
+          "Offline demos that run without internet at the event",
+          "Reviewers asked for the chat interface and richer SQL data; the demos were updated and reviewed as “very professional and consistent”."
+        ],
+        [
+          "Performance-drift MVP brief (Sep 2026)",
+          "Define the investigation journey for the data advisor",
+          "Records user goals, business goals and open gaps."
+        ]
+      ],
+      "highlights": [
+        "Deadlock view that names the conflicting transactions and resources and suggests indexing or transaction-design fixes.",
+        "Reorganisation report that finds fragmented tables and indexes and recommends which objects to reorganise.",
+        "Exception list that curates records breaking defined rules for human review and action."
+      ]
+    },
+    "implement": {
+      "governance": "Weekly calls with the AI-for-Data product managers and stakeholders. Both the AI-for-Data product manager and the Platform product manager signed off the designs on their work items.",
+      "designSystem": "Designs follow the design system and UX platform guidelines. Shared Assistant principles apply to every Data use case, and licensing UX follows the November rule to hide unlicensed AI.",
+      "feedback": "A monthly review with product-management leadership tracks priority and UX allocation (30% per use case) so scope and capacity trade-offs stay visible.",
+      "extras": [
+        {
+          "title": "Scaling AI-native design beyond the product",
+          "items": [
+            "The Data design lead presented “UX design with an AI coding tool and AI prototyping” at the internal AI learning series (Jul 2026). R&D leadership called out the session as outstanding, with strong attendee feedback."
+          ]
+        }
+      ]
+    },
+    "leadership": {
+      "intro": "The Data product line is where the pace of AI delivery was fastest and the risk of inconsistency highest. My role was to keep the squads anchored on the customer problem, protect a consistent Assistant experience and make sure a small design team could carry three agentic use cases at once.",
+      "actions": [
+        {
+          "when": "Jun 2026",
+          "situation": "The autonomous reorganisation review focused on UI details without a shared view of the problem.",
+          "did": "Asked the squad to agree the problem, the role of AI over the next three quarters, the agents’ job and which Assistant capabilities apply.",
+          "result": "The group clarified that phase one is report-only and listed follow-ups on agent invocation and the AI insight tab scope."
+        },
+        {
+          "when": "May 2026",
+          "situation": "Customer-event demos had to work despite unstable event connectivity.",
+          "did": "Backed static HTML pages instead of design-tool demos, and asked the Data engineers for realistic content so the story and data fit.",
+          "result": "Demos for both database families delivered for review, with a recorded demo as backup."
+        },
+        {
+          "when": "Jul 2026",
+          "situation": "The Platform product manager saw misalignment in the Assistant designs for the data and operations products.",
+          "did": "Reaffirmed that the Assistant is part of the design system, recommended standard patterns across products and a guidelines session with the Data team, while backing the designer’s documented sign-offs.",
+          "result": "Shared principles agreed and designs confirmed as design-system aligned; new identity and patterns follow Brand and Legal clearance."
+        },
+        {
+          "when": "Mar–Oct 2026",
+          "situation": "Three agentic use cases competed for a part-time design allocation.",
+          "did": "Made UX allocation visible per project in the monthly review deck alongside product-management priority.",
+          "result": "All three use cases reached UX “Completed” in the October 2026 review."
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Problem-first coaching",
+          "text": "Redirected UI reviews to the customer problem and AI’s role."
+        },
+        {
+          "title": "Advocacy for the team",
+          "text": "Backed documented sign-offs while acknowledging late-introduced scope."
+        },
+        {
+          "title": "Pragmatic execution",
+          "text": "Chose offline HTML demos to remove event risk."
+        },
+        {
+          "title": "Capability building",
+          "text": "Enabled designers to prototype agentic flows with AI-assisted tools."
+        }
+      ],
+      "lessons": "The “Ask follow-up” flow arrived late and without a technical owner in the room, which left questions about duplicated content and chat space unanswered. Next: involve Platform engineering in design reviews for cross-product flows and settle shared patterns before use-case designs are signed off."
+    },
+    "outcomes": [
+      {
+        "outcome": "Three agentic use cases UX-complete",
+        "evidence": "Deadlock log analysis, autonomous reorganisation and the exception list show “Completed” in the October 2026 review, targeting the November release.",
+        "benefit": "Supports the first agentic AI release for the Data product line."
+      },
+      {
+        "outcome": "Customer-facing showcase",
+        "evidence": "Log-analysis and SQL performance demos prepared for the EMEA 2026 event; the autonomous reorganisation vision was part of the leadership presentation.",
+        "benefit": "Early customer reaction and pipeline interest."
+      },
+      {
+        "outcome": "Evidence from six design partners",
+        "evidence": "Six design-partner customers in AI-for-Data research, with an interim report.",
+        "benefit": "Roadmap confidence grounded in real workflows."
+      },
+      {
+        "outcome": "Consistent Assistant experience",
+        "evidence": "Designs aligned to the design system and shared Assistant principles.",
+        "benefit": "Lower rework and one coherent AI experience across the suite."
+      }
+    ],
+    "evidenceBase": "UX project priority reviews (Mar–Oct 2026) · customer design programme research update · performance-drift design brief · customer-event review threads · Assistant design-consistency thread · UI finalisation discussion",
+    "pullQuote": "Keep the squads anchored on the customer problem, not the UI details."
+  },
+  {
+    "id": "security-console-modernisation",
+    "category": "Security",
+    "categoryKey": "modernisation",
+    "title": "Security: Streaming & Management Console Modernisation",
+    "subtitle": "Replacing green-screen configuration with a visual, policy-driven experience built with design-partner customers",
+    "description": "Replacing green-screen configuration with a visual, policy-driven experience, co-created with customers.",
+    "summary": "The Security product line protects mainframe estates by streaming security-relevant data to the enterprise. The streaming product was configured through terminal panels, and the management console was widely seen by customers as intimidating and complex. I led UX for the modernisation of both: web-based policy management, flow-map visualisation and a UX audit of the new console, run as a co-creation programme with customers.",
+    "year": "2025–2026",
+    "duration": "May 2025 to present · customer-event prototype Jun 2025 · release planned for a later quarter",
+    "role": "UX leader for the Security product line: streaming web enablement, console re-platform, policy management and certificate management",
+    "team": "Three designers (one at 50%) · Research: one UX researcher · Interaction design partner",
+    "stakeholders": [
+      "Lead product manager",
+      "Product manager",
+      "Senior Manager of Product Development",
+      "Observability product manager",
       "VP of Product Management & Design"
     ],
     "metrics": [
       {
-        "label": "Design Validation",
-        "value": "6 Customers"
+        "value": "6",
+        "label": "Customers in the streaming concept test",
+        "detail": "Findings fed prioritised design changes"
       },
       {
-        "label": "Console Redesign",
-        "value": "Policy-Driven"
+        "value": "5",
+        "label": "Customers on the console panel",
+        "detail": "Discovery interviews with design partners"
+      },
+      {
+        "value": "100+",
+        "label": "Instances per policy deployment",
+        "detail": "Instance selection designed to scale"
       }
     ],
-    "leadershipPerspective": {
-      "executiveMandate": "Use customer evidence to make design decisions credible, protect quality when development moved ahead of design, and keep scarce capacity on highest-priority work.",
-      "strategicRole": "Supported UX audit to find usability gaps and design-system inconsistencies before development effort.",
-      "crossFunctionalSynergy": "Connected product management, R&D and design-system team early so design and engineering moved together.",
-      "teamLeadership": "Coached presenters and protected design files from last-minute unverified edits.",
-      "orgTransformation": "Transformed repeated terminal work into a streamlined, policy-driven web experience."
-    },
-    "designThinkingFlow": {
-      "phase1Discover": {
-        "overview": "Phase 1: Discover & Empathize — Customer Pain Points & Workflow Mapping.",
-        "researchAnalytics": [
-          {
-            "metric": "6+5 Customers",
-            "detail": "Studied streaming product and console panel."
-          }
-        ],
-        "userCohorts": [
-          "System Programmers",
-          "Record Owners"
-        ],
-        "keyInsights": [
-          "Terminal skills are a growing challenge in large environments.",
-          "Intimidating consoles encourage set-and-forget workarounds."
-        ]
-      },
-      "phase2Define": {
-        "coreProblemStatement": "How might we let a systems programmer see, build and deploy a streaming policy across an entire estate with confidence?",
-        "cognitiveFrictionPoints": [
-          "Repeated manual deployment",
-          "No estate-wide view",
-          "Persona split"
-        ],
-        "jobsToBeDone": [
-          "Build one policy and push it to every instance.",
-          "Show coverage and modification history to record owners."
-        ],
-        "mentalModelMisalignment": "Configuring systems one by one rather than reasoning about policies and coverage across the estate."
-      },
-      "phase3Ideate": {
-        "northStarVision": "Centralised, visual policy system with flow-map visualisation of running policies across all instances.",
-        "architecturalShifts": [
-          {
-            "from": "Terminal configuration on one system",
-            "to": "Centralised policy system with history",
-            "rationale": "Removes repeated manual steps and maintains an audit trail."
-          }
-        ],
-        "strategicTradeOffs": [
-          "Put clickable instance names on hold until scope was agreed; scaled for 100+ instances."
-        ]
-      },
-      "phase4Prototype": {
-        "validationApproach": "Streaming prototype for customer event (May 2025), concept tests and UX audit.",
-        "usabilityTestingMetrics": [
-          {
-            "test": "Console Validation",
-            "baseline": "Intimidating",
-            "prototype": "Flow-Map UI",
-            "gain": "Approved"
-          }
-        ],
-        "interactiveHighlights": [
-          "Flow-map estate view",
-          "Policy creation flow",
-          "Deployment and modification history"
-        ]
-      },
-      "phase5Implement": {
-        "governanceFramework": "Bi-monthly cloud and security prioritisation reviews aligning UX and R&D.",
-        "designSystemIntegration": "Design-system portfolio lead involved for developer framework training.",
-        "continuousFeedbackLoops": "Customer recruitment and validation serving as model for other modules."
-      }
-    },
-    "businessOutcomesAndROI": {
-      "roiMetrics": [
+    "discover": {
+      "intro": "The product manager’s brief for streaming web enablement (May 2025) summarised what customers had told the company. We paired it with a UX audit of the existing console and customer discovery interviews.",
+      "research": [
         {
-          "value": "6 Customers",
-          "label": "Streaming UX Validated",
-          "context": "Lower design risk and customer-approved direction."
+          "metric": "Green-screen flow",
+          "detail": "Build config on one system, download the file, upload it to every target system, repeat, then go live."
+        },
+        {
+          "metric": "6 + 5 customers",
+          "detail": "Six on the streaming product, five on the console panel, many of them the same organisations."
+        },
+        {
+          "metric": "UX audit",
+          "detail": "Heuristic review of the new console UI (Nov 2025) against human-factors principles and design-system consistency."
+        },
+        {
+          "metric": "Two personas",
+          "detail": "System programmer (installs and configures) and record owner, such as a mainframe security engineer."
         }
       ],
-      "commercialBenefits": [
-        "Reduced reliance on terminal skills in large environments."
-      ],
-      "operationalSavings": "Focused capacity on highest-value customer and product management demand."
+      "insights": [
+        "Rolling out changes in large environments takes significant effort, and terminal skills are a growing challenge.",
+        "It takes a lot of work to see everything running on each system, which encourages a “set and forget” approach and unused enhancements.",
+        "Different personas own different record areas, so the programme needs shared understanding between system programmers and record owners.",
+        "Customers find the current console intimidating and complex, and without their feedback the redesign risks missing real needs."
+      ]
     },
-    "leadershipTakeaway": "Enterprise security UX modernisation requires co-creation with customers and early alignment between design and engineering."
-  },
-  {
-    "id": "agentic-ai-experience",
-    "category": "AI EXPERIENCES",
-    "categoryKey": "ai",
-    "title": "Agentic AI Experience",
-    "subtitle": "Designing human-agent collaboration that customers can trust",
-    "description": "Designing human-agent collaboration that customers can trust.",
-    "detailedSummary": "As the company moved from AI chat to agents that can investigate and act on mission-critical mainframe systems, the experience question became: how much autonomy, shown how, with which safeguards? I led UX direction for that shift, from a cross-product AI experience framework to the November 2026 agentic release decisions and Agentic Workspaces programme.",
-    "visualType": "ai-ops",
-    "problemSpace": "Moving from AI chat to autonomous agents requires calibrated trust, transparent reasoning, and human-in-the-loop safeguards.",
-    "solution": "Designed a two-axis framework (conversational/embedded and assistive/agentic), adjustable autonomy modes (Ask, Assist, Agent), and risk-proportional friction.",
-    "keyOutcomes": [
-      "Cross-product AI experience framework",
-      "November 2026 release de-risked",
-      "Agentic Workspaces program launched"
-    ],
-    "role": "UX leader for agentic experience strategy and cross-product alignment (Platform, Ops and Data)",
-    "year": "2025–2026",
-    "duration": "2025 to present",
-    "teamComposition": "Assistant UX lead and three designers · Research: two UX researchers",
-    "stakeholders": [
-      "VP of Product Management & Design",
-      "Directors of PM",
-      "Architects",
-      "R&D Leaders"
-    ],
-    "metrics": [
-      {
-        "label": "Autonomy Frameworks",
-        "value": "2-Axis Model"
+    "define": {
+      "hmw": "How might we let a systems programmer see, build and deploy a streaming policy across an entire estate with confidence, while record owners can trust what is being streamed?",
+      "finding": {
+        "label": "Mental-model misalignment",
+        "text": "The product was configured one system at a time. Customers reason about policies and coverage across the whole estate (for example a security policy, a performance policy, a network policy) and want to see where each one is running."
       },
-      {
-        "label": "Target Task Success",
-        "value": "≥ 80%"
-      }
-    ],
-    "leadershipPerspective": {
-      "executiveMandate": "Agentic UX is a leadership problem before it is a design problem—turning open debates into recorded decisions.",
-      "strategicRole": "Authored end-to-end UX plan for Workspaces, phases, roles, and undated milestones.",
-      "crossFunctionalSynergy": "Facilitated cross-product alignment across Platform, Ops, and Data.",
-      "teamLeadership": "Proposed four big rocks in the AI initiative discussion and invited owners.",
-      "orgTransformation": "Reframed AI chat as a progression from chat to workflows to workspaces."
-    },
-    "designThinkingFlow": {
-      "phase1Discover": {
-        "overview": "Phase 1: Discover & Empathize — Customer Evidence on AI Trust, Maturity & Incident Workflows.",
-        "researchAnalytics": [
-          {
-            "metric": "3 Customers",
-            "detail": "On-site and remote customers studied."
-          }
-        ],
-        "userCohorts": [
-          "Operators",
-          "Systems Programmers"
-        ],
-        "keyInsights": [
-          "Trust is an adoption requirement.",
-          "Governance is the adoption bottleneck."
-        ]
-      },
-      "phase2Define": {
-        "coreProblemStatement": "How might we let customers delegate more to agents over time while keeping approval visible?",
-        "cognitiveFrictionPoints": [
-          "Fragmented surfaces",
-          "Expertise bottleneck"
-        ],
-        "jobsToBeDone": [
-          "Coordinated multi-product incident response.",
-          "Transparent evidence before agent action."
-        ],
-        "mentalModelMisalignment": "Individual product agents without suite-level workflow continuity."
-      },
-      "phase3Ideate": {
-        "northStarVision": "Agentic workspaces: persistent shared workspaces where humans and agents coordinate.",
-        "architecturalShifts": [
-          {
-            "from": "Single Ask AI chat",
-            "to": "Two-axis framework & adjustable autonomy",
-            "rationale": "Gives psychological safety and graduates confidence."
-          }
-        ],
-        "strategicTradeOffs": [
-          "Hidden unlicensed AI features rather than greyed-out options."
-        ]
-      },
-      "phase4Prototype": {
-        "validationApproach": "Two tracks: November 2026 release interaction rules and Agentic Workspaces validation.",
-        "usabilityTestingMetrics": [
-          {
-            "test": "Workflow Success",
-            "baseline": "Baseline",
-            "prototype": "Target ≥ 80%",
-            "gain": "Validated"
-          }
-        ],
-        "interactiveHighlights": [
-          "Adjustable autonomy dials",
-          "Progressive disclosure",
-          "Intent previews"
-        ]
-      },
-      "phase5Implement": {
-        "governanceFramework": "AI Experience Framework for naming, licensing, and failure behaviors.",
-        "designSystemIntegration": "Assistant identity and action-naming rules in design system.",
-        "continuousFeedbackLoops": "Customer design program and research run beneath every phase."
-      }
-    },
-    "businessOutcomesAndROI": {
-      "roiMetrics": [
+      "friction": [
         {
-          "value": "Framework",
-          "label": "One AI Experience",
-          "context": "Consolidated naming, licensing and failure behaviors."
+          "title": "Repeated manual deployment",
+          "text": "Every change is rebuilt and uploaded system by system."
+        },
+        {
+          "title": "No estate-wide view",
+          "text": "It is hard to know what is running where."
+        },
+        {
+          "title": "Persona split",
+          "text": "Admins configure what record owners need to approve."
         }
       ],
-      "commercialBenefits": [
-        "De-risked November 2026 release."
-      ],
-      "operationalSavings": "Clear bar for experience quality before delivery."
+      "jobs": [
+        "When I need to change what is streamed, let me build one policy and push it to every instance.",
+        "When a record owner asks what is being streamed, show me coverage and the modification history."
+      ]
     },
-    "leadershipTakeaway": "Agentic UX requires turning complex technical autonomy trade-offs into reliable, trusted governance frameworks.",
-    "demo": "autonomy"
-  },
-  {
-    "id": "genai-assistant",
-    "category": "AI EXPERIENCES",
-    "categoryKey": "ai",
-    "title": "Generative AI Assistant: Defining the GenAI Experience",
-    "subtitle": "From a GenAI vision in December 2022 to agentic capabilities and an agent marketplace",
-    "description": "From a GenAI vision in December 2022 to agentic capabilities and an agent marketplace.",
-    "detailedSummary": "When generative AI arrived in late 2022, the IT service and operations suite had no agreed experience model for it. I led early ideation, use case exploration, customer research, UX strategy and vision for GenAI capabilities. That direction became the foundation of the company’s GenAI features: summaries, insights, recommendations and conversation across workflows.",
-    "visualType": "ai-ops",
-    "problemSpace": "Lack of suite-wide experience model for GenAI when capabilities emerged in late 2022.",
-    "solution": "Woven GenAI into the workflow: a capability model (summarise, surface insights, recommend, converse, create, aggregate) delivered in context.",
-    "keyOutcomes": [
-      "Foundation for company GenAI features",
-      "Shared design language across ITSM and AIOps",
-      "Evolution into agent marketplace"
-    ],
-    "role": "UX leader for GenAI direction: ideation, use case exploration, customer research, UX strategy and vision",
-    "year": "2022–2025",
-    "duration": "Dec 2022 to 2025",
-    "teamComposition": "Six designers · Research: two UX researchers",
-    "stakeholders": [
-      "VP of R&D and UX",
-      "Senior Director of Product Design",
-      "Design-System Lead"
-    ],
-    "metrics": [
-      {
-        "label": "GenAI Foundation",
-        "value": "Suite-Wide"
-      },
-      {
-        "label": "Customer Research",
-        "value": "43+ Participants"
-      }
-    ],
-    "leadershipPerspective": {
-      "executiveMandate": "Set the direction early, turn it into reusable patterns, and keep work grounded in customer evidence.",
-      "strategicRole": "Led end-to-end UX strategy, design audits, prototypes and recurring customer research.",
-      "crossFunctionalSynergy": "Collaborated with engineering leaders and design-system portfolio leads.",
-      "teamLeadership": "Directed six product designers and two UX researchers.",
-      "orgTransformation": "Transformed individual AI features into shared patterns in the design system."
-    },
-    "designThinkingFlow": {
-      "phase1Discover": {
-        "overview": "Phase 1: Discover & Empathize — Use Case Exploration & Behavioural Data.",
-        "researchAnalytics": [
-          {
-            "metric": "Service-Desk Usability Test",
-            "detail": "Compared 3 chat and search designs."
-          },
-          {
-            "metric": "AIOps Research Rounds",
-            "detail": "Evaluated summary and timeline."
-          }
-        ],
-        "userCohorts": [
-          "IT Operators",
-          "Service Agents"
-        ],
-        "keyInsights": [
-          "Assistant is needed across the journey, not only in chat.",
-          "Trust depends on accuracy and editable output."
-        ]
-      },
-      "phase2Define": {
-        "coreProblemStatement": "How might we bring generative AI into service and operations workflows so people get summaries and recommendations in context?",
-        "cognitiveFrictionPoints": [
-          "Scattered information",
-          "Manual documentation"
-        ],
-        "jobsToBeDone": [
-          "Get a summary and related knowledge for a ticket.",
-          "Show likely cause and remediation steps."
-        ],
-        "mentalModelMisalignment": "Organising AI around prompts and answers rather than in-task workflow steps."
-      },
-      "phase3Ideate": {
-        "northStarVision": "GenAI woven into the workflow via a unified capability model in one design language.",
-        "architecturalShifts": [
-          {
-            "from": "Stand-alone chatbot",
-            "to": "Contextual GenAI summary boxes and insights",
-            "rationale": "Ties AI directly to the user task."
-          }
-        ],
-        "strategicTradeOffs": [
-          "Treated generated code as draft requiring human review."
-        ]
-      },
-      "phase4Prototype": {
-        "validationApproach": "Usability testing, remote interviews, prototype reviews and design audits.",
-        "usabilityTestingMetrics": [
-          {
-            "test": "Ticket Resolution",
-            "baseline": "Manual",
-            "prototype": "Summary & Auto-Note",
-            "gain": "Highly Received"
-          }
-        ],
-        "interactiveHighlights": [
-          "Situation summary & code wizard",
-          "Vulnerability remediation risk view",
-          "5 Whys Action Plan"
-        ]
-      },
-      "phase5Implement": {
-        "governanceFramework": "Design patterns documented for all products with legal disclaimers.",
-        "designSystemIntegration": "Delivered assistant concept, controls, and components.",
-        "continuousFeedbackLoops": "Research and product-analytics behavior data tied to design."
-      }
-    },
-    "businessOutcomesAndROI": {
-      "roiMetrics": [
+    "ideate": {
+      "northStar": "A centralised, visual policy system: policies are created once, tagged, deployed to many instances and understood through a flow map of the whole estate.",
+      "shifts": [
         {
-          "value": "Foundation",
-          "label": "Company GenAI Story",
-          "context": "One coherent GenAI story across service and operations."
+          "from": "Terminal configuration on one system, repeated by hand",
+          "to": "Centralised policy system: create, view, edit and clone policies, with deployment and modification history",
+          "why": "Removes repeated manual steps and keeps an audit trail."
+        },
+        {
+          "from": "Text-only configuration",
+          "to": "Flow-map visualisation of running policies across all instances",
+          "why": "The most anticipated feature in customer sessions; makes the estate visible."
+        },
+        {
+          "from": "Colour-only encoding",
+          "to": "Accessible alternatives such as icons alongside colour",
+          "why": "Keeps the flow map usable for everyone."
+        },
+        {
+          "from": "Per-instance status",
+          "to": "Configuration dashboard with instance and policy lists, a policy-type column (Security, Performance, Network) and instance status",
+          "why": "Gives an at-a-glance view and easier filtering."
         }
       ],
-      "commercialBenefits": [
-        "Faster remediation and better security posture."
+      "tradeoffs": "Put clickable instance names and extra filters on hold until scope was agreed. Designed instance selection to scale to more than 100 instances. Defaulted record-type selection to include all sub-types, with an option to deselect. Audited the console before development progressed, to avoid wasted effort."
+    },
+    "prototype": {
+      "intro": "Prototypes were reviewed with product management, R&D and subject-matter experts, then tested with design-partner customers.",
+      "columns": [
+        "Artefact",
+        "Method",
+        "What we learned or decided"
       ],
-      "operationalSavings": "Estimated over 10,000 hours/year saved in IT, HR, and finance."
-    },
-    "leadershipTakeaway": "Defining a new technology experience requires early vision paired with rigorous, evidence-led pattern creation."
-  },
-  {
-    "id": "data-management-ai",
-    "category": "ENTERPRISE UX",
-    "categoryKey": "enterprise",
-    "title": "Data Management: Agentic AI for Database Operations",
-    "subtitle": "Bringing expert-level diagnosis to database teams without removing human control",
-    "description": "Bringing expert-level diagnosis to database teams without removing human control.",
-    "detailedSummary": "The Data product line covers relational and hierarchical database solutions. As squads moved to agentic AI, I led UX direction for three use cases (deadlock log analyser, autonomous reorganisation, exception list), the web log-analysis experience replacing terminal-era workflows, and 2026 customer-event demonstrations.",
-    "visualType": "enterprise-platform",
-    "problemSpace": "Database diagnosis required rare expert knowledge and relied on cumbersome terminal-era workflows.",
-    "solution": "Designed an AI insights panel next to a report grid, enabling log analysis, deadlock diagnosis, and phased autonomy from report-only to approval-gated action.",
-    "keyOutcomes": [
-      "3 Agentic use cases UX-complete",
-      "Web log-analysis experience replacing terminals",
-      "EMEA 2026 customer event showcases"
-    ],
-    "role": "UX leader for Data product line: agentic AI use cases, log analysis, Assistant consistency and demos",
-    "year": "2025–2026",
-    "duration": "Nov 2025 to present",
-    "teamComposition": "Design lead for Data product line · Research: one UX researcher",
-    "stakeholders": [
-      "Product Managers for Database Families",
-      "Senior Manager of Product Development",
-      "Platform PM"
-    ],
-    "metrics": [
-      {
-        "label": "Agentic Use Cases",
-        "value": "3 Completed"
-      },
-      {
-        "label": "Design Partners",
-        "value": "6 Customers"
-      }
-    ],
-    "leadershipPerspective": {
-      "executiveMandate": "Keep squads anchored on the customer problem, protect a consistent Assistant experience, and carry three agentic use cases.",
-      "strategicRole": "Guided problem framing, clarifying phase-one report-only boundaries and defining AI roles.",
-      "crossFunctionalSynergy": "Partnered with product managers and Data engineers, backing offline HTML demos to remove event connectivity risk.",
-      "teamLeadership": "Enabled designers to prototype agentic flows with AI-assisted tools.",
-      "orgTransformation": "Bridged terminal habits with modern web-based AI data visualization."
-    },
-    "designThinkingFlow": {
-      "phase1Discover": {
-        "overview": "Phase 1: Discover & Empathize — Design-Partner Discovery & Terminal Workflow Study.",
-        "researchAnalytics": [
-          {
-            "metric": "6 Customers",
-            "detail": "Studied across relational and hierarchical databases."
-          }
+      "rows": [
+        [
+          "Streaming prototype for the customer event (May 2025)",
+          "Prototype review with product management, R&D and subject-matter experts",
+          "Corrected the data and locked the design file so the demo stayed intact."
         ],
-        "userCohorts": [
-          "Database Administrators",
-          "Database Engineers"
+        [
+          "Streaming concept test (2026)",
+          "Concept test with six customers",
+          "Findings fed prioritised design changes; the successful programme let the team start console research immediately."
         ],
-        "keyInsights": [
-          "Expertise is the bottleneck.",
-          "Web experiences must respect terminal habits."
+        [
+          "Two prioritised features (Jan 2026)",
+          "Review with product management, R&D and interaction design",
+          "Agreed updates: sub-system ID, primary and alternate destination ID, an “Instance status” label and a modification history view."
+        ],
+        [
+          "Console discovery (2026)",
+          "Interviews with design-partner customers",
+          "Four sessions completed and two more interested by June 2026; a second phase will test more mature designs with the same customers."
+        ],
+        [
+          "Console UX audit (Nov 2025)",
+          "Human-factors and heuristic review",
+          "Issues categorised by impact and effort; small changes already in motion; exploring a way for UX to validate changes before merge."
         ]
-      },
-      "phase2Define": {
-        "coreProblemStatement": "How might we give every database team the judgement of their most experienced DBA?",
-        "cognitiveFrictionPoints": [
-          "Expert dependency",
-          "Scattered evidence",
-          "Fragile hand-offs"
-        ],
-        "jobsToBeDone": [
-          "Deadlock and performance drift analysis with likely causes.",
-          "Approve AI-recommended database actions safely."
-        ],
-        "mentalModelMisalignment": "Treating AI as immediate automation rather than phased human-approved assistance."
-      },
-      "phase3Ideate": {
-        "northStarVision": "Report first, human approved: AI insights panel next to a report grid.",
-        "architecturalShifts": [
-          {
-            "from": "Terminal panels and raw log files",
-            "to": "Web log-analysis tool with dataset visualisations",
-            "rationale": "Removes terminal-skill barriers and makes patterns visible."
-          }
-        ],
-        "strategicTradeOffs": [
-          "Kept phase one in report-only mode with strict limits on object lists."
-        ]
-      },
-      "phase4Prototype": {
-        "validationApproach": "AI-built prototypes, offline HTML demos for EMEA 2026 event, and stakeholder reviews.",
-        "usabilityTestingMetrics": [
-          {
-            "test": "Log Analysis Workflow",
-            "baseline": "Terminal",
-            "prototype": "Web Dashboard",
-            "gain": "Validated"
-          }
-        ],
-        "interactiveHighlights": [
-          "Deadlock view with conflicting transactions",
-          "Reorganisation report",
-          "Exception list curation"
-        ]
-      },
-      "phase5Implement": {
-        "governanceFramework": "Weekly AI-for-Data reviews with product managers and formal sign-offs.",
-        "designSystemIntegration": "Designs follow design system and shared Assistant principles.",
-        "continuousFeedbackLoops": "Monthly review tracking priority and UX allocation."
-      }
+      ],
+      "highlights": [
+        "Flow-map view that shows running policies across every instance, with accessibility alternatives to colour.",
+        "Policy creation flow: basic details, switches and record types, then systems, partitions and multiple instances.",
+        "Deployment and modification history for policies and instances."
+      ]
     },
-    "businessOutcomesAndROI": {
-      "roiMetrics": [
+    "implement": {
+      "governance": "A bi-monthly cloud and security prioritisation review aligns UX design and research to product-management priorities, with decisions recorded (for example, one module removed from the board and certificate-management research prioritised).",
+      "designSystem": "In January 2026 product management requested a UX redesign kick-off for the policy-management module. I involved the design-system portfolio lead so R&D developers could start design-system and framework training.",
+      "feedback": "Customers asked to see designs later said yes enthusiastically, which made follow-up recruitment faster. The streaming programme is now the model for the console and certificate management."
+    },
+    "leadership": {
+      "intro": "The Security line was a small, shared team supporting several initiatives. Leadership meant using customer evidence to make design decisions credible, protecting quality when development moved ahead of design, and keeping scarce capacity on the highest-priority work.",
+      "actions": [
         {
-          "value": "3 Use Cases",
-          "label": "Agentic Workflows",
-          "context": "Deadlock analysis, reorganisation and exception list UX-complete."
+          "when": "May 2025",
+          "situation": "The streaming demo for the customer event had tight timelines and data inaccuracies.",
+          "did": "Passed the product manager’s overview and mock-up requests to the designers, led the follow-up with product management, R&D and experts and asked for the design file to be locked once approved. Offered to coach presenters on the flow.",
+          "result": "A demo-ready prototype with corrected data, protected from last-minute edits."
+        },
+        {
+          "when": "Nov 2025",
+          "situation": "Development was already revamping the console UI.",
+          "did": "Supported a UX audit to find usability gaps and design-system inconsistencies before more effort was spent. The team is exploring a workflow for UX to validate changes before merge.",
+          "result": "Issues prioritised by impact and effort; the audit was shared with senior leadership as an example of design improving product experience."
+        },
+        {
+          "when": "Jan 2026",
+          "situation": "Product management asked UX to redesign the policy-management module and needed design-system training for developers.",
+          "did": "Looped in the design-system portfolio lead so training and design could start together.",
+          "result": "Training resources shared with the developers and the design kick-off planned."
+        },
+        {
+          "when": "Apr 2026",
+          "situation": "The team needed confidence in the streaming design decisions.",
+          "did": "Noted that six customers give a strong foundation for collecting inputs and raise confidence in the designs.",
+          "result": "Insights from six customer sessions planned into the next iteration of the first two MVP features."
+        },
+        {
+          "when": "Jun 2026",
+          "situation": "Limited shared UX capacity and shifting business priorities across cloud and security.",
+          "did": "Took part in the prioritisation review to agree what to pause and what to start.",
+          "result": "One module paused, certificate-management research prioritised, a console design-evaluation phase added."
         }
       ],
-      "commercialBenefits": [
-        "Early customer reaction and pipeline interest at EMEA 2026."
-      ],
-      "operationalSavings": "Consistent Assistant experience across the suite."
-    },
-    "leadershipTakeaway": "Data UX transformation requires respecting expert terminal habits while introducing phased, trusted agentic intelligence."
-  },
-  {
-    "id": "ami-platform",
-    "category": "AI EXPERIENCES",
-    "categoryKey": "ai",
-    "title": "AMI Assistant & Platform Experience",
-    "subtitle": "One consistent, trustworthy AI front door across workflows and products",
-    "description": "One consistent, trustworthy AI front door across workflows and products.",
-    "detailedSummary": "AMI (Assistant & Management Interface) is the unified AI front door across the company’s enterprise portfolio. I led UX direction for the platform experience, multi-product Assistant consistency, agentic workflow integration, and design governance for the 2026 releases.",
-    "visualType": "ai-ops",
-    "problemSpace": "Multiple AI capabilities across different products risked fragmenting the user experience and eroding trust.",
-    "solution": "A cohesive AI front door with consistent invocation patterns, transparent reasoning, and adjustable autonomy dials.",
-    "keyOutcomes": [
-      "Unified AI experience across 4 product lines",
-      "Assistant design patterns adopted portfolio-wide",
-      "Validated with enterprise design partners"
-    ],
-    "role": "UX leader for AMI platform strategy and cross-suite AI experience consistency",
-    "year": "2025–2026",
-    "duration": "2025 to present",
-    "teamComposition": "Four designers · Research: two UX researchers",
-    "stakeholders": [
-      "VP of Product Management & Design",
-      "R&D Directors",
-      "Platform Architects"
-    ],
-    "metrics": [
-      {
-        "label": "Product Lines",
-        "value": "4 Suites"
-      },
-      {
-        "label": "Design Partners",
-        "value": "12 Customers"
-      }
-    ],
-    "leadershipPerspective": {
-      "executiveMandate": "Establish a unified AI experience that feels native across all products while maintaining rigorous trust and governance.",
-      "strategicRole": "Defined portfolio-wide AI interaction paradigms and governance rules.",
-      "crossFunctionalSynergy": "Bridged AI research, R&D engineering, and product management.",
-      "teamLeadership": "Mentored design leads across product suites.",
-      "orgTransformation": "Shifted product teams from isolated feature silos to a unified platform ecosystem."
-    },
-    "designThinkingFlow": {
-      "phase1Discover": {
-        "overview": "Phase 1: Discover & Empathize — Cross-Product Workflow & Trust Mapping.",
-        "researchAnalytics": [
-          {
-            "metric": "12 Customers",
-            "detail": "Evaluated multi-product AI touchpoints."
-          }
-        ],
-        "userCohorts": [
-          "Enterprise IT Directors",
-          "Operators"
-        ],
-        "keyInsights": [
-          "Consistency breeds trust.",
-          "Users demand predictable guardrails."
-        ]
-      },
-      "phase2Define": {
-        "coreProblemStatement": "How might we deliver a unified AI assistant experience across diverse enterprise products without cognitive friction?",
-        "cognitiveFrictionPoints": [
-          "Inconsistent UI patterns",
-          "Unpredictable agent behavior"
-        ],
-        "jobsToBeDone": [
-          "Interact with AI seamlessly across products.",
-          "Understand reasoning before action."
-        ],
-        "mentalModelMisalignment": "Treating AI as a standalone chatbot rather than an embedded capability."
-      },
-      "phase3Ideate": {
-        "northStarVision": "One trustworthy AI front door with consistent invocation and graduated autonomy.",
-        "architecturalShifts": [
-          {
-            "from": "Siloed product chatbots",
-            "to": "Unified AMI platform experience",
-            "rationale": "Ensures predictable, cohesive user mental models."
-          }
-        ],
-        "strategicTradeOffs": [
-          "Standardized assistant chrome across diverse product contexts."
-        ]
-      },
-      "phase4Prototype": {
-        "validationApproach": "Interactive prototyping, user testing with 12 enterprise customers, and executive reviews.",
-        "usabilityTestingMetrics": [
-          {
-            "test": "Cross-Product Consistency",
-            "baseline": "Low",
-            "prototype": "Unified AMI",
-            "gain": "High Approval"
-          }
-        ],
-        "interactiveHighlights": [
-          "Universal assistant drawer",
-          "Contextual prompt triggers",
-          "Autonomy status indicators"
-        ]
-      },
-      "phase5Implement": {
-        "governanceFramework": "Cross-suite design governance and component design system integration.",
-        "designSystemIntegration": "AMI components baked into enterprise design system.",
-        "continuousFeedbackLoops": "Continuous telemetry and customer advisory council reviews."
-      }
-    },
-    "businessOutcomesAndROI": {
-      "roiMetrics": [
+      "capabilities": [
         {
-          "value": "4 Suites",
-          "label": "Unified Experience",
-          "context": "Consistent AI interaction model portfolio-wide."
+          "title": "Customer co-creation at scale",
+          "text": "Turned one successful customer programme into a repeatable model for further products."
+        },
+        {
+          "title": "Quality protection",
+          "text": "Audited and validated before rework became expensive."
+        },
+        {
+          "title": "Prioritisation under constraint",
+          "text": "Made trade-offs explicit with product managers across cloud and security."
+        },
+        {
+          "title": "Enabling partners",
+          "text": "Connected product management, R&D and the design-system team early so design and engineering moved together."
         }
       ],
-      "commercialBenefits": [
-        "Accelerated cross-product adoption."
-      ],
-      "operationalSavings": "Reduced redundant design and engineering effort."
+      "lessons": "Development had begun the console revamp before design evidence existed, so the UX audit had to retrofit quality. Next: start research and design in parallel with engineering for certificate management, including agentic scenarios and customers’ willingness to accept autonomy."
     },
-    "leadershipTakeaway": "Unified AI experiences require rigorous architectural governance and unwavering commitment to user trust."
+    "outcomes": [
+      {
+        "outcome": "Streaming web UX validated with six customers",
+        "evidence": "Concept test complete; the programme led straight into the console programme.",
+        "benefit": "Lower design risk and a customer-approved direction before release."
+      },
+      {
+        "outcome": "Policy-driven configuration replaces repeated terminal work",
+        "evidence": "Centralised policies, flow map, history and dashboard designed and prioritised.",
+        "benefit": "Less effort to roll out changes in large environments and reduced reliance on terminal skills."
+      },
+      {
+        "outcome": "Console direction grounded in evidence",
+        "evidence": "Four discovery sessions complete, five customers on the panel, UX audit completed.",
+        "benefit": "A modernised UI that addresses “intimidating and complex”."
+      },
+      {
+        "outcome": "Evidence-based prioritisation",
+        "evidence": "One module paused, certificate management prioritised, release re-planned to a later quarter while UX is nearly complete.",
+        "benefit": "Capacity focused on the work with the strongest customer and product-management demand."
+      }
+    ],
+    "evidenceBase": "product-manager overview brief (May 2025) · prototype review (May 2025) · console UX audit (Nov 2025) · design review threads (Jan–Feb 2026) · UX prioritisation notes · cloud and security prioritisation review notes (Jun and Aug 2026) · console discovery research plan",
+    "pullQuote": "Use customer evidence to make design decisions credible, and protect quality when development moves ahead of design."
   }
 ]

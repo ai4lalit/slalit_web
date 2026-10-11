@@ -24,7 +24,10 @@ Single-page app with hash routing, light and dark themes, no framework and no ru
 content/                 ← edit these to change what the site says
   site.json              page copy: hero, stats, section headings, about, résumé, contact, footer
   profile.json           name, email, LinkedIn, location
-  case-studies.json      the 5 case studies (order here = order on the site)
+  case-studies.json      the 5 case studies (order here = order on the site; first one is featured).
+                         Each has: summary, metrics, discover/define/ideate/prototype/implement (+ optional evolve),
+                         leadership (intro, actions, capabilities, lessons), outcomes, evidenceBase, pullQuote.
+                         Confidential: keep product and people names out; use roles and generic names.
   articles.json          the 10 essays
   career.json            career timeline steps (isMilestone: true = teal milestone)
   leadership-pillars.json

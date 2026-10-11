@@ -54,10 +54,12 @@
   "sections": {
     "work": {
       "eyebrow": "Selected work",
-      "title": "Designing trust, intelligence and scale across the enterprise",
+      "title": "Designing trust, intelligence and scale across an enterprise software portfolio",
       "pageTitle": "Selected work",
-      "pageLede": "Five case studies on UX leadership, product architecture and enterprise AI transformation across Platform, Agentic AI, GenAI, Data and Security.",
-      "homeCount": 3
+      "pageLede": "Five case studies from four years of UX leadership, 2022 to 2026, across Platform, Agentic AI, Generative AI, Data and Security.",
+      "homeCount": 3,
+      "introLabel": "Leadership at a glance",
+      "intro": "Over four years I moved from leading product design for IT operations management to leading user experience for a multi-product mainframe portfolio. These case studies show how the UX team I lead turned customer evidence into AI-ready experiences across the GenAI, Platform, Data and Security product lines, and how I led the people, decisions and cross-functional alignment behind them. Product names are anonymised."
     },
     "autonomy": {
       "eyebrow": "Try the framework",
@@ -101,7 +103,7 @@
       "title": "Hi, I’m Lalit. I design where technology, business and people meet.",
       "paragraphs": [
         "Over a quarter century in product experience design, I’ve focused on **enterprise UX transformation**: modernizing complex, mission-critical platforms without disrupting the business.",
-        "Today I lead UX across the AMI product portfolio, championing **human-centered AI** and building teams that make design a strategic driver of growth."
+        "Today I lead user experience for a multi-product mainframe portfolio, championing **human-centered AI** and building teams that make design a strategic driver of growth."
       ],
       "facts": [
         [
@@ -110,7 +112,7 @@
         ],
         [
           "4",
-          "AMI product lines"
+          "product lines in the portfolio"
         ],
         [
           "Pune",
@@ -157,29 +159,29 @@
         "leadership"
       ]
     ],
-    "currentRole": "Senior Manager, User Experience, leading UX across the AMI product portfolio.",
+    "currentRole": "Senior Manager, User Experience, leading UX for a multi-product enterprise mainframe portfolio.",
     "portfolio": [
       [
-        "AMI Ops",
-        "Operations"
+        "Operations",
+        "IT operations"
       ],
       [
-        "AMI Data",
-        "Database"
+        "Data",
+        "Database management"
       ],
       [
-        "AMI DevX",
+        "DevX",
         "Developer experience"
       ],
       [
-        "AMI Cloud",
-        "Platform"
+        "Cloud",
+        "Cloud platform"
       ]
     ]
   },
   "resume": {
     "title": "Senior Product Experience & UX Transformation Leader",
-    "currentRole": "Senior Manager, User Experience · AMI product portfolio",
+    "currentRole": "Senior Manager, User Experience · multi-product enterprise software portfolio",
     "summary": "Product experience and UX leader with 25+ years guiding enterprise modernization, AI product innovation and cross-functional design excellence. Translates complex technical architectures into human-centered platforms that customers trust and adopt."
   },
   "contact": {

@@ -95,7 +95,7 @@ function secHead(eyebrow, title, right){
 function workCard(p, feature){
   const m = p.metrics[0] || {};
   return `<a class="wcard${feature ? " feature" : ""}" href="#case.${p.id}">
-    <div class="wcover"><span class="dot"></span><span class="cat">${esc(nice(p.category))}</span>
+    <div class="wcover"><span class="dot"></span><span class="cat">${esc(p.category)}</span>
       <div class="metric"><b>${esc(m.value || p.year)}</b><span>${esc(m.label || "")}</span></div></div>
     <div class="wbody"><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
       <div class="go"><span>${esc(p.year)}</span><b>Read case study ${I.arrow}</b></div></div>
@@ -207,7 +207,7 @@ function autonomyDemo(){
       <div class="dial-meter"><div class="meter"><span>Agent autonomy</span><span class="bar"><i id="mA"></i></span><span class="v" id="mAv"></span></div>
         <div class="meter"><span>Human checkpoints</span><span class="bar amber"><i id="mH"></i></span><span class="v" id="mHv"></span></div></div>
     </div>
-    <div class="console" aria-live="polite"><div class="console-bar"><span class="dots"><i></i><i></i><i></i></span><span>AMI ASSISTANT · DATA</span><span class="mode-pill" id="modePill">ASK</span></div><div class="console-body" id="consoleBody"></div></div>
+    <div class="console" aria-live="polite"><div class="console-bar"><span class="dots"><i></i><i></i><i></i></span><span>AI ASSISTANT · DATA</span><span class="mode-pill" id="modePill">ASK</span></div><div class="console-body" id="consoleBody"></div></div>
     </div></section>`;
 }
 const MODES = [
@@ -232,91 +232,87 @@ function setMode(i){
 
 /* WORK INDEX */
 function viewWork(){
-  const counts = {all:DATA.projects.length, ai:DATA.projects.filter(p=>p.categoryKey==="ai").length, enterprise:DATA.projects.filter(p=>p.categoryKey==="enterprise").length};
-  const f = store.get("ls-workfilter","all");
-  return pageHead("", md(S.sections.work.pageTitle), md(S.sections.work.pageLede), "work") + `
-  <section class="sec" style="padding-top:40px"><div class="wrap">
-    <div class="toolbar"><div class="filters" role="group" aria-label="Filter case studies">
-      ${[["all","All"],["ai","AI experiences"],["enterprise","Enterprise UX"]].map(([k,l]) => `<button type="button" class="chip" data-wf="${k}" aria-pressed="${f===k}">${l}<span class="n">${counts[k]}</span></button>`).join("")}
-    </div><span class="mono">2022–2026</span></div>
-    <div class="cards" id="workList"></div>
+  const W = S.sections.work;
+  return pageHead("", md(W.pageTitle), md(W.pageLede), "work") + `
+  <section class="sec" style="padding-top:clamp(40px,5vw,64px)"><div class="wrap">
+    ${W.intro ? `<div class="work-intro"><span class="eyebrow">${md(W.introLabel || "")}</span><p>${md(W.intro)}</p></div>` : ""}
+    <div class="cards" id="workList">${workCards(DATA.projects, true)}</div>
   </div></section>${aboutBand()}`;
-}
-function renderWorkList(f){
-  const list = f === "all" ? DATA.projects : DATA.projects.filter(p => p.categoryKey === f);
-  $("#workList").innerHTML = workCards(list, f === "all");
-  $$("[data-wf]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.wf === f)));
-  store.set("ls-workfilter", f);
 }
 
 /* CASE STUDY */
-const PHASES = [["phase1Discover","Discover"],["phase2Define","Define"],["phase3Ideate","Ideate"],["phase4Prototype","Prototype"],["phase5Implement","Implement"]];
-function phasePanel(p, i){
-  const ph = p.designThinkingFlow[PHASES[i][0]];
-  const li = a => `<ul>${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
-  if (i===0) return `<p class="ov">${esc(ph.overview.replace(/^Phase \d: /,""))}</p><div class="kv">
-      <div><h4>Research</h4><ul>${ph.researchAnalytics.map(r => `<li><b>${esc(r.metric)}</b> — ${esc(r.detail)}</li>`).join("")}</ul></div>
-      <div><h4>Who we studied</h4>${li(ph.userCohorts)}</div>
-      <div class="wide"><h4>Key insights</h4>${li(ph.keyInsights)}</div></div>`;
-  if (i===1) return `<div class="problem-q"><span>How might we…</span>${esc(ph.coreProblemStatement.replace(/^How might we /i,"").replace(/^./, c=>c))}</div><div class="kv">
-      <div><h4>Friction points</h4>${li(ph.cognitiveFrictionPoints)}</div>
-      <div><h4>Jobs to be done</h4>${li(ph.jobsToBeDone)}</div>
-      <div class="wide"><h4>Mental-model mismatch</h4><p>${esc(ph.mentalModelMisalignment)}</p></div></div>`;
-  if (i===2) return `<p class="ov"><span class="mono" style="color:var(--accent);display:block;margin-bottom:8px">North star</span>${esc(ph.northStarVision)}</p>
-      ${ph.architecturalShifts.map(s => `<div class="shift"><div class="from">${esc(s.from)}</div>${I.arrow}<div class="to">${esc(s.to)}</div></div><p class="shift-why">${esc(s.rationale)}</p>`).join("")}
-      <div class="kv" style="margin-top:18px"><div class="wide"><h4>Trade-offs we chose</h4>${li(ph.strategicTradeOffs)}</div></div>`;
-  if (i===3) return `<p class="ov">${esc(ph.validationApproach)}</p>
-      <div class="scroll-x"><table class="test-table"><thead><tr><th>Test</th><th>Baseline</th><th>Prototype</th><th>Result</th></tr></thead><tbody>
-      ${ph.usabilityTestingMetrics.map(t => `<tr><td>${esc(t.test)}</td><td>${esc(t.baseline)}</td><td>${esc(t.prototype)}</td><td>${esc(t.gain)}</td></tr>`).join("")}</tbody></table></div>
-      <div class="kv" style="margin-top:18px"><div class="wide"><h4>Prototype highlights</h4>${li(ph.interactiveHighlights)}</div></div>`;
-  return `<div class="kv"><div class="wide"><h4>Governance</h4><p>${esc(ph.governanceFramework)}</p></div>
-      <div><h4>Design-system integration</h4><p>${esc(ph.designSystemIntegration)}</p></div>
-      <div><h4>Feedback loops</h4><p>${esc(ph.continuousFeedbackLoops)}</p></div></div>`;
+const tbl = (cols, rows) => `<div class="scroll-x"><table class="cs-table"><thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map((c,i) => `<td${i===0 ? ' class="k"' : ""}>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+const ul = a => `<ul class="cs-list">${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+function casePhases(p){
+  const ph = [["discover","Discover"],["define","Define"],["ideate","Ideate"],["prototype","Prototype"],["implement","Implement"]];
+  if (p.evolve) ph.push(["evolve","Evolve"]);
+  return ph.filter(([k]) => p[k]);
+}
+function phasePanel(p, key){
+  const x = p[key];
+  if (key === "discover") return `<p class="ov">${esc(x.intro)}</p>
+    <div class="facts">${x.research.map(r => `<div><b>${esc(r.metric)}</b><p>${esc(r.detail)}</p></div>`).join("")}</div>`;
+  if (key === "define") return `${x.finding ? `<div class="note"><b>${esc(x.finding.label)}</b><p>${esc(x.finding.text)}</p></div>` : ""}
+    <div class="kv"><div><h4>Friction</h4><ul class="cs-list">${x.friction.map(f => `<li><b>${esc(f.title)}.</b> ${esc(f.text)}</li>`).join("")}</ul></div>
+    <div><h4>Jobs to be done</h4>${ul(x.jobs)}</div></div>`;
+  if (key === "ideate") return `<p class="ov"><span class="lbl">North star</span>${esc(x.northStar)}</p>
+    <div class="shifts">${x.shifts.map(s => `<div class="shift-row"><div class="from">${esc(s.from)}</div><span class="arw">${I.arrow}</span><div class="to">${esc(s.to)}</div><p class="why">${esc(s.why)}</p></div>`).join("")}</div>
+    ${x.pillars ? `<h4 class="sub-h">Four pillars under every AI feature</h4><div class="pillar4">${x.pillars.map((q,i) => `<div><span class="n">${i+1}</span><b>${esc(q.name)}</b><p>${esc(q.purpose)}</p><p class="muted">${esc(q.principles)}</p></div>`).join("")}</div>` : ""}
+    <div class="note"><b>Trade-offs we chose</b><p>${esc(x.tradeoffs)}</p></div>`;
+  if (key === "prototype") return `<p class="ov">${esc(x.intro)}</p>
+    ${x.title ? `<h4 class="sub-h">${esc(x.title)}</h4>` : ""}${tbl(x.columns, x.rows)}
+    ${x.highlights ? `<h4 class="sub-h">Prototype highlights</h4><div class="hl3">${x.highlights.map(h => `<p>${esc(h)}</p>`).join("")}</div>` : ""}
+    ${(x.extras || []).map(e => `<h4 class="sub-h">${esc(e.title)}</h4>${e.rows ? tbl(e.columns, e.rows) : `<div class="note"><p>${esc(e.text)}</p></div>`}`).join("")}`;
+  if (key === "implement") return `<div class="kv3"><div><h4>Governance</h4><p>${esc(x.governance)}</p></div><div><h4>Design system</h4><p>${esc(x.designSystem)}</p></div><div><h4>Continuous feedback</h4><p>${esc(x.feedback)}</p></div></div>
+    ${(x.extras || []).map(e => `<h4 class="sub-h">${esc(e.title)}</h4>${ul(e.items)}`).join("")}`;
+  if (key === "evolve") return `<p class="ov">${esc(x.title)}</p>${tbl(x.columns, x.rows)}`;
+  return "";
 }
 function viewCase(id){
   const i = projIdx(id); if (i < 0) return viewNotFound();
   const p = DATA.projects[i], prev = DATA.projects[(i - 1 + DATA.projects.length) % DATA.projects.length], next = DATA.projects[(i + 1) % DATA.projects.length];
-  const L = p.leadershipPerspective, R = p.businessOutcomesAndROI;
-  const toc = [["cs-overview","Overview"], ...(p.demo === "autonomy" ? [["cs-demo","Try the framework"]] : []), ["cs-process","Design process"],["cs-leadership","Leadership"],["cs-outcomes","Outcomes"],["cs-takeaway","Takeaway"]];
-  return `<header class="cs-hero"><div class="gridbg"></div><div class="wrap">
+  const L = p.leadership, phases = casePhases(p);
+  const toc = [["cs-overview","Overview"], ...(p.demo === "autonomy" ? [["cs-demo","Try the framework"]] : []), ["cs-process","Design process"],["cs-leadership","Leadership"],["cs-outcomes","Outcomes"]];
+  return `<header class="cs-hero"><div class="wrap">
     <nav class="crumb" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#work">Work</a><span aria-hidden="true">/</span><span>Case ${i+1} of ${DATA.projects.length}</span></nav>
-    <div style="margin-top:24px"><span class="eyebrow">${esc(nice(p.category))} · ${esc(p.year)}</span></div>
+    <div style="margin-top:24px"><span class="eyebrow">${esc(p.category)} · ${esc(p.year)}</span></div>
     <h1 class="reveal">${esc(p.title)}</h1>
     <p class="sub reveal" style="animation-delay:.06s">${esc(p.subtitle)}</p>
     <dl class="cs-meta reveal" style="animation-delay:.12s">
       <div><dt>Role</dt><dd>${esc(p.role)}</dd></div>
       <div><dt>Timeline</dt><dd>${esc(p.duration)}</dd></div>
-      <div><dt>Team</dt><dd>${esc(p.teamComposition)}</dd></div>
+      <div><dt>Team</dt><dd>${esc(p.team)}</dd></div>
       <div><dt>Stakeholders</dt><dd>${p.stakeholders.map(esc).join(" · ")}</dd></div>
     </dl>
   </div></header>
+  <div class="cs-stats"><div class="wrap">${p.metrics.map(m => `<div><b>${esc(m.value)}</b><span>${esc(m.label)}</span>${m.detail ? `<p>${esc(m.detail)}</p>` : ""}</div>`).join("")}</div></div>
   <div class="wrap cs-layout">
     <nav class="toc" aria-label="Case study sections"><span class="mono">On this page</span>${toc.map(([h,l]) => `<a href="#${h}" data-toc="${h}">${l}</a>`).join("")}</nav>
     <div class="cs-body">
       <section class="cs-block" id="cs-overview"><span class="eyebrow">Overview</span><h2>The challenge</h2>
-        <p class="lead">${esc(p.detailedSummary)}</p>
-        <div class="ps" style="margin-top:28px"><div class="p"><h3>Problem</h3><p>${esc(p.problemSpace)}</p></div><div class="s"><h3>Solution</h3><p>${esc(p.solution)}</p></div></div>
-        <div class="big-metrics">${p.metrics.map(m => `<div class="big-metric"><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join("")}</div>
+        <p class="lead">${esc(p.summary)}</p>
+        <div class="problem-q"><span>How might we…</span>${esc(p.define.hmw.replace(/^How might we /i,""))}</div>
+        <h3 class="sub-h">What we heard</h3>${ul(p.discover.insights)}
       </section>
       ${p.demo === "autonomy" ? autonomyDemo() : ""}
-      <section class="cs-block" id="cs-process"><span class="eyebrow">Design process</span><h2>Five phases, from evidence to delivery</h2>
-        <div class="phase-tabs" role="tablist" aria-label="Design phases">${PHASES.map(([k,l],j) => `<button type="button" role="tab" id="tab-${j}" aria-controls="phasePanel" aria-selected="${j===0}" data-phase="${j}" tabindex="${j===0?0:-1}"><span class="n">0${j+1}</span><span class="t">${l}</span></button>`).join("")}</div>
-        <div class="phase-panel" id="phasePanel" role="tabpanel" aria-labelledby="tab-0">${phasePanel(p,0)}</div>
+      <section class="cs-block" id="cs-process"><span class="eyebrow">Design process</span><h2>From evidence to delivery</h2>
+        <div class="phase-tabs" role="tablist" aria-label="Design phases" style="grid-template-columns:repeat(${phases.length},minmax(0,1fr))">${phases.map(([k,l],j) => `<button type="button" role="tab" id="tab-${j}" aria-controls="phasePanel" aria-selected="${j===0}" data-phase="${j}" data-key="${k}" tabindex="${j===0?0:-1}"><span class="n">0${j+1}</span><span class="t">${l}</span></button>`).join("")}</div>
+        <div class="phase-panel" id="phasePanel" role="tabpanel" aria-labelledby="tab-0">${phasePanel(p, phases[0][0])}</div>
       </section>
       <section class="cs-block" id="cs-leadership"><span class="eyebrow">Leadership perspective</span><h2>How I led it</h2>
-        <dl class="persp">
-          <div><dt>Mandate</dt><dd>${esc(L.executiveMandate)}</dd></div>
-          <div><dt>Strategic role</dt><dd>${esc(L.strategicRole)}</dd></div>
-          <div><dt>Cross-functional</dt><dd>${esc(L.crossFunctionalSynergy)}</dd></div>
-          <div><dt>Team leadership</dt><dd>${esc(L.teamLeadership)}</dd></div>
-          <div><dt>Transformation</dt><dd>${esc(L.orgTransformation)}</dd></div>
-        </dl>
+        <div class="pull"><span class="pull-mark">“</span>${esc(p.pullQuote)}</div>
+        <p class="lead" style="margin-top:28px">${esc(L.intro)}</p>
+        <h3 class="sub-h">Leadership in action</h3>
+        <div class="acts">${L.actions.map(a => `<details class="act"><summary><span class="when">${esc(a.when)}</span><span class="sit">${esc(a.situation)}</span><span class="tog" aria-hidden="true">${I.plus}</span></summary>
+          <div class="act-body"><div><h4>What I did</h4><p>${esc(a.did)}</p></div><div class="res"><h4>Result</h4><p>${esc(a.result)}</p></div></div></details>`).join("")}</div>
+        <h3 class="sub-h">Capabilities demonstrated</h3>
+        <div class="caps">${L.capabilities.map(c => `<div><b>${esc(c.title)}</b><p>${esc(c.text)}</p></div>`).join("")}</div>
       </section>
-      <section class="cs-block" id="cs-outcomes"><span class="eyebrow">Outcomes</span><h2>What changed</h2>
-        <ul class="outcomes">${p.keyOutcomes.map(o => `<li>${I.check}<span>${esc(o)}</span></li>`).join("")}${R.commercialBenefits.map(o => `<li>${I.check}<span>${esc(o)}</span></li>`).join("")}<li>${I.check}<span>${esc(R.operationalSavings)}</span></li></ul>
-        <div class="big-metrics">${R.roiMetrics.map(m => `<div class="big-metric"><b>${esc(m.value)}</b><span>${esc(m.label)}</span><p>${esc(m.context)}</p></div>`).join("")}</div>
+      <section class="cs-block" id="cs-outcomes"><span class="eyebrow">Data, ROI and business benefits</span><h2>What changed</h2>
+        <div class="outs">${p.outcomes.map(o => `<div class="out"><h4>${esc(o.outcome)}</h4><p>${esc(o.benefit)}</p><p class="ev"><b>Evidence:</b> ${esc(o.evidence)}</p></div>`).join("")}</div>
+        <div class="lessons"><span class="eyebrow">Lessons and next moves</span><p>${esc(L.lessons)}</p></div>
+        ${p.evidenceBase ? `<p class="ev-base"><b>Evidence base:</b> ${esc(p.evidenceBase)}</p>` : ""}
       </section>
-      <section class="cs-block" id="cs-takeaway"><div class="pull"><span class="mono">Leadership takeaway</span><span class="pull-mark">“</span>${esc(p.leadershipTakeaway)}</div></section>
     </div>
   </div>
   <div class="wrap pn">
@@ -585,7 +581,6 @@ function mount(r, id){
   if (r === "home"){
     const hp = $("#homePhotos"); hp.innerHTML = photoStories().slice(0,3).map(s => `<div class="ph" role="button" tabindex="0" data-photo="${esc(s.id)}"><div class="img">${photoMedia(s)}</div><b>${esc(s.title)}</b><span>${esc(s.location)}</span></div>`).join(""); hydrateStudies(hp);
   }
-  if (r === "work") renderWorkList(store.get("ls-workfilter","all"));
   if (r === "thinking"){ artState = {cat:"All", q:""}; renderArticles(); }
   if (r === "photography"){ photoCat = "All"; renderPhotos(); }
   if (r === "journey"){
@@ -614,7 +609,6 @@ document.addEventListener("click", e => {
   const seg = t.closest("#seg button"); if (seg){ setMode(+seg.dataset.mode); return; }
   const demo = t.closest("[data-demo]"); if (demo){ toast(demo.dataset.demo + " — demo only"); return; }
   const pil = t.closest(".pillar"); if (pil){ const o = !pil.classList.contains("open"); pil.classList.toggle("open", o); pil.setAttribute("aria-expanded", o); $(".more span", pil).textContent = o ? "Close" : "How"; return; }
-  const wf = t.closest("[data-wf]"); if (wf){ renderWorkList(wf.dataset.wf); return; }
   const af = t.closest("[data-af]"); if (af){ artState.cat = af.dataset.af; renderArticles(); return; }
   const pf = t.closest("[data-pf]"); if (pf){ photoCat = pf.dataset.pf; renderPhotos(); return; }
   const ph = t.closest("[data-phase]"); if (ph){ selectPhase(+ph.dataset.phase); return; }
@@ -642,12 +636,13 @@ document.addEventListener("input", e => {
 function selectPhase(j){
   const {id} = parse(); const p = DATA.projects.find(x => x.id === id);
   $$("[data-phase]").forEach(b => { const on = +b.dataset.phase === j; b.setAttribute("aria-selected", on); b.tabIndex = on ? 0 : -1; });
-  const pnl = $("#phasePanel"); pnl.setAttribute("aria-labelledby", "tab-" + j); pnl.innerHTML = phasePanel(p, j); pnl.style.animation = "none"; pnl.offsetHeight; pnl.style.animation = "";
+  const key = $(`[data-phase="${j}"]`).dataset.key;
+  const pnl = $("#phasePanel"); pnl.setAttribute("aria-labelledby", "tab-" + j); pnl.innerHTML = phasePanel(p, key); pnl.style.animation = "none"; pnl.offsetHeight; pnl.style.animation = "";
 }
 document.addEventListener("keydown", e => {
   if ((e.key === "Enter" || e.key === " ") && e.target.getAttribute && e.target.getAttribute("role") === "button"){ e.preventDefault(); e.target.click(); return; }
   const tab = e.target.closest && e.target.closest("[data-phase]");
-  if (tab && (e.key === "ArrowRight" || e.key === "ArrowLeft")){ const j = (+tab.dataset.phase + (e.key === "ArrowRight" ? 1 : 4)) % 5; selectPhase(j); $(`[data-phase="${j}"]`).focus(); e.preventDefault(); return; }
+  if (tab && (e.key === "ArrowRight" || e.key === "ArrowLeft")){ const n = $$("[data-phase]").length; const j = (+tab.dataset.phase + (e.key === "ArrowRight" ? 1 : n - 1)) % n; selectPhase(j); $(`[data-phase="${j}"]`).focus(); e.preventDefault(); return; }
   if (e.key === "Escape"){ if ($("#modal").classList.contains("open")) closeModal(); else if (mm.classList.contains("open")) setMenu(false); return; }
   const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
   if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
