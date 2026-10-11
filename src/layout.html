@@ -1,0 +1,61 @@
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" hidden></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#home" aria-label="Lalit Shahane — home">
+      <span class="brand-mark">LS</span>
+      <span class="brand-txt"><b>LALIT SHAHANE</b><span>Product Experience &amp; UX Leader</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks"></ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Switch colour theme" title="Switch theme (T)">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm nav-cta" href="#contact">Let’s talk</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="mm-top">
+    <a class="brand" href="#home"><span class="brand-mark">LS</span><span class="brand-txt"><b>LALIT SHAHANE</b></span></a>
+    <button class="icon-btn" id="menuClose" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <nav id="mobileLinks"></nav>
+  <a class="btn btn-primary" href="#contact" style="justify-content:center">Let’s talk</a>
+</div>
+
+<main id="main" tabindex="-1"></main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="about">
+      <a class="brand" href="#home"><span class="brand-mark">LS</span><span class="brand-txt"><b>LALIT SHAHANE</b><span>Pune, Maharashtra, India</span></span></a>
+      <p id="footBlurb"></p>
+    </div>
+    <div><h4>Work</h4><ul id="footWork"></ul></div>
+    <div><h4>Explore</h4><ul>
+      <li><a href="#thinking">Thinking</a></li><li><a href="#journey">Career journey</a></li><li><a href="#about">About</a></li><li><a href="#photography">Photography</a></li><li><a href="#resume">Résumé</a></li>
+    </ul></div>
+    <div><h4>Connect</h4><ul>
+      <li><a href="#contact">Contact form</a></li>
+      <li><a href="https://www.linkedin.com/in/lalitshahane/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><button class="copy" type="button" data-copy="slalit@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copy email</button></li>
+    </ul></div>
+  </div>
+  <div class="wrap statusline">
+    <span>© <span id="yr"></span> Lalit Shahane</span>
+    <span class="live"><span class="pulse"></span> Pune · <span id="clock">IST</span> · 18.5204° N, 73.8567° E</span>
+    <span>Press <span class="kbd">T</span> to switch theme</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modalBox"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>

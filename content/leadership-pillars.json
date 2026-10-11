@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ux-strategy",
+    "title": "UX STRATEGY",
+    "description": "Experience vision, portfolio alignment and product strategy.",
+    "iconName": "strategy",
+    "details": [
+      "Aligning product roadmaps directly with validated user mental models and commercial ROI.",
+      "Translating ambiguous business objectives into defensible experience north stars.",
+      "Establishing executive design reviews that position UX as a top-line growth driver."
+    ]
+  },
+  {
+    "id": "ai-innovation",
+    "title": "AI & INNOVATION",
+    "description": "Human-centered AI, agentic experiences and design-led innovation.",
+    "iconName": "ai",
+    "details": [
+      "Architecting human-in-the-loop interaction models for proactive generative systems.",
+      "Mitigating algorithmic hallucination anxiety through explainability and verification.",
+      "Designing multimodal spatial and agentic workflows beyond primitive conversational chat."
+    ]
+  },
+  {
+    "id": "people-organization",
+    "title": "PEOPLE & ORGANIZATION",
+    "description": "Building, mentoring and empowering high-performing UX teams.",
+    "iconName": "people",
+    "details": [
+      "Recruiting, developing, and retaining world-class multidisciplinary design talent.",
+      "Instituting a culture of intellectual rigor, mutual candor, and continuous craft excellence.",
+      "Structuring career pathways that bridge individual contributor craft and executive leadership."
+    ]
+  },
+  {
+    "id": "transformation",
+    "title": "TRANSFORMATION",
+    "description": "Moving organizations from feature delivery toward experience-led development.",
+    "iconName": "transformation",
+    "details": [
+      "Shifting organizational posture from reactive ticket completion to holistic journey outcomes.",
+      "Embedding continuous qualitative and quantitative feedback loops directly into sprint cycles.",
+      "De-risking multi-million dollar platform replatforming initiatives through prototype testing."
+    ]
+  }
+]

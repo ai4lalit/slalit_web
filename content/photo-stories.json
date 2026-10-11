@@ -1,0 +1,104 @@
+[
+  {
+    "id": "shaniwar-wada-morning-light",
+    "title": "Shadows of the Peshwas",
+    "subtitle": "Morning light slicing through the 18th-century stone archways of Pune",
+    "category": "Light & Architecture",
+    "location": "Shaniwar Wada, Pune, India",
+    "year": "2025",
+    "cameraGear": "Fujifilm X-T5 · Fujinon 33mm f/1.4",
+    "exif": {
+      "aperture": "f/2.0",
+      "shutter": "1/640s",
+      "iso": "160"
+    },
+    "imageUrl": null,
+    "story": "I arrived just as the first morning rays filtered past the spiked Delhi Gate. At dawn, when the crowds are absent, Shaniwar Wada breathes in silence. The way the golden sunlight grazed the weathered teak pillars and heavy stone lintels reminded me of how architecture guides human attention. In UX, as in ancient masonry, negative space and shadow establish rhythm.",
+    "philosophy": "Observing natural light teaches patience. You cannot rush the sun; you must position yourself and wait for the precise angle where structural truth emerges."
+  },
+  {
+    "id": "western-ghats-monsoon-veil",
+    "title": "The Monsoon Veil",
+    "subtitle": "Ascending Sinhagad fort amidst swirling clouds and basalt ridges",
+    "category": "Nature & Landscapes",
+    "location": "Sinhagad Ridge, Western Ghats, Pune",
+    "year": "2024",
+    "cameraGear": "Sony A7 IV · 24-70mm f/2.8 GM II",
+    "exif": {
+      "aperture": "f/5.6",
+      "shutter": "1/250s",
+      "iso": "200"
+    },
+    "imageUrl": null,
+    "story": "The Western Ghats during July are a spectacle of mist and deluge. Reaching the crest of Sinhagad, visibility dropped to twenty meters before an updraft tore open a window into the valley below. The intense emerald terraces gleamed against dark volcanic basalt for barely three seconds. I released the shutter instinctively.",
+    "philosophy": "Capturing transient moments in severe conditions mirrors rapid product prototyping: you have to embrace ambiguity and rely on muscle memory when the opportunity reveals itself."
+  },
+  {
+    "id": "tulsibaug-market-rhythm",
+    "title": "Pulse of Tulsibaug",
+    "subtitle": "A quiet portrait amidst the vibrant bustle of old Pune bazaar",
+    "category": "Street & Culture",
+    "location": "Tulsibaug Bazaar, Pune, India",
+    "year": "2024",
+    "cameraGear": "Fujifilm X100V · 23mm f/2.0",
+    "exif": {
+      "aperture": "f/2.8",
+      "shutter": "1/320s",
+      "iso": "400"
+    },
+    "imageUrl": "img/tulsibaug.jpg",
+    "story": "Tulsibaug is sensory overload—the clinking of brass utensils, aroma of marigolds, and haggling voices. In the center of this whirlwind sat an artisan shaping clay lamps with deliberate, tranquil focus. While everyone else moved at frantic speeds, his hands moved with generational muscle memory. This contrast between ambient chaos and individual stillness was compelling.",
+    "philosophy": "Human-centered design is about uncovering that quiet stillness inside high-complexity environments: filtering noise so true intent can breathe."
+  },
+  {
+    "id": "mumbai-cst-geometry",
+    "title": "Cathedral of Motion",
+    "subtitle": "Victorian Gothic arches framing thousands of daily commuter journeys",
+    "category": "Light & Architecture",
+    "location": "CST Terminus, Mumbai, India",
+    "year": "2025",
+    "cameraGear": "Leica Q2 · Summilux 28mm f/1.7",
+    "exif": {
+      "aperture": "f/2.8",
+      "shutter": "1/125s",
+      "iso": "800"
+    },
+    "imageUrl": null,
+    "story": "Every evening, thousands of commuters flow beneath CST’s soaring ribbed vaults. Standing on the concourse with a slow shutter speed, the travelers dissolved into flowing rivers of energy while the monolithic sandstone arches remained immovable. It is an extraordinary study in how physical infrastructure channels human intent.",
+    "philosophy": "Enterprise design systems are like railway concourses: the scaffolding must be rock-solid and invisible so people can achieve their destinations effortlessly."
+  },
+  {
+    "id": "varanasi-dawn-contemplation",
+    "title": "Ripples of Dawn",
+    "subtitle": "A boatman resting at the confluence of mist and river",
+    "category": "Moments & Moods",
+    "location": "Assi Ghat, Varanasi, India",
+    "year": "2024",
+    "cameraGear": "Sony A7 IV · 85mm f/1.4 GM",
+    "exif": {
+      "aperture": "f/1.8",
+      "shutter": "1/1000s",
+      "iso": "100"
+    },
+    "imageUrl": null,
+    "story": "At 5:30 AM on the Ganges, color hasn’t arrived yet. The world is rendered in subtle gradients of silver, blue, and charcoal. A lone boatman had paused his oars, eyes closed in silent prayer as incense smoke drifted across the bow. There was an honesty to the moment that no staged portrait could ever replicate.",
+    "philosophy": "Empathy in research cannot be faked or scheduled into a 30-minute user interview. It requires showing up early, leaving preconceptions at the door, and listening to unvoiced gestures."
+  },
+  {
+    "id": "kaas-plateau-wildflowers",
+    "title": "The Ephemeral Bloom",
+    "subtitle": "Microcosms of rare endemic flora on the UNESCO Kaas basalt plateau",
+    "category": "Nature & Landscapes",
+    "location": "Kaas Plateau, Satara, Maharashtra",
+    "year": "2024",
+    "cameraGear": "Fujifilm X-T5 · 80mm Macro f/2.8",
+    "exif": {
+      "aperture": "f/4.0",
+      "shutter": "1/500s",
+      "iso": "250"
+    },
+    "imageUrl": null,
+    "story": "For just three weeks post-monsoon, the volcanic plateau transforms into a carpet of endemic wildflowers surviving in mere inches of topsoil. Getting down to eye level with macro lenses reveals miniature engineering feats—delicate moisture-wicking petals, dewdrop lenses, and symbiotic insect pathways.",
+    "philosophy": "True craft reveals itself under close magnification. Whether designing micro-interactions in software or studying endemic petals, precision at the smallest scale creates enduring delight."
+  }
+]

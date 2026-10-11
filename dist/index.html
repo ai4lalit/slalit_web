@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Lalit Shahane</title>
+<meta name="description" content="Lalit Shahane — Product Experience &amp; UX Transformation Leader. 25+ years in enterprise UX, AI experiences and design leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* Layout concept: an operations console with an editorial voice. Mono "telemetry" metadata frames
+   wide, confident display type; teal is the system signal, amber marks human judgement. */
+:root{
+  --bg:#F3F6F5; --bg-2:#FFFFFF; --surface:#FFFFFF; --surface-2:#E8EFEE; --line:#D3DFDD; --line-2:#B9CBC8;
+  --fg:#0D1A21; --muted:#4D5F68; --faint:#7A8B92;
+  --accent:#0B7A6C; --accent-2:#0E9483; --accent-ink:#FFFFFF; --accent-soft:rgba(11,122,108,.10);
+  --amber:#9A620C; --amber-soft:rgba(154,98,12,.10);
+  --shadow:0 1px 2px rgba(13,26,33,.06),0 12px 32px -12px rgba(13,26,33,.18);
+  --grid:rgba(13,26,33,.06);
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Instrument Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px); --r:14px;
+  --nav-h:68px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1117; --bg-2:#0F171E; --surface:#16232D; --surface-2:#1B2A35; --line:#263641; --line-2:#34495A;
+  --fg:#F3F0E8; --muted:#9AAAB5; --faint:#6F818D;
+  --accent:#35D0BA; --accent-2:#5CE6D2; --accent-ink:#06131D; --accent-soft:rgba(53,208,186,.12);
+  --amber:#E7B86B; --amber-soft:rgba(231,184,107,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 40px -16px rgba(0,0,0,.6);
+  --grid:rgba(154,170,181,.07);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0B1117; --bg-2:#0F171E; --surface:#16232D; --surface-2:#1B2A35; --line:#263641; --line-2:#34495A;
+  --fg:#F3F0E8; --muted:#9AAAB5; --faint:#6F818D;
+  --accent:#35D0BA; --accent-2:#5CE6D2; --accent-ink:#06131D; --accent-soft:rgba(53,208,186,.12);
+  --amber:#E7B86B; --amber-soft:rgba(231,184,107,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 40px -16px rgba(0,0,0,.6);
+  --grid:rgba(154,170,181,.07);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.65 var(--f-body);letter-spacing:-.005em;overflow-x:hidden;transition:background-color .35s ease,color .35s ease}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:650;line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::selection{background:var(--accent);color:var(--accent-ink)}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:18px;height:1px;background:currentColor}
+.muted{color:var(--muted)}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:8px}
+.skip:focus{left:12px}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(150%) blur(14px);-webkit-backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s, background-color .35s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-in{height:var(--nav-h);display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand-mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--fg);color:var(--bg);font:700 15px/1 var(--f-display);letter-spacing:-.02em;flex:none;position:relative;overflow:hidden}
+.brand-mark::after{content:"";position:absolute;right:5px;bottom:5px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-txt b{font:650 15px/1.2 var(--f-display);letter-spacing:.02em}
+.brand-txt span{font:500 10.5px/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.nav-links{display:flex;gap:2px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+.nav-links a{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted);transition:color .2s,background-color .2s}
+.nav-links a:hover{color:var(--fg);background:var(--surface-2)}
+.nav-links a.active{color:var(--fg);background:var(--accent-soft);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 35%,transparent)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);transition:border-color .2s, transform .2s}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn svg{width:18px;height:18px}
+.theme-btn .sun{display:none}
+:root[data-theme="dark"] .theme-btn .sun{display:block}
+:root[data-theme="dark"] .theme-btn .moon{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .theme-btn .sun{display:block}:root:not([data-theme="light"]) .theme-btn .moon{display:none}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;transition:transform .2s, background-color .2s, border-color .2s, color .2s;white-space:nowrap}
+.btn svg{width:16px;height:16px;transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-ghost{border-color:var(--line-2);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:9px 16px;font-size:14px}
+.nav-cta{display:inline-flex}
+.menu-btn{display:none}
+.mobile-menu{position:fixed;inset:0;z-index:70;background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 18px) var(--gut) calc(env(safe-area-inset-bottom,0px) + 24px);display:flex;flex-direction:column;gap:24px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s}
+.mobile-menu.open{opacity:1;transform:none;pointer-events:auto}
+.mobile-menu .mm-top{display:flex;justify-content:space-between;align-items:center}
+.mobile-menu nav{display:flex;flex-direction:column}
+.mobile-menu nav a{font:600 clamp(28px,8vw,40px)/1.25 var(--f-display);letter-spacing:-.02em;text-decoration:none;padding:6px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+.mobile-menu nav a span{font:500 11px var(--f-mono);color:var(--faint);letter-spacing:.1em}
+.mobile-menu nav a.active{color:var(--accent)}
+@media (max-width:1060px){.nav-links{display:none}.menu-btn{display:grid}.nav-actions{margin-left:auto}}
+@media (max-width:520px){.nav-cta{display:none}.brand-txt span{display:none}}
+
+/* ---------- ROUTE TRANSITION ---------- */
+main{min-height:60vh}
+.view{animation:viewIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes viewIn{from{opacity:.0001;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ---------- PAGE HEAD ---------- */
+.crumb{font:500 12px/1 var(--f-mono);letter-spacing:.06em;color:var(--faint);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.page-head{isolation:isolate;padding-block:clamp(40px,7vw,88px) clamp(28px,4vw,48px);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.page-head h1{font-size:clamp(40px,7vw,88px);font-weight:600;margin-top:18px;max-width:16ch}
+.page-head .lede{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch;margin-top:20px}
+.gridbg{position:absolute;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 70% 80% at 85% 20%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 85% 20%,#000 20%,transparent 75%)}
+section{position:relative}
+.sec{padding-block:clamp(64px,9vw,120px)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head h2{font-size:clamp(32px,4.6vw,56px);margin-top:14px;max-width:18ch}
+.sec-head p{max-width:46ch;color:var(--muted)}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent);text-decoration:none;font-size:15px}
+.link-arrow svg{width:16px;height:16px;transition:transform .2s}
+.link-arrow:hover svg{transform:translateX(4px)}
+.alt{background:var(--bg-2);border-block:1px solid var(--line)}
+
+/* ---------- HERO ---------- */
+.hero{isolation:isolate;padding-block:clamp(40px,6vw,80px) clamp(48px,6vw,88px);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center}
+.status{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;padding:7px 14px 7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font:500 11.5px/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(44px,7.4vw,104px);font-weight:600;line-height:.98;letter-spacing:-.04em;margin-top:26px}
+.hero h1 .thin{font-weight:300;color:var(--muted)}
+.hero h1 .acc{color:var(--accent);font-style:normal}
+.hero .sub{font:300 clamp(20px,2.2vw,27px)/1.35 var(--f-display);margin-top:28px;max-width:30ch;letter-spacing:-.01em}
+.hero .intro{color:var(--muted);max-width:52ch;margin-top:18px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.portrait{position:relative;max-width:440px;justify-self:end;width:100%}
+.portrait-frame{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:1070/1470;background:var(--surface-2);box-shadow:var(--shadow);max-width:100%}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.portrait:hover .portrait-frame img{transform:scale(1.03)}
+.portrait .tick{position:absolute;width:22px;height:22px;border-color:var(--accent);border-style:solid;border-width:0}
+.tick.tl{top:-10px;left:-10px;border-top-width:2px;border-left-width:2px}
+.tick.tr{top:-10px;right:-10px;border-top-width:2px;border-right-width:2px}
+.tick.bl{bottom:-10px;left:-10px;border-bottom-width:2px;border-left-width:2px}
+.tick.br{bottom:-10px;right:-10px;border-bottom-width:2px;border-right-width:2px}
+.portrait-tag{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);font:500 11px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.portrait-tag b{color:var(--accent);font-weight:600}
+.coords{position:absolute;font:500 10.5px/1 var(--f-mono);letter-spacing:.14em;color:var(--faint);writing-mode:vertical-rl;right:-34px;top:12%;white-space:nowrap}
+@media (max-width:1100px){.coords{display:none}}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.portrait{justify-self:start;max-width:340px}}
+
+.ticker{border-block:1px solid var(--line);background:var(--bg-2);overflow:hidden}
+.ticker-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ticker-cell{padding:26px var(--gut) 24px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.ticker-cell:first-child{border-left:0}
+.ticker-cell b{font:600 clamp(28px,3.4vw,42px)/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.ticker-cell span{font:500 11.5px/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:760px){.ticker-row{grid-template-columns:repeat(2,minmax(0,1fr))}.ticker-cell:nth-child(3){border-left:0}.ticker-cell:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* ---------- WORK CARDS ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font:500 13.5px/1.2 var(--f-body);color:var(--muted);transition:all .2s}
+.chip:hover{color:var(--fg);border-color:var(--line-2)}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip .n{font:500 11px var(--f-mono);opacity:.6;margin-left:6px}
+.work-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.work-row{display:grid;grid-template-columns:72px minmax(0,1.3fr) minmax(0,1fr) 150px;gap:28px;align-items:start;padding:34px 0;border-bottom:1px solid var(--line);text-decoration:none;position:relative;transition:padding .35s cubic-bezier(.2,.7,.2,1)}
+.work-row::before{content:"";position:absolute;inset:0 calc(var(--gut) * -1);background:var(--surface);opacity:0;transition:opacity .3s;z-index:-1}
+.work-row:hover::before{opacity:1}
+.work-row:hover{padding-left:12px}
+.work-row .idx{font:500 12px var(--f-mono);color:var(--faint);padding-top:10px}
+.work-row h3{font-size:clamp(24px,2.6vw,34px);font-weight:600;transition:color .2s}
+.work-row:hover h3{color:var(--accent)}
+.work-row .cat{display:inline-block;font:500 11px var(--f-mono);letter-spacing:.12em;color:var(--amber);margin-bottom:10px}
+.work-row .desc{color:var(--muted);font-size:16px;padding-top:6px}
+.work-row .yr{font:500 13px var(--f-mono);color:var(--muted);text-align:right;padding-top:8px;display:flex;flex-direction:column;align-items:end;gap:14px}
+.arrow-circle{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:all .3s}
+.arrow-circle svg{width:18px;height:18px;transition:transform .3s}
+.work-row:hover .arrow-circle{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.work-row:hover .arrow-circle svg{transform:rotate(-45deg)}
+.metrics-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{display:inline-flex;align-items:center;gap:6px;font:500 12px/1.2 var(--f-mono);padding:6px 10px;border-radius:8px;background:var(--surface-2);color:var(--muted)}
+.tag b{color:var(--fg);font-weight:600}
+@media (max-width:860px){.work-row{grid-template-columns:1fr;gap:10px}.work-row .idx{padding:0}.work-row .yr{flex-direction:row;justify-content:space-between;align-items:center;text-align:left}}
+
+/* ---------- AUTONOMY DIAL ---------- */
+.dial-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.seg{display:inline-grid;grid-template-columns:repeat(3,1fr);padding:5px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);position:relative;margin-top:28px;width:100%;max-width:420px}
+.seg button{position:relative;z-index:1;padding:11px 8px;border-radius:999px;font-weight:600;font-size:15px;color:var(--muted);transition:color .25s}
+.seg button[aria-pressed="true"]{color:var(--accent-ink)}
+.seg .thumb{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);border-radius:999px;background:var(--accent);transition:transform .45s cubic-bezier(.3,1.3,.5,1)}
+.dial-meter{margin-top:22px;display:flex;flex-direction:column;gap:12px;max-width:420px}
+.meter{display:grid;grid-template-columns:120px 1fr 40px;gap:12px;align-items:center;font:500 12px var(--f-mono);letter-spacing:.04em;color:var(--muted)}
+.meter .bar{height:6px;border-radius:6px;background:var(--surface-2);overflow:hidden}
+.meter .bar i{display:block;height:100%;background:var(--accent);border-radius:6px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.meter .bar.amber i{background:var(--amber)}
+.meter .v{text-align:right;color:var(--fg);font-variant-numeric:tabular-nums}
+.console{border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.console-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);font:500 11.5px var(--f-mono);letter-spacing:.06em;color:var(--muted);background:var(--bg-2)}
+.console-bar .dots{display:flex;gap:6px}
+.console-bar .dots i{width:9px;height:9px;border-radius:50%;background:var(--line-2)}
+.mode-pill{padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;letter-spacing:.1em}
+.console-body{padding:20px;display:flex;flex-direction:column;gap:14px;min-height:340px}
+.incident{display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap}
+.incident h4{font-size:19px;font-weight:600}
+.incident .sev{font:600 11px var(--f-mono);letter-spacing:.1em;color:var(--amber);background:var(--amber-soft);padding:4px 9px;border-radius:6px}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.step{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:center;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:var(--bg-2);font-size:15px;transition:border-color .3s, background-color .3s}
+.step .ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font:700 11px var(--f-mono);border:1.5px solid var(--line-2);color:var(--faint)}
+.step .st{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.step.done .ic{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.step.done .st{color:var(--accent)}
+.step.wait{border-color:color-mix(in srgb,var(--amber) 50%,transparent);background:var(--amber-soft)}
+.step.wait .ic{border-color:var(--amber);color:var(--amber)}
+.step.wait .st{color:var(--amber)}
+.step.run .ic{border-color:var(--accent);border-top-color:transparent;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.console-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding-top:6px;border-top:1px dashed var(--line);margin-top:auto}
+.console-foot p{font-size:14px;color:var(--muted);max-width:44ch;padding-top:10px}
+.console-foot .acts{display:flex;gap:8px;padding-top:10px}
+@media (max-width:900px){.dial-wrap{grid-template-columns:1fr}}
+
+/* ---------- PILLARS ---------- */
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pillar{cursor:pointer;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 26px 28px;display:flex;flex-direction:column;gap:14px;text-align:left;transition:background-color .3s;position:relative}
+.pillar:hover{background:var(--surface)}
+.pillar .pi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.pillar .pi svg{width:22px;height:22px}
+.pillar h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.pillar > p{color:var(--muted);font-size:15.5px}
+.pillar ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;overflow:hidden;max-height:0;opacity:0;transition:max-height .5s cubic-bezier(.2,.7,.2,1), opacity .4s}
+.pillar.open ul{max-height:420px;opacity:1}
+.pillar li{font-size:14.5px;color:var(--muted);padding-left:18px;position:relative}
+.pillar li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--accent)}
+.pillar .more{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:inline-flex;gap:6px;align-items:center;margin-top:auto;padding-top:6px}
+.pillar .more svg{width:14px;height:14px;transition:transform .3s}
+.pillar.open .more svg{transform:rotate(45deg)}
+@media (max-width:980px){.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}}
+
+/* ---------- ARTICLES ---------- */
+.art-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.art-card{display:flex;flex-direction:column;gap:16px;padding:26px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);text-decoration:none;transition:transform .35s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s;min-width:0}
+.art-card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:var(--shadow)}
+.art-card .meta{display:flex;justify-content:space-between;gap:10px;font:500 11.5px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.art-card .meta .c{color:var(--accent)}
+.art-card .meta .c.amb{color:var(--amber)}
+.art-card h3{font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.art-card p{color:var(--muted);font-size:15.5px;flex:1}
+.art-card .foot{display:flex;justify-content:space-between;align-items:center;font:500 12px var(--f-mono);color:var(--faint);padding-top:14px;border-top:1px solid var(--line)}
+.art-card .foot .r{color:var(--accent);display:inline-flex;gap:6px;align-items:center}
+.art-card .foot svg{width:14px;height:14px;transition:transform .2s}
+.art-card:hover .foot svg{transform:translateX(4px)}
+.art-card.feature{grid-column:span 2;background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.art-card.feature h3{font-size:clamp(28px,3vw,38px)}
+.art-card.feature p,.art-card.feature .meta,.art-card.feature .foot{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.art-card.feature .foot{border-top-color:color-mix(in srgb,var(--bg) 20%,transparent)}
+.art-card.feature .meta .c,.art-card.feature .foot .r{color:var(--accent-2)}
+:root[data-theme="dark"] .art-card.feature .meta .c,:root[data-theme="dark"] .art-card.feature .foot .r{color:#0B7A6C}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .art-card.feature .meta .c,:root:not([data-theme="light"]) .art-card.feature .foot .r{color:#0B7A6C}}
+.art-card.feature blockquote{margin:0;font:400 italic 18px/1.5 var(--f-body);border-left:2px solid currentColor;padding-left:16px;opacity:.85}
+@media (max-width:980px){.art-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.art-grid{grid-template-columns:1fr}.art-card.feature{grid-column:auto}}
+.toolbar{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-bottom:32px}
+.search{position:relative;flex:1 1 260px;max-width:360px}
+.search input{width:100%;padding:12px 16px 12px 42px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-size:15px}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search svg{position:absolute;left:15px;top:50%;width:17px;height:17px;transform:translateY(-50%);color:var(--faint)}
+.empty{padding:48px 24px;text-align:center;border:1px dashed var(--line-2);border-radius:var(--r);color:var(--muted)}
+
+/* ---------- CASE STUDY ---------- */
+.cs-hero{isolation:isolate;padding-block:clamp(36px,6vw,72px) clamp(32px,5vw,56px);position:relative;overflow:hidden}
+.cs-hero h1{font-size:clamp(36px,6vw,76px);font-weight:600;margin-top:22px;max-width:20ch;letter-spacing:-.035em}
+.cs-hero .sub{font:300 clamp(19px,2vw,25px)/1.4 var(--f-display);color:var(--muted);margin-top:20px;max-width:46ch}
+.cs-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);margin-top:40px;overflow:hidden}
+.cs-meta > div{padding:20px 22px;border-left:1px solid var(--line);min-width:0}
+.cs-meta > div:first-child{border-left:0}
+.cs-meta dt{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.cs-meta dd{margin:0;font-size:15px;line-height:1.5}
+@media (max-width:900px){.cs-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.cs-meta > div:nth-child(3){border-left:0}.cs-meta > div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:520px){.cs-meta{grid-template-columns:1fr}.cs-meta > div{border-left:0!important}.cs-meta > div+div{border-top:1px solid var(--line)}}
+.cs-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(28px,5vw,72px);padding-block:clamp(40px,6vw,72px)}
+.toc{position:sticky;top:calc(var(--nav-h) + 24px);align-self:start;display:flex;flex-direction:column;gap:2px}
+.toc .mono{color:var(--faint);margin-bottom:12px}
+.toc a{text-decoration:none;color:var(--muted);font-size:14.5px;padding:7px 0 7px 14px;border-left:2px solid var(--line);transition:all .2s}
+.toc a:hover{color:var(--fg)}
+.toc a.on{color:var(--accent);border-left-color:var(--accent)}
+@media (max-width:900px){.cs-layout{grid-template-columns:1fr}.toc{display:none}}
+.cs-body{display:flex;flex-direction:column;gap:clamp(56px,7vw,88px);min-width:0}
+.cs-block{scroll-margin-top:calc(var(--nav-h) + 24px)}
+.cs-block > h2{font-size:clamp(28px,3.4vw,40px);margin:12px 0 22px}
+.cs-block .lead{font-size:clamp(18px,1.6vw,21px);line-height:1.6;max-width:62ch}
+.ps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ps > div{padding:24px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface)}
+.ps h3{font:600 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.ps .p h3{color:var(--amber)}
+.ps .s h3{color:var(--accent)}
+@media (max-width:700px){.ps{grid-template-columns:1fr}}
+.outcomes{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px}
+.outcomes li{display:flex;gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+.outcomes li svg{flex:none;width:20px;height:20px;color:var(--accent);margin-top:3px}
+.big-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px}
+.big-metric{padding:22px;border-radius:var(--r);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)}
+.big-metric b{display:block;font:600 clamp(26px,3vw,36px)/1.1 var(--f-display);letter-spacing:-.02em;color:var(--fg)}
+.big-metric span{display:block;margin-top:8px;font:500 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.big-metric p{margin-top:10px;font-size:14.5px;color:var(--muted)}
+/* phases */
+.phase-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.phase-tabs button{padding:14px 10px;text-align:left;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:3px;position:relative;transition:background-color .2s}
+.phase-tabs button:first-child{border-left:0}
+.phase-tabs button:hover{background:var(--surface-2)}
+.phase-tabs button .n{font:500 11px var(--f-mono);color:var(--faint);letter-spacing:.08em}
+.phase-tabs button .t{font:600 15px var(--f-display)}
+.phase-tabs button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.phase-tabs button[aria-selected="true"]{background:var(--accent-soft)}
+.phase-tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+.phase-tabs button[aria-selected="true"] .n{color:var(--accent)}
+@media (max-width:640px){.phase-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}.phase-tabs button{padding:12px 6px;align-items:center}.phase-tabs .t{display:none}}
+.phase-panel{padding:26px 0 0;animation:viewIn .4s both}
+.phase-panel .ov{font:400 clamp(18px,1.6vw,20px)/1.55 var(--f-display);margin-bottom:22px;color:var(--fg)}
+.kv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.kv > div{padding:20px;border-radius:12px;border:1px solid var(--line);background:var(--surface);min-width:0}
+.kv h4{font:600 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.kv ul{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:6px;font-size:15.5px}
+.kv ul li::marker{color:var(--accent)}
+.kv .wide{grid-column:1/-1}
+.shift{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);gap:12px;align-items:center}
+.shift .from,.shift .to{padding:14px 16px;border-radius:10px;font-size:15.5px}
+.shift .from{background:var(--surface-2);color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--muted) 50%,transparent)}
+.shift .to{background:var(--accent-soft);color:var(--fg);font-weight:500}
+.shift svg{width:22px;height:22px;color:var(--accent);justify-self:center}
+.shift-why{font-size:14.5px;color:var(--muted);margin-top:10px}
+@media (max-width:560px){.kv{grid-template-columns:1fr}.shift{grid-template-columns:1fr}.shift svg{transform:rotate(90deg)}}
+.test-table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:480px}
+.test-table th{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.test-table td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.test-table td:last-child{color:var(--accent);font-weight:600}
+.scroll-x{overflow-x:auto}
+.problem-q{font:500 clamp(20px,2vw,24px)/1.4 var(--f-display);padding:22px 24px;border-radius:12px;background:var(--amber-soft);border:1px solid color-mix(in srgb,var(--amber) 30%,transparent);margin-bottom:18px;letter-spacing:-.01em}
+.problem-q span{display:block;font:600 11px var(--f-mono);letter-spacing:.12em;color:var(--amber);margin-bottom:8px;text-transform:uppercase}
+.persp{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.persp > div{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.persp dt{font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-top:3px}
+.persp dd{margin:0;font-size:17px}
+@media (max-width:640px){.persp > div{grid-template-columns:1fr;gap:6px}}
+.pull{font:400 clamp(26px,3.4vw,42px)/1.22 var(--f-display);letter-spacing:-.025em;padding:clamp(28px,4vw,48px);border-radius:20px;background:var(--fg);color:var(--bg);position:relative}
+.pull .mono{display:block;margin-bottom:18px;color:color-mix(in srgb,var(--bg) 60%,transparent)}
+.pull-mark{font:700 88px/0.6 var(--f-display);color:var(--accent);display:block;height:36px}
+.pn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-block:0 clamp(56px,8vw,96px)}
+.pn a{padding:24px;border:1px solid var(--line);border-radius:var(--r);text-decoration:none;display:flex;flex-direction:column;gap:8px;background:var(--surface);transition:border-color .2s, transform .3s}
+.pn a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pn a.next{text-align:right;align-items:end}
+.pn .mono{color:var(--faint)}
+.pn b{font:600 20px/1.25 var(--f-display);letter-spacing:-.01em}
+@media (max-width:640px){.pn{grid-template-columns:1fr}.pn a.next{text-align:left;align-items:start}}
+
+/* ---------- ARTICLE ---------- */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:80;width:0;transition:width .1s linear}
+.art-head{padding-block:clamp(40px,7vw,88px) 32px;max-width:860px;margin-inline:auto}
+.art-head h1{font-size:clamp(36px,5.6vw,68px);margin-top:22px;letter-spacing:-.035em;font-weight:600}
+.art-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:24px;font:500 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.art-meta b{color:var(--accent);font-weight:600}
+.prose{max-width:720px;margin-inline:auto;padding-bottom:40px}
+.prose .lead{font:400 clamp(20px,2vw,24px)/1.55 var(--f-display);letter-spacing:-.01em;margin-bottom:36px}
+.prose h2{font-size:clamp(26px,3vw,34px);margin:56px 0 18px;letter-spacing:-.025em}
+.prose h2 .no{font:500 13px var(--f-mono);color:var(--accent);display:block;margin-bottom:10px;letter-spacing:.1em}
+.prose p{margin-bottom:20px;font-size:18px;line-height:1.75}
+.prose blockquote{margin:32px 0;padding:6px 0 6px 24px;border-left:3px solid var(--amber);font:400 italic clamp(20px,2vw,23px)/1.5 var(--f-body);color:var(--fg)}
+.prose ul{padding:0;margin:0 0 20px;list-style:none;display:flex;flex-direction:column;gap:14px}
+.prose li{padding-left:26px;position:relative;font-size:17px;line-height:1.65}
+.prose li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:10px;border:2px solid var(--accent);border-radius:3px}
+.prose li b{font-weight:600}
+.key-quote{max-width:860px;margin:0 auto 48px;font:500 clamp(24px,3vw,36px)/1.25 var(--f-display);letter-spacing:-.02em;padding:clamp(24px,4vw,40px);border-radius:20px;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)}
+.takeaways{margin-top:56px;padding:clamp(24px,4vw,36px);border-radius:18px;border:1px solid var(--line);background:var(--surface)}
+.takeaways h3{font-size:22px;margin-bottom:18px}
+.takeaways ol{margin:0;padding:0;list-style:none;counter-reset:t;display:flex;flex-direction:column;gap:14px}
+.takeaways li{counter-increment:t;display:grid;grid-template-columns:36px 1fr;gap:10px;font-size:16.5px}
+.takeaways li::before{content:counter(t,decimal-leading-zero);font:600 13px/1.9 var(--f-mono);color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+
+/* ---------- JOURNEY ---------- */
+.tl-controls{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:36px}
+.switch{display:inline-flex;align-items:center;gap:12px;font-size:15px;cursor:pointer;user-select:none}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .tr{width:44px;height:26px;border-radius:999px;background:var(--line-2);position:relative;transition:background-color .25s;flex:none}
+.switch .tr::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--bg-2);transition:transform .3s cubic-bezier(.3,1.3,.5,1);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.switch input:checked + .tr{background:var(--accent)}
+.switch input:checked + .tr::after{transform:translateX(18px)}
+.switch input:focus-visible + .tr{outline:2px solid var(--accent);outline-offset:3px}
+.timeline{position:relative}.tl-list{list-style:none;margin:0;padding:0}
+.timeline::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline .fill{position:absolute;left:23px;top:8px;width:2px;background:var(--accent);height:0;transition:height .2s linear}
+.tl-item{position:relative;padding:0 0 18px 72px}
+.tl-item[hidden]{display:none}
+.tl-node{position:absolute;left:12px;top:22px;width:24px;height:24px;border-radius:50%;background:var(--bg);border:2px solid var(--line-2);display:grid;place-items:center;z-index:1;transition:all .3s}
+.tl-item.ms .tl-node{border-color:var(--accent);background:var(--accent-soft)}
+.tl-item.ms .tl-node::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.tl-card{cursor:pointer;width:100%;text-align:left;display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:20px;align-items:start;padding:20px 22px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);transition:border-color .25s, box-shadow .25s}
+.tl-card:hover{border-color:var(--line-2)}
+.tl-item.open .tl-card{border-color:var(--accent);box-shadow:var(--shadow)}
+.tl-card .stage{font:600 12px var(--f-mono);color:var(--faint);letter-spacing:.06em;padding-top:5px}
+.tl-card h3{font-size:clamp(20px,2.2vw,26px);font-weight:600}
+.tl-card .org{font:500 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-top:6px}
+.tl-card .d{color:var(--muted);margin-top:10px;font-size:16px}
+.tl-card .hl{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+.tl-card .hl > *{overflow:hidden;min-height:0}
+.tl-item.open .tl-card .hl{grid-template-rows:1fr}
+.tl-card .hl p{margin-top:14px;padding:14px 16px;border-radius:10px;background:var(--amber-soft);font-size:15px;border-left:2px solid var(--amber)}
+.tl-card .hl p b{font:600 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:4px}
+.tl-card .badge{font:600 10.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:6px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.tl-card .plus{width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:transform .3s}
+.tl-card .plus svg{width:14px;height:14px}
+.tl-item.open .tl-card .plus{transform:rotate(45deg);border-color:var(--accent);color:var(--accent)}
+.tl-side{display:flex;flex-direction:column;align-items:end;gap:10px}
+@media (max-width:700px){.tl-card{grid-template-columns:minmax(0,1fr) auto}.tl-card .stage{grid-column:1/-1;padding:0}.tl-item{padding-left:52px}.timeline::before,.timeline .fill{left:15px}.tl-node{left:4px}}
+.arc{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));margin-top:8px;padding-top:8px}
+@media (max-width:980px){.arc{display:flex;overflow-x:auto;padding-bottom:10px}}
+.arc-step{flex:1 0 130px;padding:16px 12px 0 0;border-top:2px solid var(--line);position:relative;text-decoration:none;min-width:120px}
+.arc-step::before{content:"";position:absolute;top:-6px;left:0;width:10px;height:10px;border-radius:50%;background:var(--bg-2);border:2px solid var(--line-2)}
+.arc-step.ms{border-top-color:var(--accent)}
+.arc-step.ms::before{border-color:var(--accent);background:var(--accent)}
+.arc-step b{display:block;font:600 15px/1.25 var(--f-display)}
+.arc-step span{display:block;font:500 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-top:6px}
+.arc-step:hover b{color:var(--accent)}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
+.about-photo{position:sticky;top:calc(var(--nav-h) + 24px)}
+.about-photo .portrait-frame{aspect-ratio:4/5}
+.about-copy p{font-size:18px;line-height:1.75;color:var(--muted);margin-bottom:22px}
+.about-copy p strong{color:var(--fg);font-weight:600}
+.about-copy .big{font:400 clamp(24px,2.6vw,32px)/1.35 var(--f-display);color:var(--fg);letter-spacing:-.02em;margin-bottom:32px}
+.chips-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.chips-row span{padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:14.5px}
+.chips-row span b{font-family:var(--f-display);font-weight:650;margin-right:4px}
+.portfolio-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.pm{padding:18px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.pm b{font:600 18px var(--f-display);display:block}
+.pm span{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}.about-photo{position:static;max-width:380px}.portfolio-map{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cred{padding:28px 24px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.cred .seal{position:absolute;right:-18px;top:-18px;width:96px;height:96px;border-radius:50%;border:1px dashed var(--line-2);display:grid;place-items:center;color:var(--line-2)}
+.cred .badge{font:600 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.cred h3{font-size:24px;font-weight:600}
+.cred .f{color:var(--accent);font-weight:500}
+.cred p{color:var(--muted);font-size:15px}
+@media (max-width:860px){.creds{grid-template-columns:1fr}}
+
+/* ---------- PHOTOGRAPHY ---------- */
+.photo-grid{columns:3 300px;column-gap:20px}
+.photo-card{cursor:pointer;break-inside:avoid;margin-bottom:20px;display:block;width:100%;text-align:left;border-radius:var(--r);overflow:hidden;background:var(--surface);border:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .3s}
+.photo-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.photo-card .img{position:relative;overflow:hidden;background:var(--surface-2)}
+.photo-card img,.photo-card canvas{width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.photo-card:hover img,.photo-card:hover canvas{transform:scale(1.04)}
+.photo-card .exif{position:absolute;left:12px;bottom:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap}
+.photo-card .exif span{font:500 10.5px var(--f-mono);letter-spacing:.06em;padding:4px 8px;border-radius:6px;background:rgba(6,19,29,.62);color:#F3F0E8;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.photo-card .study{position:absolute;top:12px;left:12px;font:600 10px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;border-radius:6px;background:rgba(6,19,29,.62);color:#E7B86B}
+.photo-card .cap{padding:18px 20px 20px}
+.photo-card .cap .mono{color:var(--accent);font-size:11px}
+.photo-card .cap h3{font-size:21px;margin-top:8px;font-weight:600}
+.photo-card .cap p{font-size:14.5px;color:var(--muted);margin-top:6px}
+.photo-card .loc{font:500 12px var(--f-mono);color:var(--faint);margin-top:12px;display:flex;align-items:center;gap:6px}
+.photo-card .loc svg{width:13px;height:13px}
+.mine{font:600 10px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-left:8px}
+
+/* ---------- MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px calc(env(safe-area-inset-bottom,0px) + 16px);background:rgba(6,12,17,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-box{width:min(1080px,100%);max-height:100%;overflow:auto;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;box-shadow:0 40px 80px -20px rgba(0,0,0,.5);transform:translateY(16px) scale(.98);transition:transform .35s cubic-bezier(.2,.7,.2,1);position:relative}
+.modal.open .modal-box{transform:none}
+.modal-close{position:absolute;top:14px;right:14px;z-index:3}
+.lb{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.lb-img{background:#06131D;display:flex;min-height:320px}
+.lb-img img,.lb-img canvas{width:100%;height:100%;max-height:82vh;object-fit:cover}
+.lb-txt{padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.lb-txt h2{font-size:clamp(28px,3vw,38px)}
+.lb-txt .sub{font:300 18px/1.45 var(--f-display);color:var(--muted)}
+.lb-txt .story{font-size:16.5px;line-height:1.7}
+.lb-txt .phil{padding:16px 18px;border-radius:12px;background:var(--accent-soft);border-left:2px solid var(--accent);font-style:italic;font-size:15.5px}
+.lb-txt .phil b{display:block;font:600 10.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-style:normal;margin-bottom:6px}
+.exif-table{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.exif-table div{padding:10px 12px;border-left:1px solid var(--line)}
+.exif-table div:first-child{border-left:0}
+.exif-table span{display:block;font:500 10px var(--f-mono);letter-spacing:.1em;color:var(--faint);text-transform:uppercase}
+.exif-table b{font:600 15px var(--f-mono)}
+.lb-nav{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);align-items:center}
+@media (max-width:820px){.lb{grid-template-columns:1fr}.lb-img img,.lb-img canvas{max-height:52vh}}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.form .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field label{font:600 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-size:15.5px;transition:border-color .2s, box-shadow .2s}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.field .err{font-size:13px;color:#C2410C;display:none}
+.field.invalid input,.field.invalid textarea,.field.invalid select{border-color:#C2410C}
+.field.invalid .err{display:block}
+:root[data-theme="dark"] .field .err{color:#FB923C}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .field .err{color:#FB923C}}
+@media (max-width:600px){.form{grid-template-columns:1fr}}
+.drop{border:1.5px dashed var(--line-2);border-radius:12px;padding:18px;text-align:center;color:var(--muted);font-size:14.5px;cursor:pointer;transition:border-color .2s, background-color .2s}
+.drop:hover,.drop.over{border-color:var(--accent);background:var(--accent-soft)}
+.drop img{max-height:140px;margin:10px auto 0;border-radius:8px}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);padding-block:clamp(48px,7vw,88px)}
+.channel{display:flex;flex-direction:column;gap:6px;padding:22px 0;border-bottom:1px solid var(--line)}
+.channel .mono{color:var(--faint)}
+.channel .val{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font:500 clamp(19px,2vw,24px)/1.3 var(--f-display);word-break:break-word}
+.channel a.val{text-decoration:none}
+.channel a.val:hover{color:var(--accent)}
+.copy{display:inline-flex;align-items:center;gap:6px;font:600 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--muted);transition:all .2s}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.copy svg{width:13px;height:13px}
+.topics{display:flex;flex-wrap:wrap;gap:8px}
+.topics input{position:absolute;opacity:0;width:1px;height:1px}
+.topics label{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px;cursor:pointer;transition:all .2s;text-transform:none;letter-spacing:0;font-family:var(--f-body);font-weight:500;color:var(--muted)}
+.topics input:checked + label{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.topics input:focus-visible + label{outline:2px solid var(--accent);outline-offset:2px}
+.composed{border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);background:var(--accent-soft);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:14px;animation:viewIn .4s both}
+.composed pre{margin:0;white-space:pre-wrap;word-break:break-word;font:400 14px/1.6 var(--f-mono);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;max-height:280px;overflow:auto;user-select:all}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+/* ---------- RESUME ---------- */
+.resume{max-width:940px;margin:clamp(32px,5vw,56px) auto clamp(56px,8vw,96px);background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.rs-head{padding:clamp(24px,4vw,44px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+.rs-head h1{font-size:clamp(32px,4.4vw,48px)}
+.rs-head .role{color:var(--accent);font-weight:600;margin-top:8px}
+.rs-head .ct{display:flex;flex-direction:column;gap:6px;font:500 13px var(--f-mono);color:var(--muted);text-align:right}
+.rs-head .ct a{text-decoration:none;color:var(--fg)}
+.rs-head .ct a:hover{color:var(--accent)}
+.rs-sec{padding:clamp(22px,3.4vw,36px) clamp(24px,4vw,44px);border-bottom:1px solid var(--line);display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px}
+.rs-sec:last-child{border-bottom:0}
+.rs-sec > h2{font:600 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);padding-top:4px}
+.rs-roles{display:flex;flex-direction:column;gap:18px}
+.rs-role{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px}
+.rs-role b{font:600 17px var(--f-display)}
+.rs-role .p{font:500 12px var(--f-mono);color:var(--faint);text-align:right}
+.rs-role .o{font-size:14px;color:var(--accent);grid-column:1/-1}
+.rs-role p{grid-column:1/-1;color:var(--muted);font-size:15px}
+.rs-comp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.rs-comp div b{font:600 14px var(--f-display);display:block}
+.rs-comp div span{font-size:14.5px;color:var(--muted)}
+.rs-cs{display:flex;flex-direction:column;gap:12px}
+.rs-cs a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;text-decoration:none;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.rs-cs a:last-child{border-bottom:0;padding-bottom:0}
+.rs-cs a b{font-weight:600}
+.rs-cs a span{font:500 12px var(--f-mono);color:var(--faint)}
+.rs-cs a:hover b{color:var(--accent)}
+@media (max-width:700px){.rs-sec{grid-template-columns:1fr;gap:12px}.rs-head .ct{text-align:left}.rs-comp{grid-template-columns:1fr}}
+
+/* ---------- CTA + FOOTER ---------- */
+.cta-band{padding-block:clamp(64px,9vw,120px);text-align:left}
+.cta-band h2{font-size:clamp(40px,7vw,96px);font-weight:600;letter-spacing:-.04em;line-height:.98;max-width:14ch}
+.cta-band h2 em{font-style:normal;color:var(--accent)}
+.cta-band .row{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:end;margin-top:36px}
+.cta-band .row p{max-width:46ch;color:var(--muted)}
+footer{border-top:1px solid var(--line);background:var(--bg-2)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px;padding-block:56px 40px}
+.foot-grid h4{font:600 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.foot-grid a{text-decoration:none;color:var(--muted);font-size:15px}
+.foot-grid a:hover{color:var(--accent)}
+.foot-grid .about p{color:var(--muted);font-size:15px;margin-top:14px;max-width:40ch}
+.statusline{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:18px;border-top:1px solid var(--line);font:500 11.5px var(--f-mono);letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+.statusline .live{display:inline-flex;gap:8px;align-items:center}
+@media (max-width:860px){.foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-grid .about{grid-column:1/-1}}
+
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);transform:translate(-50%,20px);background:var(--fg);color:var(--bg);padding:12px 18px;border-radius:12px;font-size:14.5px;font-weight:500;z-index:100;opacity:0;pointer-events:none;transition:all .3s;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.kbd{font:500 11px var(--f-mono);padding:2px 6px;border:1px solid var(--line-2);border-radius:5px;color:var(--muted)}
+.notfound{padding-block:clamp(80px,12vw,160px)}
+.notfound h1{font-size:clamp(64px,12vw,160px);letter-spacing:-.05em}
+.reveal{animation:viewIn .7s cubic-bezier(.2,.7,.2,1) both}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" hidden></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#home" aria-label="Lalit Shahane — home">
+      <span class="brand-mark">LS</span>
+      <span class="brand-txt"><b>LALIT SHAHANE</b><span>Product Experience &amp; UX Leader</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks"></ul>
+    <div class="nav-actions">
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Switch colour theme" title="Switch theme (T)">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm nav-cta" href="#contact">Let’s talk</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="mm-top">
+    <a class="brand" href="#home"><span class="brand-mark">LS</span><span class="brand-txt"><b>LALIT SHAHANE</b></span></a>
+    <button class="icon-btn" id="menuClose" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <nav id="mobileLinks"></nav>
+  <a class="btn btn-primary" href="#contact" style="justify-content:center">Let’s talk</a>
+</div>
+
+<main id="main" tabindex="-1"></main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="about">
+      <a class="brand" href="#home"><span class="brand-mark">LS</span><span class="brand-txt"><b>LALIT SHAHANE</b><span>Pune, Maharashtra, India</span></span></a>
+      <p id="footBlurb"></p>
+    </div>
+    <div><h4>Work</h4><ul id="footWork"></ul></div>
+    <div><h4>Explore</h4><ul>
+      <li><a href="#thinking">Thinking</a></li><li><a href="#journey">Career journey</a></li><li><a href="#about">About</a></li><li><a href="#photography">Photography</a></li><li><a href="#resume">Résumé</a></li>
+    </ul></div>
+    <div><h4>Connect</h4><ul>
+      <li><a href="#contact">Contact form</a></li>
+      <li><a href="https://www.linkedin.com/in/lalitshahane/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><button class="copy" type="button" data-copy="slalit@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copy email</button></li>
+    </ul></div>
+  </div>
+  <div class="wrap statusline">
+    <span>© <span id="yr"></span> Lalit Shahane</span>
+    <span class="live"><span class="pulse"></span> Pune · <span id="clock">IST</span> · 18.5204° N, 73.8567° E</span>
+    <span>Press <span class="kbd">T</span> to switch theme</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modalBox"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const DATA = {"site": {"meta": {"title": "Lalit Shahane", "titleSuffix": "Product Experience & UX Leader", "description": "Lalit Shahane — Product Experience & UX Transformation Leader. 25+ years in enterprise UX, AI experiences and design leadership."}, "hero": {"statusTags": ["25+ years", "Executive UX", "Pune, MH, India"], "headline": {"lead": "Product experience", "joiner": "&", "middle": "UX transformation", "accent": "leader."}, "subhead": "Designing intelligent experiences. Transforming products, teams and organizations.", "intro": "I’m Lalit Shahane, a UX leader with 25+ years at the intersection of human-centered design, enterprise technology and AI-driven product innovation.", "primaryCta": {"label": "Explore my work", "href": "#work"}, "secondaryCta": {"label": "Read my thinking", "href": "#thinking"}, "portrait": {"src": "img/portrait.jpg", "alt": "Portrait of Lalit Shahane", "captionLeft": "Sr. Manager ·", "captionAccent": "User Experience", "captionRight": "2026"}}, "stats": [{"value": "25+", "label": "Years in UX & product"}, {"value": "4", "label": "Product lines · Ops, Data, DevX, Cloud"}, {"value": "{caseStudyCount}", "label": "Case studies, 2022–2026"}, {"value": "{articleCount}", "label": "Essays on AI & leadership"}], "sections": {"work": {"eyebrow": "Selected work", "title": "Designing trust, intelligence and scale across the enterprise", "pageTitle": "Selected work", "pageLede": "Five case studies on UX leadership, product architecture and enterprise AI transformation across Platform, Agentic AI, GenAI, Data and Security.", "homeCount": 3}, "autonomy": {"eyebrow": "A framework I use", "title": "Autonomy is a dial, not a switch.", "body": "In the agentic AI work, we let customers graduate trust over time: Ask, Assist and Agent modes with friction proportional to risk. Turn the dial to see how the same incident plays out."}, "leadership": {"eyebrow": "Leadership & impact", "title": "Designing for people, products and what’s next", "body": "I help organizations elevate design from a delivery function to a strategic driver of product, platform and business transformation."}, "thinking": {"eyebrow": "Thinking", "title": "Ideas, perspectives and experiences from the journey", "pageTitle": "Thinking", "pageLede": "Essays on human-centered AI, agentic workflows, experience strategy and the changing role of design leadership."}, "journey": {"eyebrow": "Career journey", "title": "From visual craft to enterprise UX leadership", "pageTitle": "A journey of continuous growth", "pageLede": "From design execution to enterprise UX leadership — a path driven by curiosity, continuous learning and a passion for meaningful experiences."}, "photography": {"eyebrow": "Photography", "title": "The art of noticing", "body": "Photography is my lifelong practice of observation: light, geometry, patience and human emotion, the same qualities that build empathy in design.", "pageTitle": "The art of noticing: light, shadows & human moments", "pageLede": "Beyond enterprise strategy and systems architecture, photography is my lifelong practice of deep observation. Every frame is a study in light, geometry, patience and emotion."}, "cta": {"eyebrow": "Open to conversations", "titleLead": "Let’s design what’s", "titleAccent": "next", "titleTail": ", together.", "body": "UX leadership advisory, AI product innovation, design-organization building or a keynote. Tell me what you’re working on."}}, "about": {"pageTitle": "A little more about me", "photo": {"src": "img/portrait.jpg", "alt": "Lalit Shahane", "caption": "Executive UX practice · Pune, India"}, "intro": "Over a quarter century in product experience design, I’ve worked where technical architecture, business strategy and human behaviour meet.", "paragraphs": ["My focus is **enterprise UX transformation**: modernizing complex, mission-critical platforms into elegant, defensible software systems without disrupting the business.", "As generative systems reshape computing, I champion **human-centered AI and innovation**, building transparent interaction models where human agency and autonomous, agentic workflows work in calibrated harmony.", "As a design leader, I build and mentor multidisciplinary UX teams, and move design from a reactive delivery function to a strategic catalyst for customer retention and enterprise growth."], "highlights": [["25+", "years experience"], ["UX", "leadership"], ["AI-enabled", "innovation"], ["Design", "strategy"], ["Team", "leadership"]], "currentRole": "Senior Manager, User Experience, leading UX across the AMI product portfolio.", "portfolio": [["AMI Ops", "Operations"], ["AMI Data", "Database"], ["AMI DevX", "Developer experience"], ["AMI Cloud", "Platform"]]}, "resume": {"title": "Senior Product Experience & UX Transformation Leader", "currentRole": "Senior Manager, User Experience · AMI product portfolio", "summary": "Product experience and UX leader with 25+ years guiding enterprise modernization, AI product innovation and cross-functional design excellence. Translates complex technical architectures into human-centered platforms that customers trust and adopt."}, "contact": {"pageTitle": "Let’s start a conversation", "pageLede": "Reach out about UX leadership advisory, AI product innovation or keynote discussions. I read every message.", "openTo": "Executive advisory · keynote sessions · strategic design leadership", "topics": ["UX leadership advisory", "AI product innovation", "Keynote or talk", "Design org building", "Something else"]}, "footer": {"blurb": "25+ years shaping enterprise product experiences, AI-enabled systems and design organizations. Open to executive advisory, keynote sessions and strategic design leadership."}}, "profile": {"name": "LALIT SHAHANE", "initials": "LS", "role": "Product Experience & UX Transformation Leader", "experienceYears": "25+", "location": "Pune, MH, India", "email": "slalit@gmail.com", "linkedInUrl": "https://www.linkedin.com/in/lalitshahane/", "linkedInDisplay": "linkedin.com/in/lalitshahane"}, "projects": [{"id": "security-console-modernisation", "category": "ENTERPRISE UX", "categoryKey": "enterprise", "title": "Security: Streaming & Management Console Modernisation", "subtitle": "Replacing green-screen configuration with a visual, policy-driven experience", "description": "Replacing green-screen configuration with a visual, policy-driven experience.", "detailedSummary": "The Security product line protects mainframe estates by streaming security-relevant data. The streaming product was configured through terminal panels, and the management console was widely seen as intimidating and complex. I led UX for the modernisation of both: web-based policy management, flow-map visualisation and a UX audit.", "visualType": "enterprise-platform", "problemSpace": "Green-screen configuration and intimidating management consoles made streaming setup complex and error-prone.", "solution": "A centralised, visual policy system: policies are created once, tagged, deployed to many instances and understood through an estate flow map.", "keyOutcomes": ["Streaming web UX validated with 6 customers", "Policy-driven configuration replacing terminal work", "Evidence-based console modernisation"], "role": "UX leader for Security product line: streaming web enablement, console re-platform, policy management", "year": "2025–2026", "duration": "May 2025 to present", "teamComposition": "Three designers (one at 50%) · Research: one UX researcher", "stakeholders": ["Lead Product Manager", "Senior Manager of Product Development", "VP of Product Management & Design"], "metrics": [{"label": "Design Validation", "value": "6 Customers"}, {"label": "Console Redesign", "value": "Policy-Driven"}], "leadershipPerspective": {"executiveMandate": "Use customer evidence to make design decisions credible, protect quality when development moved ahead of design, and keep scarce capacity on highest-priority work.", "strategicRole": "Supported UX audit to find usability gaps and design-system inconsistencies before development effort.", "crossFunctionalSynergy": "Connected product management, R&D and design-system team early so design and engineering moved together.", "teamLeadership": "Coached presenters and protected design files from last-minute unverified edits.", "orgTransformation": "Transformed repeated terminal work into a streamlined, policy-driven web experience."}, "designThinkingFlow": {"phase1Discover": {"overview": "Phase 1: Discover & Empathize — Customer Pain Points & Workflow Mapping.", "researchAnalytics": [{"metric": "6+5 Customers", "detail": "Studied streaming product and console panel."}], "userCohorts": ["System Programmers", "Record Owners"], "keyInsights": ["Terminal skills are a growing challenge in large environments.", "Intimidating consoles encourage set-and-forget workarounds."]}, "phase2Define": {"coreProblemStatement": "How might we let a systems programmer see, build and deploy a streaming policy across an entire estate with confidence?", "cognitiveFrictionPoints": ["Repeated manual deployment", "No estate-wide view", "Persona split"], "jobsToBeDone": ["Build one policy and push it to every instance.", "Show coverage and modification history to record owners."], "mentalModelMisalignment": "Configuring systems one by one rather than reasoning about policies and coverage across the estate."}, "phase3Ideate": {"northStarVision": "Centralised, visual policy system with flow-map visualisation of running policies across all instances.", "architecturalShifts": [{"from": "Terminal configuration on one system", "to": "Centralised policy system with history", "rationale": "Removes repeated manual steps and maintains an audit trail."}], "strategicTradeOffs": ["Put clickable instance names on hold until scope was agreed; scaled for 100+ instances."]}, "phase4Prototype": {"validationApproach": "Streaming prototype for customer event (May 2025), concept tests and UX audit.", "usabilityTestingMetrics": [{"test": "Console Validation", "baseline": "Intimidating", "prototype": "Flow-Map UI", "gain": "Approved"}], "interactiveHighlights": ["Flow-map estate view", "Policy creation flow", "Deployment and modification history"]}, "phase5Implement": {"governanceFramework": "Bi-monthly cloud and security prioritisation reviews aligning UX and R&D.", "designSystemIntegration": "Design-system portfolio lead involved for developer framework training.", "continuousFeedbackLoops": "Customer recruitment and validation serving as model for other modules."}}, "businessOutcomesAndROI": {"roiMetrics": [{"value": "6 Customers", "label": "Streaming UX Validated", "context": "Lower design risk and customer-approved direction."}], "commercialBenefits": ["Reduced reliance on terminal skills in large environments."], "operationalSavings": "Focused capacity on highest-value customer and product management demand."}, "leadershipTakeaway": "Enterprise security UX modernisation requires co-creation with customers and early alignment between design and engineering."}, {"id": "agentic-ai-experience", "category": "AI EXPERIENCES", "categoryKey": "ai", "title": "Agentic AI Experience", "subtitle": "Designing human-agent collaboration that customers can trust", "description": "Designing human-agent collaboration that customers can trust.", "detailedSummary": "As the company moved from AI chat to agents that can investigate and act on mission-critical mainframe systems, the experience question became: how much autonomy, shown how, with which safeguards? I led UX direction for that shift, from a cross-product AI experience framework to the November 2026 agentic release decisions and Agentic Workspaces programme.", "visualType": "ai-ops", "problemSpace": "Moving from AI chat to autonomous agents requires calibrated trust, transparent reasoning, and human-in-the-loop safeguards.", "solution": "Designed a two-axis framework (conversational/embedded and assistive/agentic), adjustable autonomy modes (Ask, Assist, Agent), and risk-proportional friction.", "keyOutcomes": ["Cross-product AI experience framework", "November 2026 release de-risked", "Agentic Workspaces program launched"], "role": "UX leader for agentic experience strategy and cross-product alignment (Platform, Ops and Data)", "year": "2025–2026", "duration": "2025 to present", "teamComposition": "Assistant UX lead and three designers · Research: two UX researchers", "stakeholders": ["VP of Product Management & Design", "Directors of PM", "Architects", "R&D Leaders"], "metrics": [{"label": "Autonomy Frameworks", "value": "2-Axis Model"}, {"label": "Target Task Success", "value": "≥ 80%"}], "leadershipPerspective": {"executiveMandate": "Agentic UX is a leadership problem before it is a design problem—turning open debates into recorded decisions.", "strategicRole": "Authored end-to-end UX plan for Workspaces, phases, roles, and undated milestones.", "crossFunctionalSynergy": "Facilitated cross-product alignment across Platform, Ops, and Data.", "teamLeadership": "Proposed four big rocks in the AI initiative discussion and invited owners.", "orgTransformation": "Reframed AI chat as a progression from chat to workflows to workspaces."}, "designThinkingFlow": {"phase1Discover": {"overview": "Phase 1: Discover & Empathize — Customer Evidence on AI Trust, Maturity & Incident Workflows.", "researchAnalytics": [{"metric": "3 Customers", "detail": "On-site and remote customers studied."}], "userCohorts": ["Operators", "Systems Programmers"], "keyInsights": ["Trust is an adoption requirement.", "Governance is the adoption bottleneck."]}, "phase2Define": {"coreProblemStatement": "How might we let customers delegate more to agents over time while keeping approval visible?", "cognitiveFrictionPoints": ["Fragmented surfaces", "Expertise bottleneck"], "jobsToBeDone": ["Coordinated multi-product incident response.", "Transparent evidence before agent action."], "mentalModelMisalignment": "Individual product agents without suite-level workflow continuity."}, "phase3Ideate": {"northStarVision": "Agentic workspaces: persistent shared workspaces where humans and agents coordinate.", "architecturalShifts": [{"from": "Single Ask AI chat", "to": "Two-axis framework & adjustable autonomy", "rationale": "Gives psychological safety and graduates confidence."}], "strategicTradeOffs": ["Hidden unlicensed AI features rather than greyed-out options."]}, "phase4Prototype": {"validationApproach": "Two tracks: November 2026 release interaction rules and Agentic Workspaces validation.", "usabilityTestingMetrics": [{"test": "Workflow Success", "baseline": "Baseline", "prototype": "Target ≥ 80%", "gain": "Validated"}], "interactiveHighlights": ["Adjustable autonomy dials", "Progressive disclosure", "Intent previews"]}, "phase5Implement": {"governanceFramework": "AI Experience Framework for naming, licensing, and failure behaviors.", "designSystemIntegration": "Assistant identity and action-naming rules in design system.", "continuousFeedbackLoops": "Customer design program and research run beneath every phase."}}, "businessOutcomesAndROI": {"roiMetrics": [{"value": "Framework", "label": "One AI Experience", "context": "Consolidated naming, licensing and failure behaviors."}], "commercialBenefits": ["De-risked November 2026 release."], "operationalSavings": "Clear bar for experience quality before delivery."}, "leadershipTakeaway": "Agentic UX requires turning complex technical autonomy trade-offs into reliable, trusted governance frameworks."}, {"id": "genai-assistant", "category": "AI EXPERIENCES", "categoryKey": "ai", "title": "Generative AI Assistant: Defining the GenAI Experience", "subtitle": "From a GenAI vision in December 2022 to agentic capabilities and an agent marketplace", "description": "From a GenAI vision in December 2022 to agentic capabilities and an agent marketplace.", "detailedSummary": "When generative AI arrived in late 2022, the IT service and operations suite had no agreed experience model for it. I led early ideation, use case exploration, customer research, UX strategy and vision for GenAI capabilities. That direction became the foundation of the company’s GenAI features: summaries, insights, recommendations and conversation across workflows.", "visualType": "ai-ops", "problemSpace": "Lack of suite-wide experience model for GenAI when capabilities emerged in late 2022.", "solution": "Woven GenAI into the workflow: a capability model (summarise, surface insights, recommend, converse, create, aggregate) delivered in context.", "keyOutcomes": ["Foundation for company GenAI features", "Shared design language across ITSM and AIOps", "Evolution into agent marketplace"], "role": "UX leader for GenAI direction: ideation, use case exploration, customer research, UX strategy and vision", "year": "2022–2025", "duration": "Dec 2022 to 2025", "teamComposition": "Six designers · Research: two UX researchers", "stakeholders": ["VP of R&D and UX", "Senior Director of Product Design", "Design-System Lead"], "metrics": [{"label": "GenAI Foundation", "value": "Suite-Wide"}, {"label": "Customer Research", "value": "43+ Participants"}], "leadershipPerspective": {"executiveMandate": "Set the direction early, turn it into reusable patterns, and keep work grounded in customer evidence.", "strategicRole": "Led end-to-end UX strategy, design audits, prototypes and recurring customer research.", "crossFunctionalSynergy": "Collaborated with engineering leaders and design-system portfolio leads.", "teamLeadership": "Directed six product designers and two UX researchers.", "orgTransformation": "Transformed individual AI features into shared patterns in the design system."}, "designThinkingFlow": {"phase1Discover": {"overview": "Phase 1: Discover & Empathize — Use Case Exploration & Behavioural Data.", "researchAnalytics": [{"metric": "Service-Desk Usability Test", "detail": "Compared 3 chat and search designs."}, {"metric": "AIOps Research Rounds", "detail": "Evaluated summary and timeline."}], "userCohorts": ["IT Operators", "Service Agents"], "keyInsights": ["Assistant is needed across the journey, not only in chat.", "Trust depends on accuracy and editable output."]}, "phase2Define": {"coreProblemStatement": "How might we bring generative AI into service and operations workflows so people get summaries and recommendations in context?", "cognitiveFrictionPoints": ["Scattered information", "Manual documentation"], "jobsToBeDone": ["Get a summary and related knowledge for a ticket.", "Show likely cause and remediation steps."], "mentalModelMisalignment": "Organising AI around prompts and answers rather than in-task workflow steps."}, "phase3Ideate": {"northStarVision": "GenAI woven into the workflow via a unified capability model in one design language.", "architecturalShifts": [{"from": "Stand-alone chatbot", "to": "Contextual GenAI summary boxes and insights", "rationale": "Ties AI directly to the user task."}], "strategicTradeOffs": ["Treated generated code as draft requiring human review."]}, "phase4Prototype": {"validationApproach": "Usability testing, remote interviews, prototype reviews and design audits.", "usabilityTestingMetrics": [{"test": "Ticket Resolution", "baseline": "Manual", "prototype": "Summary & Auto-Note", "gain": "Highly Received"}], "interactiveHighlights": ["Situation summary & code wizard", "Vulnerability remediation risk view", "5 Whys Action Plan"]}, "phase5Implement": {"governanceFramework": "Design patterns documented for all products with legal disclaimers.", "designSystemIntegration": "Delivered assistant concept, controls, and components.", "continuousFeedbackLoops": "Research and product-analytics behavior data tied to design."}}, "businessOutcomesAndROI": {"roiMetrics": [{"value": "Foundation", "label": "Company GenAI Story", "context": "One coherent GenAI story across service and operations."}], "commercialBenefits": ["Faster remediation and better security posture."], "operationalSavings": "Estimated over 10,000 hours/year saved in IT, HR, and finance."}, "leadershipTakeaway": "Defining a new technology experience requires early vision paired with rigorous, evidence-led pattern creation."}, {"id": "data-management-ai", "category": "ENTERPRISE UX", "categoryKey": "enterprise", "title": "Data Management: Agentic AI for Database Operations", "subtitle": "Bringing expert-level diagnosis to database teams without removing human control", "description": "Bringing expert-level diagnosis to database teams without removing human control.", "detailedSummary": "The Data product line covers relational and hierarchical database solutions. As squads moved to agentic AI, I led UX direction for three use cases (deadlock log analyser, autonomous reorganisation, exception list), the web log-analysis experience replacing terminal-era workflows, and 2026 customer-event demonstrations.", "visualType": "enterprise-platform", "problemSpace": "Database diagnosis required rare expert knowledge and relied on cumbersome terminal-era workflows.", "solution": "Designed an AI insights panel next to a report grid, enabling log analysis, deadlock diagnosis, and phased autonomy from report-only to approval-gated action.", "keyOutcomes": ["3 Agentic use cases UX-complete", "Web log-analysis experience replacing terminals", "EMEA 2026 customer event showcases"], "role": "UX leader for Data product line: agentic AI use cases, log analysis, Assistant consistency and demos", "year": "2025–2026", "duration": "Nov 2025 to present", "teamComposition": "Design lead for Data product line · Research: one UX researcher", "stakeholders": ["Product Managers for Database Families", "Senior Manager of Product Development", "Platform PM"], "metrics": [{"label": "Agentic Use Cases", "value": "3 Completed"}, {"label": "Design Partners", "value": "6 Customers"}], "leadershipPerspective": {"executiveMandate": "Keep squads anchored on the customer problem, protect a consistent Assistant experience, and carry three agentic use cases.", "strategicRole": "Guided problem framing, clarifying phase-one report-only boundaries and defining AI roles.", "crossFunctionalSynergy": "Partnered with product managers and Data engineers, backing offline HTML demos to remove event connectivity risk.", "teamLeadership": "Enabled designers to prototype agentic flows with AI-assisted tools.", "orgTransformation": "Bridged terminal habits with modern web-based AI data visualization."}, "designThinkingFlow": {"phase1Discover": {"overview": "Phase 1: Discover & Empathize — Design-Partner Discovery & Terminal Workflow Study.", "researchAnalytics": [{"metric": "6 Customers", "detail": "Studied across relational and hierarchical databases."}], "userCohorts": ["Database Administrators", "Database Engineers"], "keyInsights": ["Expertise is the bottleneck.", "Web experiences must respect terminal habits."]}, "phase2Define": {"coreProblemStatement": "How might we give every database team the judgement of their most experienced DBA?", "cognitiveFrictionPoints": ["Expert dependency", "Scattered evidence", "Fragile hand-offs"], "jobsToBeDone": ["Deadlock and performance drift analysis with likely causes.", "Approve AI-recommended database actions safely."], "mentalModelMisalignment": "Treating AI as immediate automation rather than phased human-approved assistance."}, "phase3Ideate": {"northStarVision": "Report first, human approved: AI insights panel next to a report grid.", "architecturalShifts": [{"from": "Terminal panels and raw log files", "to": "Web log-analysis tool with dataset visualisations", "rationale": "Removes terminal-skill barriers and makes patterns visible."}], "strategicTradeOffs": ["Kept phase one in report-only mode with strict limits on object lists."]}, "phase4Prototype": {"validationApproach": "AI-built prototypes, offline HTML demos for EMEA 2026 event, and stakeholder reviews.", "usabilityTestingMetrics": [{"test": "Log Analysis Workflow", "baseline": "Terminal", "prototype": "Web Dashboard", "gain": "Validated"}], "interactiveHighlights": ["Deadlock view with conflicting transactions", "Reorganisation report", "Exception list curation"]}, "phase5Implement": {"governanceFramework": "Weekly AI-for-Data reviews with product managers and formal sign-offs.", "designSystemIntegration": "Designs follow design system and shared Assistant principles.", "continuousFeedbackLoops": "Monthly review tracking priority and UX allocation."}}, "businessOutcomesAndROI": {"roiMetrics": [{"value": "3 Use Cases", "label": "Agentic Workflows", "context": "Deadlock analysis, reorganisation and exception list UX-complete."}], "commercialBenefits": ["Early customer reaction and pipeline interest at EMEA 2026."], "operationalSavings": "Consistent Assistant experience across the suite."}, "leadershipTakeaway": "Data UX transformation requires respecting expert terminal habits while introducing phased, trusted agentic intelligence."}, {"id": "ami-platform", "category": "AI EXPERIENCES", "categoryKey": "ai", "title": "AMI Assistant & Platform Experience", "subtitle": "One consistent, trustworthy AI front door across workflows and products", "description": "One consistent, trustworthy AI front door across workflows and products.", "detailedSummary": "AMI (Assistant & Management Interface) is the unified AI front door across the company’s enterprise portfolio. I led UX direction for the platform experience, multi-product Assistant consistency, agentic workflow integration, and design governance for the 2026 releases.", "visualType": "ai-ops", "problemSpace": "Multiple AI capabilities across different products risked fragmenting the user experience and eroding trust.", "solution": "A cohesive AI front door with consistent invocation patterns, transparent reasoning, and adjustable autonomy dials.", "keyOutcomes": ["Unified AI experience across 4 product lines", "Assistant design patterns adopted portfolio-wide", "Validated with enterprise design partners"], "role": "UX leader for AMI platform strategy and cross-suite AI experience consistency", "year": "2025–2026", "duration": "2025 to present", "teamComposition": "Four designers · Research: two UX researchers", "stakeholders": ["VP of Product Management & Design", "R&D Directors", "Platform Architects"], "metrics": [{"label": "Product Lines", "value": "4 Suites"}, {"label": "Design Partners", "value": "12 Customers"}], "leadershipPerspective": {"executiveMandate": "Establish a unified AI experience that feels native across all products while maintaining rigorous trust and governance.", "strategicRole": "Defined portfolio-wide AI interaction paradigms and governance rules.", "crossFunctionalSynergy": "Bridged AI research, R&D engineering, and product management.", "teamLeadership": "Mentored design leads across product suites.", "orgTransformation": "Shifted product teams from isolated feature silos to a unified platform ecosystem."}, "designThinkingFlow": {"phase1Discover": {"overview": "Phase 1: Discover & Empathize — Cross-Product Workflow & Trust Mapping.", "researchAnalytics": [{"metric": "12 Customers", "detail": "Evaluated multi-product AI touchpoints."}], "userCohorts": ["Enterprise IT Directors", "Operators"], "keyInsights": ["Consistency breeds trust.", "Users demand predictable guardrails."]}, "phase2Define": {"coreProblemStatement": "How might we deliver a unified AI assistant experience across diverse enterprise products without cognitive friction?", "cognitiveFrictionPoints": ["Inconsistent UI patterns", "Unpredictable agent behavior"], "jobsToBeDone": ["Interact with AI seamlessly across products.", "Understand reasoning before action."], "mentalModelMisalignment": "Treating AI as a standalone chatbot rather than an embedded capability."}, "phase3Ideate": {"northStarVision": "One trustworthy AI front door with consistent invocation and graduated autonomy.", "architecturalShifts": [{"from": "Siloed product chatbots", "to": "Unified AMI platform experience", "rationale": "Ensures predictable, cohesive user mental models."}], "strategicTradeOffs": ["Standardized assistant chrome across diverse product contexts."]}, "phase4Prototype": {"validationApproach": "Interactive prototyping, user testing with 12 enterprise customers, and executive reviews.", "usabilityTestingMetrics": [{"test": "Cross-Product Consistency", "baseline": "Low", "prototype": "Unified AMI", "gain": "High Approval"}], "interactiveHighlights": ["Universal assistant drawer", "Contextual prompt triggers", "Autonomy status indicators"]}, "phase5Implement": {"governanceFramework": "Cross-suite design governance and component design system integration.", "designSystemIntegration": "AMI components baked into enterprise design system.", "continuousFeedbackLoops": "Continuous telemetry and customer advisory council reviews."}}, "businessOutcomesAndROI": {"roiMetrics": [{"value": "4 Suites", "label": "Unified Experience", "context": "Consistent AI interaction model portfolio-wide."}], "commercialBenefits": ["Accelerated cross-product adoption."], "operationalSavings": "Reduced redundant design and engineering effort."}, "leadershipTakeaway": "Unified AI experiences require rigorous architectural governance and unwavering commitment to user trust."}], "articles": [{"id": "designing-human-centered-ai-experiences", "title": "Designing Human-Centered AI Experiences", "date": "February 2026", "readingTime": "6 min read", "category": "AI & Product Design", "shortDescription": "Why chat interfaces are insufficient for complex enterprise cognition, and how multimodal generative canvases foster transparent agentic collaboration.", "coverAccent": "#35D0BA", "tags": ["Agentic AI", "Cognitive Canvas", "Enterprise UX", "Human-in-the-Loop", "AI Trust"], "fullContent": {"lead": "The tech industry has spent the past two years shoving chat interfaces into enterprise software. Yet when dealing with high-stakes financial pipelines, clinical diagnoses, or complex cloud orchestration, a conversational text stream introduces cognitive friction rather than relieving it. True intelligence requires spatial ergonomics.", "keyQuote": "Conversation is ephemeral and linear; professional enterprise cognition is spatial, multidimensional, and verified through comparative models.", "sections": [{"heading": "The Limits of the Conversational Sandbox", "body": "Conversation is fundamentally linear, ephemeral, and low-density. Enterprise professionals do not think in single back-and-forth text exchanges; they manipulate spatial models, verify multidimensional tables, and validate branching decision trees. By forcing sophisticated users to interact exclusively through a text box, we degrade their situational awareness.", "quote": "A text box is the least expressive interface for multidimensional data analysis ever conceived.", "bulletPoints": ["Chat interfaces hide state: Users lose track of antecedent parameters and intermediate model assumptions.", "Linear scrolling creates context thrashing: Comparing two complex outputs requires endless vertical scrubbing.", "Prompt gymnastics place the cognitive burden on the human rather than the tool."]}, {"heading": "Introducing the Adaptive Cognitive Canvas", "body": "Human-centered AI requires replacing static chat windows with dynamic, self-assembling user interfaces. When an agent synthesizes an inquiry, it should output structured telemetry cards, editable decision matrices, and transparent attribution chains. The UI becomes an interactive playground for verification rather than a passive transcript.", "quote": "The future of enterprise AI UX is generative interfaces that assemble ad-hoc UI components tailored to the active task.", "bulletPoints": ["Contextual Artifacts: Generative outputs render as first-class UI cards, graphs, and sliders that can be directly tweaked.", "Explainability Topologies: Interactive attribution links showing exactly which data sources produced the recommendation.", "Spatial Memory: Preserving workspace state across multi-turn sessions so operators never lose their train of thought."]}, {"heading": "Designing Calibrated Trust & Friction", "body": "Counterintuitively, a frictionless AI experience is dangerous. When system mistakes carry multi-million dollar ramifications, UX leaders must intentionally introduce \"cognitive pauses\"—clear checkpoints where human judgement validates agent intent before autonomous execution.", "quote": "Frictionless design in high-stakes AI is an architectural bug, not a feature. We must design intentional moments of reflection.", "bulletPoints": ["Confidence Visualization: Clearly demarcating probabilistic predictions versus deterministic truths.", "Safe Dry-Runs: Allowing operators to preview simulated outcome impacts before triggering destructive scripts.", "Instant Rollback Safeguards: Empowering users with unambiguous escape hatches and single-click state reversion."]}], "takeaways": ["Shift from transient chat boxes to multimodal generative UI artifacts that preserve spatial context.", "Calibrate friction intentionally: introduce cognitive verification checkpoints before high-consequence automations.", "Anchor agent explainability directly into the visual layout through interactive attribution topologies.", "Empower human operators as directors and validators, never passive consumers of black-box outputs."]}}, {"id": "from-feature-delivery-to-experience-transformation", "title": "From Feature Delivery to Experience Transformation", "date": "November 2025", "readingTime": "7 min read", "category": "UX Strategy", "shortDescription": "A practical executive framework for escaping the feature factory and restructuring design as a primary driver of enterprise platform valuation.", "coverAccent": "#E7B86B", "tags": ["UX Strategy", "Experience Transformation", "DesignOps", "Enterprise Value", "Product Operations"], "fullContent": {"lead": "Most enterprise design teams operate as high-velocity ticket fulfillment centers. They produce screens, wireframes, and prototypes in response to feature requests, yet the aggregate experience remains bloated, fractured, and disjointed. Moving from delivery to strategic value demands an organizational paradigm shift.", "keyQuote": "Executives do not buy Figma files; they invest in customer retention, reduced support overhead, and accelerated ARR expansion.", "sections": [{"heading": "Diagnosing the Feature Factory Trap", "body": "When engineering teams measure velocity by story points and product managers by feature ship counts, the customer bears the cognitive burden. Every shipped toggle or standalone tab increases systemic debt. A feature-centric organization measures outputs; an experience-led organization measures workflow completion and cognitive load.", "quote": "Shipping 50 disjointed features creates negative compounding value if the end-to-end customer journey remains broken.", "bulletPoints": ["Feature bloat directly correlates with customer onboarding drag and elevated customer support tickets.", "Siloed product pods optimize for local metrics while destroying global usability cohesion.", "Designers get relegated to cosmetic polishers at the end of the waterfall sprint cycle."]}, {"heading": "The Three-Horizon Experience Architecture", "body": "To elevate design into boardroom strategy, UX leaders must construct a Three-Horizon Roadmap: Horizon 1 fixes acute ergonomic bottlenecks in current releases; Horizon 2 unifies fractured workflows across product silos; Horizon 3 prototypes the disruptive paradigm shifts that safeguard the business against competitive obsolescence.", "quote": "A design leader must balance quarterly tactical ergonomics with multi-year conceptual reinvention.", "bulletPoints": ["Horizon 1 (Current Quarter): Remove friction from the top 5 high-volume enterprise task journeys.", "Horizon 2 (6-12 Months): Unify fragmented product platforms into a single coherent design token system.", "Horizon 3 (1-3 Years): Prototype speculative operating paradigms that redefine the company’s product category."]}, {"heading": "Speaking the Language of the Executive Suite", "body": "Executives do not buy Figma files; they invest in customer retention, reduced support overhead, faster user onboarding, and accelerated expansion revenue. UX leaders must tie every qualitative friction point to a quantified operational cost.", "quote": "If you cannot articulate how a design change protects gross margins or accelerates sales velocity, you remain an observer in executive decisions.", "bulletPoints": ["Translate System Usability Scale (SUS) scores into reduced onboarding churn metrics.", "Measure task completion duration in terms of recouped enterprise labor hours.", "Present UX scorecards directly alongside quarterly financial business reviews."]}], "takeaways": ["De-emphasize feature ship counts in favor of holistic user job completion velocity.", "Use the Three-Horizon model to balance urgent tactical ergonomics with bold strategic reinvention.", "Quantify UX debt as direct operational labor cost and customer retention risk.", "Embed design leadership at the inception of business strategy, not the tail end of product delivery."]}}, {"id": "evolving-role-ux-leaders-ai-era", "title": "The Evolving Role of UX Leaders in the AI Era", "date": "August 2025", "readingTime": "5 min read", "category": "Leadership", "shortDescription": "As machine intelligence generates baseline UI components, the true value of design leadership shifts toward ethical governance, problem framing, and organizational empathy.", "coverAccent": "#35D0BA", "tags": ["Design Leadership", "AI Ethics", "Org Design", "Human Agency", "Polymathic Teams"], "fullContent": {"lead": "Generative algorithms will soon construct wireframes, write component code, and run synthetic usability simulations in seconds. In this reality, what is the enduring mandate of a senior UX leader? It is the deliberate stewardship of human intent, ethical boundaries, and organizational purpose.", "keyQuote": "The central challenge of the AI era is not \"What can we build with this model?\", but \"Should we build this, and how does it protect human agency?\"", "sections": [{"heading": "The Commoditization of Pixel Execution", "body": "For twenty years, design orgs differentiated themselves by the aesthetic polish and speed of their design deliverables. As design systems and AI automate layout composition, pixel-pushing will become a commoditized utility. What cannot be automated is deep customer empathy, systems-level problem definition, and ethical stewardship.", "quote": "When execution becomes virtually free, framing the right problem becomes priceless.", "bulletPoints": ["Automated design tools can render 100 variants of a button, but cannot discern whether the button should exist.", "Designers must elevate from interface artisans to systems thinkers and ethical auditors.", "Executive value shifts from deliverable throughput to customer outcome efficacy."]}, {"heading": "Design Leaders as Chief Meaning Officers", "body": "The central challenge of the AI era is not \"What can we build with this model?\", but \"Should we build this, and how does it respect human agency?\" Design executives must become the fierce protectors of human dignity, verifying that automated systems empower rather than marginalize the humans they serve.", "quote": "Design leaders must be the conscience of the product organization, asking the uncomfortable questions before algorithms are deployed.", "bulletPoints": ["Establish algorithmic safety and fairness principles before training models on customer data.", "Prevent automation complacency by designing transparent oversight interfaces for domain experts.", "Advocate for vulnerable user cohorts who bear the disproportionate brunt of system errors."]}, {"heading": "Cultivating High-Agency, Polymathic Teams", "body": "The next generation of high-impact design teams will be smaller, faster, and radically interdisciplinary. Designers will need fluency in statistical probabilistic models, prompt ergonomics, and system topology. Cultivating this curiosity is the greatest privilege of modern design leadership.", "quote": "The best AI designers will not be tool operators; they will be polymaths who navigate data science, human psychology, and business strategy with equal agility.", "bulletPoints": ["Break down silos between UX researchers and ML data scientists through joint problem-discovery sprints.", "Instill prompt ergonomics and mental model mapping as foundational design competencies.", "Foster an organizational culture where qualitative human insight actively steers quantitative algorithmic goals."]}], "takeaways": ["Shift focus from deliverable quantity to strategic problem framing and system-level architecture.", "Champion human agency and ethical safety as non-negotiable core pillars of product design.", "Foster polymathic design teams fluent in data science, cognitive ergonomics, and business viability.", "Serve as the bridge between computational machine capabilities and human emotional resonance."]}}, {"id": "agentic-workflows-beyond-chat", "title": "Agentic Workflows: Moving Beyond Conversational Chat", "date": "January 2026", "readingTime": "6 min read", "category": "AI & Product Design", "shortDescription": "How to design multi-step autonomous agent workflows that maintain operator oversight, transparent telemetry, and predictable failure recovery.", "coverAccent": "#35D0BA", "tags": ["Agentic Workflows", "Autonomous Agents", "Human-in-the-Loop", "Enterprise AI"], "fullContent": {"lead": "Moving from generative chatbots to autonomous multi-step agents represents the most profound shift in enterprise software since the transition from desktop to cloud. Agents do not merely answer questions; they investigate, decide, and act across distributed microservice estates.", "keyQuote": "An agent without transparent intermediate reasoning is merely a high-speed black box generating expensive uncertainty.", "sections": [{"heading": "The Anatomy of Agentic Interaction", "body": "Enterprise agents operate across asynchronous horizons. Unlike instant chat responses, a complex database reorganisation or security remediation plan may take minutes to compile. The interface must communicate progress, intent, and branching options without overwhelming the operator.", "quote": "Designers must visualize agent intent before execution so humans remain directors rather than spectators.", "bulletPoints": ["Intent Previews: Clear, structured summaries of what the agent plans to modify before executing commands.", "Live Telemetry Streams: Step-by-step progress tickers showing which logs, databases, or policies are being inspected.", "Graceful Degradation: Preserving partial results when an agent encounters unexpected system permissions."]}, {"heading": "Adjustable Autonomy Dials", "body": "Different tasks require different levels of machine independence. We must design adjustable autonomy settings (Ask, Assist, Agent) that allow organizations to graduate trust incrementally as agent reliability is empirically proven in production.", "quote": "Autonomy is not a binary switch; it is a graduated sliding scale calibrated against risk and domain familiarity.", "bulletPoints": ["Ask Mode: Agent recommends actions and waits for explicit manual confirmation on every step.", "Assist Mode: Agent executes low-risk subtasks automatically while pausing for major state alterations.", "Agent Mode: Autonomous multi-step execution with post-action audit trails and instant rollback."]}], "takeaways": ["Provide transparent intent previews before autonomous multi-step execution begins.", "Implement adjustable autonomy dials (Ask, Assist, Agent) to scale trust incrementally.", "Design robust live telemetry streams so operators maintain situational awareness.", "Ensure single-click rollback mechanisms are always visible for emergency intervention."]}}, {"id": "designing-for-trust-explainability", "title": "Designing for Trust and Explainability in Autonomous Systems", "date": "December 2025", "readingTime": "5 min read", "category": "Enterprise UX", "shortDescription": "Strategies for exposing machine reasoning, confidence scores, and data lineage to eliminate user anxiety in mission-critical environments.", "coverAccent": "#E7B86B", "tags": ["Trust", "Explainability", "Data Lineage", "Enterprise Safety"], "fullContent": {"lead": "In enterprise systems, trust is hard-won and instantly lost. When an AI model recommends purging a cache or modifying a security firewall rule, the operator needs to know exactly why the recommendation was made and what historical data informed it.", "keyQuote": "Explainability is not an audit afterthought; it is the fundamental foundation upon which enterprise AI adoption rests.", "sections": [{"heading": "Visualizing Data Lineage and Provenance", "body": "Operators do not trust opaque confidence percentages. They require interactive attribution links that connect recommendations directly to specific log lines, compliance frameworks, and historical incident tickets.", "quote": "If an AI cannot cite its evidentiary sources, its recommendation should be treated as conjecture.", "bulletPoints": ["Source Citation Cards: Hoverable footnotes linking directly to underlying telemetry and audit records.", "Confidence Breakdown: Granular scoring across accuracy, historical precedent, and anomaly risk.", "Alternative Hypothesis View: Showing what other conclusions the model considered before arriving at its primary recommendation."]}], "takeaways": ["Always connect AI recommendations to verifiable underlying data sources and telemetry.", "Break down confidence scores into understandable rubric components.", "Surface alternative hypotheses to prevent premature operator automation bias."]}}, {"id": "enterprise-design-systems-generative-ui", "title": "Enterprise Design Systems in the Age of Generative UI", "date": "October 2025", "readingTime": "6 min read", "category": "Enterprise UX", "shortDescription": "Adapting traditional component libraries to support dynamic, AI-assembled user interfaces without compromising accessibility and brand integrity.", "coverAccent": "#35D0BA", "tags": ["Design Systems", "Generative UI", "Tokens", "Accessibility"], "fullContent": {"lead": "Traditional design systems are built on static component taxonomies: buttons, tables, modals, and accordions. But when generative AI begins assembling ad-hoc interfaces in real time based on user queries, how do design tokens and accessibility standards hold up?", "keyQuote": "Design systems in the AI era must govern generative composition rules, not just static component pixels.", "sections": [{"heading": "Governing Generative Layout Composition", "body": "When an AI assistant generates a custom dashboard on the fly, it must adhere to strict spatial token hierarchies, contrast ratios, and keyboard navigation standards defined in the core design system.", "quote": "Generative UI requires programmatic guardrails to prevent layout chaos and cognitive overload.", "bulletPoints": ["Composition Rules: Strict layout bounding boxes that prevent generated widgets from colliding or overflowing.", "Tokenized Intent: Mapping AI semantic tags directly to design system token variables.", "Automated Accessibility Checks: Real-time validation of contrast, ARIA labels, and tab orders on generated elements."]}], "takeaways": ["Extend design systems from static components to dynamic generative layout rules.", "Enforce strict contrast, tokenization, and accessibility checks on all AI-rendered widgets.", "Maintain unified brand tone and ergonomic rhythm across both static and dynamic UI surfaces."]}}, {"id": "mitigating-cognitive-friction", "title": "Mitigating Cognitive Friction in Complex Enterprise Operations", "date": "September 2025", "readingTime": "7 min read", "category": "Enterprise UX", "shortDescription": "How progressive disclosure, contextual telemetry, and unified dashboards eliminate the intimidation factor of legacy enterprise tooling.", "coverAccent": "#E7B86B", "tags": ["Cognitive Load", "Progressive Disclosure", "Enterprise Tooling", "UX Ergonomics"], "fullContent": {"lead": "Legacy enterprise software is notorious for exposing every database parameter, configuration toggle, and log stream on a single intimidating screen. Reducing cognitive friction requires mastering progressive disclosure and spatial hierarchy.", "keyQuote": "Simplicity in enterprise software is not the removal of power; it is the immaculate timing of information revelation.", "sections": [{"heading": "The Art of Progressive Disclosure", "body": "By surfacing high-level executive summaries and estate flow maps by default, while tucking deep parameter controls into contextual drill-down panels, we empower novice operators without clipping the wings of elite experts.", "quote": "Show the summary state first, the diagnostic drill-down second, and raw configuration parameters only when requested.", "bulletPoints": ["Estate Flow Maps: Visual topologies representing system health at a glance.", "Contextual Action Drawers: Side panels that slide in to provide deep controls without obscuring primary workflows.", "Smart Defaults: Pre-populating complex forms with AI-derived recommendations based on historical best practices."]}], "takeaways": ["Adopt progressive disclosure to prevent overwhelming operators with raw configuration data.", "Use visual estate flow maps to communicate complex system health instantly.", "Leverage smart defaults and contextual drawers to streamline high-volume workflows."]}}, {"id": "three-horizon-framework-ai", "title": "The Three-Horizon Framework for AI-Driven Product Strategy", "date": "July 2025", "readingTime": "6 min read", "category": "UX Strategy", "shortDescription": "A structured roadmap for balancing immediate tactical AI feature integration with long-term platform reinvention and disruptive innovation.", "coverAccent": "#35D0BA", "tags": ["Product Strategy", "Three-Horizon Model", "Roadmapping", "Innovation"], "fullContent": {"lead": "Product teams often fall into the trap of either chasing every shiny AI trend or remaining paralyzed by legacy maintenance. The Three-Horizon Framework provides a disciplined methodology for sequencing AI investments across short, medium, and long-term horizons.", "keyQuote": "True product strategy is the art of allocating scarce design and engineering capacity between defending today and inventing tomorrow.", "sections": [{"heading": "Sequencing Horizon 1, 2, and 3 Investments", "body": "Horizon 1 focuses on embedding generative summaries and assistive insights into existing workflows. Horizon 2 unifies cross-product agentic workspaces. Horizon 3 explores spatial computing and fully autonomous cognitive governance.", "quote": "Without a multi-horizon framework, urgent bug fixes will always crowd out transformative innovation.", "bulletPoints": ["Horizon 1 (Optimization): Instant summaries, auto-generated notes, and guided error recovery.", "Horizon 2 (Expansion): Cross-product agentic workspaces and shared AMI front doors.", "Horizon 3 (Disruption): Fully autonomous self-healing enterprise architectures."]}], "takeaways": ["Balance immediate assistive AI features with long-term platform agentic transformation.", "Protect dedicated design capacity for Horizon 3 exploratory research and prototyping.", "Align R&D roadmap milestones with measurable customer value inflection points."]}}, {"id": "balancing-algorithmic-autonomy", "title": "Balancing Algorithmic Autonomy with Human Governance", "date": "June 2025", "readingTime": "5 min read", "category": "Leadership", "shortDescription": "Why organizational governance and ethical design review boards are essential prerequisites for deploying high-stakes autonomous AI agents.", "coverAccent": "#E7B86B", "tags": ["Governance", "Algorithmic Autonomy", "Ethics", "Leadership"], "fullContent": {"lead": "As software gains the authority to modify production databases and firewall rules autonomously, the traditional lines of product liability blur. UX leaders must spearhead cross-functional governance structures to oversee agentic behavior.", "keyQuote": "When code can take autonomous action, product design governance becomes corporate risk management.", "sections": [{"heading": "Establishing Cross-Functional AI Governance", "body": "Bringing together product managers, security architects, legal counsel, and UX designers into weekly AI review boards ensures that autonomy is granted strictly on the basis of empirical safety validation and clear audit trails.", "quote": "Ethics in AI cannot be outsourced to a compliance checkbox; it must be baked directly into the interaction design.", "bulletPoints": ["Multidisciplinary Review Boards: Joint sign-offs for any feature granting autonomous write privileges.", "Standardized Failure Protocols: Defining predictable, graceful fallback behaviors when models produce syntax or logic errors.", "Immutable Audit Logs: Ensuring every agent decision is permanently recorded for regulatory compliance."]}], "takeaways": ["Institute multidisciplinary AI governance boards to oversee autonomous feature releases.", "Design standardized, graceful fallback behaviors for all model failure scenarios.", "Maintain immutable audit logs of all agent-driven system modifications."]}}, {"id": "polymathic-product-team", "title": "The Polymathic Product Team: Merging UX, Data Science, and Engineering", "date": "May 2025", "readingTime": "6 min read", "category": "Innovation", "shortDescription": "Breaking down traditional departmental silos to build fast, interdisciplinary squads capable of shipping complex AI-driven enterprise products.", "coverAccent": "#35D0BA", "tags": ["Polymathic Teams", "Cross-Functional", "DesignOps", "Engineering Culture"], "fullContent": {"lead": "The era of handing requirements over the wall from product management to UX, then from UX to engineering, is officially dead. Building sophisticated AI experiences requires polymathic squads where designers understand model telemetry and engineers grasp cognitive ergonomics.", "keyQuote": "The best products are built by blended teams who share a common mental model of customer pain and technical possibility.", "sections": [{"heading": "Breaking Down Departmental Silos", "body": "By embedding UX researchers directly into machine learning training sprints and pairing designers with system architects during prototype discovery, we eliminate translation loss and compress delivery timelines.", "quote": "Speed in modern product development is a direct consequence of eliminating inter-departmental handoffs.", "bulletPoints": ["Blended Discovery Sprints: Product managers, designers, and data scientists prototyping together on day one.", "Shared Mental Models: Training engineers in cognitive empathy and designers in system constraints.", "Rapid Prototyping Loops: Testing interactive HTML prototypes directly with design partners before writing production code."]}], "takeaways": ["Erase traditional handoff silos by forming blended, multidisciplinary product squads.", "Empower designers with foundational fluency in data science and system architecture.", "Prioritize rapid interactive prototyping over static specification documents."]}}], "career": [{"id": "role-1", "title": "UI Designer", "period": "Foundations", "organization": "Digital Studios & Agencies", "description": "Mastered visual design principles, typography, layout hierarchies, and early web standards.", "isMilestone": false, "highlight": "Foundation in digital interface craft and visual ergonomics."}, {"id": "role-2", "title": "Visualizer", "period": "Early Craft", "organization": "Creative & Media Studios", "description": "Conceptualized brand identities, interactive multimedia narratives, and storytelling architectures.", "isMilestone": false, "highlight": "Creative direction and cross-medium visual storytelling."}, {"id": "role-3", "title": "Usability Consultant", "period": "Human Factors", "organization": "Usability Advisory Group", "description": "Conducted heuristic evaluations, cognitive walkthroughs, and lab-based usability tests.", "isMilestone": true, "highlight": "Rigorous grounding in cognitive psychology and empirical usability benchmarking."}, {"id": "role-4", "title": "UX Consultant / Lead", "period": "Enterprise Practices", "organization": "Global Consulting Practices", "description": "Led user research and information architecture for enterprise client engagements across sectors.", "isMilestone": false, "highlight": "Translating complex client workflows into intuitive information architectures."}, {"id": "role-5", "title": "Team Manager / UXD", "period": "Team Leadership", "organization": "Enterprise Solutions Practice", "description": "Managed delivery teams of UX designers, researchers, and prototype engineers on critical client products.", "isMilestone": false, "highlight": "First formal design people management and delivery governance."}, {"id": "role-6", "title": "Senior Technical Architect", "period": "Systems Architecture", "organization": "Technology Services & Platforms", "description": "Bridged engineering feasibility and UX architecture, defining front-end component systems.", "isMilestone": true, "highlight": "Deep technical integration: bridging design systems with enterprise codebases."}, {"id": "role-7", "title": "Senior Manager", "period": "Practice Scaling", "organization": "Global Technology Enterprise", "description": "Expanded regional UX capabilities, mentored lead designers, and standardized user testing frameworks.", "isMilestone": false, "highlight": "Scaling design standards across multi-disciplinary product lines."}, {"id": "role-8", "title": "Program Manager", "period": "Strategic Delivery", "organization": "Enterprise Product Group", "description": "Orchestrated cross-functional product discovery and delivery across globally distributed squads.", "isMilestone": false, "highlight": "Cross-functional operational governance and executive stakeholder alignment."}, {"id": "role-9", "title": "Manager – Product Design", "period": "Product Ownership", "organization": "Cloud & SaaS Platform", "description": "Owned the core product design vision, partnering directly with VP of Product and engineering leads.", "isMilestone": true, "highlight": "Pivoting core SaaS products toward modern user-centric mental models."}, {"id": "role-10", "title": "Senior Manager – User Experience", "period": "Executive Leadership", "organization": "Enterprise Platform & AI Initiatives", "description": "Spearheading UX transformation, AI-powered product innovation, and design organization leadership.", "isMilestone": true, "highlight": "Directing enterprise UX transformation and next-generation AI experience strategy."}], "pillars": [{"id": "ux-strategy", "title": "UX STRATEGY", "description": "Experience vision, portfolio alignment and product strategy.", "iconName": "strategy", "details": ["Aligning product roadmaps directly with validated user mental models and commercial ROI.", "Translating ambiguous business objectives into defensible experience north stars.", "Establishing executive design reviews that position UX as a top-line growth driver."]}, {"id": "ai-innovation", "title": "AI & INNOVATION", "description": "Human-centered AI, agentic experiences and design-led innovation.", "iconName": "ai", "details": ["Architecting human-in-the-loop interaction models for proactive generative systems.", "Mitigating algorithmic hallucination anxiety through explainability and verification.", "Designing multimodal spatial and agentic workflows beyond primitive conversational chat."]}, {"id": "people-organization", "title": "PEOPLE & ORGANIZATION", "description": "Building, mentoring and empowering high-performing UX teams.", "iconName": "people", "details": ["Recruiting, developing, and retaining world-class multidisciplinary design talent.", "Instituting a culture of intellectual rigor, mutual candor, and continuous craft excellence.", "Structuring career pathways that bridge individual contributor craft and executive leadership."]}, {"id": "transformation", "title": "TRANSFORMATION", "description": "Moving organizations from feature delivery toward experience-led development.", "iconName": "transformation", "details": ["Shifting organizational posture from reactive ticket completion to holistic journey outcomes.", "Embedding continuous qualitative and quantitative feedback loops directly into sprint cycles.", "De-risking multi-million dollar platform replatforming initiatives through prototype testing."]}], "creds": [{"id": "mba", "degree": "MBA", "field": "Master of Business Administration", "badge": "Business Leadership", "institution": "Executive Strategic Management & Marketing"}, {"id": "pg-diploma", "degree": "Post Graduate Diploma", "field": "Business Administration / Operations", "badge": "Operations & Systems", "institution": "Business Processes & Organizational Strategy"}, {"id": "cua", "degree": "Certified Usability Analyst", "field": "CUA", "badge": "Human Factors International", "institution": "Cognitive Ergonomics & Usability Science"}], "photos": [{"id": "shaniwar-wada-morning-light", "title": "Shadows of the Peshwas", "subtitle": "Morning light slicing through the 18th-century stone archways of Pune", "category": "Light & Architecture", "location": "Shaniwar Wada, Pune, India", "year": "2025", "cameraGear": "Fujifilm X-T5 · Fujinon 33mm f/1.4", "exif": {"aperture": "f/2.0", "shutter": "1/640s", "iso": "160"}, "imageUrl": null, "story": "I arrived just as the first morning rays filtered past the spiked Delhi Gate. At dawn, when the crowds are absent, Shaniwar Wada breathes in silence. The way the golden sunlight grazed the weathered teak pillars and heavy stone lintels reminded me of how architecture guides human attention. In UX, as in ancient masonry, negative space and shadow establish rhythm.", "philosophy": "Observing natural light teaches patience. You cannot rush the sun; you must position yourself and wait for the precise angle where structural truth emerges."}, {"id": "western-ghats-monsoon-veil", "title": "The Monsoon Veil", "subtitle": "Ascending Sinhagad fort amidst swirling clouds and basalt ridges", "category": "Nature & Landscapes", "location": "Sinhagad Ridge, Western Ghats, Pune", "year": "2024", "cameraGear": "Sony A7 IV · 24-70mm f/2.8 GM II", "exif": {"aperture": "f/5.6", "shutter": "1/250s", "iso": "200"}, "imageUrl": null, "story": "The Western Ghats during July are a spectacle of mist and deluge. Reaching the crest of Sinhagad, visibility dropped to twenty meters before an updraft tore open a window into the valley below. The intense emerald terraces gleamed against dark volcanic basalt for barely three seconds. I released the shutter instinctively.", "philosophy": "Capturing transient moments in severe conditions mirrors rapid product prototyping: you have to embrace ambiguity and rely on muscle memory when the opportunity reveals itself."}, {"id": "tulsibaug-market-rhythm", "title": "Pulse of Tulsibaug", "subtitle": "A quiet portrait amidst the vibrant bustle of old Pune bazaar", "category": "Street & Culture", "location": "Tulsibaug Bazaar, Pune, India", "year": "2024", "cameraGear": "Fujifilm X100V · 23mm f/2.0", "exif": {"aperture": "f/2.8", "shutter": "1/320s", "iso": "400"}, "imageUrl": "img/tulsibaug.jpg", "story": "Tulsibaug is sensory overload—the clinking of brass utensils, aroma of marigolds, and haggling voices. In the center of this whirlwind sat an artisan shaping clay lamps with deliberate, tranquil focus. While everyone else moved at frantic speeds, his hands moved with generational muscle memory. This contrast between ambient chaos and individual stillness was compelling.", "philosophy": "Human-centered design is about uncovering that quiet stillness inside high-complexity environments: filtering noise so true intent can breathe."}, {"id": "mumbai-cst-geometry", "title": "Cathedral of Motion", "subtitle": "Victorian Gothic arches framing thousands of daily commuter journeys", "category": "Light & Architecture", "location": "CST Terminus, Mumbai, India", "year": "2025", "cameraGear": "Leica Q2 · Summilux 28mm f/1.7", "exif": {"aperture": "f/2.8", "shutter": "1/125s", "iso": "800"}, "imageUrl": null, "story": "Every evening, thousands of commuters flow beneath CST’s soaring ribbed vaults. Standing on the concourse with a slow shutter speed, the travelers dissolved into flowing rivers of energy while the monolithic sandstone arches remained immovable. It is an extraordinary study in how physical infrastructure channels human intent.", "philosophy": "Enterprise design systems are like railway concourses: the scaffolding must be rock-solid and invisible so people can achieve their destinations effortlessly."}, {"id": "varanasi-dawn-contemplation", "title": "Ripples of Dawn", "subtitle": "A boatman resting at the confluence of mist and river", "category": "Moments & Moods", "location": "Assi Ghat, Varanasi, India", "year": "2024", "cameraGear": "Sony A7 IV · 85mm f/1.4 GM", "exif": {"aperture": "f/1.8", "shutter": "1/1000s", "iso": "100"}, "imageUrl": null, "story": "At 5:30 AM on the Ganges, color hasn’t arrived yet. The world is rendered in subtle gradients of silver, blue, and charcoal. A lone boatman had paused his oars, eyes closed in silent prayer as incense smoke drifted across the bow. There was an honesty to the moment that no staged portrait could ever replicate.", "philosophy": "Empathy in research cannot be faked or scheduled into a 30-minute user interview. It requires showing up early, leaving preconceptions at the door, and listening to unvoiced gestures."}, {"id": "kaas-plateau-wildflowers", "title": "The Ephemeral Bloom", "subtitle": "Microcosms of rare endemic flora on the UNESCO Kaas basalt plateau", "category": "Nature & Landscapes", "location": "Kaas Plateau, Satara, Maharashtra", "year": "2024", "cameraGear": "Fujifilm X-T5 · 80mm Macro f/2.8", "exif": {"aperture": "f/4.0", "shutter": "1/500s", "iso": "250"}, "imageUrl": null, "story": "For just three weeks post-monsoon, the volcanic plateau transforms into a carpet of endemic wildflowers surviving in mere inches of topsoil. Getting down to eye level with macro lenses reveals miniature engineering feats—delicate moisture-wicking petals, dewdrop lenses, and symbiotic insect pathways.", "philosophy": "True craft reveals itself under close magnification. Whether designing micro-interactions in software or studying endemic petals, precision at the smallest scale creates enduring delight."}]};
+</script>
+<script>
+(function(){
+"use strict";
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); return true; }catch(e){ return false; } }
+};
+const P = DATA.profile;
+const S = DATA.site;
+/* fill {caseStudyCount}/{articleCount} tokens; **bold** -> <strong> */
+const fill = t => String(t ?? "").replace("{caseStudyCount}", DATA.projects.length).replace("{articleCount}", DATA.articles.length);
+const md = t => esc(fill(t)).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+const I = {
+  arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.5L16 9.5"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+  close:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  strategy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>',
+  ai:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>',
+  people:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/></svg>',
+  transformation:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11l-3-3M20 17H9l3 3"/><path d="M19 7a4 4 0 0 1 1 3M5 17a4 4 0 0 1-1-3"/></svg>',
+  linkedin:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg>'
+};
+const NAV = [["home","Home"],["work","Work"],["thinking","Thinking"],["journey","Journey"],["about","About"],["photography","Photography"],["resume","Résumé"]];
+
+/* ---------------- THEME ---------------- */
+const root = document.documentElement;
+function systemDark(){ return window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches; }
+function currentTheme(){ return root.getAttribute("data-theme") || (systemDark() ? "dark" : "light"); }
+const savedTheme = store.get("ls-theme", null);
+if (savedTheme === "light" || savedTheme === "dark") root.setAttribute("data-theme", savedTheme);
+function toggleTheme(){
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  store.set("ls-theme", next);
+  $("#themeBtn").setAttribute("aria-label", next === "dark" ? "Switch to light theme" : "Switch to dark theme");
+  toast(next === "dark" ? "Dark mode on" : "Light mode on");
+}
+$("#themeBtn").addEventListener("click", toggleTheme);
+
+/* ---------------- UTIL ---------------- */
+let toastT;
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(()=>t.classList.remove("show"), 2200); }
+async function copyText(text, btn){
+  try{ await navigator.clipboard.writeText(text); toast("Copied: " + (text.length > 40 ? "message text" : text)); }
+  catch(e){
+    const r = document.createRange(); const n = btn && btn.closest("[data-copy-target]") ? $(btn.closest("[data-copy-target]").dataset.copyTarget) : null;
+    if (n){ r.selectNodeContents(n); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Text selected — press Ctrl/⌘+C to copy"); }
+    else toast(text);
+  }
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]");
+  if (b){ e.preventDefault(); copyText(b.dataset.copy, b); }
+});
+const catCls = k => k === "enterprise" ? "amb" : "";
+const projIdx = id => DATA.projects.findIndex(p => p.id === id);
+
+/* ---------------- NAV ---------------- */
+$("#navLinks").innerHTML = NAV.slice(1).map(([k,l]) => `<li><a href="#${k}" data-nav="${k}">${l}</a></li>`).join("");
+$("#mobileLinks").innerHTML = NAV.map(([k,l],i) => `<a href="#${k}" data-nav="${k}">${l}<span>0${i+1}</span></a>`).join("") + `<a href="#contact" data-nav="contact">Contact<span>08</span></a>`;
+$("#footWork").innerHTML = DATA.projects.slice(0,4).map(p => `<li><a href="#case.${p.id}">${esc(p.title.split(":")[0])}</a></li>`).join("") + `<li><a href="#work">All case studies</a></li>`;
+const mm = $("#mobileMenu");
+function setMenu(open){ mm.classList.toggle("open", open); $("#menuBtn").setAttribute("aria-expanded", open); document.body.style.overflow = open ? "hidden" : ""; if(open) $("#menuClose").focus(); }
+$("#menuBtn").addEventListener("click", () => setMenu(true));
+$("#menuClose").addEventListener("click", () => setMenu(false));
+mm.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+window.addEventListener("scroll", () => {
+  $("#nav").classList.toggle("scrolled", scrollY > 8);
+  const pr = $("#progress");
+  if (!pr.hidden){ const h = document.documentElement.scrollHeight - innerHeight; pr.style.width = (h > 0 ? Math.min(100, scrollY / h * 100) : 0) + "%"; }
+  scrollHooks.forEach(f => f());
+}, {passive:true});
+let scrollHooks = [];
+
+/* ---------------- VIEWS ---------------- */
+function pageHead(eyebrow, title, lede, crumb){
+  return `<header class="page-head"><div class="gridbg"></div><div class="wrap">
+    <div class="crumb"><a href="#home">~/lalit</a><span>/</span><span>${crumb}</span></div>
+    <h1 class="reveal">${title}</h1>${lede ? `<p class="lede reveal" style="animation-delay:.08s">${lede}</p>` : ""}
+  </div></header>`;
+}
+function workRows(list){
+  return list.map(p => `<a class="work-row" href="#case.${p.id}">
+      <span class="idx">${String(projIdx(p.id)+1).padStart(2,"0")} / ${String(DATA.projects.length).padStart(2,"0")}</span>
+      <div><span class="cat">${esc(p.category)}</span><h3>${esc(p.title)}</h3>
+        <div class="metrics-mini">${p.metrics.map(m => `<span class="tag">${esc(m.label)} <b>${esc(m.value)}</b></span>`).join("")}</div></div>
+      <p class="desc">${esc(p.description)}</p>
+      <div class="yr"><span>${esc(p.year)}</span><span class="arrow-circle">${I.arrow}</span></div>
+    </a>`).join("");
+}
+function artCard(a, feature){
+  const c = /Strategy|Leadership/.test(a.category) ? "amb" : "";
+  return `<a class="art-card${feature ? " feature" : ""}" href="#article.${a.id}">
+    <div class="meta"><span class="c ${c}">${esc(a.category)}</span><span>${esc(a.date)}</span></div>
+    <h3>${esc(a.title)}</h3>
+    ${feature ? `<blockquote>${esc(a.fullContent.keyQuote)}</blockquote>` : ""}
+    <p>${esc(a.shortDescription)}</p>
+    <div class="foot"><span>${esc(a.readingTime)}</span><span class="r">Read ${I.arrow}</span></div>
+  </a>`;
+}
+function ctaBand(){
+  return `<section class="cta-band alt"><div class="wrap">
+    <span class="eyebrow">${md(S.sections.cta.eyebrow)}</span>
+    <h2 style="margin-top:18px">${md(S.sections.cta.titleLead)} <em>${md(S.sections.cta.titleAccent)}</em>${md(S.sections.cta.titleTail)}</h2>
+    <div class="row"><p>${md(S.sections.cta.body)}</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="#contact">Start a conversation ${I.arrow}</a><a class="btn btn-ghost" href="#resume">View résumé</a></div></div>
+  </div></section>`;
+}
+
+/* HOME */
+function viewHome(){
+  const feat = DATA.projects, H = S.hero, X = S.sections;
+  const latest = DATA.articles.slice().sort((a,b) => new Date("1 "+b.date) - new Date("1 "+a.date)).slice(0,3);
+  return `
+  <section class="hero"><div class="gridbg"></div><div class="wrap hero-grid">
+    <div>
+      <span class="status reveal"><span class="pulse"></span>${H.statusTags.map(md).join(' <span style="opacity:.4">/</span> ')}</span>
+      <h1 class="reveal" style="animation-delay:.05s">${md(H.headline.lead)} <span class="thin">${md(H.headline.joiner)}</span> ${md(H.headline.middle)} <span class="acc">${md(H.headline.accent)}</span></h1>
+      <p class="sub reveal" style="animation-delay:.12s">${md(H.subhead)}</p>
+      <p class="intro reveal" style="animation-delay:.18s">${md(H.intro)}</p>
+      <div class="hero-ctas reveal" style="animation-delay:.24s"><a class="btn btn-primary" href="${esc(H.primaryCta.href)}">${md(H.primaryCta.label)} ${I.arrow}</a><a class="btn btn-ghost" href="${esc(H.secondaryCta.href)}">${md(H.secondaryCta.label)}</a></div>
+    </div>
+    <figure class="portrait reveal" style="margin:0;animation-delay:.1s">
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <div class="portrait-frame"><img src="${esc(H.portrait.src)}" alt="${esc(H.portrait.alt)}" width="1070" height="1470"></div>
+      <figcaption class="portrait-tag"><span>${md(H.portrait.captionLeft)} <b>${md(H.portrait.captionAccent)}</b></span><span>${md(H.portrait.captionRight)}</span></figcaption>
+      <span class="coords">SYS // 25Y.EXP_NODE — PUNE 18.5204° N</span>
+    </figure>
+  </div></section>
+
+  <div class="ticker"><div class="ticker-row">
+    ${S.stats.map(x => `<div class="ticker-cell"><b>${md(x.value)}</b><span>${md(x.label)}</span></div>`).join("")}
+  </div></div>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">${md(X.work.eyebrow)}</span><h2>${md(X.work.title)}</h2></div>
+      <a class="link-arrow" href="#work">All case studies ${I.arrow}</a></div>
+    <div class="work-list">${workRows(feat.slice(0, X.work.homeCount || 3))}</div>
+  </div></section>
+
+  <section class="sec alt"><div class="wrap dial-wrap">
+    <div>
+      <span class="eyebrow">${md(X.autonomy.eyebrow)}</span>
+      <h2 style="font-size:clamp(32px,4.4vw,52px);margin-top:14px">${md(X.autonomy.title)}</h2>
+      <p class="muted" style="margin-top:18px;max-width:46ch">${md(X.autonomy.body)}</p>
+      <div class="seg" role="group" aria-label="Autonomy mode" id="seg">
+        <span class="thumb" id="segThumb"></span>
+        <button type="button" data-mode="0" aria-pressed="true">Ask</button>
+        <button type="button" data-mode="1" aria-pressed="false">Assist</button>
+        <button type="button" data-mode="2" aria-pressed="false">Agent</button>
+      </div>
+      <div class="dial-meter">
+        <div class="meter"><span>Agent autonomy</span><span class="bar"><i id="mA"></i></span><span class="v" id="mAv"></span></div>
+        <div class="meter"><span>Human checkpoints</span><span class="bar amber"><i id="mH"></i></span><span class="v" id="mHv"></span></div>
+      </div>
+      <a class="link-arrow" style="margin-top:28px" href="#article.agentic-workflows-beyond-chat">Read: Agentic workflows beyond chat ${I.arrow}</a>
+    </div>
+    <div class="console" aria-live="polite">
+      <div class="console-bar"><span class="dots"><i></i><i></i><i></i></span><span>AMI ASSISTANT · DATA</span><span class="mode-pill" id="modePill">ASK</span></div>
+      <div class="console-body" id="consoleBody"></div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">${md(X.leadership.eyebrow)}</span><h2>${md(X.leadership.title)}</h2></div>
+      <p>${md(X.leadership.body)}</p></div>
+    ${pillarsHTML()}
+  </div></section>
+
+  <section class="sec alt"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">${md(X.thinking.eyebrow)}</span><h2>${md(X.thinking.title)}</h2></div>
+      <a class="link-arrow" href="#thinking">All ${DATA.articles.length} essays ${I.arrow}</a></div>
+    <div class="art-grid">${artCard(latest[0], true)}${artCard(latest[1])}</div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">${md(X.journey.eyebrow)}</span><h2>${md(X.journey.title)}</h2></div>
+      <a class="link-arrow" href="#journey">See the full journey ${I.arrow}</a></div>
+    <div class="arc">${DATA.career.map(c => `<a class="arc-step${c.isMilestone ? " ms" : ""}" href="#journey" data-open="${c.id}"><b>${esc(c.title)}</b><span>${esc(c.period)}</span></a>`).join("")}</div>
+  </div></section>
+
+  <section class="sec alt"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">${md(X.photography.eyebrow)}</span><h2>${md(X.photography.title)}</h2></div>
+      <p>${md(X.photography.body)}</p></div>
+    <div class="photo-grid" id="homePhotos"></div>
+    <a class="link-arrow" href="#photography">Visit the gallery ${I.arrow}</a>
+  </div></section>
+  ${ctaBand()}`;
+}
+function pillarsHTML(){
+  return `<div class="pillars">${DATA.pillars.map(p => `
+    <div class="pillar" role="button" tabindex="0" aria-expanded="false">
+      <span class="pi">${I[p.iconName] || I.strategy}</span>
+      <h3>${esc(p.title.charAt(0) + p.title.slice(1).toLowerCase()).replace("Ux","UX").replace("Ai ","AI ")}</h3>
+      <p>${esc(p.description)}</p>
+      <ul>${p.details.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
+      <span class="more">${I.plus}<span>How</span></span>
+    </div>`).join("")}</div>`;
+}
+const MODES = [
+  {k:"ASK", auto:15, hum:100, steps:[["Collect deadlock log for DB2P","done","Done"],["Identify conflicting transactions","wait","Approve?"],["Draft reorganisation plan","idle","Queued"],["Apply change in production","idle","Queued"]],
+   note:"The agent recommends each step and waits for your explicit confirmation before it moves on.", acts:["Approve step","Edit"]},
+  {k:"ASSIST", auto:55, hum:45, steps:[["Collect deadlock log for DB2P","done","Auto"],["Identify conflicting transactions","done","Auto"],["Draft reorganisation plan","run","Running"],["Apply change in production","wait","Needs you"]],
+   note:"Low-risk analysis runs automatically. The agent pauses before anything that alters system state.", acts:["Review intent preview","Pause"]},
+  {k:"AGENT", auto:90, hum:12, steps:[["Collect deadlock log for DB2P","done","Auto"],["Identify conflicting transactions","done","Auto"],["Draft reorganisation plan","done","Auto"],["Apply change in production","done","Logged"]],
+   note:"Multi-step execution with a full audit trail and one-click rollback always in view.", acts:["View audit trail","Roll back"]}
+];
+function setMode(i){
+  const m = MODES[i]; const body = $("#consoleBody"); if (!body) return;
+  $$("#seg button").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.mode === i)));
+  $("#segThumb").style.transform = `translateX(${i*100}%)`;
+  $("#modePill").textContent = m.k;
+  $("#mA").style.width = m.auto + "%"; $("#mAv").textContent = m.auto;
+  $("#mH").style.width = m.hum + "%"; $("#mHv").textContent = m.hum;
+  body.innerHTML = `<div class="incident"><div><div class="mono" style="color:var(--faint)">INC-8842 · Data product line</div><h4>Deadlock spike on payments database</h4></div><span class="sev">SEV 2</span></div>
+    <ol class="steps">${m.steps.map((s,j) => `<li class="step ${s[1]}"><span class="ic">${s[1]==="done" ? "✓" : s[1]==="run" ? "" : j+1}</span><span>${s[0]}</span><span class="st">${s[2]}</span></li>`).join("")}</ol>
+    <div class="console-foot"><p>${m.note}</p><div class="acts">${m.acts.map((a,j) => `<button type="button" class="btn btn-sm ${j ? "btn-ghost" : "btn-primary"}" data-demo="${esc(a)}">${a}</button>`).join("")}</div></div>`;
+}
+
+/* WORK INDEX */
+function viewWork(){
+  const counts = {all:DATA.projects.length, ai:DATA.projects.filter(p=>p.categoryKey==="ai").length, enterprise:DATA.projects.filter(p=>p.categoryKey==="enterprise").length};
+  const f = store.get("ls-workfilter","all");
+  return pageHead("", md(S.sections.work.pageTitle), md(S.sections.work.pageLede), "work") + `
+  <section class="sec" style="padding-top:40px"><div class="wrap">
+    <div class="toolbar"><div class="filters" role="group" aria-label="Filter case studies">
+      ${[["all","All"],["ai","AI experiences"],["enterprise","Enterprise UX"]].map(([k,l]) => `<button type="button" class="chip" data-wf="${k}" aria-pressed="${f===k}">${l}<span class="n">${counts[k]}</span></button>`).join("")}
+    </div><span class="mono muted">2022 — 2026</span></div>
+    <div class="work-list" id="workList"></div>
+  </div></section>${ctaBand()}`;
+}
+function renderWorkList(f){
+  const list = f === "all" ? DATA.projects : DATA.projects.filter(p => p.categoryKey === f);
+  $("#workList").innerHTML = workRows(list);
+  $$("[data-wf]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.wf === f)));
+  store.set("ls-workfilter", f);
+}
+
+/* CASE STUDY */
+const PHASES = [["phase1Discover","Discover"],["phase2Define","Define"],["phase3Ideate","Ideate"],["phase4Prototype","Prototype"],["phase5Implement","Implement"]];
+function phasePanel(p, i){
+  const ph = p.designThinkingFlow[PHASES[i][0]];
+  const li = a => `<ul>${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  if (i===0) return `<p class="ov">${esc(ph.overview.replace(/^Phase \d: /,""))}</p><div class="kv">
+      <div><h4>Research</h4><ul>${ph.researchAnalytics.map(r => `<li><b>${esc(r.metric)}</b> — ${esc(r.detail)}</li>`).join("")}</ul></div>
+      <div><h4>Who we studied</h4>${li(ph.userCohorts)}</div>
+      <div class="wide"><h4>Key insights</h4>${li(ph.keyInsights)}</div></div>`;
+  if (i===1) return `<div class="problem-q"><span>How might we…</span>${esc(ph.coreProblemStatement.replace(/^How might we /i,"").replace(/^./, c=>c))}</div><div class="kv">
+      <div><h4>Friction points</h4>${li(ph.cognitiveFrictionPoints)}</div>
+      <div><h4>Jobs to be done</h4>${li(ph.jobsToBeDone)}</div>
+      <div class="wide"><h4>Mental-model mismatch</h4><p>${esc(ph.mentalModelMisalignment)}</p></div></div>`;
+  if (i===2) return `<p class="ov"><span class="mono" style="color:var(--accent);display:block;margin-bottom:8px">North star</span>${esc(ph.northStarVision)}</p>
+      ${ph.architecturalShifts.map(s => `<div class="shift"><div class="from">${esc(s.from)}</div>${I.arrow}<div class="to">${esc(s.to)}</div></div><p class="shift-why">${esc(s.rationale)}</p>`).join("")}
+      <div class="kv" style="margin-top:18px"><div class="wide"><h4>Trade-offs we chose</h4>${li(ph.strategicTradeOffs)}</div></div>`;
+  if (i===3) return `<p class="ov">${esc(ph.validationApproach)}</p>
+      <div class="scroll-x"><table class="test-table"><thead><tr><th>Test</th><th>Baseline</th><th>Prototype</th><th>Result</th></tr></thead><tbody>
+      ${ph.usabilityTestingMetrics.map(t => `<tr><td>${esc(t.test)}</td><td>${esc(t.baseline)}</td><td>${esc(t.prototype)}</td><td>${esc(t.gain)}</td></tr>`).join("")}</tbody></table></div>
+      <div class="kv" style="margin-top:18px"><div class="wide"><h4>Prototype highlights</h4>${li(ph.interactiveHighlights)}</div></div>`;
+  return `<div class="kv"><div class="wide"><h4>Governance</h4><p>${esc(ph.governanceFramework)}</p></div>
+      <div><h4>Design-system integration</h4><p>${esc(ph.designSystemIntegration)}</p></div>
+      <div><h4>Feedback loops</h4><p>${esc(ph.continuousFeedbackLoops)}</p></div></div>`;
+}
+function viewCase(id){
+  const i = projIdx(id); if (i < 0) return viewNotFound();
+  const p = DATA.projects[i], prev = DATA.projects[(i - 1 + DATA.projects.length) % DATA.projects.length], next = DATA.projects[(i + 1) % DATA.projects.length];
+  const L = p.leadershipPerspective, R = p.businessOutcomesAndROI;
+  const toc = [["cs-overview","Overview"],["cs-process","Design process"],["cs-leadership","Leadership"],["cs-outcomes","Outcomes"],["cs-takeaway","Takeaway"]];
+  return `<header class="cs-hero"><div class="gridbg"></div><div class="wrap">
+    <div class="crumb"><a href="#home">~/lalit</a><span>/</span><a href="#work">work</a><span>/</span><span>${esc(p.id)}</span></div>
+    <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><span class="eyebrow" style="color:${p.categoryKey==="enterprise" ? "var(--amber)" : "var(--accent)"}">${esc(p.category)}</span><span class="tag">Case ${String(i+1).padStart(2,"0")} / ${String(DATA.projects.length).padStart(2,"0")}</span></div>
+    <h1 class="reveal">${esc(p.title)}</h1>
+    <p class="sub reveal" style="animation-delay:.06s">${esc(p.subtitle)}</p>
+    <dl class="cs-meta reveal" style="animation-delay:.12s">
+      <div><dt>Role</dt><dd>${esc(p.role)}</dd></div>
+      <div><dt>Timeline</dt><dd>${esc(p.duration)}</dd></div>
+      <div><dt>Team</dt><dd>${esc(p.teamComposition)}</dd></div>
+      <div><dt>Stakeholders</dt><dd>${p.stakeholders.map(esc).join(" · ")}</dd></div>
+    </dl>
+  </div></header>
+  <div class="wrap cs-layout">
+    <nav class="toc" aria-label="Case study sections"><span class="mono">On this page</span>${toc.map(([h,l]) => `<a href="#${h}" data-toc="${h}">${l}</a>`).join("")}</nav>
+    <div class="cs-body">
+      <section class="cs-block" id="cs-overview"><span class="eyebrow">Overview</span><h2>The challenge</h2>
+        <p class="lead">${esc(p.detailedSummary)}</p>
+        <div class="ps" style="margin-top:28px"><div class="p"><h3>Problem</h3><p>${esc(p.problemSpace)}</p></div><div class="s"><h3>Solution</h3><p>${esc(p.solution)}</p></div></div>
+        <div class="big-metrics">${p.metrics.map(m => `<div class="big-metric"><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join("")}</div>
+      </section>
+      <section class="cs-block" id="cs-process"><span class="eyebrow">Design process</span><h2>Five phases, from evidence to delivery</h2>
+        <div class="phase-tabs" role="tablist" aria-label="Design phases">${PHASES.map(([k,l],j) => `<button type="button" role="tab" id="tab-${j}" aria-controls="phasePanel" aria-selected="${j===0}" data-phase="${j}" tabindex="${j===0?0:-1}"><span class="n">0${j+1}</span><span class="t">${l}</span></button>`).join("")}</div>
+        <div class="phase-panel" id="phasePanel" role="tabpanel" aria-labelledby="tab-0">${phasePanel(p,0)}</div>
+      </section>
+      <section class="cs-block" id="cs-leadership"><span class="eyebrow">Leadership perspective</span><h2>How I led it</h2>
+        <dl class="persp">
+          <div><dt>Mandate</dt><dd>${esc(L.executiveMandate)}</dd></div>
+          <div><dt>Strategic role</dt><dd>${esc(L.strategicRole)}</dd></div>
+          <div><dt>Cross-functional</dt><dd>${esc(L.crossFunctionalSynergy)}</dd></div>
+          <div><dt>Team leadership</dt><dd>${esc(L.teamLeadership)}</dd></div>
+          <div><dt>Transformation</dt><dd>${esc(L.orgTransformation)}</dd></div>
+        </dl>
+      </section>
+      <section class="cs-block" id="cs-outcomes"><span class="eyebrow">Outcomes</span><h2>What changed</h2>
+        <ul class="outcomes">${p.keyOutcomes.map(o => `<li>${I.check}<span>${esc(o)}</span></li>`).join("")}${R.commercialBenefits.map(o => `<li>${I.check}<span>${esc(o)}</span></li>`).join("")}<li>${I.check}<span>${esc(R.operationalSavings)}</span></li></ul>
+        <div class="big-metrics">${R.roiMetrics.map(m => `<div class="big-metric"><b>${esc(m.value)}</b><span>${esc(m.label)}</span><p>${esc(m.context)}</p></div>`).join("")}</div>
+      </section>
+      <section class="cs-block" id="cs-takeaway"><div class="pull"><span class="mono">Leadership takeaway</span><span class="pull-mark">“</span>${esc(p.leadershipTakeaway)}</div></section>
+    </div>
+  </div>
+  <div class="wrap pn">
+    <a href="#case.${prev.id}"><span class="mono">← Previous case</span><b>${esc(prev.title)}</b></a>
+    <a class="next" href="#case.${next.id}"><span class="mono">Next case →</span><b>${esc(next.title)}</b></a>
+  </div>`;
+}
+
+/* THINKING */
+function viewThinking(){
+  const cats = ["All", ...new Set(DATA.articles.map(a => a.category))];
+  return pageHead("", md(S.sections.thinking.pageTitle), md(S.sections.thinking.pageLede), "thinking") + `
+  <section class="sec" style="padding-top:40px"><div class="wrap">
+    <div class="toolbar"><div class="filters" role="group" aria-label="Filter essays">${cats.map((c,i) => `<button type="button" class="chip" data-af="${esc(c)}" aria-pressed="${i===0}">${esc(c)}<span class="n">${c==="All" ? DATA.articles.length : DATA.articles.filter(a=>a.category===c).length}</span></button>`).join("")}</div>
+      <label class="search"><span class="mono" style="position:absolute;left:-9999px">Search essays</span>${I.search}<input id="artSearch" type="search" placeholder="Search essays and tags…" autocomplete="off"></label></div>
+    <div class="art-grid" id="artGrid"></div>
+  </div></section>`;
+}
+let artState = {cat:"All", q:""};
+function renderArticles(){
+  const q = artState.q.trim().toLowerCase();
+  const list = DATA.articles.filter(a => (artState.cat === "All" || a.category === artState.cat) &&
+    (!q || (a.title + " " + a.shortDescription + " " + a.tags.join(" ") + " " + a.category).toLowerCase().includes(q)));
+  $("#artGrid").innerHTML = list.length ? list.map((a,i) => artCard(a, i===0 && artState.cat==="All" && !q)).join("") : `<div class="empty" style="grid-column:1/-1">No essays match “${esc(artState.q)}”. Try “trust”, “agentic” or “strategy”.</div>`;
+  $$("[data-af]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.af === artState.cat)));
+}
+function viewArticle(id){
+  const i = DATA.articles.findIndex(a => a.id === id); if (i < 0) return viewNotFound();
+  const a = DATA.articles[i], F = a.fullContent;
+  const related = DATA.articles.filter(x => x.id !== a.id).map(x => [x, x.tags.filter(t => a.tags.includes(t)).length + (x.category === a.category ? 1 : 0)]).sort((m,n) => n[1]-m[1]).slice(0,3).map(x=>x[0]);
+  return `<article><header class="art-head wrap">
+      <div class="crumb"><a href="#home">~/lalit</a><span>/</span><a href="#thinking">thinking</a><span>/</span><span>${esc(a.id)}</span></div>
+      <h1 class="reveal">${esc(a.title)}</h1>
+      <div class="art-meta"><b>${esc(a.category)}</b><span>${esc(a.date)}</span><span>${esc(a.readingTime)}</span><span>By Lalit Shahane</span></div>
+    </header>
+    <div class="wrap"><blockquote class="key-quote reveal" style="animation-delay:.08s">${esc(F.keyQuote)}</blockquote></div>
+    <div class="wrap"><div class="prose">
+      <p class="lead">${esc(F.lead)}</p>
+      ${F.sections.map((s,j) => `<h2><span class="no">${String(j+1).padStart(2,"0")}</span>${esc(s.heading)}</h2><p>${esc(s.body)}</p>
+        <blockquote>${esc(s.quote)}</blockquote>
+        <ul>${s.bulletPoints.map(b => { const k = b.indexOf(":"); return `<li>${k > 0 && k < 40 ? `<b>${esc(b.slice(0,k))}:</b>${esc(b.slice(k+1))}` : esc(b)}</li>`; }).join("")}</ul>`).join("")}
+      <div class="takeaways"><h3>Key takeaways</h3><ol>${F.takeaways.map(t => `<li><span>${esc(t)}</span></li>`).join("")}</ol></div>
+      <div class="tags">${a.tags.map(t => `<span class="tag">#${esc(t)}</span>`).join("")}</div>
+      <div class="share"><span class="mono muted">Share</span>
+        <button type="button" class="copy" data-copy="${esc(a.title)} — Lalit Shahane">${I.copy}Copy title</button>
+        <a class="link-arrow" href="#thinking" style="margin-left:auto">${I.back} All essays</a></div>
+    </div></div>
+  </article>
+  <section class="sec alt"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Keep reading</span><h2>Related essays</h2></div></div>
+    <div class="art-grid">${related.map(x => artCard(x)).join("")}</div></div></section>`;
+}
+
+/* JOURNEY */
+function viewJourney(){
+  const ms = DATA.career.filter(c => c.isMilestone).length;
+  return pageHead("", md(S.sections.journey.pageTitle), md(S.sections.journey.pageLede), "journey") + `
+  <section class="sec" style="padding-top:40px"><div class="wrap" style="max-width:980px">
+    <div class="tl-controls">
+      <label class="switch"><input type="checkbox" id="msOnly"><span class="tr"></span><span>Show milestones only <span class="mono muted">(${ms})</span></span></label>
+      <div style="display:flex;gap:8px"><button class="chip" type="button" id="expandAll">Expand all</button><button class="chip" type="button" id="collapseAll">Collapse all</button></div>
+    </div>
+    <div class="timeline" id="timeline"><span class="fill" id="tlFill"></span><ol class="tl-list">
+    ${DATA.career.map((c,i) => `<li class="tl-item${c.isMilestone ? " ms" : ""}" id="tl-${c.id}" data-ms="${c.isMilestone}">
+      <span class="tl-node"></span>
+      <div class="tl-card" role="button" tabindex="0" aria-expanded="false">
+        <span class="stage">STAGE ${String(i+1).padStart(2,"0")}</span>
+        <span style="min-width:0"><h3>${esc(c.title)}</h3><span class="org" style="display:block">${esc(c.organization)} · ${esc(c.period)}</span>
+          <span class="d" style="display:block">${esc(c.description)}</span>
+          <span class="hl"><span style="display:block"><p><b>What it built</b>${esc(c.highlight)}</p></span></span></span>
+        <span class="tl-side">${c.isMilestone ? `<span class="badge">Milestone</span>` : ""}<span class="plus">${I.plus}</span></span>
+      </div></li>`).join("")}
+    </ol></div>
+    <p class="mono muted" style="margin-top:20px">Teal nodes mark major career transformation milestones.</p>
+  </div></section>${ctaBand()}`;
+}
+
+/* ABOUT */
+function viewAbout(){
+  const A = S.about;
+  return pageHead("", md(A.pageTitle), "", "about") + `
+  <section class="sec"><div class="wrap about-grid">
+    <figure class="about-photo" style="margin:0">
+      <div class="portrait-frame"><img src="${esc(A.photo.src)}" alt="${esc(A.photo.alt)}" width="1070" height="1470" style="object-position:center 25%"></div>
+      <figcaption class="mono muted" style="margin-top:14px">${md(A.photo.caption)}</figcaption>
+    </figure>
+    <div class="about-copy">
+      <p class="big">${md(A.intro)}</p>
+      ${A.paragraphs.map(t => `<p>${md(t)}</p>`).join("")}
+      <div class="chips-row">${A.highlights.map(([a,b]) => `<span><b>${md(a)}</b>${md(b)}</span>`).join("")}</div>
+      <h3 style="font-size:22px;margin-top:44px">Today</h3>
+      <p style="margin-top:10px">${md(A.currentRole)}</p>
+      <div class="portfolio-map">${A.portfolio.map(([a,b]) => `<div class="pm"><b>${md(a)}</b><span>${md(b)}</span></div>`).join("")}</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px"><a class="btn btn-primary" href="#journey">More about my journey ${I.arrow}</a><a class="btn btn-ghost" href="#resume">Résumé</a></div>
+    </div>
+  </div></section>
+  <section class="sec alt"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Leadership &amp; impact</span><h2>Four areas I lead in</h2></div><p>Select a card to see how each one shows up in practice.</p></div>
+    ${pillarsHTML()}
+  </div></section>
+  <section class="sec"><div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Academic foundation</span><h2>Education &amp; credentials</h2></div></div>
+    <div class="creds">${DATA.creds.map(c => `<div class="cred"><span class="seal">${I.check}</span><span class="badge">${esc(c.badge)}</span><h3>${esc(c.degree)}</h3><span class="f">${esc(c.field)}</span><p>${esc(c.institution)}</p></div>`).join("")}</div>
+  </div></section>${ctaBand()}`;
+}
+
+/* PHOTOGRAPHY */
+function photoStories(){ return [...store.get("ls-photos", []), ...DATA.photos]; }
+const PALETTES = {
+  "Light & Architecture":["#2b1a10","#8a4b1f","#e8a24a","#f6d79a"],
+  "Nature & Landscapes":["#0c1f1c","#1e4a3f","#6a9a7a","#d6e6d9"],
+  "Street & Culture":["#1b0f14","#6b2335","#d9733b","#f3c46b"],
+  "Moments & Moods":["#0a1220","#2a3b55","#8ea2bc","#e6e2da"]
+};
+function hash(s){ let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; }
+function study(story, w=800, h=1000){
+  const cv = document.createElement("canvas"); cv.width = w; cv.height = h;
+  const x = cv.getContext("2d"); let seed = hash(story.id); const rnd = () => ((seed = Math.imul(seed ^ seed >>> 15, 2246822507) ^ Math.imul(seed ^ seed >>> 13, 3266489909)) >>> 0) / 4294967296;
+  const pal = PALETTES[story.category] || PALETTES["Moments & Moods"];
+  const g = x.createLinearGradient(0,0,0,h); g.addColorStop(0,pal[3]); g.addColorStop(.55,pal[2]); g.addColorStop(1,pal[1]); x.fillStyle = g; x.fillRect(0,0,w,h);
+  const sun = x.createRadialGradient(w*(.3+rnd()*.4), h*.32, 0, w*.5, h*.32, w*.7); sun.addColorStop(0,"rgba(255,244,214,.85)"); sun.addColorStop(1,"rgba(255,244,214,0)"); x.fillStyle = sun; x.fillRect(0,0,w,h);
+  if (story.category === "Light & Architecture"){
+    const n = 3 + Math.floor(rnd()*2), aw = w / n;
+    for (let i=0;i<n;i++){ x.fillStyle = pal[0]; x.fillRect(i*aw, h*.18, aw*.16, h); x.fillRect(i*aw + aw*.84, h*.18, aw*.16, h);
+      x.beginPath(); x.moveTo(i*aw, h*.18); x.lineTo(i*aw+aw, h*.18); x.lineTo(i*aw+aw, h*.42); x.quadraticCurveTo(i*aw+aw*.84, h*.24, i*aw+aw/2, h*.24); x.quadraticCurveTo(i*aw+aw*.16, h*.24, i*aw+aw*.16, h*.42); x.lineTo(i*aw, h*.42); x.fill(); }
+    x.fillRect(0,0,w,h*.18); x.globalAlpha = .35; x.fillStyle = pal[3];
+    for (let i=0;i<n;i++){ x.beginPath(); x.moveTo(i*aw+aw*.2,h*.45); x.lineTo(i*aw+aw*.95,h); x.lineTo(i*aw+aw*.5,h); x.fill(); } x.globalAlpha = 1;
+  } else if (story.category === "Nature & Landscapes"){
+    for (let l=0;l<5;l++){ x.fillStyle = l===4 ? pal[0] : `rgba(${l*10+12},${l*18+30},${l*14+28},${.35+l*.15})`; x.beginPath(); x.moveTo(0,h);
+      let y = h*(.42 + l*.11); for (let px=0; px<=w; px+=w/40){ y += (rnd()-.5)*h*.04; x.lineTo(px, y - Math.sin(px/w*Math.PI*(1+l))*h*.05); } x.lineTo(w,h); x.fill();
+      x.fillStyle = "rgba(240,245,240,.18)"; x.fillRect(0,h*(.48+l*.11),w,h*.03); }
+  } else if (story.category === "Street & Culture"){
+    for (let i=0;i<46;i++){ const r = 10 + rnd()*70; const gx = x.createRadialGradient(0,0,0,0,0,r); const c = pal[1 + Math.floor(rnd()*3)];
+      x.save(); x.translate(rnd()*w, rnd()*h*.75); gx.addColorStop(0, c); gx.addColorStop(1, "rgba(0,0,0,0)"); x.globalAlpha = .55; x.fillStyle = gx; x.beginPath(); x.arc(0,0,r,0,7); x.fill(); x.restore(); }
+    x.fillStyle = pal[0]; x.beginPath(); x.ellipse(w*.5, h*.86, w*.2, h*.06, 0, 0, 7); x.fill(); x.beginPath(); x.arc(w*.5, h*.62, w*.07, 0, 7); x.fill(); x.fillRect(w*.38, h*.68, w*.24, h*.2);
+    x.fillStyle = "#f3b24a"; for (let i=0;i<5;i++){ x.beginPath(); x.ellipse(w*(.3+i*.1), h*.93, 14, 7, 0, 0, 7); x.fill(); }
+  } else {
+    for (let i=0;i<9;i++){ x.fillStyle = `rgba(230,226,218,${.05+rnd()*.08})`; x.fillRect(0, h*(.5+i*.05), w, 2+rnd()*6); }
+    x.fillStyle = pal[0]; const by = h*.62; x.beginPath(); x.moveTo(w*.28,by); x.quadraticCurveTo(w*.5,by+h*.06,w*.74,by-6); x.lineTo(w*.7,by+h*.03); x.quadraticCurveTo(w*.5,by+h*.07,w*.32,by+h*.03); x.fill();
+    x.fillRect(w*.5,by-h*.09,8,h*.09); x.beginPath(); x.arc(w*.5+4,by-h*.1,12,0,7); x.fill();
+    x.globalAlpha = .3; x.fillRect(w*.3, by+h*.08, w*.42, 3); x.globalAlpha = 1;
+  }
+  const grain = x.getImageData(0,0,w,h), d = grain.data; for (let i=0;i<d.length;i+=4){ const n=(rnd()-.5)*18; d[i]+=n; d[i+1]+=n; d[i+2]+=n; } x.putImageData(grain,0,0);
+  const vg = x.createRadialGradient(w/2,h/2,w*.3,w/2,h/2,w*.85); vg.addColorStop(0,"rgba(0,0,0,0)"); vg.addColorStop(1,"rgba(0,0,0,.45)"); x.fillStyle = vg; x.fillRect(0,0,w,h);
+  return cv;
+}
+const studyCache = {};
+function photoMedia(s, big){
+  if (s.imageUrl) return `<img src="${esc(s.imageUrl)}" alt="${esc(s.title)} — ${esc(s.location)}" loading="lazy">`;
+  return `<canvas data-study="${esc(s.id)}" width="800" height="${big ? 900 : [1000,820,1060,900][hash(s.id)%4]}" aria-label="Light study for ${esc(s.title)}"></canvas>`;
+}
+function hydrateStudies(scope){
+  $$("canvas[data-study]", scope).forEach(cv => {
+    const s = photoStories().find(p => p.id === cv.dataset.study); if (!s) return;
+    const key = s.id + cv.height; if (!studyCache[key]) studyCache[key] = study(s, 800, cv.height).toDataURL("image/jpeg", .85);
+    const img = new Image(); img.onload = () => cv.getContext("2d").drawImage(img, 0, 0); img.src = studyCache[key];
+  });
+}
+function photoCard(s){
+  return `<div class="photo-card" role="button" tabindex="0" data-photo="${esc(s.id)}">
+    <div class="img">${photoMedia(s)}${s.imageUrl ? "" : `<span class="study">Light study</span>`}<div class="exif">${s.exif ? [s.exif.aperture, s.exif.shutter, "ISO " + s.exif.iso].filter(Boolean).map(e => `<span>${esc(e)}</span>`).join("") : ""}</div></div>
+    <div class="cap"><span class="mono">${esc(s.category)}${s.mine ? `<span class="mine">Added by you</span>` : ""}</span><h3>${esc(s.title)}</h3><p>${esc(s.subtitle)}</p>
+      <span class="loc">${I.pin}${esc(s.location)} · ${esc(s.year)}</span></div></div>`;
+}
+function viewPhotography(){
+  const cats = ["All", ...new Set(DATA.photos.map(p => p.category))];
+  return pageHead("", md(S.sections.photography.pageTitle), md(S.sections.photography.pageLede), "photography") + `
+  <section class="sec" style="padding-top:40px"><div class="wrap">
+    <div class="toolbar"><div class="filters" role="group" aria-label="Filter photo stories">${cats.map((c,i) => `<button type="button" class="chip" data-pf="${esc(c)}" aria-pressed="${i===0}">${esc(c)}</button>`).join("")}</div>
+      <button type="button" class="btn btn-primary btn-sm" id="addStory">${I.plus.replace('<svg','<svg width="16" height="16"')} Post a photo story</button></div>
+    <div class="photo-grid" id="photoGrid"></div>
+    <p class="mono muted" style="margin-top:12px">Frames marked “Light study” are generated colour studies standing in until the original photograph is added.</p>
+  </div></section>`;
+}
+let photoCat = "All";
+function renderPhotos(){
+  const list = photoStories().filter(s => photoCat === "All" || s.category === photoCat);
+  const g = $("#photoGrid"); g.innerHTML = list.length ? list.map(photoCard).join("") : `<div class="empty">No stories in this category yet.</div>`;
+  hydrateStudies(g);
+  $$("[data-pf]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.pf === photoCat)));
+}
+
+/* RESUME */
+function viewResume(){
+  return `<div class="wrap"><div class="crumb" style="padding-top:32px"><a href="#home">~/lalit</a><span>/</span><span>resume</span></div>
+  <div class="resume reveal">
+    <div class="rs-head"><div><h1>Lalit Shahane</h1><p class="role">${md(S.resume.title)}</p><p class="muted" style="margin-top:6px;font-size:15px">${md(S.resume.currentRole)}</p></div>
+      <div class="ct"><span>${esc(P.location)}</span><span>${esc(P.email)} <button class="copy" type="button" data-copy="${esc(P.email)}" style="margin-left:6px">${I.copy}Copy</button></span><a href="${esc(P.linkedInUrl)}" target="_blank" rel="noopener">${esc(P.linkedInDisplay)} ↗</a></div></div>
+    <div class="rs-sec"><h2>Summary</h2><p>${md(S.resume.summary)}</p></div>
+    <div class="rs-sec"><h2>Competencies</h2><div class="rs-comp">${DATA.pillars.map(p => `<div><b>${esc(p.title)}</b><span>${esc(p.description)}</span></div>`).join("")}</div></div>
+    <div class="rs-sec"><h2>Recent work</h2><div class="rs-cs">${DATA.projects.map(p => `<a href="#case.${p.id}"><b>${esc(p.title)}</b><span>${esc(p.year)}</span></a>`).join("")}</div></div>
+    <div class="rs-sec"><h2>Career</h2><div class="rs-roles">${DATA.career.slice().reverse().map(c => `<div class="rs-role"><b>${esc(c.title)}</b><span class="p">${esc(c.period)}</span><span class="o">${esc(c.organization)}</span><p>${esc(c.description)}</p></div>`).join("")}</div></div>
+    <div class="rs-sec"><h2>Education</h2><div class="rs-comp">${DATA.creds.map(c => `<div><b>${esc(c.degree)}</b><span>${esc(c.field)} · ${esc(c.badge)}</span></div>`).join("")}</div></div>
+    <div class="rs-sec"><h2>References</h2><p class="muted">Available on request. <a href="#contact" class="link-arrow" style="margin-left:6px">Get in touch ${I.arrow}</a></p></div>
+  </div></div>`;
+}
+
+/* CONTACT */
+function viewContact(){
+  const draft = store.get("ls-contact-draft", {});
+  const topics = S.contact.topics;
+  return pageHead("", md(S.contact.pageTitle), md(S.contact.pageLede), "contact") + `
+  <div class="wrap contact-grid">
+    <div>
+      <div class="channel" style="border-top:1px solid var(--line)"><span class="mono">Email</span><span class="val">${esc(P.email)}<button class="copy" type="button" data-copy="${esc(P.email)}">${I.copy}Copy</button></span></div>
+      <div class="channel"><span class="mono">LinkedIn</span><a class="val" href="${esc(P.linkedInUrl)}" target="_blank" rel="noopener">${esc(P.linkedInDisplay)} ↗</a></div>
+      <div class="channel"><span class="mono">Based in</span><span class="val">${esc(P.location)} · <span id="clock2">IST</span></span></div>
+      <div class="channel"><span class="mono">Open to</span><span style="color:var(--muted)">${md(S.contact.openTo)}</span></div>
+    </div>
+    <form id="contactForm" novalidate>
+      <div class="form">
+        <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" autocomplete="name" value="${esc(draft.name||"")}" required><span class="err">Please add your name.</span></div>
+        <div class="field"><label for="cf-email">Your email</label><input id="cf-email" name="email" type="email" autocomplete="email" value="${esc(draft.email||"")}" required><span class="err">Enter an email like name@company.com.</span></div>
+        <div class="field full"><label for="cf-org">Company or organization <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional)</span></label><input id="cf-org" name="org" autocomplete="organization" value="${esc(draft.org||"")}"></div>
+        <div class="field full"><label>What’s it about?</label><div class="topics">${topics.map((t,i) => `<input type="radio" name="topic" id="cf-t${i}" value="${esc(t)}" ${(draft.topic||topics[0])===t ? "checked" : ""}><label for="cf-t${i}">${t}</label>`).join("")}</div></div>
+        <div class="field full"><label for="cf-msg">Message</label><textarea id="cf-msg" name="msg" required placeholder="Hello Lalit, I would like to connect about…">${esc(draft.msg||"")}</textarea><span class="err">Add a short message (at least 10 characters).</span></div>
+        <div class="full" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn-primary" type="submit">Prepare message ${I.arrow}</button><span class="muted" style="font-size:14px">Your draft is kept in this browser until you send it.</span></div>
+      </div>
+      <div id="composed" style="margin-top:24px"></div>
+    </form>
+  </div>`;
+}
+
+function viewNotFound(){
+  return `<section class="notfound"><div class="wrap"><span class="eyebrow">Error 404 · route not found</span><h1>Off the map.</h1><p class="muted" style="margin-top:16px;max-width:44ch">That page doesn’t exist. It may have moved, or the link was mistyped.</p><div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap"><a class="btn btn-primary" href="#home">Back home ${I.arrow}</a><a class="btn btn-ghost" href="#work">See the work</a></div></div></section>`;
+}
+
+/* ---------------- ROUTER ---------------- */
+const TITLES = {home:S.meta.title, work:"Work", thinking:"Thinking", journey:"Career journey", about:"About", photography:"Photography", resume:"Résumé", contact:"Contact"};
+function parse(){
+  const h = decodeURIComponent(location.hash.slice(1)) || "home";
+  const [r, ...rest] = h.split(".");
+  return {r, id: rest.join(".")};
+}
+let lastRoute = "";
+function route(){
+  const {r, id} = parse();
+  if (r.startsWith("cs-")) { const el = document.getElementById(r); if (el){ el.scrollIntoView({behavior:"smooth"}); } return; }
+  const key = r + "." + id; if (key === lastRoute) return; lastRoute = key;
+  scrollHooks = [];
+  const main = $("#main");
+  let html, title;
+  switch(r){
+    case "home": html = viewHome(); title = TITLES.home; break;
+    case "work": html = viewWork(); break;
+    case "case": html = viewCase(id); title = (DATA.projects.find(p=>p.id===id)||{}).title; break;
+    case "thinking": html = viewThinking(); break;
+    case "article": html = viewArticle(id); title = (DATA.articles.find(a=>a.id===id)||{}).title; break;
+    case "journey": html = viewJourney(); break;
+    case "about": html = viewAbout(); break;
+    case "photography": html = viewPhotography(); break;
+    case "resume": html = viewResume(); break;
+    case "contact": html = viewContact(); break;
+    default: html = viewNotFound(); title = "Not found";
+  }
+  main.innerHTML = `<div class="view">${html}</div>`;
+  document.title = (title || TITLES[r] || "Lalit Shahane") + (r === "home" ? " — " + S.meta.titleSuffix : " · " + S.meta.title);
+  const navKey = r === "case" ? "work" : r === "article" ? "thinking" : r;
+  $$("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === navKey));
+  $$("[data-nav]").forEach(a => a.dataset.nav === navKey ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
+  $("#progress").hidden = r !== "article"; $("#progress").style.width = "0";
+  window.scrollTo({top:0, behavior:"instant"});
+  mount(r, id);
+}
+function mount(r, id){
+  if (r === "home"){
+    setMode(0);
+    const hp = $("#homePhotos"); hp.innerHTML = photoStories().slice(0,3).map(photoCard).join(""); hydrateStudies(hp);
+  }
+  if (r === "work") renderWorkList(store.get("ls-workfilter","all"));
+  if (r === "thinking"){ artState = {cat:"All", q:""}; renderArticles(); }
+  if (r === "photography"){ photoCat = "All"; renderPhotos(); }
+  if (r === "journey"){
+    const pending = sessionStorage && (()=>{ try{ return sessionStorage.getItem("ls-open"); }catch(e){ return null; } })();
+    if (pending){ try{ sessionStorage.removeItem("ls-open"); }catch(e){} const el = document.getElementById("tl-" + pending); if (el){ toggleTl(el, true); setTimeout(() => el.scrollIntoView({behavior:"smooth", block:"center"}), 120); } }
+    const tl = $("#timeline"), fill = $("#tlFill");
+    scrollHooks.push(() => { const b = tl.getBoundingClientRect(); const p = Math.max(0, Math.min(1, (innerHeight*.6 - b.top) / b.height)); fill.style.height = (p * (b.height - 16)) + "px"; });
+    scrollHooks[0]();
+  }
+  if (r === "case"){
+    const links = $$("[data-toc]");
+    scrollHooks.push(() => { let cur = links[0]; links.forEach(l => { const s = document.getElementById(l.dataset.toc); if (s && s.getBoundingClientRect().top < innerHeight*.35) cur = l; }); links.forEach(l => l.classList.toggle("on", l === cur)); });
+    scrollHooks[0]();
+  }
+}
+window.addEventListener("hashchange", route);
+
+/* ---------------- DELEGATED INTERACTIONS ---------------- */
+function toggleTl(item, force){
+  const open = force ?? !item.classList.contains("open");
+  item.classList.toggle("open", open); $(".tl-card", item).setAttribute("aria-expanded", open);
+}
+document.addEventListener("click", e => {
+  const t = e.target;
+  const toc = t.closest("[data-toc]"); if (toc){ e.preventDefault(); document.getElementById(toc.dataset.toc).scrollIntoView({behavior:"smooth"}); return; }
+  const seg = t.closest("#seg button"); if (seg){ setMode(+seg.dataset.mode); return; }
+  const demo = t.closest("[data-demo]"); if (demo){ toast(demo.dataset.demo + " — demo only"); return; }
+  const pil = t.closest(".pillar"); if (pil){ const o = !pil.classList.contains("open"); pil.classList.toggle("open", o); pil.setAttribute("aria-expanded", o); $(".more span", pil).textContent = o ? "Close" : "How"; return; }
+  const wf = t.closest("[data-wf]"); if (wf){ renderWorkList(wf.dataset.wf); return; }
+  const af = t.closest("[data-af]"); if (af){ artState.cat = af.dataset.af; renderArticles(); return; }
+  const pf = t.closest("[data-pf]"); if (pf){ photoCat = pf.dataset.pf; renderPhotos(); return; }
+  const ph = t.closest("[data-phase]"); if (ph){ selectPhase(+ph.dataset.phase); return; }
+  const tl = t.closest(".tl-card"); if (tl){ toggleTl(tl.closest(".tl-item")); return; }
+  if (t.closest("#expandAll")){ $$(".tl-item").forEach(i => toggleTl(i, true)); return; }
+  if (t.closest("#collapseAll")){ $$(".tl-item").forEach(i => toggleTl(i, false)); return; }
+  const arc = t.closest("[data-open]"); if (arc){ try{ sessionStorage.setItem("ls-open", arc.dataset.open); }catch(err){} return; }
+  const pc = t.closest("[data-photo]"); if (pc){ openPhoto(pc.dataset.photo); return; }
+  if (t.closest("#addStory")){ openAddStory(); return; }
+  if (t.closest("[data-close]")){ closeModal(); return; }
+  const nav = t.closest("[data-lb]"); if (nav){ openPhoto(nav.dataset.lb); return; }
+  const del = t.closest("[data-del]"); if (del){
+    if (del.dataset.armed){ store.set("ls-photos", store.get("ls-photos",[]).filter(s => s.id !== del.dataset.del)); closeModal(); renderPhotos(); toast("Story removed"); }
+    else { del.dataset.armed = "1"; del.textContent = "Click again to remove"; }
+    return;
+  }
+});
+document.addEventListener("change", e => {
+  if (e.target.id === "msOnly"){ const on = e.target.checked; $$(".tl-item").forEach(i => i.hidden = on && i.dataset.ms !== "true"); scrollHooks.forEach(f=>f()); }
+});
+document.addEventListener("input", e => {
+  if (e.target.id === "artSearch"){ artState.q = e.target.value; renderArticles(); }
+  if (e.target.closest("#contactForm")){ const f = $("#contactForm"); store.set("ls-contact-draft", {name:f.name.value, email:f.email.value, org:f.org.value, msg:f.msg.value, topic:(f.querySelector("[name=topic]:checked")||{}).value}); e.target.closest(".field")?.classList.remove("invalid"); }
+});
+function selectPhase(j){
+  const {id} = parse(); const p = DATA.projects.find(x => x.id === id);
+  $$("[data-phase]").forEach(b => { const on = +b.dataset.phase === j; b.setAttribute("aria-selected", on); b.tabIndex = on ? 0 : -1; });
+  const pnl = $("#phasePanel"); pnl.setAttribute("aria-labelledby", "tab-" + j); pnl.innerHTML = phasePanel(p, j); pnl.style.animation = "none"; pnl.offsetHeight; pnl.style.animation = "";
+}
+document.addEventListener("keydown", e => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.getAttribute && e.target.getAttribute("role") === "button"){ e.preventDefault(); e.target.click(); return; }
+  const tab = e.target.closest && e.target.closest("[data-phase]");
+  if (tab && (e.key === "ArrowRight" || e.key === "ArrowLeft")){ const j = (+tab.dataset.phase + (e.key === "ArrowRight" ? 1 : 4)) % 5; selectPhase(j); $(`[data-phase="${j}"]`).focus(); e.preventDefault(); return; }
+  if (e.key === "Escape"){ if ($("#modal").classList.contains("open")) closeModal(); else if (mm.classList.contains("open")) setMenu(false); return; }
+  const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
+  if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key === "t" || e.key === "T"){ toggleTheme(); }
+  if ($("#modal").classList.contains("open") && (e.key === "ArrowRight" || e.key === "ArrowLeft")){ const b = $(`[data-lb-dir="${e.key === "ArrowRight" ? "next" : "prev"}"]`); if (b) b.click(); }
+  if (e.key === "/" && $("#artSearch")){ e.preventDefault(); $("#artSearch").focus(); }
+});
+
+/* ---------------- MODAL ---------------- */
+let lastFocus;
+function openModal(html, label){
+  lastFocus = document.activeElement;
+  const box = $("#modalBox"); box.innerHTML = `<button class="icon-btn modal-close" type="button" data-close aria-label="Close">${I.close}</button>` + html;
+  $("#modal").classList.add("open"); $("#modal").setAttribute("aria-hidden","false"); document.body.style.overflow = "hidden";
+  setTimeout(() => (box.querySelector("[autofocus]") || box.querySelector(".modal-close")).focus(), 30);
+}
+function closeModal(){ $("#modal").classList.remove("open"); $("#modal").setAttribute("aria-hidden","true"); document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
+$("#modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
+$("#modal").addEventListener("keydown", e => {
+  if (e.key !== "Tab") return; const f = $$("button, a[href], input, select, textarea", $("#modalBox")).filter(x => !x.disabled && x.offsetParent);
+  if (!f.length) return; const first = f[0], last = f[f.length-1];
+  if (e.shiftKey && document.activeElement === first){ last.focus(); e.preventDefault(); } else if (!e.shiftKey && document.activeElement === last){ first.focus(); e.preventDefault(); }
+});
+function openPhoto(id){
+  const all = photoStories().filter(s => photoCat === "All" || s.category === photoCat || parse().r !== "photography");
+  const i = all.findIndex(s => s.id === id); if (i < 0) return; const s = all[i];
+  const prev = all[(i - 1 + all.length) % all.length], next = all[(i + 1) % all.length];
+  openModal(`<div class="lb"><div class="lb-img">${photoMedia(s, true)}</div>
+    <div class="lb-txt"><span class="eyebrow">${esc(s.category)}</span><h2 id="modalTitle">${esc(s.title)}</h2><p class="sub">${esc(s.subtitle)}</p>
+      <span class="loc mono muted" style="display:flex;gap:6px;align-items:center;text-transform:none;letter-spacing:.02em">${I.pin.replace('<svg','<svg width="14" height="14"')}${esc(s.location)} · ${esc(s.year)}</span>
+      ${s.exif ? `<div class="exif-table"><div><span>Aperture</span><b>${esc(s.exif.aperture||"—")}</b></div><div><span>Shutter</span><b>${esc(s.exif.shutter||"—")}</b></div><div><span>ISO</span><b>${esc(s.exif.iso||"—")}</b></div></div>` : ""}
+      ${s.cameraGear ? `<p class="mono muted" style="text-transform:none;letter-spacing:.02em">${esc(s.cameraGear)}</p>` : ""}
+      <p class="story">${esc(s.story)}</p>
+      ${s.philosophy ? `<p class="phil"><b>What it taught me</b>${esc(s.philosophy)}</p>` : ""}
+      ${s.mine ? `<button type="button" class="copy" data-del="${esc(s.id)}" style="align-self:start">Remove this story</button>` : ""}
+      <div class="lb-nav"><button class="btn btn-ghost btn-sm" type="button" data-lb="${esc(prev.id)}" data-lb-dir="prev">← ${esc(prev.title)}</button><span class="mono muted">${i+1} / ${all.length}</span><button class="btn btn-ghost btn-sm" type="button" data-lb="${esc(next.id)}" data-lb-dir="next">${esc(next.title)} →</button></div>
+    </div></div>`);
+  hydrateStudies($("#modalBox"));
+}
+function openAddStory(){
+  const cats = Object.keys(PALETTES);
+  openModal(`<form id="storyForm" novalidate style="padding:clamp(24px,4vw,40px)">
+    <span class="eyebrow">New photo story</span><h2 id="modalTitle" style="font-size:clamp(28px,3vw,36px);margin:12px 0 8px">Post a photo story</h2>
+    <p class="muted" style="margin-bottom:24px;font-size:15px">Stories you add are saved in this browser only.</p>
+    <div class="form">
+      <div class="field"><label for="sf-title">Title</label><input id="sf-title" name="title" required autofocus><span class="err">Give the story a title.</span></div>
+      <div class="field"><label for="sf-cat">Category</label><select id="sf-cat" name="category">${cats.map(c => `<option>${c}</option>`).join("")}</select></div>
+      <div class="field full"><label for="sf-sub">One-line caption</label><input id="sf-sub" name="subtitle"></div>
+      <div class="field"><label for="sf-loc">Location</label><input id="sf-loc" name="location" required><span class="err">Where was this taken?</span></div>
+      <div class="field"><label for="sf-year">Year</label><input id="sf-year" name="year" inputmode="numeric" value="${new Date().getFullYear()}"></div>
+      <div class="field full"><label for="sf-gear">Camera &amp; lens</label><input id="sf-gear" name="gear" placeholder="e.g. Fujifilm X-T5 · 33mm f/1.4"></div>
+      <div class="field"><label for="sf-ap">Aperture</label><input id="sf-ap" name="ap" placeholder="f/2.8"></div>
+      <div class="field"><label for="sf-sh">Shutter · ISO</label><input id="sf-sh" name="sh" placeholder="1/250s · 200"></div>
+      <div class="field full"><label for="sf-story">The story</label><textarea id="sf-story" name="story" required></textarea><span class="err">Tell the story behind the frame.</span></div>
+      <div class="field full"><label for="sf-phil">What it taught you <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional)</span></label><input id="sf-phil" name="phil"></div>
+      <div class="field full"><label for="sf-file">Photo <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional — a light study is drawn if you skip it)</span></label>
+        <label class="drop" id="drop" for="sf-file">Drop an image here or <b style="color:var(--accent)">browse</b><input id="sf-file" type="file" accept="image/*" hidden><span id="dropPrev"></span></label></div>
+      <div class="full" style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary" type="submit">Publish story ${I.arrow}</button><button class="btn btn-ghost" type="button" data-close>Cancel</button></div>
+    </div></form>`);
+  let imgData = null;
+  const fileIn = $("#sf-file"), drop = $("#drop");
+  const take = file => { if (!file || !/^image\//.test(file.type)) { toast("Choose an image file (JPG, PNG or WebP)."); return; }
+    const r = new FileReader(); r.onload = () => { const im = new Image(); im.onload = () => { const s = Math.min(1, 1100 / Math.max(im.width, im.height)); const c = document.createElement("canvas"); c.width = Math.round(im.width*s); c.height = Math.round(im.height*s); c.getContext("2d").drawImage(im,0,0,c.width,c.height); imgData = c.toDataURL("image/jpeg", .8); $("#dropPrev").innerHTML = `<img src="${imgData}" alt="Preview">`; }; im.src = r.result; }; r.readAsDataURL(file); };
+  fileIn.addEventListener("change", () => take(fileIn.files[0]));
+  ["dragenter","dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+  ["dragleave","drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+  drop.addEventListener("drop", e => take(e.dataTransfer.files[0]));
+  $("#storyForm").addEventListener("submit", e => {
+    e.preventDefault(); const f = e.target; let ok = true;
+    ["title","location","story"].forEach(n => { const bad = !f[n].value.trim(); f[n].closest(".field").classList.toggle("invalid", bad); if (bad && ok){ f[n].focus(); ok = false; } });
+    if (!ok) return;
+    const [sh, iso] = f.sh.value.split("·").map(x => x.trim());
+    const s = {id:"mine-" + Date.now(), mine:true, title:f.title.value.trim(), subtitle:f.subtitle.value.trim(), category:f.category.value, location:f.location.value.trim(), year:f.year.value.trim(), cameraGear:f.gear.value.trim(),
+      exif:(f.ap.value || sh) ? {aperture:f.ap.value.trim(), shutter:sh||"", iso:iso||""} : null, story:f.story.value.trim(), philosophy:f.phil.value.trim(), imageUrl:imgData};
+    const list = store.get("ls-photos", []); list.unshift(s);
+    if (!store.set("ls-photos", list)){ s.imageUrl = null; list[0] = s; if (!store.set("ls-photos", list)) { toast("This browser isn’t allowing saved stories. Try a normal (non-private) window."); return; } toast("Saved without the photo: it was too large for browser storage."); }
+    else toast("Story published to your gallery");
+    closeModal(); photoCat = "All"; renderPhotos();
+  });
+}
+
+/* CONTACT SUBMIT */
+document.addEventListener("submit", e => {
+  if (e.target.id !== "contactForm") return; e.preventDefault();
+  const f = e.target; const v = {name:f.name.value.trim(), email:f.email.value.trim(), org:f.org.value.trim(), msg:f.msg.value.trim(), topic:(f.querySelector("[name=topic]:checked")||{}).value};
+  const checks = [["name", v.name.length > 0], ["email", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)], ["msg", v.msg.length >= 10]];
+  let first = null; checks.forEach(([n, ok]) => { f[n].closest(".field").classList.toggle("invalid", !ok); if (!ok && !first) first = f[n]; });
+  if (first){ first.focus(); return; }
+  const subject = `${v.topic} — from ${v.name}${v.org ? " (" + v.org + ")" : ""}`;
+  const body = `Hello Lalit,\n\n${v.msg}\n\n— ${v.name}${v.org ? ", " + v.org : ""}\n${v.email}`;
+  $("#composed").innerHTML = `<div class="composed" data-copy-target="#composedText"><div><span class="eyebrow">Ready to send</span><p style="margin-top:8px;font-size:15px">Copy this and send it to <b>${esc(P.email)}</b>, or open it in your email app.</p></div>
+    <pre id="composedText">To: ${esc(P.email)}\nSubject: ${esc(subject)}\n\n${esc(body)}</pre>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="btn btn-primary btn-sm" data-copy="${esc("Subject: " + subject + "\n\n" + body)}">${I.copy.replace('<svg','<svg width="16" height="16"')} Copy message</button>
+    <a class="btn btn-ghost btn-sm" href="mailto:${esc(P.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">Open in email app</a></div></div>`;
+  $("#composed").scrollIntoView({behavior:"smooth", block:"nearest"});
+});
+
+/* ---------------- CLOCK ---------------- */
+function tick(){
+  let t; try{ t = new Intl.DateTimeFormat("en-IN",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Kolkata"}).format(new Date()) + " IST"; }catch(e){ t = "IST"; }
+  $("#clock").textContent = t; const c2 = $("#clock2"); if (c2) c2.textContent = t + " local time";
+}
+const fb = $("#footBlurb"); if (fb) fb.textContent = fill(S.footer.blurb);
+$("#yr").textContent = new Date().getFullYear(); tick(); setInterval(tick, 30000);
+route();
+})();
+</script>
+</body>
+</html>

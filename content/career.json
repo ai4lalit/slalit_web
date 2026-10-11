@@ -1,0 +1,92 @@
+[
+  {
+    "id": "role-1",
+    "title": "UI Designer",
+    "period": "Foundations",
+    "organization": "Digital Studios & Agencies",
+    "description": "Mastered visual design principles, typography, layout hierarchies, and early web standards.",
+    "isMilestone": false,
+    "highlight": "Foundation in digital interface craft and visual ergonomics."
+  },
+  {
+    "id": "role-2",
+    "title": "Visualizer",
+    "period": "Early Craft",
+    "organization": "Creative & Media Studios",
+    "description": "Conceptualized brand identities, interactive multimedia narratives, and storytelling architectures.",
+    "isMilestone": false,
+    "highlight": "Creative direction and cross-medium visual storytelling."
+  },
+  {
+    "id": "role-3",
+    "title": "Usability Consultant",
+    "period": "Human Factors",
+    "organization": "Usability Advisory Group",
+    "description": "Conducted heuristic evaluations, cognitive walkthroughs, and lab-based usability tests.",
+    "isMilestone": true,
+    "highlight": "Rigorous grounding in cognitive psychology and empirical usability benchmarking."
+  },
+  {
+    "id": "role-4",
+    "title": "UX Consultant / Lead",
+    "period": "Enterprise Practices",
+    "organization": "Global Consulting Practices",
+    "description": "Led user research and information architecture for enterprise client engagements across sectors.",
+    "isMilestone": false,
+    "highlight": "Translating complex client workflows into intuitive information architectures."
+  },
+  {
+    "id": "role-5",
+    "title": "Team Manager / UXD",
+    "period": "Team Leadership",
+    "organization": "Enterprise Solutions Practice",
+    "description": "Managed delivery teams of UX designers, researchers, and prototype engineers on critical client products.",
+    "isMilestone": false,
+    "highlight": "First formal design people management and delivery governance."
+  },
+  {
+    "id": "role-6",
+    "title": "Senior Technical Architect",
+    "period": "Systems Architecture",
+    "organization": "Technology Services & Platforms",
+    "description": "Bridged engineering feasibility and UX architecture, defining front-end component systems.",
+    "isMilestone": true,
+    "highlight": "Deep technical integration: bridging design systems with enterprise codebases."
+  },
+  {
+    "id": "role-7",
+    "title": "Senior Manager",
+    "period": "Practice Scaling",
+    "organization": "Global Technology Enterprise",
+    "description": "Expanded regional UX capabilities, mentored lead designers, and standardized user testing frameworks.",
+    "isMilestone": false,
+    "highlight": "Scaling design standards across multi-disciplinary product lines."
+  },
+  {
+    "id": "role-8",
+    "title": "Program Manager",
+    "period": "Strategic Delivery",
+    "organization": "Enterprise Product Group",
+    "description": "Orchestrated cross-functional product discovery and delivery across globally distributed squads.",
+    "isMilestone": false,
+    "highlight": "Cross-functional operational governance and executive stakeholder alignment."
+  },
+  {
+    "id": "role-9",
+    "title": "Manager – Product Design",
+    "period": "Product Ownership",
+    "organization": "Cloud & SaaS Platform",
+    "description": "Owned the core product design vision, partnering directly with VP of Product and engineering leads.",
+    "isMilestone": true,
+    "highlight": "Pivoting core SaaS products toward modern user-centric mental models."
+  },
+  {
+    "id": "role-10",
+    "title": "Senior Manager – User Experience",
+    "period": "Executive Leadership",
+    "organization": "Enterprise Platform & AI Initiatives",
+    "description": "Spearheading UX transformation, AI-powered product innovation, and design organization leadership.",
+    "isMilestone": true,
+    "highlight": "Directing enterprise UX transformation and next-generation AI experience strategy."
+  }
+]

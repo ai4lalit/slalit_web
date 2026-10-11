@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Lalit Shahane",
+    "titleSuffix": "Product Experience & UX Leader",
+    "description": "Lalit Shahane — Product Experience & UX Transformation Leader. 25+ years in enterprise UX, AI experiences and design leadership."
+  },
+  "hero": {
+    "statusTags": ["25+ years", "Executive UX", "Pune, MH, India"],
+    "headline": { "lead": "Product experience", "joiner": "&", "middle": "UX transformation", "accent": "leader." },
+    "subhead": "Designing intelligent experiences. Transforming products, teams and organizations.",
+    "intro": "I’m Lalit Shahane, a UX leader with 25+ years at the intersection of human-centered design, enterprise technology and AI-driven product innovation.",
+    "primaryCta": { "label": "Explore my work", "href": "#work" },
+    "secondaryCta": { "label": "Read my thinking", "href": "#thinking" },
+    "portrait": { "src": "img/portrait.jpg", "alt": "Portrait of Lalit Shahane", "captionLeft": "Sr. Manager ·", "captionAccent": "User Experience", "captionRight": "2026" }
+  },
+  "stats": [
+    { "value": "25+", "label": "Years in UX & product" },
+    { "value": "4", "label": "Product lines · Ops, Data, DevX, Cloud" },
+    { "value": "{caseStudyCount}", "label": "Case studies, 2022–2026" },
+    { "value": "{articleCount}", "label": "Essays on AI & leadership" }
+  ],
+  "sections": {
+    "work": { "eyebrow": "Selected work", "title": "Designing trust, intelligence and scale across the enterprise", "pageTitle": "Selected work", "pageLede": "Five case studies on UX leadership, product architecture and enterprise AI transformation across Platform, Agentic AI, GenAI, Data and Security.", "homeCount": 3 },
+    "autonomy": { "eyebrow": "A framework I use", "title": "Autonomy is a dial, not a switch.", "body": "In the agentic AI work, we let customers graduate trust over time: Ask, Assist and Agent modes with friction proportional to risk. Turn the dial to see how the same incident plays out." },
+    "leadership": { "eyebrow": "Leadership & impact", "title": "Designing for people, products and what’s next", "body": "I help organizations elevate design from a delivery function to a strategic driver of product, platform and business transformation." },
+    "thinking": { "eyebrow": "Thinking", "title": "Ideas, perspectives and experiences from the journey", "pageTitle": "Thinking", "pageLede": "Essays on human-centered AI, agentic workflows, experience strategy and the changing role of design leadership." },
+    "journey": { "eyebrow": "Career journey", "title": "From visual craft to enterprise UX leadership", "pageTitle": "A journey of continuous growth", "pageLede": "From design execution to enterprise UX leadership — a path driven by curiosity, continuous learning and a passion for meaningful experiences." },
+    "photography": { "eyebrow": "Photography", "title": "The art of noticing", "body": "Photography is my lifelong practice of observation: light, geometry, patience and human emotion, the same qualities that build empathy in design.", "pageTitle": "The art of noticing: light, shadows & human moments", "pageLede": "Beyond enterprise strategy and systems architecture, photography is my lifelong practice of deep observation. Every frame is a study in light, geometry, patience and emotion." },
+    "cta": { "eyebrow": "Open to conversations", "titleLead": "Let’s design what’s", "titleAccent": "next", "titleTail": ", together.", "body": "UX leadership advisory, AI product innovation, design-organization building or a keynote. Tell me what you’re working on." }
+  },
+  "about": {
+    "pageTitle": "A little more about me",
+    "photo": { "src": "img/portrait.jpg", "alt": "Lalit Shahane", "caption": "Executive UX practice · Pune, India" },
+    "intro": "Over a quarter century in product experience design, I’ve worked where technical architecture, business strategy and human behaviour meet.",
+    "paragraphs": [
+      "My focus is **enterprise UX transformation**: modernizing complex, mission-critical platforms into elegant, defensible software systems without disrupting the business.",
+      "As generative systems reshape computing, I champion **human-centered AI and innovation**, building transparent interaction models where human agency and autonomous, agentic workflows work in calibrated harmony.",
+      "As a design leader, I build and mentor multidisciplinary UX teams, and move design from a reactive delivery function to a strategic catalyst for customer retention and enterprise growth."
+    ],
+    "highlights": [["25+", "years experience"], ["UX", "leadership"], ["AI-enabled", "innovation"], ["Design", "strategy"], ["Team", "leadership"]],
+    "currentRole": "Senior Manager, User Experience, leading UX across the AMI product portfolio.",
+    "portfolio": [["AMI Ops", "Operations"], ["AMI Data", "Database"], ["AMI DevX", "Developer experience"], ["AMI Cloud", "Platform"]]
+  },
+  "resume": {
+    "title": "Senior Product Experience & UX Transformation Leader",
+    "currentRole": "Senior Manager, User Experience · AMI product portfolio",
+    "summary": "Product experience and UX leader with 25+ years guiding enterprise modernization, AI product innovation and cross-functional design excellence. Translates complex technical architectures into human-centered platforms that customers trust and adopt."
+  },
+  "contact": {
+    "pageTitle": "Let’s start a conversation",
+    "pageLede": "Reach out about UX leadership advisory, AI product innovation or keynote discussions. I read every message.",
+    "openTo": "Executive advisory · keynote sessions · strategic design leadership",
+    "topics": ["UX leadership advisory", "AI product innovation", "Keynote or talk", "Design org building", "Something else"]
+  },
+  "footer": {
+    "blurb": "25+ years shaping enterprise product experiences, AI-enabled systems and design organizations. Open to executive advisory, keynote sessions and strategic design leadership."
+  }
+}
