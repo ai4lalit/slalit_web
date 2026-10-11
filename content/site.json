@@ -27,9 +27,15 @@
       "href": "#thinking"
     },
     "background": {
-      "light": "img/hero-light.jpg",
-      "dark": "img/hero-dark.jpg",
-      "alt": "Lalit Shahane, arms crossed, in front of a teal abstract background"
+      "light": "img/hero-bg-light.jpg",
+      "dark": "img/hero-bg-dark.jpg"
+    },
+    "portrait": {
+      "light": "img/hero-figure-light.webp",
+      "dark": "img/hero-figure-dark.webp",
+      "alt": "Lalit Shahane, smiling with arms crossed, in front of a teal circle",
+      "width": 1400,
+      "height": 1500
     },
     "meta": "PUNE, INDIA · 18.5204° N, 73.8567° E"
   },

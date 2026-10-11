@@ -139,8 +139,12 @@ function viewHome(){
   const latest = DATA.articles.slice(0, (X.thinking.homeCount || 3) + 1);
   return `
   <section class="hero" style="--hero-light:url('${esc(H.background.light)}');--hero-dark:url('${esc(H.background.dark)}')">
-    <div class="hero-art" role="img" aria-label="${esc(H.background.alt)}"></div><div class="hero-shade"></div>
-    <div class="wrap"><div class="hero-copy">
+    <div class="wrap hero-grid">
+    <figure class="hero-figure">
+      <img class="hf-light" src="${esc(H.portrait.light)}" alt="${esc(H.portrait.alt)}" width="${H.portrait.width}" height="${H.portrait.height}" fetchpriority="high">
+      <img class="hf-dark" src="${esc(H.portrait.dark)}" alt="${esc(H.portrait.alt)}" width="${H.portrait.width}" height="${H.portrait.height}">
+    </figure>
+    <div class="hero-copy">
       <span class="status reveal"><span class="pulse"></span>${H.statusTags.map(md).join(' <span class="sep">/</span> ')}</span>
       <h1 class="reveal" style="animation-delay:.05s">${md(H.headline.lead)} <span class="thin">${md(H.headline.joiner)}</span> ${md(H.headline.middle)} <span class="acc">${md(H.headline.accent)}</span></h1>
       <p class="sub reveal" style="animation-delay:.12s">${md(H.subhead)}</p>
