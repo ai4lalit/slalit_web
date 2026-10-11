@@ -399,7 +399,7 @@ function viewAbout(){
   return pageHead("", md(A.pageTitle), "", "about") + `
   <section class="sec"><div class="wrap about-grid">
     <figure class="about-photo" style="margin:0">
-      <div class="portrait-frame"><img src="${esc(A.photo.src)}" alt="${esc(A.photo.alt)}" width="1070" height="1470" style="object-position:center 25%"></div>
+      <div class="portrait-frame"><img src="${esc(A.photo.src)}" alt="${esc(A.photo.alt)}" width="508" height="949"></div>
       <figcaption class="mono muted" style="margin-top:14px">${md(A.photo.caption)}</figcaption>
     </figure>
     <div class="about-copy">
