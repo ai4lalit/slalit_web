@@ -119,21 +119,17 @@ function viewHome(){
   const feat = DATA.projects, H = S.hero, X = S.sections;
   const latest = DATA.articles.slice().sort((a,b) => new Date("1 "+b.date) - new Date("1 "+a.date)).slice(0,3);
   return `
-  <section class="hero"><div class="gridbg"></div><div class="wrap hero-grid">
-    <div>
-      <span class="status reveal"><span class="pulse"></span>${H.statusTags.map(md).join(' <span style="opacity:.4">/</span> ')}</span>
+  <section class="hero" style="--hero-light:url('${esc(H.background.light)}');--hero-dark:url('${esc(H.background.dark)}')">
+    <div class="hero-art" role="img" aria-label="${esc(H.background.alt)}"></div><div class="hero-shade"></div>
+    <div class="wrap"><div class="hero-copy">
+      <span class="status reveal"><span class="pulse"></span>${H.statusTags.map(md).join(' <span class="sep">/</span> ')}</span>
       <h1 class="reveal" style="animation-delay:.05s">${md(H.headline.lead)} <span class="thin">${md(H.headline.joiner)}</span> ${md(H.headline.middle)} <span class="acc">${md(H.headline.accent)}</span></h1>
       <p class="sub reveal" style="animation-delay:.12s">${md(H.subhead)}</p>
       <p class="intro reveal" style="animation-delay:.18s">${md(H.intro)}</p>
       <div class="hero-ctas reveal" style="animation-delay:.24s"><a class="btn btn-primary" href="${esc(H.primaryCta.href)}">${md(H.primaryCta.label)} ${I.arrow}</a><a class="btn btn-ghost" href="${esc(H.secondaryCta.href)}">${md(H.secondaryCta.label)}</a></div>
-    </div>
-    <figure class="portrait reveal" style="margin:0;animation-delay:.1s">
-      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
-      <div class="portrait-frame"><img src="${esc(H.portrait.src)}" alt="${esc(H.portrait.alt)}" width="1070" height="1470"></div>
-      <figcaption class="portrait-tag"><span>${md(H.portrait.captionLeft)} <b>${md(H.portrait.captionAccent)}</b></span><span>${md(H.portrait.captionRight)}</span></figcaption>
-      <span class="coords">SYS // 25Y.EXP_NODE — PUNE 18.5204° N</span>
-    </figure>
-  </div></section>
+    </div></div>
+    ${H.meta ? `<span class="hero-meta">${md(H.meta)}</span>` : ""}
+  </section>
 
   <div class="ticker"><div class="ticker-row">
     ${S.stats.map(x => `<div class="ticker-cell"><b>${md(x.value)}</b><span>${md(x.label)}</span></div>`).join("")}
