@@ -72,8 +72,9 @@ def main():
     app = (SRC / "app.js").read_text(encoding="utf-8")
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
-    page = (f"{head}\n<style>\n{css}</style>\n\n{layout}\n"
-            f"<script>\nconst DATA = {payload};\n</script>\n<script>\n{app}</script>\n")
+    styles_and_body = (f"<style>\n{css}</style>\n\n{layout}\n"
+                       f"<script>\nconst DATA = {payload};\n</script>\n<script>\n{app}</script>\n")
+    page = f"{head}\n{styles_and_body}"
 
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -85,7 +86,7 @@ def main():
     (DIST / "index.html").write_text(
         '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
-        f"</head>\n<body>\n{page}</body>\n</html>\n", encoding="utf-8")
+        f"{head}\n</head>\n<body>\n{styles_and_body}</body>\n</html>\n", encoding="utf-8")
     kb = (DIST / "index.html").stat().st_size // 1024
     print(f"Built dist/index.html and dist/preview.html ({kb} KB) from {len(CONTENT_FILES)} content files.")
 
