@@ -243,7 +243,8 @@
       ],
       "operationalSavings": "Clear bar for experience quality before delivery."
     },
-    "leadershipTakeaway": "Agentic UX requires turning complex technical autonomy trade-offs into reliable, trusted governance frameworks."
+    "leadershipTakeaway": "Agentic UX requires turning complex technical autonomy trade-offs into reliable, trusted governance frameworks.",
+    "demo": "autonomy"
   },
   {
     "id": "genai-assistant",

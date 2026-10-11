@@ -27,7 +27,9 @@ const I = {
   transformation:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11l-3-3M20 17H9l3 3"/><path d="M19 7a4 4 0 0 1 1 3M5 17a4 4 0 0 1-1-3"/></svg>',
   linkedin:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg>'
 };
-const NAV = [["home","Home"],["work","Work"],["thinking","Thinking"],["journey","Journey"],["about","About"],["photography","Photography"],["resume","Résumé"]];
+const NAV = [["home","Home"],["work","Work"],["thinking","Thinking"],["journey","Journey"],["about","About"],["photography","Photography"]];
+/* "ENTERPRISE UX" -> "Enterprise UX" */
+const nice = t => String(t||"").toLowerCase().replace(/^./, c => c.toUpperCase()).replace(/\bux\b/gi,"UX").replace(/\bai\b/gi,"AI").replace(/\bgenai\b/gi,"GenAI");
 
 /* ---------------- THEME ---------------- */
 const root = document.documentElement;
@@ -64,7 +66,7 @@ const projIdx = id => DATA.projects.findIndex(p => p.id === id);
 
 /* ---------------- NAV ---------------- */
 $("#navLinks").innerHTML = NAV.slice(1).map(([k,l]) => `<li><a href="#${k}" data-nav="${k}">${l}</a></li>`).join("");
-$("#mobileLinks").innerHTML = NAV.map(([k,l],i) => `<a href="#${k}" data-nav="${k}">${l}<span>0${i+1}</span></a>`).join("") + `<a href="#contact" data-nav="contact">Contact<span>08</span></a>`;
+$("#mobileLinks").innerHTML = NAV.map(([k,l],i) => `<a href="#${k}" data-nav="${k}">${l}<span>0${i+1}</span></a>`).join("") + `<a href="#resume" data-nav="resume">Résumé<span>07</span></a><a href="#contact" data-nav="contact">Contact<span>08</span></a>`;
 $("#footWork").innerHTML = DATA.projects.slice(0,4).map(p => `<li><a href="#case.${p.id}">${esc(p.title.split(":")[0])}</a></li>`).join("") + `<li><a href="#work">All case studies</a></li>`;
 const mm = $("#mobileMenu");
 function setMenu(open){ mm.classList.toggle("open", open); $("#menuBtn").setAttribute("aria-expanded", open); document.body.style.overflow = open ? "hidden" : ""; if(open) $("#menuClose").focus(); }
@@ -81,19 +83,30 @@ let scrollHooks = [];
 
 /* ---------------- VIEWS ---------------- */
 function pageHead(eyebrow, title, lede, crumb){
-  return `<header class="page-head"><div class="gridbg"></div><div class="wrap">
-    <div class="crumb"><a href="#home">~/lalit</a><span>/</span><span>${crumb}</span></div>
+  const label = (NAV.find(n => n[0] === crumb) || [0, nice(crumb)])[1];
+  return `<header class="page-head"><div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><span>${esc(label)}</span></nav>
     <h1 class="reveal">${title}</h1>${lede ? `<p class="lede reveal" style="animation-delay:.08s">${lede}</p>` : ""}
   </div></header>`;
 }
-function workRows(list){
-  return list.map(p => `<a class="work-row" href="#case.${p.id}">
-      <span class="idx">${String(projIdx(p.id)+1).padStart(2,"0")} / ${String(DATA.projects.length).padStart(2,"0")}</span>
-      <div><span class="cat">${esc(p.category)}</span><h3>${esc(p.title)}</h3>
-        <div class="metrics-mini">${p.metrics.map(m => `<span class="tag">${esc(m.label)} <b>${esc(m.value)}</b></span>`).join("")}</div></div>
-      <p class="desc">${esc(p.description)}</p>
-      <div class="yr"><span>${esc(p.year)}</span><span class="arrow-circle">${I.arrow}</span></div>
-    </a>`).join("");
+function secHead(eyebrow, title, right){
+  return `<div class="sec-head"><div><span class="eyebrow">${eyebrow}</span><h2>${title}</h2></div>${right || ""}</div>`;
+}
+function workCard(p, feature){
+  const m = p.metrics[0] || {};
+  return `<a class="wcard${feature ? " feature" : ""}" href="#case.${p.id}">
+    <div class="wcover"><span class="dot"></span><span class="cat">${esc(nice(p.category))}</span>
+      <div class="metric"><b>${esc(m.value || p.year)}</b><span>${esc(m.label || "")}</span></div></div>
+    <div class="wbody"><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
+      <div class="go"><span>${esc(p.year)}</span><b>Read case study ${I.arrow}</b></div></div>
+  </a>`;
+}
+function workCards(list, featureFirst){ return list.map((p,i) => workCard(p, featureFirst && i === 0)).join(""); }
+function articleRow(a){
+  return `<a class="arow" href="#article.${a.id}">
+    <span class="when"><b>${esc(a.category)}</b><span>${esc(a.date)} · ${esc(a.readingTime)}</span></span>
+    <span style="min-width:0"><h3>${esc(a.title)}</h3><p>${esc(a.shortDescription)}</p></span>
+    <span class="arr">${I.arrow}</span></a>`;
 }
 function artCard(a, feature){
   const c = /Strategy|Leadership/.test(a.category) ? "amb" : "";
@@ -106,7 +119,7 @@ function artCard(a, feature){
   </a>`;
 }
 function ctaBand(){
-  return `<section class="cta-band alt"><div class="wrap">
+  return `<section class="cta-band"><div class="wrap">
     <span class="eyebrow">${md(S.sections.cta.eyebrow)}</span>
     <h2 style="margin-top:18px">${md(S.sections.cta.titleLead)} <em>${md(S.sections.cta.titleAccent)}</em>${md(S.sections.cta.titleTail)}</h2>
     <div class="row"><p>${md(S.sections.cta.body)}</p>
@@ -117,7 +130,7 @@ function ctaBand(){
 /* HOME */
 function viewHome(){
   const feat = DATA.projects, H = S.hero, X = S.sections;
-  const latest = DATA.articles.slice().sort((a,b) => new Date("1 "+b.date) - new Date("1 "+a.date)).slice(0,3);
+  const latest = DATA.articles.slice().sort((a,b) => new Date("1 "+b.date) - new Date("1 "+a.date)).slice(0, (X.thinking.homeCount || 3) + 1);
   return `
   <section class="hero" style="--hero-light:url('${esc(H.background.light)}');--hero-dark:url('${esc(H.background.dark)}')">
     <div class="hero-art" role="img" aria-label="${esc(H.background.alt)}"></div><div class="hero-shade"></div>
@@ -131,62 +144,32 @@ function viewHome(){
     ${H.meta ? `<span class="hero-meta">${md(H.meta)}</span>` : ""}
   </section>
 
-  <div class="ticker"><div class="ticker-row">
+  <div class="ticker"><div class="wrap ticker-row" style="padding-inline:var(--gut)">
     ${S.stats.map(x => `<div class="ticker-cell"><b>${md(x.value)}</b><span>${md(x.label)}</span></div>`).join("")}
   </div></div>
 
-  <section class="sec"><div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">${md(X.work.eyebrow)}</span><h2>${md(X.work.title)}</h2></div>
-      <a class="link-arrow" href="#work">All case studies ${I.arrow}</a></div>
-    <div class="work-list">${workRows(feat.slice(0, X.work.homeCount || 3))}</div>
+  <section class="sec alt"><div class="wrap">
+    ${secHead(md(X.work.eyebrow), md(X.work.title), `<a class="link-arrow" href="#work">All ${DATA.projects.length} case studies ${I.arrow}</a>`)}
+    <div class="cards">${workCards(feat.slice(0, X.work.homeCount || 3), true)}</div>
   </div></section>
 
-  <section class="sec alt"><div class="wrap dial-wrap">
-    <div>
-      <span class="eyebrow">${md(X.autonomy.eyebrow)}</span>
-      <h2 style="font-size:clamp(32px,4.4vw,52px);margin-top:14px">${md(X.autonomy.title)}</h2>
-      <p class="muted" style="margin-top:18px;max-width:46ch">${md(X.autonomy.body)}</p>
-      <div class="seg" role="group" aria-label="Autonomy mode" id="seg">
-        <span class="thumb" id="segThumb"></span>
-        <button type="button" data-mode="0" aria-pressed="true">Ask</button>
-        <button type="button" data-mode="1" aria-pressed="false">Assist</button>
-        <button type="button" data-mode="2" aria-pressed="false">Agent</button>
-      </div>
-      <div class="dial-meter">
-        <div class="meter"><span>Agent autonomy</span><span class="bar"><i id="mA"></i></span><span class="v" id="mAv"></span></div>
-        <div class="meter"><span>Human checkpoints</span><span class="bar amber"><i id="mH"></i></span><span class="v" id="mHv"></span></div>
-      </div>
-      <a class="link-arrow" style="margin-top:28px" href="#article.agentic-workflows-beyond-chat">Read: Agentic workflows beyond chat ${I.arrow}</a>
-    </div>
-    <div class="console" aria-live="polite">
-      <div class="console-bar"><span class="dots"><i></i><i></i><i></i></span><span>AMI ASSISTANT · DATA</span><span class="mode-pill" id="modePill">ASK</span></div>
-      <div class="console-body" id="consoleBody"></div>
+  <section class="sec"><div class="wrap">
+    ${secHead(md(X.leadership.eyebrow), md(X.leadership.title), `<a class="link-arrow" href="#about">More about me ${I.arrow}</a>`)}
+    <div class="lead-grid">${DATA.pillars.map(p => `<div class="lead-item"><span class="pi">${I[p.iconName] || I.strategy}</span><h3>${esc(nice(p.title))}</h3><p>${esc(p.description)}</p></div>`).join("")}</div>
+  </div></section>
+
+  <section class="sec alt"><div class="wrap">
+    ${secHead(md(X.thinking.eyebrow), md(X.thinking.title), `<a class="link-arrow" href="#thinking">All ${DATA.articles.length} essays ${I.arrow}</a>`)}
+    <div class="think">
+      <a class="think-feature" href="#article.${latest[0].id}"><span class="meta-line"><span class="c">${esc(latest[0].category)}</span><span>${esc(latest[0].date)} · ${esc(latest[0].readingTime)}</span></span>
+        <h3>${esc(latest[0].title)}</h3><blockquote>${esc(latest[0].fullContent.keyQuote)}</blockquote><span class="link-arrow">Read essay ${I.arrow}</span></a>
+      <ul class="alist">${latest.slice(1).map(a => `<li><a href="#article.${a.id}"><h3>${esc(a.title)}</h3><span class="meta-line"><span class="c">${esc(a.category)}</span><span>${esc(a.date)}</span></span><span class="arr">${I.arrow}</span></a></li>`).join("")}</ul>
     </div>
   </div></section>
 
   <section class="sec"><div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">${md(X.leadership.eyebrow)}</span><h2>${md(X.leadership.title)}</h2></div>
-      <p>${md(X.leadership.body)}</p></div>
-    ${pillarsHTML()}
-  </div></section>
-
-  <section class="sec alt"><div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">${md(X.thinking.eyebrow)}</span><h2>${md(X.thinking.title)}</h2></div>
-      <a class="link-arrow" href="#thinking">All ${DATA.articles.length} essays ${I.arrow}</a></div>
-    <div class="art-grid">${artCard(latest[0], true)}${artCard(latest[1])}</div>
-  </div></section>
-
-  <section class="sec"><div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">${md(X.journey.eyebrow)}</span><h2>${md(X.journey.title)}</h2></div>
-      <a class="link-arrow" href="#journey">See the full journey ${I.arrow}</a></div>
-    <div class="arc">${DATA.career.map(c => `<a class="arc-step${c.isMilestone ? " ms" : ""}" href="#journey" data-open="${c.id}"><b>${esc(c.title)}</b><span>${esc(c.period)}</span></a>`).join("")}</div>
-  </div></section>
-
-  <section class="sec alt"><div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">${md(X.photography.eyebrow)}</span><h2>${md(X.photography.title)}</h2></div>
-      <p>${md(X.photography.body)}</p></div>
-    <div class="photo-grid" id="homePhotos"></div>
-    <a class="link-arrow" href="#photography">Visit the gallery ${I.arrow}</a>
+    ${secHead(md(X.photography.eyebrow), md(X.photography.title), `<a class="link-arrow" href="#photography">Visit the gallery ${I.arrow}</a>`)}
+    <div class="pstrip" id="homePhotos"></div>
   </div></section>
   ${ctaBand()}`;
 }
@@ -194,11 +177,24 @@ function pillarsHTML(){
   return `<div class="pillars">${DATA.pillars.map(p => `
     <div class="pillar" role="button" tabindex="0" aria-expanded="false">
       <span class="pi">${I[p.iconName] || I.strategy}</span>
-      <h3>${esc(p.title.charAt(0) + p.title.slice(1).toLowerCase()).replace("Ux","UX").replace("Ai ","AI ")}</h3>
+      <h3>${esc(nice(p.title))}</h3>
       <p>${esc(p.description)}</p>
       <ul>${p.details.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
       <span class="more">${I.plus}<span>How</span></span>
     </div>`).join("")}</div>`;
+}
+function autonomyDemo(){
+  const A = S.sections.autonomy;
+  return `<section class="cs-block" id="cs-demo"><span class="eyebrow">${md(A.eyebrow)}</span><h2>${md(A.title)}</h2>
+    <div class="dial-wrap"><div>
+      <p class="muted" style="max-width:46ch">${md(A.body)}</p>
+      <div class="seg" role="group" aria-label="Autonomy mode" id="seg"><span class="thumb" id="segThumb"></span>
+        <button type="button" data-mode="0" aria-pressed="true">Ask</button><button type="button" data-mode="1" aria-pressed="false">Assist</button><button type="button" data-mode="2" aria-pressed="false">Agent</button></div>
+      <div class="dial-meter"><div class="meter"><span>Agent autonomy</span><span class="bar"><i id="mA"></i></span><span class="v" id="mAv"></span></div>
+        <div class="meter"><span>Human checkpoints</span><span class="bar amber"><i id="mH"></i></span><span class="v" id="mHv"></span></div></div>
+    </div>
+    <div class="console" aria-live="polite"><div class="console-bar"><span class="dots"><i></i><i></i><i></i></span><span>AMI ASSISTANT · DATA</span><span class="mode-pill" id="modePill">ASK</span></div><div class="console-body" id="consoleBody"></div></div>
+    </div></section>`;
 }
 const MODES = [
   {k:"ASK", auto:15, hum:100, steps:[["Collect deadlock log for DB2P","done","Done"],["Identify conflicting transactions","wait","Approve?"],["Draft reorganisation plan","idle","Queued"],["Apply change in production","idle","Queued"]],
@@ -228,13 +224,13 @@ function viewWork(){
   <section class="sec" style="padding-top:40px"><div class="wrap">
     <div class="toolbar"><div class="filters" role="group" aria-label="Filter case studies">
       ${[["all","All"],["ai","AI experiences"],["enterprise","Enterprise UX"]].map(([k,l]) => `<button type="button" class="chip" data-wf="${k}" aria-pressed="${f===k}">${l}<span class="n">${counts[k]}</span></button>`).join("")}
-    </div><span class="mono muted">2022 — 2026</span></div>
-    <div class="work-list" id="workList"></div>
+    </div><span class="mono">2022–2026</span></div>
+    <div class="cards" id="workList"></div>
   </div></section>${ctaBand()}`;
 }
 function renderWorkList(f){
   const list = f === "all" ? DATA.projects : DATA.projects.filter(p => p.categoryKey === f);
-  $("#workList").innerHTML = workRows(list);
+  $("#workList").innerHTML = workCards(list, f === "all");
   $$("[data-wf]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.wf === f)));
   store.set("ls-workfilter", f);
 }
@@ -267,10 +263,10 @@ function viewCase(id){
   const i = projIdx(id); if (i < 0) return viewNotFound();
   const p = DATA.projects[i], prev = DATA.projects[(i - 1 + DATA.projects.length) % DATA.projects.length], next = DATA.projects[(i + 1) % DATA.projects.length];
   const L = p.leadershipPerspective, R = p.businessOutcomesAndROI;
-  const toc = [["cs-overview","Overview"],["cs-process","Design process"],["cs-leadership","Leadership"],["cs-outcomes","Outcomes"],["cs-takeaway","Takeaway"]];
+  const toc = [["cs-overview","Overview"], ...(p.demo === "autonomy" ? [["cs-demo","Try the framework"]] : []), ["cs-process","Design process"],["cs-leadership","Leadership"],["cs-outcomes","Outcomes"],["cs-takeaway","Takeaway"]];
   return `<header class="cs-hero"><div class="gridbg"></div><div class="wrap">
-    <div class="crumb"><a href="#home">~/lalit</a><span>/</span><a href="#work">work</a><span>/</span><span>${esc(p.id)}</span></div>
-    <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;align-items:center"><span class="eyebrow" style="color:${p.categoryKey==="enterprise" ? "var(--amber)" : "var(--accent)"}">${esc(p.category)}</span><span class="tag">Case ${String(i+1).padStart(2,"0")} / ${String(DATA.projects.length).padStart(2,"0")}</span></div>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#work">Work</a><span aria-hidden="true">/</span><span>Case ${i+1} of ${DATA.projects.length}</span></nav>
+    <div style="margin-top:24px"><span class="eyebrow">${esc(nice(p.category))} · ${esc(p.year)}</span></div>
     <h1 class="reveal">${esc(p.title)}</h1>
     <p class="sub reveal" style="animation-delay:.06s">${esc(p.subtitle)}</p>
     <dl class="cs-meta reveal" style="animation-delay:.12s">
@@ -288,6 +284,7 @@ function viewCase(id){
         <div class="ps" style="margin-top:28px"><div class="p"><h3>Problem</h3><p>${esc(p.problemSpace)}</p></div><div class="s"><h3>Solution</h3><p>${esc(p.solution)}</p></div></div>
         <div class="big-metrics">${p.metrics.map(m => `<div class="big-metric"><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join("")}</div>
       </section>
+      ${p.demo === "autonomy" ? autonomyDemo() : ""}
       <section class="cs-block" id="cs-process"><span class="eyebrow">Design process</span><h2>Five phases, from evidence to delivery</h2>
         <div class="phase-tabs" role="tablist" aria-label="Design phases">${PHASES.map(([k,l],j) => `<button type="button" role="tab" id="tab-${j}" aria-controls="phasePanel" aria-selected="${j===0}" data-phase="${j}" tabindex="${j===0?0:-1}"><span class="n">0${j+1}</span><span class="t">${l}</span></button>`).join("")}</div>
         <div class="phase-panel" id="phasePanel" role="tabpanel" aria-labelledby="tab-0">${phasePanel(p,0)}</div>
@@ -321,7 +318,7 @@ function viewThinking(){
   <section class="sec" style="padding-top:40px"><div class="wrap">
     <div class="toolbar"><div class="filters" role="group" aria-label="Filter essays">${cats.map((c,i) => `<button type="button" class="chip" data-af="${esc(c)}" aria-pressed="${i===0}">${esc(c)}<span class="n">${c==="All" ? DATA.articles.length : DATA.articles.filter(a=>a.category===c).length}</span></button>`).join("")}</div>
       <label class="search"><span class="mono" style="position:absolute;left:-9999px">Search essays</span>${I.search}<input id="artSearch" type="search" placeholder="Search essays and tags…" autocomplete="off"></label></div>
-    <div class="art-grid" id="artGrid"></div>
+    <div class="arows" id="artGrid"></div>
   </div></section>`;
 }
 let artState = {cat:"All", q:""};
@@ -329,7 +326,7 @@ function renderArticles(){
   const q = artState.q.trim().toLowerCase();
   const list = DATA.articles.filter(a => (artState.cat === "All" || a.category === artState.cat) &&
     (!q || (a.title + " " + a.shortDescription + " " + a.tags.join(" ") + " " + a.category).toLowerCase().includes(q)));
-  $("#artGrid").innerHTML = list.length ? list.map((a,i) => artCard(a, i===0 && artState.cat==="All" && !q)).join("") : `<div class="empty" style="grid-column:1/-1">No essays match “${esc(artState.q)}”. Try “trust”, “agentic” or “strategy”.</div>`;
+  $("#artGrid").innerHTML = list.length ? list.map(articleRow).join("") : `<div class="empty" style="grid-column:1/-1">No essays match “${esc(artState.q)}”. Try “trust”, “agentic” or “strategy”.</div>`;
   $$("[data-af]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.af === artState.cat)));
 }
 function viewArticle(id){
@@ -337,7 +334,7 @@ function viewArticle(id){
   const a = DATA.articles[i], F = a.fullContent;
   const related = DATA.articles.filter(x => x.id !== a.id).map(x => [x, x.tags.filter(t => a.tags.includes(t)).length + (x.category === a.category ? 1 : 0)]).sort((m,n) => n[1]-m[1]).slice(0,3).map(x=>x[0]);
   return `<article><header class="art-head wrap">
-      <div class="crumb"><a href="#home">~/lalit</a><span>/</span><a href="#thinking">thinking</a><span>/</span><span>${esc(a.id)}</span></div>
+      <nav class="crumb" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#thinking">Thinking</a></nav>
       <h1 class="reveal">${esc(a.title)}</h1>
       <div class="art-meta"><b>${esc(a.category)}</b><span>${esc(a.date)}</span><span>${esc(a.readingTime)}</span><span>By Lalit Shahane</span></div>
     </header>
@@ -354,8 +351,8 @@ function viewArticle(id){
         <a class="link-arrow" href="#thinking" style="margin-left:auto">${I.back} All essays</a></div>
     </div></div>
   </article>
-  <section class="sec alt"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Keep reading</span><h2>Related essays</h2></div></div>
-    <div class="art-grid">${related.map(x => artCard(x)).join("")}</div></div></section>`;
+  <section class="sec alt"><div class="wrap">${secHead("Keep reading", "Related essays", `<a class="link-arrow" href="#thinking">All essays ${I.arrow}</a>`)}
+    <div class="arows">${related.map(articleRow).join("")}</div></div></section>`;
 }
 
 /* JOURNEY */
@@ -402,11 +399,11 @@ function viewAbout(){
     </div>
   </div></section>
   <section class="sec alt"><div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Leadership &amp; impact</span><h2>Four areas I lead in</h2></div><p>Select a card to see how each one shows up in practice.</p></div>
+    ${secHead("Leadership and impact", "Four areas I lead in", `<p>Select a card to see how each one shows up in practice.</p>`)}
     ${pillarsHTML()}
   </div></section>
   <section class="sec"><div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Academic foundation</span><h2>Education &amp; credentials</h2></div></div>
+    ${secHead("Academic foundation", "Education and credentials")}
     <div class="creds">${DATA.creds.map(c => `<div class="cred"><span class="seal">${I.check}</span><span class="badge">${esc(c.badge)}</span><h3>${esc(c.degree)}</h3><span class="f">${esc(c.field)}</span><p>${esc(c.institution)}</p></div>`).join("")}</div>
   </div></section>${ctaBand()}`;
 }
@@ -489,7 +486,7 @@ function renderPhotos(){
 
 /* RESUME */
 function viewResume(){
-  return `<div class="wrap"><div class="crumb" style="padding-top:32px"><a href="#home">~/lalit</a><span>/</span><span>resume</span></div>
+  return `<div class="wrap"><nav class="crumb" style="padding-top:32px" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><span>Résumé</span></nav>
   <div class="resume reveal">
     <div class="rs-head"><div><h1>Lalit Shahane</h1><p class="role">${md(S.resume.title)}</p><p class="muted" style="margin-top:6px;font-size:15px">${md(S.resume.currentRole)}</p></div>
       <div class="ct"><span>${esc(P.location)}</span><span>${esc(P.email)} <button class="copy" type="button" data-copy="${esc(P.email)}" style="margin-left:6px">${I.copy}Copy</button></span><a href="${esc(P.linkedInUrl)}" target="_blank" rel="noopener">${esc(P.linkedInDisplay)} ↗</a></div></div>
@@ -570,9 +567,9 @@ function route(){
   mount(r, id);
 }
 function mount(r, id){
+  if ($("#seg")) setMode(0);
   if (r === "home"){
-    setMode(0);
-    const hp = $("#homePhotos"); hp.innerHTML = photoStories().slice(0,3).map(photoCard).join(""); hydrateStudies(hp);
+    const hp = $("#homePhotos"); hp.innerHTML = photoStories().slice(0,3).map(s => `<div class="ph" role="button" tabindex="0" data-photo="${esc(s.id)}"><div class="img">${photoMedia(s)}</div><b>${esc(s.title)}</b><span>${esc(s.location)}</span></div>`).join(""); hydrateStudies(hp);
   }
   if (r === "work") renderWorkList(store.get("ls-workfilter","all"));
   if (r === "thinking"){ artState = {cat:"All", q:""}; renderArticles(); }

@@ -60,20 +60,21 @@
       "homeCount": 3
     },
     "autonomy": {
-      "eyebrow": "A framework I use",
+      "eyebrow": "Try the framework",
       "title": "Autonomy is a dial, not a switch.",
       "body": "In the agentic AI work, we let customers graduate trust over time: Ask, Assist and Agent modes with friction proportional to risk. Turn the dial to see how the same incident plays out."
     },
     "leadership": {
-      "eyebrow": "Leadership & impact",
-      "title": "Designing for people, products and what’s next",
+      "eyebrow": "How I lead",
+      "title": "Four things I bring to every team",
       "body": "I help organizations elevate design from a delivery function to a strategic driver of product, platform and business transformation."
     },
     "thinking": {
       "eyebrow": "Thinking",
-      "title": "Ideas, perspectives and experiences from the journey",
+      "title": "Ideas from the journey",
       "pageTitle": "Thinking",
-      "pageLede": "Essays on human-centered AI, agentic workflows, experience strategy and the changing role of design leadership."
+      "pageLede": "Essays on human-centered AI, agentic workflows, experience strategy and the changing role of design leadership.",
+      "homeCount": 3
     },
     "journey": {
       "eyebrow": "Career journey",
@@ -82,7 +83,7 @@
       "pageLede": "From design execution to enterprise UX leadership — a path driven by curiosity, continuous learning and a passion for meaningful experiences."
     },
     "photography": {
-      "eyebrow": "Photography",
+      "eyebrow": "Beyond work",
       "title": "The art of noticing",
       "body": "Photography is my lifelong practice of observation: light, geometry, patience and human emotion, the same qualities that build empathy in design.",
       "pageTitle": "The art of noticing: light, shadows & human moments",
