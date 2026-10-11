@@ -96,9 +96,9 @@ function workCard(p, feature){
   const m = p.metrics[0] || {};
   return `<a class="wcard${feature ? " feature" : ""}" href="#case.${p.id}">
     <div class="wcover"><span class="dot"></span><span class="cat">${esc(p.category)}</span>
-      <div class="metric"><b>${esc(m.value || p.year)}</b><span>${esc(m.label || "")}</span></div></div>
+      <div class="metric"><b>${esc(m.value || "")}</b><span>${esc(m.label || "")}</span></div></div>
     <div class="wbody"><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
-      <div class="go"><span>${esc(p.year)}</span><b>Read case study ${I.arrow}</b></div></div>
+      <div class="go"><span></span><b>Read case study ${I.arrow}</b></div></div>
   </a>`;
 }
 function workCards(list, featureFirst){ return list.map((p,i) => workCard(p, featureFirst && i === 0)).join(""); }
@@ -275,15 +275,10 @@ function viewCase(id){
   const toc = [["cs-overview","Overview"], ...(p.demo === "autonomy" ? [["cs-demo","Try the framework"]] : []), ["cs-process","Design process"],["cs-leadership","Leadership"],["cs-outcomes","Outcomes"]];
   return `<header class="cs-hero"><div class="wrap">
     <nav class="crumb" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#work">Work</a><span aria-hidden="true">/</span><span>Case ${i+1} of ${DATA.projects.length}</span></nav>
-    <div style="margin-top:24px"><span class="eyebrow">${esc(p.category)} · ${esc(p.year)}</span></div>
+    <div style="margin-top:24px"><span class="eyebrow">${esc(p.category)}</span></div>
     <h1 class="reveal">${esc(p.title)}</h1>
     <p class="sub reveal" style="animation-delay:.06s">${esc(p.subtitle)}</p>
-    <dl class="cs-meta reveal" style="animation-delay:.12s">
-      <div><dt>Role</dt><dd>${esc(p.role)}</dd></div>
-      <div><dt>Timeline</dt><dd>${esc(p.duration)}</dd></div>
-      <div><dt>Team</dt><dd>${esc(p.team)}</dd></div>
-      <div><dt>Stakeholders</dt><dd>${p.stakeholders.map(esc).join(" · ")}</dd></div>
-    </dl>
+    <p class="cs-role reveal" style="animation-delay:.12s"><b>My role</b>${esc(p.role)}</p>
   </div></header>
   <div class="cs-stats"><div class="wrap">${p.metrics.map(m => `<div><b>${esc(m.value)}</b><span>${esc(m.label)}</span>${m.detail ? `<p>${esc(m.detail)}</p>` : ""}</div>`).join("")}</div></div>
   <div class="wrap cs-layout">
@@ -303,7 +298,7 @@ function viewCase(id){
         <div class="pull"><span class="pull-mark">“</span>${esc(p.pullQuote)}</div>
         <p class="lead" style="margin-top:28px">${esc(L.intro)}</p>
         <h3 class="sub-h">Leadership in action</h3>
-        <div class="acts">${L.actions.map(a => `<details class="act"><summary><span class="when">${esc(a.when)}</span><span class="sit">${esc(a.situation)}</span><span class="tog" aria-hidden="true">${I.plus}</span></summary>
+        <div class="acts">${L.actions.map(a => `<details class="act"><summary><span class="sit">${esc(a.situation)}</span><span class="tog" aria-hidden="true">${I.plus}</span></summary>
           <div class="act-body"><div><h4>What I did</h4><p>${esc(a.did)}</p></div><div class="res"><h4>Result</h4><p>${esc(a.result)}</p></div></div></details>`).join("")}</div>
         <h3 class="sub-h">Capabilities demonstrated</h3>
         <div class="caps">${L.capabilities.map(c => `<div><b>${esc(c.title)}</b><p>${esc(c.text)}</p></div>`).join("")}</div>
@@ -502,7 +497,7 @@ function viewResume(){
       <div class="ct"><span>${esc(P.location)}</span><span>${esc(P.email)} <button class="copy" type="button" data-copy="${esc(P.email)}" style="margin-left:6px">${I.copy}Copy</button></span><a href="${esc(P.linkedInUrl)}" target="_blank" rel="noopener">${esc(P.linkedInDisplay)} ↗</a></div></div>
     <div class="rs-sec"><h2>Summary</h2><p>${md(S.resume.summary)}</p></div>
     <div class="rs-sec"><h2>Competencies</h2><div class="rs-comp">${DATA.pillars.map(p => `<div><b>${esc(p.title)}</b><span>${esc(p.description)}</span></div>`).join("")}</div></div>
-    <div class="rs-sec"><h2>Recent work</h2><div class="rs-cs">${DATA.projects.map(p => `<a href="#case.${p.id}"><b>${esc(p.title)}</b><span>${esc(p.year)}</span></a>`).join("")}</div></div>
+    <div class="rs-sec"><h2>Recent work</h2><div class="rs-cs">${DATA.projects.map(p => `<a href="#case.${p.id}"><b>${esc(p.title)}</b><span>${esc(p.category)}</span></a>`).join("")}</div></div>
     <div class="rs-sec"><h2>Career</h2><div class="rs-roles">${DATA.career.slice().reverse().map(c => `<div class="rs-role"><b>${esc(c.title)}</b><span class="p">${esc(c.period)}</span><span class="o">${esc(c.organization)}</span><p>${esc(c.description)}</p></div>`).join("")}</div></div>
     <div class="rs-sec"><h2>Education</h2><div class="rs-comp">${DATA.creds.map(c => `<div><b>${esc(c.degree)}</b><span>${esc(c.field)} · ${esc(c.badge)}</span></div>`).join("")}</div></div>
     <div class="rs-sec"><h2>References</h2><p class="muted">Available on request. <a href="#contact" class="link-arrow" style="margin-left:6px">Get in touch ${I.arrow}</a></p></div>

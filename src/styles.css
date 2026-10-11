@@ -854,3 +854,9 @@ footer{background:var(--bg)}
 .ev-base{margin-top:18px;font-size:13.5px;color:var(--faint);line-height:1.6}
 .ev-base b{color:var(--muted)}
 .pull{font-size:clamp(22px,2.6vw,32px)}
+/* role line replaces the old meta grid; actions without dates */
+.cs-role{margin-top:28px;max-width:70ch;padding:16px 20px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-size:16px;line-height:1.6}
+.cs-role b{display:block;font:600 13.5px var(--f-label);color:var(--amber);margin-bottom:4px}
+.act summary{grid-template-columns:minmax(0,1fr) 32px}
+.act-body{padding:0 20px 20px}
+.wbody .go{justify-content:flex-end}

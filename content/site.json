@@ -44,7 +44,7 @@
     },
     {
       "value": "{caseStudyCount}",
-      "label": "Case studies, 2022–2026"
+      "label": "Case studies"
     },
     {
       "value": "{articleCount}",
@@ -56,7 +56,7 @@
       "eyebrow": "Selected work",
       "title": "Designing trust, intelligence and scale across an enterprise software portfolio",
       "pageTitle": "Selected work",
-      "pageLede": "Five case studies from four years of UX leadership, 2022 to 2026, across Platform, Agentic AI, Generative AI, Data and Security.",
+      "pageLede": "Five case studies of UX leadership across Platform, Agentic AI, Generative AI, Data and Security.",
       "homeCount": 3,
       "introLabel": "Leadership at a glance",
       "intro": "Over four years I moved from leading product design for IT operations management to leading user experience for a multi-product mainframe portfolio. These case studies show how the UX team I lead turned customer evidence into AI-ready experiences across the GenAI, Platform, Data and Security product lines, and how I led the people, decisions and cross-functional alignment behind them. Product names are anonymised."
