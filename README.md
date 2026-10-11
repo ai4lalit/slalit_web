@@ -51,10 +51,25 @@ python3 build.py
 The build checks the content first (valid JSON, unique ids, image files exist) and stops with a
 plain-language list of problems if anything is wrong.
 
-## Deploy
+## Publishing (GitHub Pages)
 
-Upload the `dist/` folder (`index.html` + `img/`) to any static host: Netlify, Vercel, GitHub Pages,
-Cloudflare Pages, S3. No server is needed.
+Every push to `main` runs `.github/workflows/deploy.yml`, which runs `build.py` and publishes `dist/`
+to GitHub Pages. `dist/` is generated, so it is not committed.
+
+One-time setup: repository **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+## Editing on github.com (no download needed)
+
+1. Open a file in `content/` (for example `content/site.json`) and click the pencil icon.
+2. Change the text inside the quotes. Keep the commas, brackets and quotes as they are.
+3. Click **Commit changes**. The site rebuilds and goes live in about a minute.
+4. Check progress in the **Actions** tab. A red ✗ means the content check failed. Open the run
+   to see the plain-language error (for example "invalid JSON at line 12"), fix it and commit again.
+
+To add an image: open `assets/img/`, choose **Add file → Upload files**, then reference it as
+`img/<file name>` in the content.
+
+For anything bigger (new sections, design changes), ask Claude with the repository attached.
 
 ## Writing conventions in content
 

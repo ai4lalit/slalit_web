@@ -7,8 +7,9 @@ Portfolio site for Lalit Shahane. See README.md for structure.
 - Text and data changes go in `content/*.json`. Never hard-code copy in `src/app.js` when a content file can hold it; if new copy is needed, add a field to `content/site.json` and read it via `S.<path>` with `md()`.
 - Styling goes in `src/styles.css`. Every colour must be a token defined on bare `:root` (light) and redefined in BOTH dark blocks (`@media (prefers-color-scheme: dark) :root:not([data-theme="light"])` and `:root[data-theme="dark"]`).
 - New images go in `assets/img/` and are referenced as `img/<name>`.
-- After any change: run `python3 build.py`, then republish `dist/preview.html` to the existing preview artifact with `files` `img/*` from `dist/img/`.
-- Commit each round of changes with a short message describing what changed on the site.
+- After any change: run `python3 build.py` (it must pass), commit with a short message describing what changed on the site, and push to `main`. GitHub Actions rebuilds and publishes to GitHub Pages.
+- `dist/` is generated and git-ignored. Optionally republish `dist/preview.html` (plus `img/*` from `dist/img/`) to the preview artifact.
+- The owner also edits `content/` directly on github.com, so pull before editing.
 
 ## Constraints
 
