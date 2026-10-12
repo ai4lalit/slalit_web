@@ -1,104 +1,87 @@
 [
   {
-    "id": "shaniwar-wada-morning-light",
-    "title": "Shadows of the Peshwas",
-    "subtitle": "Morning light slicing through the 18th-century stone archways of Pune",
-    "category": "Light & Architecture",
-    "location": "Shaniwar Wada, Pune, India",
-    "year": "2025",
-    "cameraGear": "Fujifilm X-T5 · Fujinon 33mm f/1.4",
-    "exif": {
-      "aperture": "f/2.0",
-      "shutter": "1/640s",
-      "iso": "160"
-    },
-    "imageUrl": null,
-    "story": "I arrived just as the first morning rays filtered past the spiked Delhi Gate. At dawn, when the crowds are absent, Shaniwar Wada breathes in silence. The way the golden sunlight grazed the weathered teak pillars and heavy stone lintels reminded me of how architecture guides human attention. In UX, as in ancient masonry, negative space and shadow establish rhythm.",
-    "philosophy": "Observing natural light teaches patience. You cannot rush the sun; you must position yourself and wait for the precise angle where structural truth emerges."
+    "id": "flamingo-flock-sparring",
+    "title": "A Quarrel at First Light",
+    "subtitle": "Two greater flamingos rise bill to bill above a flock that keeps on feeding",
+    "category": "Flamingos",
+    "alt": "Two greater flamingos face off bill to bill above a feeding flock on dark blue water",
+    "imageUrl": "img/photo-flamingo-flock-sparring.jpg",
+    "thumbUrl": "img/photo-flamingo-flock-sparring-sm.jpg",
+    "width": 1920,
+    "height": 1282,
+    "focus": "34% 50%",
+    "story": [
+      "Most of the flock has its head down, sweeping the shallows for food in a slow, steady rhythm. Then two necks rise out of the crowd and meet at the top of the frame, bills almost touching.",
+      "Whether it is a squabble over feeding space or the start of a display, it lasts only a few seconds. A third flamingo looks on from the back, and everyone else keeps feeding as if nothing is happening.",
+      "Low, warm light picks out the pink in their wings against the dark water and the deep blue haze behind them. I kept the frame wide so the confrontation reads as a small moment inside a much larger, calmer scene."
+    ]
   },
   {
-    "id": "western-ghats-monsoon-veil",
-    "title": "The Monsoon Veil",
-    "subtitle": "Ascending Sinhagad fort amidst swirling clouds and basalt ridges",
-    "category": "Nature & Landscapes",
-    "location": "Sinhagad Ridge, Western Ghats, Pune",
-    "year": "2024",
-    "cameraGear": "Sony A7 IV · 24-70mm f/2.8 GM II",
-    "exif": {
-      "aperture": "f/5.6",
-      "shutter": "1/250s",
-      "iso": "200"
-    },
-    "imageUrl": null,
-    "story": "The Western Ghats during July are a spectacle of mist and deluge. Reaching the crest of Sinhagad, visibility dropped to twenty meters before an updraft tore open a window into the valley below. The intense emerald terraces gleamed against dark volcanic basalt for barely three seconds. I released the shutter instinctively.",
-    "philosophy": "Capturing transient moments in severe conditions mirrors rapid product prototyping: you have to embrace ambiguity and rely on muscle memory when the opportunity reveals itself."
+    "id": "grey-herons-mid-air",
+    "title": "Airborne Dispute",
+    "subtitle": "Two grey herons clash in mid-air while the wetland below carries on",
+    "category": "Waders",
+    "alt": "Two grey herons clash in mid-air with wings spread, above flamingos and a standing heron in misty water",
+    "imageUrl": "img/photo-grey-herons-mid-air.jpg",
+    "thumbUrl": "img/photo-grey-herons-mid-air-sm.jpg",
+    "width": 1321,
+    "height": 1980,
+    "focus": "50% 38%",
+    "story": [
+      "Grey herons usually stand perfectly still for minutes at a time. This exchange broke that stillness in a burst of wings, legs and open bills.",
+      "One heron launches at the other from above, neck fully stretched, while the lower bird twists and lifts off the water to meet it. Water droplets are still falling from their feet.",
+      "Below them the wetland barely reacts. Flamingos, storks and a third heron stand in the soft morning haze, which turns the background into a pale wash and leaves the two fighters as clean silhouettes. Moments like this are over almost as soon as they begin."
+    ]
   },
   {
-    "id": "tulsibaug-market-rhythm",
-    "title": "Pulse of Tulsibaug",
-    "subtitle": "A quiet portrait amidst the vibrant bustle of old Pune bazaar",
-    "category": "Street & Culture",
-    "location": "Tulsibaug Bazaar, Pune, India",
-    "year": "2024",
-    "cameraGear": "Fujifilm X100V · 23mm f/2.0",
-    "exif": {
-      "aperture": "f/2.8",
-      "shutter": "1/320s",
-      "iso": "400"
-    },
-    "imageUrl": "img/tulsibaug.jpg",
-    "story": "Tulsibaug is sensory overload—the clinking of brass utensils, aroma of marigolds, and haggling voices. In the center of this whirlwind sat an artisan shaping clay lamps with deliberate, tranquil focus. While everyone else moved at frantic speeds, his hands moved with generational muscle memory. This contrast between ambient chaos and individual stillness was compelling.",
-    "philosophy": "Human-centered design is about uncovering that quiet stillness inside high-complexity environments: filtering noise so true intent can breathe."
+    "id": "flamingos-taking-off",
+    "title": "The Running Start",
+    "subtitle": "Greater flamingos sprint across the water, wings open, to get airborne",
+    "category": "Flamingos",
+    "alt": "Several greater flamingos run across shallow water with wings spread, showing red and black wing feathers",
+    "imageUrl": "img/photo-flamingos-taking-off.jpg",
+    "thumbUrl": "img/photo-flamingos-taking-off-sm.jpg",
+    "width": 1500,
+    "height": 1002,
+    "focus": "55% 50%",
+    "story": [
+      "Flamingos cannot simply leap into the air. They need a running start, so they sprint across the water with their wings open until they have enough speed to lift off.",
+      "This is the moment the group commits: long legs mid-stride, splashes at their feet, and wings that look pale at rest suddenly opening into bright red with black flight feathers.",
+      "Each bird is at a different point in the same movement, from the first few steps to the bird on the right with its feet already clear of the water. The haze over the far shore keeps the background quiet so the colour carries the frame."
+    ]
   },
   {
-    "id": "mumbai-cst-geometry",
-    "title": "Cathedral of Motion",
-    "subtitle": "Victorian Gothic arches framing thousands of daily commuter journeys",
-    "category": "Light & Architecture",
-    "location": "CST Terminus, Mumbai, India",
-    "year": "2025",
-    "cameraGear": "Leica Q2 · Summilux 28mm f/1.7",
-    "exif": {
-      "aperture": "f/2.8",
-      "shutter": "1/125s",
-      "iso": "800"
-    },
-    "imageUrl": null,
-    "story": "Every evening, thousands of commuters flow beneath CST’s soaring ribbed vaults. Standing on the concourse with a slow shutter speed, the travelers dissolved into flowing rivers of energy while the monolithic sandstone arches remained immovable. It is an extraordinary study in how physical infrastructure channels human intent.",
-    "philosophy": "Enterprise design systems are like railway concourses: the scaffolding must be rock-solid and invisible so people can achieve their destinations effortlessly."
+    "id": "flamingo-courtship-walk",
+    "title": "Two Ways to Cross the Water",
+    "subtitle": "One flamingo flares its wings mid-stride while another walks on calmly",
+    "category": "Flamingos",
+    "alt": "Two greater flamingos wading in blue water at sunrise, one with its wings raised and its foot kicking up spray",
+    "imageUrl": "img/photo-flamingo-courtship-walk.jpg",
+    "thumbUrl": "img/photo-flamingo-courtship-walk-sm.jpg",
+    "width": 1920,
+    "height": 1282,
+    "focus": "42% 50%",
+    "story": [
+      "Two greater flamingos cross the same stretch of water in completely different moods. The one on the left lifts its wings and kicks up a trail of spray with each step; the one on the right walks on, neck curved, unbothered.",
+      "Flamingos often raise and flash their wings in group displays, and this looks like one of those moments, though it could just as easily be a bird stretching or finding its balance.",
+      "The early sun lights both birds from the side and leaves the bank behind them in shadow, so they glow against the dark background. Their reflections and the line of droplets give the scene its sense of motion."
+    ]
   },
   {
-    "id": "varanasi-dawn-contemplation",
-    "title": "Ripples of Dawn",
-    "subtitle": "A boatman resting at the confluence of mist and river",
-    "category": "Moments & Moods",
-    "location": "Assi Ghat, Varanasi, India",
-    "year": "2024",
-    "cameraGear": "Sony A7 IV · 85mm f/1.4 GM",
-    "exif": {
-      "aperture": "f/1.8",
-      "shutter": "1/1000s",
-      "iso": "100"
-    },
-    "imageUrl": null,
-    "story": "At 5:30 AM on the Ganges, color hasn’t arrived yet. The world is rendered in subtle gradients of silver, blue, and charcoal. A lone boatman had paused his oars, eyes closed in silent prayer as incense smoke drifted across the bow. There was an honesty to the moment that no staged portrait could ever replicate.",
-    "philosophy": "Empathy in research cannot be faked or scheduled into a 30-minute user interview. It requires showing up early, leaving preconceptions at the door, and listening to unvoiced gestures."
-  },
-  {
-    "id": "kaas-plateau-wildflowers",
-    "title": "The Ephemeral Bloom",
-    "subtitle": "Microcosms of rare endemic flora on the UNESCO Kaas basalt plateau",
-    "category": "Nature & Landscapes",
-    "location": "Kaas Plateau, Satara, Maharashtra",
-    "year": "2024",
-    "cameraGear": "Fujifilm X-T5 · 80mm Macro f/2.8",
-    "exif": {
-      "aperture": "f/4.0",
-      "shutter": "1/500s",
-      "iso": "250"
-    },
-    "imageUrl": null,
-    "story": "For just three weeks post-monsoon, the volcanic plateau transforms into a carpet of endemic wildflowers surviving in mere inches of topsoil. Getting down to eye level with macro lenses reveals miniature engineering feats—delicate moisture-wicking petals, dewdrop lenses, and symbiotic insect pathways.",
-    "philosophy": "True craft reveals itself under close magnification. Whether designing micro-interactions in software or studying endemic petals, precision at the smallest scale creates enduring delight."
+    "id": "glossy-ibis-blue-hour",
+    "title": "Hidden Colours",
+    "subtitle": "A glossy ibis rests in still water, its dark plumage catching bronze and green",
+    "category": "Waders",
+    "alt": "A glossy ibis standing in blue water, its dark feathers showing bronze, purple and green sheen",
+    "imageUrl": "img/photo-glossy-ibis-blue-hour.jpg",
+    "thumbUrl": "img/photo-glossy-ibis-blue-hour-sm.jpg",
+    "width": 1500,
+    "height": 1002,
+    "focus": "70% 50%",
+    "story": [
+      "From a distance the glossy ibis looks almost black, and it is easy to overlook among more colourful birds. Up close and in the right light, its feathers carry a sheen of bronze, purple and green.",
+      "This one stood in the shallows with its feathers fluffed, long curved bill resting, turning slowly as the light changed. Each small turn shifted the colours across its back.",
+      "I placed the bird to the right and left the open water to its left, so the curve of the bill leads the eye into the frame. The calm blue water and the soft green bank behind keep attention on the plumage."
+    ]
   }
 ]

@@ -552,20 +552,21 @@ section{position:relative}
 .modal-close{position:absolute;top:14px;right:14px;z-index:3}
 .lb{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
 .lb-img{background:#06131D;display:flex;min-height:320px}
-.lb-img img,.lb-img canvas{width:100%;height:100%;max-height:82vh;object-fit:cover}
+.lb-img{align-items:center;justify-content:center}
+.lb-img canvas{width:100%;height:100%;max-height:82vh;object-fit:cover}
+.lb-img img{width:100%;height:100%;max-height:82vh;object-fit:contain}
+.lb-txt .stories{display:flex;flex-direction:column;gap:12px}
 .lb-txt{padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:16px;min-width:0}
 .lb-txt h2{font-size:clamp(28px,3vw,38px)}
 .lb-txt .sub{font:300 18px/1.45 var(--f-display);color:var(--muted)}
 .lb-txt .story{font-size:16.5px;line-height:1.7}
-.lb-txt .phil{padding:16px 18px;border-radius:12px;background:var(--accent-soft);border-left:2px solid var(--accent);font-style:italic;font-size:15.5px}
-.lb-txt .phil b{display:block;font:600 13px var(--f-label);letter-spacing:.01em;color:var(--accent);font-style:normal;margin-bottom:6px}
 .exif-table{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .exif-table div{padding:10px 12px;border-left:1px solid var(--line)}
 .exif-table div:first-child{border-left:0}
 .exif-table span{display:block;font:500 10px var(--f-mono);letter-spacing:.1em;color:var(--faint);text-transform:uppercase}
 .exif-table b{font:600 15px var(--f-mono)}
 .lb-nav{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);align-items:center}
-@media (max-width:820px){.lb{grid-template-columns:1fr}.lb-img img,.lb-img canvas{max-height:52vh}}
+@media (max-width:820px){.lb{grid-template-columns:1fr}.lb-img{min-height:0}.lb-img img,.lb-img canvas{max-height:52vh;height:auto}}
 /* copy-to-clipboard button (footer email, article title) */
 .copy{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--f-label);letter-spacing:.01em;padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--muted);transition:all .2s}
 .copy:hover{border-color:var(--accent);color:var(--accent)}

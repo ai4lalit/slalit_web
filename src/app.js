@@ -471,7 +471,7 @@ function study(story, w=800, h=1000){
 }
 const studyCache = {};
 function photoMedia(s, big){
-  if (s.imageUrl) return `<img src="${esc(s.imageUrl)}" alt="${esc(s.title)} — ${esc(s.location)}" loading="lazy">`;
+  if (s.imageUrl) return `<img src="${esc(big ? s.imageUrl : (s.thumbUrl || s.imageUrl))}" alt="${esc(s.alt || s.title)}"${s.width ? ` width="${s.width}" height="${s.height}"` : ""}${s.focus ? ` style="object-position:${esc(s.focus)}"` : ""} loading="lazy">`;
   return `<canvas data-study="${esc(s.id)}" width="800" height="${big ? 900 : [1000,820,1060,900][hash(s.id)%4]}" aria-label="Light study for ${esc(s.title)}"></canvas>`;
 }
 function hydrateStudies(scope){
@@ -481,11 +481,14 @@ function hydrateStudies(scope){
     const img = new Image(); img.onload = () => cv.getContext("2d").drawImage(img, 0, 0); img.src = studyCache[key];
   });
 }
+const photoWhere = s => [s.location, s.year].filter(Boolean).map(esc).join(" · ");
+const photoExif = s => s.exif ? [s.exif.aperture, s.exif.shutter, s.exif.iso && "ISO " + s.exif.iso].filter(Boolean) : [];
+const photoStory = s => (Array.isArray(s.story) ? s.story : [s.story]).filter(Boolean).map(t => `<p class="story">${esc(t)}</p>`).join("");
 function photoCard(s){
   return `<div class="photo-card" role="button" tabindex="0" data-photo="${esc(s.id)}">
-    <div class="img">${photoMedia(s)}${s.imageUrl ? "" : `<span class="study">Light study</span>`}<div class="exif">${s.exif ? [s.exif.aperture, s.exif.shutter, "ISO " + s.exif.iso].filter(Boolean).map(e => `<span>${esc(e)}</span>`).join("") : ""}</div></div>
+    <div class="img">${photoMedia(s)}${s.imageUrl ? "" : `<span class="study">Light study</span>`}${photoExif(s).length ? `<div class="exif">${photoExif(s).map(e => `<span>${esc(e)}</span>`).join("")}</div>` : ""}</div>
     <div class="cap"><span class="mono">${esc(s.category)}${s.mine ? `<span class="mine">Added by you</span>` : ""}</span><h3>${esc(s.title)}</h3><p>${esc(s.subtitle)}</p>
-      <span class="loc">${I.pin}${esc(s.location)} · ${esc(s.year)}</span></div></div>`;
+      ${photoWhere(s) ? `<span class="loc">${I.pin}${photoWhere(s)}</span>` : ""}</div></div>`;
 }
 function viewPhotography(){
   const cats = ["All", ...new Set(DATA.photos.map(p => p.category))];
@@ -494,7 +497,6 @@ function viewPhotography(){
     <div class="toolbar"><div class="filters" role="group" aria-label="Filter photo stories">${cats.map((c,i) => `<button type="button" class="chip" data-pf="${esc(c)}" aria-pressed="${i===0}">${esc(c)}</button>`).join("")}</div>
       <button type="button" class="btn btn-primary btn-sm" id="addStory">${I.plus.replace('<svg','<svg width="16" height="16"')} Post a photo story</button></div>
     <div class="photo-grid" id="photoGrid"></div>
-    <p class="mono muted" style="margin-top:12px">Frames marked “Light study” are generated colour studies standing in until the original photograph is added.</p>
   </div></section>`;
 }
 let photoCat = "All";
@@ -563,7 +565,7 @@ function route(){
 function mount(r, id){
   if ($("#seg")) setMode(0);
   if (r === "home"){
-    const hp = $("#homePhotos"); hp.innerHTML = photoStories().slice(0,3).map(s => `<div class="ph" role="button" tabindex="0" data-photo="${esc(s.id)}"><div class="img">${photoMedia(s)}</div><b>${esc(s.title)}</b><span>${esc(s.location)}</span></div>`).join(""); hydrateStudies(hp);
+    const hp = $("#homePhotos"); hp.innerHTML = photoStories().slice(0,3).map(s => `<div class="ph" role="button" tabindex="0" data-photo="${esc(s.id)}"><div class="img">${photoMedia(s)}</div><b>${esc(s.title)}</b><span>${esc(s.location || s.subtitle)}</span></div>`).join(""); hydrateStudies(hp);
   }
   if (r === "thinking"){ artState = {cat:"All", q:""}; renderArticles(); }
   if (r === "photography"){ photoCat = "All"; renderPhotos(); }
@@ -655,11 +657,10 @@ function openPhoto(id){
   const prev = all[(i - 1 + all.length) % all.length], next = all[(i + 1) % all.length];
   openModal(`<div class="lb"><div class="lb-img">${photoMedia(s, true)}</div>
     <div class="lb-txt"><span class="eyebrow">${esc(s.category)}</span><h2 id="modalTitle">${esc(s.title)}</h2><p class="sub">${esc(s.subtitle)}</p>
-      <span class="loc mono muted" style="display:flex;gap:6px;align-items:center;text-transform:none;letter-spacing:.02em">${I.pin.replace('<svg','<svg width="14" height="14"')}${esc(s.location)} · ${esc(s.year)}</span>
-      ${s.exif ? `<div class="exif-table"><div><span>Aperture</span><b>${esc(s.exif.aperture||"—")}</b></div><div><span>Shutter</span><b>${esc(s.exif.shutter||"—")}</b></div><div><span>ISO</span><b>${esc(s.exif.iso||"—")}</b></div></div>` : ""}
+      ${photoWhere(s) ? `<span class="loc mono muted" style="display:flex;gap:6px;align-items:center;text-transform:none;letter-spacing:.02em">${I.pin.replace('<svg','<svg width="14" height="14"')}${photoWhere(s)}</span>` : ""}
+      ${photoExif(s).length ? `<div class="exif-table"><div><span>Aperture</span><b>${esc(s.exif.aperture||"—")}</b></div><div><span>Shutter</span><b>${esc(s.exif.shutter||"—")}</b></div><div><span>ISO</span><b>${esc(s.exif.iso||"—")}</b></div></div>` : ""}
       ${s.cameraGear ? `<p class="mono muted" style="text-transform:none;letter-spacing:.02em">${esc(s.cameraGear)}</p>` : ""}
-      <p class="story">${esc(s.story)}</p>
-      ${s.philosophy ? `<p class="phil"><b>What it taught me</b>${esc(s.philosophy)}</p>` : ""}
+      <div class="stories">${photoStory(s)}</div>
       ${s.mine ? `<button type="button" class="copy" data-del="${esc(s.id)}" style="align-self:start">Remove this story</button>` : ""}
       <div class="lb-nav"><button class="btn btn-ghost btn-sm" type="button" data-lb="${esc(prev.id)}" data-lb-dir="prev">← ${esc(prev.title)}</button><span class="mono muted">${i+1} / ${all.length}</span><button class="btn btn-ghost btn-sm" type="button" data-lb="${esc(next.id)}" data-lb-dir="next">${esc(next.title)} →</button></div>
     </div></div>`);
@@ -680,7 +681,6 @@ function openAddStory(){
       <div class="field"><label for="sf-ap">Aperture</label><input id="sf-ap" name="ap" placeholder="f/2.8"></div>
       <div class="field"><label for="sf-sh">Shutter · ISO</label><input id="sf-sh" name="sh" placeholder="1/250s · 200"></div>
       <div class="field full"><label for="sf-story">The story</label><textarea id="sf-story" name="story" required></textarea><span class="err">Tell the story behind the frame.</span></div>
-      <div class="field full"><label for="sf-phil">What it taught you <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional)</span></label><input id="sf-phil" name="phil"></div>
       <div class="field full"><label for="sf-file">Photo <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional — a light study is drawn if you skip it)</span></label>
         <label class="drop" id="drop" for="sf-file">Drop an image here or <b style="color:var(--accent)">browse</b><input id="sf-file" type="file" accept="image/*" hidden><span id="dropPrev"></span></label></div>
       <div class="full" style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary" type="submit">Publish story ${I.arrow}</button><button class="btn btn-ghost" type="button" data-close>Cancel</button></div>
@@ -699,7 +699,7 @@ function openAddStory(){
     if (!ok) return;
     const [sh, iso] = f.sh.value.split("·").map(x => x.trim());
     const s = {id:"mine-" + Date.now(), mine:true, title:f.title.value.trim(), subtitle:f.subtitle.value.trim(), category:f.category.value, location:f.location.value.trim(), year:f.year.value.trim(), cameraGear:f.gear.value.trim(),
-      exif:(f.ap.value || sh) ? {aperture:f.ap.value.trim(), shutter:sh||"", iso:iso||""} : null, story:f.story.value.trim(), philosophy:f.phil.value.trim(), imageUrl:imgData};
+      exif:(f.ap.value || sh) ? {aperture:f.ap.value.trim(), shutter:sh||"", iso:iso||""} : null, story:f.story.value.trim(), imageUrl:imgData};
     const list = store.get("ls-photos", []); list.unshift(s);
     if (!store.set("ls-photos", list)){ s.imageUrl = null; list[0] = s; if (!store.set("ls-photos", list)) { toast("This browser isn’t allowing saved stories. Try a normal (non-private) window."); return; } toast("Saved without the photo: it was too large for browser storage."); }
     else toast("Story published to your gallery");
