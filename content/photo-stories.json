@@ -11,9 +11,26 @@
     "height": 1282,
     "focus": "34% 50%",
     "story": [
-      "Most of the flock has its head down, sweeping the shallows for food in a slow, steady rhythm. Then two necks rise out of the crowd and meet at the top of the frame, bills almost touching.",
-      "Whether it is a squabble over feeding space or the start of a display, it lasts only a few seconds. A third flamingo looks on from the back, and everyone else keeps feeding as if nothing is happening.",
-      "Low, warm light picks out the pink in their wings against the dark water and the deep blue haze behind them. I kept the frame wide so the confrontation reads as a small moment inside a much larger, calmer scene."
+      "Every flock has its quiet politics. For most of the morning the rules held: heads down, feet stirring the mud, nobody standing too close to anybody else.",
+      "Then one bird took a step into the wrong patch of water, and the argument that had been simmering all week finally rose above the crowd. Two necks went up like raised voices in a room where everyone else pretends not to hear.",
+      "It was over in seconds. One of them lowered its head, the other went back to feeding, and the flock closed around the moment as if it had never happened. Only the old bird at the back kept watching, the way elders do."
+    ]
+  },
+  {
+    "id": "weaver-in-the-doorway",
+    "title": "The Green Lantern",
+    "subtitle": "A weaver peers out from a nest hidden among acacia seed pods",
+    "category": "Weavers",
+    "alt": "A baya weaver looking out from the entrance of a green woven nest hanging among dark green leaves and seed pods",
+    "imageUrl": "img/photo-weaver-in-the-doorway.jpg",
+    "thumbUrl": "img/photo-weaver-in-the-doorway-sm.jpg",
+    "width": 1500,
+    "height": 1001,
+    "focus": "35% 50%",
+    "story": [
+      "Under the acacia, among a hundred hanging seed pods, one green lantern looks almost exactly like the rest.",
+      "That is the point. The safest house in the forest is the one nobody notices, woven from the same green as everything around it and hung from a branch too thin for a snake to trust.",
+      "Then a yellow face appears in the doorway and the disguise is over. He looks out at the world the way we all look out from our front doors in the morning: checking the weather, checking the neighbours, deciding whether today is worth leaving home for."
     ]
   },
   {
@@ -28,9 +45,26 @@
     "height": 1980,
     "focus": "50% 38%",
     "story": [
-      "Grey herons usually stand perfectly still for minutes at a time. This exchange broke that stillness in a burst of wings, legs and open bills.",
-      "One heron launches at the other from above, neck fully stretched, while the lower bird twists and lifts off the water to meet it. Water droplets are still falling from their feet.",
-      "Below them the wetland barely reacts. Flamingos, storks and a third heron stand in the soft morning haze, which turns the background into a pale wash and leaves the two fighters as clean silhouettes. Moments like this are over almost as soon as they begin."
+      "Herons are the monks of the wetland. They can stand so still for so long that you forget they are alive, and the smaller birds go about their business right under their bills.",
+      "But even a monk has a boundary. This stretch of shallow water had belonged to one heron since the mist first lifted, and when a second one landed a little too close, the patience ran out all at once.",
+      "For two heartbeats the wetland had a storm in it: wings, claws, open bills and a spray of water caught in the low light. Then the intruder wheeled away, the owner folded back into stillness, and the flamingos below never once looked up."
+    ]
+  },
+  {
+    "id": "weaver-upside-down",
+    "title": "The Architect Hangs Upside Down",
+    "subtitle": "A baya weaver works on a fresh green nest, the doorway still unfinished",
+    "category": "Weavers",
+    "alt": "A male baya weaver with a yellow crown hangs upside down from a half-built green grass nest",
+    "imageUrl": "img/photo-weaver-upside-down.jpg",
+    "thumbUrl": "img/photo-weaver-upside-down-sm.jpg",
+    "width": 1500,
+    "height": 1001,
+    "focus": "40% 50%",
+    "story": [
+      "Long before the nest is a home, it is a promise, and a male baya weaver has to build the promise first.",
+      "Blade by blade, he tears fresh grass into strips and knots it into place, hanging upside down when the work demands it and chattering at anyone who comes too close. The doorway is not finished, the walls are still green and the whole structure sways with every tug.",
+      "He does not seem to mind the dizziness. A half-built nest is a statement of intent, and every strand he adds is one more line in a letter to someone who has not arrived yet."
     ]
   },
   {
@@ -45,9 +79,26 @@
     "height": 1002,
     "focus": "55% 50%",
     "story": [
-      "Flamingos cannot simply leap into the air. They need a running start, so they sprint across the water with their wings open until they have enough speed to lift off.",
-      "This is the moment the group commits: long legs mid-stride, splashes at their feet, and wings that look pale at rest suddenly opening into bright red with black flight feathers.",
-      "Each bird is at a different point in the same movement, from the first few steps to the bird on the right with its feet already clear of the water. The haze over the far shore keeps the background quiet so the colour carries the frame."
+      "Nobody tells you how much effort it takes to become weightless. Before a flamingo flies, it has to run, and it runs like it means it.",
+      "Someone in the group decided it was time, and the decision spread the way decisions do in any team: a few hesitant steps, then everyone committing at once. Pale bodies opened into red and black, and the quiet lagoon became a runway.",
+      "Each bird was at a different stage of the same idea, one still finding its footing, another already leaving the water behind. In a minute they would be a pink line against the hills. For now they were just effort, splash and the promise of lift."
+    ]
+  },
+  {
+    "id": "weaver-finished-nest",
+    "title": "Waiting to Be Chosen",
+    "subtitle": "A male weaver perches proudly on his finished, sun-dried nest",
+    "category": "Weavers",
+    "alt": "A male baya weaver perched on the side of a large golden woven nest",
+    "imageUrl": "img/photo-weaver-finished-nest.jpg",
+    "thumbUrl": "img/photo-weaver-finished-nest-sm.jpg",
+    "width": 1500,
+    "height": 1001,
+    "focus": "62% 45%",
+    "story": [
+      "The building is done. The grass has dried to gold, the walls are tight and the long neck of the nest has taken the strain of a hundred gusts of wind.",
+      "Now comes the harder part: waiting to be chosen. Female weavers inspect a nest like a home buyer inspects a house, and they are known to walk away from beautiful work without a second look.",
+      "So he perches on the side of his masterpiece, crown bright, chest out, looking out across the clearing. A builder who has done everything he can, waiting to find out whether it was enough."
     ]
   },
   {
@@ -62,9 +113,26 @@
     "height": 1282,
     "focus": "42% 50%",
     "story": [
-      "Two greater flamingos cross the same stretch of water in completely different moods. The one on the left lifts its wings and kicks up a trail of spray with each step; the one on the right walks on, neck curved, unbothered.",
-      "Flamingos often raise and flash their wings in group displays, and this looks like one of those moments, though it could just as easily be a bird stretching or finding its balance.",
-      "The early sun lights both birds from the side and leaves the bank behind them in shadow, so they glow against the dark background. Their reflections and the line of droplets give the scene its sense of motion."
+      "Some mornings you are the one who has to make an entrance. Other mornings you are the one who simply keeps walking.",
+      "The flamingo on the left had something to prove. Wings half raised, every step kicking up a little fountain, it crossed the shallows like an actor who knows the light is on him.",
+      "Its companion was not impressed. Neck curved, pace unchanged, it walked on as though the show were happening somewhere else entirely. Between the two of them, they captured every meeting I have ever sat in."
+    ]
+  },
+  {
+    "id": "weaver-wings-open",
+    "title": "The Invitation",
+    "subtitle": "Wings spread and calling, a male weaver shows off his nest",
+    "category": "Weavers",
+    "alt": "A male baya weaver clings to a hanging grass nest with his wings spread against a soft golden background",
+    "imageUrl": "img/photo-weaver-wings-open.jpg",
+    "thumbUrl": "img/photo-weaver-wings-open-sm.jpg",
+    "width": 1500,
+    "height": 1001,
+    "focus": "30% 50%",
+    "story": [
+      "Courtship among weavers is part architecture and part theatre, and this was the theatre.",
+      "Clinging to the side of his nest, the male threw his wings wide and shivered them, calling loudly enough to be heard across the clearing. It is the bird version of standing outside a house you built yourself and inviting the whole street to come and see.",
+      "The nest swung, the leaves overhead trembled and the soft gold light behind him made the whole performance look a little like a stage. Somewhere out of frame, an audience of one was deciding."
     ]
   },
   {
@@ -79,9 +147,26 @@
     "height": 1002,
     "focus": "70% 50%",
     "story": [
-      "From a distance the glossy ibis looks almost black, and it is easy to overlook among more colourful birds. Up close and in the right light, its feathers carry a sheen of bronze, purple and green.",
-      "This one stood in the shallows with its feathers fluffed, long curved bill resting, turning slowly as the light changed. Each small turn shifted the colours across its back.",
-      "I placed the bird to the right and left the open water to its left, so the curve of the bill leads the eye into the frame. The calm blue water and the soft green bank behind keep attention on the plumage."
+      "At a distance, everyone says the glossy ibis is black. It hears this all the time and does not bother to argue.",
+      "It simply waits for the right light, fluffs its feathers against the morning chill and turns, slowly, the way a jeweller turns a stone. Bronze appears on the shoulders, then purple, then a flash of green that was never there a moment ago.",
+      "The colours were always there. They just needed someone patient enough to stand at the water's edge and look again."
+    ]
+  },
+  {
+    "id": "weavers-the-approach",
+    "title": "The Inspection",
+    "subtitle": "A second weaver flies in as the builder hangs beneath his nest",
+    "category": "Weavers",
+    "alt": "One baya weaver hangs beneath a woven nest with wings open while another flies towards it",
+    "imageUrl": "img/photo-weavers-the-approach.jpg",
+    "thumbUrl": "img/photo-weavers-the-approach-sm.jpg",
+    "width": 1500,
+    "height": 1001,
+    "focus": "50% 50%",
+    "story": [
+      "Every story about building a home eventually needs a second character.",
+      "She came in fast and low across the clearing, wings blurred, eyes fixed on the nest. He was already hanging beneath it, wings spread, putting on one last frantic display as if he had heard the inspection was about to begin.",
+      "Whether she stayed is a different story. For one frozen moment they were both in the air around the house he had made, one asking a question and one about to answer it."
     ]
   }
 ]
