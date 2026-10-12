@@ -34,6 +34,23 @@
     ]
   },
   {
+    "id": "ruins-sunburst",
+    "title": "The Sun Keeps Its Appointment",
+    "subtitle": "The setting sun breaks through the broken tower of an old stone temple",
+    "category": "Heritage",
+    "alt": "Silhouette of an ancient pillared stone temple at sunset, with the sun bursting through a ruined tower",
+    "imageUrl": "img/photo-ruins-sunburst.jpg",
+    "thumbUrl": "img/photo-ruins-sunburst-sm.jpg",
+    "width": 1500,
+    "height": 1001,
+    "focus": "60% 55%",
+    "story": [
+      "Long ago, someone measured the sky and laid these stones so that the light would arrive at exactly the right place.",
+      "The roof has fallen in places, the tower has crumbled and most of the carvings have softened under centuries of wind. But the arrangement still works. Every evening the sun finds the gap in the broken tower and pours through it, right on time.",
+      "Buildings fade, kingdoms disappear and the names of the architects are forgotten. The appointment they made with the sun is the one thing that has never been cancelled."
+    ]
+  },
+  {
     "id": "grey-herons-mid-air",
     "title": "Airborne Dispute",
     "subtitle": "Two grey herons clash in mid-air while the wetland below carries on",
@@ -48,6 +65,23 @@
       "Herons are the monks of the wetland. They can stand so still for so long that you forget they are alive, and the smaller birds go about their business right under their bills.",
       "But even a monk has a boundary. This stretch of shallow water had belonged to one heron since the mist first lifted, and when a second one landed a little too close, the patience ran out all at once.",
       "For two heartbeats the wetland had a storm in it: wings, claws, open bills and a spray of water caught in the low light. Then the intruder wheeled away, the owner folded back into stillness, and the flamingos below never once looked up."
+    ]
+  },
+  {
+    "id": "snail-after-rain",
+    "title": "The Long Commute",
+    "subtitle": "A small snail sets out across a wet stone path after the rain",
+    "category": "Small Worlds",
+    "alt": "A small snail with a glossy amber shell crossing a wet stone surface, green grass blurred behind it",
+    "imageUrl": "img/photo-snail-after-rain.jpg",
+    "thumbUrl": "img/photo-snail-after-rain-sm.jpg",
+    "width": 2000,
+    "height": 1428,
+    "focus": "68% 55%",
+    "story": [
+      "The rain stopped an hour ago, which in snail time means the whole world has just opened for business.",
+      "Somewhere on the far side of this stone path is a patch of grass, perhaps a leaf with his name on it. He has no map and no schedule, only two antennae held out like a traveller reading street signs in a city he has never visited.",
+      "It will take him most of the morning to cross what we would step over without noticing. He does not seem to mind. Nobody has ever told him the journey was supposed to be fast."
     ]
   },
   {
@@ -85,6 +119,23 @@
     ]
   },
   {
+    "id": "ruins-tree-dusk",
+    "title": "The Last Two Guardians",
+    "subtitle": "A leafless tree and a small stone shrine hold the hilltop as the sky turns gold",
+    "category": "Heritage",
+    "alt": "A bare, twisted tree beside a small stone shrine and old pavilions, silhouetted against an orange and blue dusk sky",
+    "imageUrl": "img/photo-ruins-tree-dusk.jpg",
+    "thumbUrl": "img/photo-ruins-tree-dusk-sm.jpg",
+    "width": 1500,
+    "height": 1001,
+    "focus": "50% 60%",
+    "story": [
+      "The kings left. The markets emptied. The pilgrims found other roads. Only two of them stayed on the hill.",
+      "The shrine kept its stones together the way old men keep their stories, a little crooked but complete. The tree, which had long since given up on leaves, kept watch with its arms raised, as if still waving goodbye to a city that marched away centuries ago.",
+      "Every evening the sky puts on the same show for them, blue at the top and molten at the edge. They have seen it thousands of times. They still stand facing west, just in case tonight is the night someone comes back."
+    ]
+  },
+  {
     "id": "weaver-finished-nest",
     "title": "Waiting to Be Chosen",
     "subtitle": "A male weaver perches proudly on his finished, sun-dried nest",
@@ -100,6 +151,30 @@
       "Now comes the harder part: waiting to be chosen. Female weavers inspect a nest like a home buyer inspects a house, and they are known to walk away from beautiful work without a second look.",
       "So he perches on the side of his masterpiece, crown bright, chest out, looking out across the clearing. A builder who has done everything he can, waiting to find out whether it was enough."
     ]
+  },
+  {
+    "id": "single-grass-spike",
+    "title": "Standing Out",
+    "subtitle": "One bristly grass spike stands sharp against a wash of green and violet",
+    "category": "Small Worlds",
+    "alt": "A single bristly seed head of grass in sharp focus against a soft green and purple background",
+    "imageUrl": "img/photo-single-grass-spike.jpg",
+    "thumbUrl": "img/photo-single-grass-spike-sm.jpg",
+    "width": 1600,
+    "height": 1143,
+    "focus": "30% 50%",
+    "story": [
+      "In a field of a million grass stems, this one did not do anything special. It just stood still at the right moment.",
+      "A breeze had been moving through the field all morning, blurring everything into soft colour. Then, for a breath, it paused. One spike held perfectly still, its seeds lined up like beads, each bristle catching the light, a single drop of water clinging near the base.",
+      "Behind it, a neighbour stayed soft and out of focus, waiting for its own turn. Most of what we call noticing is just this: deciding which one, out of the thousands, deserves your full attention."
+    ],
+    "year": "2011",
+    "cameraGear": "Nikon D40 · 105mm",
+    "exif": {
+      "aperture": "f/6.3",
+      "shutter": "1/200s",
+      "iso": "200"
+    }
   },
   {
     "id": "flamingo-courtship-walk",
@@ -134,6 +209,30 @@
       "Clinging to the side of his nest, the male threw his wings wide and shivered them, calling loudly enough to be heard across the clearing. It is the bird version of standing outside a house you built yourself and inviting the whole street to come and see.",
       "The nest swung, the leaves overhead trembled and the soft gold light behind him made the whole performance look a little like a stage. Somewhere out of frame, an audience of one was deciding."
     ]
+  },
+  {
+    "id": "meadow-cockscomb",
+    "title": "The Quiet Crowd",
+    "subtitle": "Wild cockscomb spikes rise from a monsoon meadow, each one catching the light",
+    "category": "Small Worlds",
+    "alt": "Pink and white flower spikes of wild cockscomb rising from a green meadow",
+    "imageUrl": "img/photo-meadow-cockscomb.jpg",
+    "thumbUrl": "img/photo-meadow-cockscomb-sm.jpg",
+    "width": 1600,
+    "height": 1067,
+    "focus": "35% 50%",
+    "story": [
+      "Nobody plants this meadow. Every monsoon it simply arrives, the way a crowd gathers in a square without anyone sending an invitation.",
+      "For a few weeks the wild cockscomb stands up in its hundreds, each spike painted pink at the tip and silver below, each one convinced it is the tallest. The bees know better. They move through the field like ushers, visiting every seat.",
+      "By the time the rains leave, the crowd will have gone to seed and the grass will close over the place where it stood. Next year it will gather again, in almost the same spot, without a single reminder."
+    ],
+    "year": "2011",
+    "cameraGear": "Nikon D40 · 300mm",
+    "exif": {
+      "aperture": "f/5.6",
+      "shutter": "1/320s",
+      "iso": "200"
+    }
   },
   {
     "id": "glossy-ibis-blue-hour",
