@@ -80,6 +80,9 @@ img{display:block;max-width:100%}
 .icon-btn{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);transition:border-color .2s, transform .2s}
 .icon-btn:hover{border-color:var(--accent)}
 .icon-btn svg{width:18px;height:18px}
+.li-btn{color:var(--fg);text-decoration:none}
+.li-btn svg{width:17px;height:17px}
+.li-btn:hover{color:var(--accent)}
 .theme-btn .sun{display:none}
 :root[data-theme="dark"] .theme-btn .sun{display:block}
 :root[data-theme="dark"] .theme-btn .moon{display:none}
@@ -92,7 +95,6 @@ img{display:block;max-width:100%}
 .btn-ghost{border-color:var(--line-2);color:var(--fg);background:transparent}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 .btn-sm{padding:9px 16px;font-size:14px}
-.nav-cta{display:inline-flex}
 .menu-btn{display:none}
 .mobile-menu{position:fixed;inset:0;z-index:70;background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 18px) var(--gut) calc(env(safe-area-inset-bottom,0px) + 24px);display:flex;flex-direction:column;gap:24px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s}
 .mobile-menu.open{opacity:1;transform:none;pointer-events:auto}
@@ -102,7 +104,7 @@ img{display:block;max-width:100%}
 .mobile-menu nav a span{font:600 13px var(--f-label);color:var(--faint);letter-spacing:.01em}
 .mobile-menu nav a.active{color:var(--accent)}
 @media (max-width:1060px){.nav-links{display:none}.menu-btn{display:grid}.nav-actions{margin-left:auto}}
-@media (max-width:520px){.nav-cta{display:none}.brand-txt span{display:none}}
+@media (max-width:520px){.brand-txt span{display:none}}
 
 /* ---------- ROUTE TRANSITION ---------- */
 main{min-height:60vh}
@@ -138,6 +140,8 @@ section{position:relative}
 .hero-copy{grid-column:1;grid-row:1;align-self:center;position:relative;z-index:1;padding-block:clamp(32px,4vw,56px) clamp(64px,7vw,104px);min-width:0}
 .hero-figure{grid-column:2;grid-row:1;margin:0;justify-self:end;width:calc(100% + 140px);max-width:720px;animation:heroArt 1.2s cubic-bezier(.2,.7,.2,1) both}
 .hero-figure img{display:block;width:100%;height:auto}
+/* the figure has ~7.3% transparent space right of the shoulder/circle; shift it so they meet the grid edge */
+@media (min-width:861px){.hero-figure img{transform:translateX(7.3%)}}
 .hero-figure .hf-dark{display:none}
 :root[data-theme="dark"] .hero-figure .hf-light{display:none}
 :root[data-theme="dark"] .hero-figure .hf-dark{display:block}
@@ -769,9 +773,6 @@ footer{background:var(--bg)}
 .art-head h1{font-weight:700}
 
 /* nav LinkedIn button */
-.nav-cta svg{width:16px;height:16px}
-.nav-cta:hover svg{transform:none}
-@media (max-width:520px){.nav-cta{display:inline-flex;width:40px;height:40px;padding:0;justify-content:center;border-radius:999px}.nav-cta span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
 
 /* ---------- closing "About me" band (inverted in both themes) ---------- */
 .about-band{background:var(--band-bg);color:var(--band-fg);padding-block:clamp(72px,9vw,120px)}
