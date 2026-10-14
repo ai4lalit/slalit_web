@@ -84,7 +84,7 @@ def main():
             shutil.copy2(f, DIST / "img" / f.name)
     (DIST / "preview.html").write_text(page, encoding="utf-8")
     (DIST / "index.html").write_text(
-        '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+        '<!doctype html>\n<html lang="en" data-theme="dark">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
         f"{head}\n</head>\n<body>\n{styles_and_body}</body>\n</html>\n", encoding="utf-8")
     kb = (DIST / "index.html").stat().st_size // 1024

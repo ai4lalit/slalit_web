@@ -36,7 +36,8 @@ const root = document.documentElement;
 function systemDark(){ return window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches; }
 function currentTheme(){ return root.getAttribute("data-theme") || (systemDark() ? "dark" : "light"); }
 const savedTheme = store.get("ls-theme", null);
-if (savedTheme === "light" || savedTheme === "dark") root.setAttribute("data-theme", savedTheme);
+/* dark is the default; a visitor's own saved choice wins */
+root.setAttribute("data-theme", savedTheme === "light" ? "light" : "dark");
 function toggleTheme(){
   const next = currentTheme() === "dark" ? "light" : "dark";
   root.setAttribute("data-theme", next);
